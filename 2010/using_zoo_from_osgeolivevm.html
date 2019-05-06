@@ -1,0 +1,383 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Using ZOO from an OSGeoLive virtual machine &mdash; ZOO-Project 1.7 documentation</title>
+  
+  <link href="http://fonts.googleapis.com/css?family=Days+One" rel="stylesheet" type="text/css">
+  
+  
+
+  
+
+  
+  
+    
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within ZOO-Project 1.7 documentation" href="../_static/opensearch.xml"/>
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="ZOO-Project 1.7 documentation" href="../index.html"/>
+        <link rel="up" title="ZOO-Project Workshop 2010" href="index.html"/>
+        <link rel="next" title="Creating OGR based Web Services" href="ogr_base_vect_ops.html"/>
+        <link rel="prev" title="Introduction" href="introduction.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+	  <a class="shrink" href="http://zoo-project.org"><img src="http://zoo-project.org/img/zoo-sun-logo.png" class="img-responsive sun" style="display: inline;"> ZOO</a>
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../2017/index.html">ZOO-Project workshop 2017</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../2017/introduction.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2017/using_zoo_from_osgeolivevm.html">Configuration and ZOO-Kernel use</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2017/first_service.html">Creating your first ZOO Service</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2017/building_blocks_presentation.html">Building blocks presentation - Using OGR and PgRouting based Web Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2017/js_services_chaining.html">Playing with buildign blocks - Creating JavaScript Web Services</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../2016/index.html">ZOO-Project workshop 2016</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../2016/introduction.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2016/using_zoo_from_osgeolivevm.html">Configuration and ZOO-Kernel use</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2016/first_service.html">Creating your first ZOO Service</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2016/building_blocks_presentation.html">Building blocks presentation - Using OGR and PgRouting based Web Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2016/js_services_chaining.html">Playing with buildign blocks - Creating JavaScript Web Services</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../2015/index.html">ZOO-Project workshop 2015</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../2015/introduction.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2015/using_zoo_from_osgeolivevm.html">Configuration and ZOO-Kernel use</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2015/first_service.html">Creating your first ZOO Service</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2015/building_blocks_presentation.html">Building blocks presentation - Using OGR and PgRouting based Web Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2015/js_services_chaining.html">Playing with buildign blocks - Creating JavaScript Web Services</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../2014/index.html">ZOO-Project workshop 2014</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../2014/introduction.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2014/using_zoo_from_osgeolivevm.html">Configuration and ZOO-Kernel use</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2014/first_service.html">Creating your first ZOO Service</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2014/building_blocks_presentation.html">Building blocks presentation - Using OGR and PgRouting based Web Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2014/js_services_chaining.html">Playing with buildign blocks - Creating JavaScript Web Services</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../2013/index.html">ZOO-Project Workshop 2013</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../2013/introduction.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2013/using_zoo_from_osgeolivevm.html">Configuration and ZOO-Kernel use</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2013/first_service.html">Create your first ZOO Service</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2013/building_blocks_presentation.html">Building blocks presentation - Using OGR and PgRouting based Web Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2013/js_services_chaining.html">Playing with buildign blocks - Creating JavaScript Web Services</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../2012/index.html">ZOO-Project Workshop 2012</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../2012/introduction.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2012/using_zoo_from_osgeolivevm.html">Configuration and ZOO-Kernel use</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2012/first_service.html">Creating your first ZOO Service</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2012/building_blocks_presentation.html">Presenting building blocks - Using OGR based Web Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2012/js_services_chaining.html">Playing with buildign blocks - Creating JavaScript Web Services</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">ZOO-Project Workshop 2010</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Using ZOO from an OSGeoLive virtual machine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ogr_base_vect_ops.html">Creating OGR based Web Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="building_wps_client_using_ol.html">Building a WPS client using OpenLayers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exercise.html">Exercise</a></li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">ZOO-Project</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+
+    <li><a href="../index.html"> Workshops</a> &#8725; &#160;</li>
+      
+          <li><a href="index.html">ZOO-Project Workshop 2010</a> &#8725; &#160;</li>
+      
+    <li>Using ZOO from an OSGeoLive virtual machine</li>
+      <li class="wy-breadcrumbs-aside">
+        $Date: 2015-06-26 17:56:32 +0200 (Ven, 26 jui 2015) $
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="using-zoo-from-an-osgeolive-virtual-machine">
+<span id="using-zoo-from-osgeolivevm"></span><h1><a class="toc-backref" href="#table-of-contents">Using ZOO from an OSGeoLive virtual machine</a><a class="headerlink" href="#using-zoo-from-an-osgeolive-virtual-machine" title="Permalink to this headline">¶</a></h1>
+<div class="contents topic" id="table-of-contents">
+<p class="topic-title first">Table of Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#using-zoo-from-an-osgeolive-virtual-machine" id="id1">Using ZOO from an OSGeoLive virtual machine</a><ul>
+<li><a class="reference internal" href="#zoo-kernel-installation" id="id2">ZOO Kernel Installation</a></li>
+<li><a class="reference internal" href="#testing-the-zoo-installation-with-getcapabilities" id="id3">Testing the ZOO installation with GetCapabilities</a></li>
+<li><a class="reference internal" href="#preparing-your-zoo-services-provider-directory" id="id4">Preparing your ZOO Services Provider directory</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<p><a class="reference external" href="http://live.osgeo.org/">OSGeoLive</a> is a live DVD and virtual machine based on  <a class="reference external" href="http://www.xubuntu.org/">Xubuntu</a> that allows you to try a wide variety of open source geospatial software without installing anything. It is composed entirely of free software and include ZOO 1.0 this year, for testing purpose.</p>
+<div class="section" id="zoo-kernel-installation">
+<h2><a class="toc-backref" href="#table-of-contents">ZOO Kernel Installation</a><a class="headerlink" href="#zoo-kernel-installation" title="Permalink to this headline">¶</a></h2>
+<p>As already said in introduction, an OSGeoLive virtual machine image disk has
+been installed on your computer, allowing you to use ZOO Kernel in a development
+environment directly. Using a virtual machine image disk seems to be the simplest
+way to use ZOO Kernel and to develop ZOO Services locally, as we can ensure that
+everything requested for compiling C Services and running Python ones is available
+and ready to use. Every ZOO related material and source code have been placed in
+<code class="docutils literal"><span class="pre">/home/user/zoows</span></code> directory. We will work inside it during this workshop. As
+the binary version of ZOO Kernel is already compiled and stored in <code class="docutils literal"><span class="pre">/home/user/zoows/sources/zoo-kernel</span></code>,
+you only have to copy two important files inside the <code class="docutils literal"><span class="pre">/usr/lib/cgi-bin</span></code>
+directory : <code class="docutils literal"><span class="pre">zoo_loader.cgi</span></code> and the <code class="docutils literal"><span class="pre">main.cfg</span></code> in order to make ZOO Kernel
+available, using the following commands :</p>
+<div class="highlight-guess"><div class="highlight"><pre>sudo cp ~/zoows/sources/zoo-kernel/zoo_loader.cgi /usr/lib/cgi-bin
+sudo cp ~/zoows/sources/zoo-kernel/main.cfg /usr/lib/cgi-bin
+</pre></div>
+</div>
+<p>Please note that we will talk about ZOO Kernel or <code class="docutils literal"><span class="pre">zoo_loader.cgi</span></code> script without
+any distinction during this workshop.</p>
+<p>The <code class="docutils literal"><span class="pre">main.cfg</span></code> file contains metadata informations about the identification and
+provider but also some important settings. The file is composed of various sections,
+namely main, identification and provider per default. Obviously, you are free to add
+new sections to the file if you need them for a specific Service. Nevertheless, you
+have to know that the env and lenv sections name are used in a specific way.</p>
+<p>The env section lets you define environment variables that your Service requires
+during its runtime. For instance, if your Service requires to access to a X server
+running on framebuffer, then you will have to set the <code class="docutils literal"><span class="pre">DISPLAY</span></code> environnement
+variably, in this case you would add <code class="docutils literal"><span class="pre">DISPLAY=:1</span></code> line in your env section.</p>
+<p>As for the env section, there is the section lenv where specific informations about
+status informations of a running Service will be written by the ZOO Kernel or the
+ZOO Services. For instance, when your service failed, you can set the value for
+message in lenv to see it displayed in the Status node of the ExecuteResponse
+returned back to the client. If your service will take long time and can get
+informations about processing status, you can then set a value between 0 and 100
+to status in lenv to represent the percentage completed of the running Service task,
+we will talk deeper about this later in this workshop.</p>
+<p>Please take a look to your local file <code class="docutils literal"><span class="pre">main.cfg</span></code> file. Three important parameters are commented bellow:</p>
+<blockquote>
+<div><ul class="simple">
+<li>serverAddress : The url to access to the ZOO Kernel</li>
+<li>tmpPath : The full path to store temporary files</li>
+<li>tmpUrl : The url path relative to serverAddress to access temporary directory.</li>
+</ul>
+</div></blockquote>
+<p>The values of the main.cfg file used from the running virtual machine are the following :</p>
+<div class="highlight-guess"><div class="highlight"><pre>serverAddress=http://localhost/zoo
+tmpPath=/var/www/temp
+tmpUrl=../temp/
+</pre></div>
+</div>
+<p>You could have noticed that the tmpUrl is a relative url from <code class="docutils literal"><span class="pre">serverAddress</span></code>,
+so it must be a directory. Even if ZOO Kernel can be used with the full url of
+the <code class="docutils literal"><span class="pre">zoo_loader.cgi</span></code> script, for better readability and fully functional ZOO Kernel,
+you have to modify the default Apache configuration in order to be able to use the
+<a class="reference external" href="http://localhost/zoo/">http://localhost/zoo/</a> url directly.</p>
+<p>First, please create a <code class="docutils literal"><span class="pre">zoo</span></code> directory in the existing <code class="docutils literal"><span class="pre">/var/www</span></code> which is
+used by Apache as the <code class="docutils literal"><span class="pre">DocumentRoot</span></code>. Then, please edit the <code class="docutils literal"><span class="pre">/etc/apache2/sites-available/default</span></code>
+configuration file and add the following lines after the <code class="docutils literal"><span class="pre">Directory</span></code> block related to <code class="docutils literal"><span class="pre">/var/www</span></code> directory :</p>
+<div class="highlight-none"><div class="highlight"><pre>&lt;Directory /var/www/zoo/&gt;
+    Options Indexes FollowSymLinks MultiViews
+    AllowOverride All
+    Order allow,deny
+    allow from all
+&lt;/Directory&gt;
+</pre></div>
+</div>
+<p>Now create a small <code class="docutils literal"><span class="pre">.htaccess</span></code> file in the <code class="docutils literal"><span class="pre">/var/www/zoo</span></code> containing the following lines:</p>
+<div class="highlight-guess"><div class="highlight"><pre>RewriteEngine on
+RewriteRule call/(.*)/(.*) /cgi-bin/zoo_loader.cgi?request=Execute&amp;service=WPS&amp;version=1.0.0&amp;Identifier=$1&amp;DataInputs=sid=$2&amp;RawDataOutput=Result [L,QSA]
+RewriteRule (.*)/(.*) /cgi-bin/zoo_loader.cgi?metapath=$1 [L,QSA]
+RewriteRule (.*) /cgi-bin/zoo_loader.cgi [L,QSA]
+</pre></div>
+</div>
+<p>For this last file to be taken into account by Apache, you must activate the
+rewrite Apache module by copying a load file as bellow :</p>
+<div class="highlight-guess"><div class="highlight"><pre>sudo cp /etc/apache2/mods-available/rewrite.load /etc/apache2/mods-enabled/
+</pre></div>
+</div>
+<p>Or using the <code class="docutils literal"><span class="pre">a2enmod</span></code> tool this way :</p>
+<div class="highlight-guess"><div class="highlight"><pre>a2enmod rewrite
+</pre></div>
+</div>
+<p>Now you should be able to access the ZOO Kernel using a simplified by restarting your Apache Web server :</p>
+<div class="highlight-guess"><div class="highlight"><pre>sudo /etc/init.d/apache2 restart
+</pre></div>
+</div>
+<p>Two other softwares form the OSGeoLive environment will be used during this workshop.
+MapServer will first be used to provide WFS input data for the ZOO Services we are
+going to develop. The MapServer dataset providen by Orkney (japanese regions polygons)
+will be passed to our service during <a class="reference external" href="http://zoo-project.org/trac/wiki/ZooWorkshop/FOSS4GJapan/CreatingOGRBasedWebServices#CallingthesinglegeometryservicesfromJavaScript">section 4</a>.</p>
+<p>OpenLayers library is also available on the OSGeoLive virtual machine image disk,
+and it will be used during <a class="reference external" href="http://zoo-project.org/trac/wiki/ZooWorkshop/FOSS4GJapan/CreatingOGRBasedWebServices#CallingthesinglegeometryservicesfromJavaScript">section 4</a>, for building a simple WPS client application able to query the newly developed ZOO Services.</p>
+<p>As we planned to use OGR C-API and Python module of the GDAL library, we will need
+the corresponding header files, libraries and associated files. Hopefully everything
+was already available per default and so ready to use on the OSGeoLive packaging.</p>
+</div>
+<div class="section" id="testing-the-zoo-installation-with-getcapabilities">
+<h2><a class="toc-backref" href="#table-of-contents">Testing the ZOO installation with GetCapabilities</a><a class="headerlink" href="#testing-the-zoo-installation-with-getcapabilities" title="Permalink to this headline">¶</a></h2>
+<p>You can now simply query ZOO Kernel using the following request from your Internet browser:</p>
+<p><a class="reference external" href="http://localhost/cgi-bin/zoo_loader.cgi?Request=GetCapabilities&amp;Service=WPS">http://localhost/cgi-bin/zoo_loader.cgi?Request=GetCapabilities&amp;Service=WPS</a></p>
+<p>You should then get a valid Capabilities XML document, as the following :</p>
+<a class="reference internal image-reference" href="../_images/Practical-introduction-to-ZOO-2.png"><img alt="../_images/Practical-introduction-to-ZOO-2.png" class="align-center" src="../_images/Practical-introduction-to-ZOO-2.png" style="width: 458px; height: 159px;" /></a>
+<p>Please note that no Process node is returned in the ProcessOfferings section, as no
+ZOO Service is available yet. You can also proceed to a GetCapabilities request from
+the command line, using the following command:</p>
+<div class="highlight-none"><div class="highlight"><pre>cd /usr/lib/cgi-bin
+./zoo_loader.cgi “request=GetCapabilities&amp;service=WPS”
+</pre></div>
+</div>
+<p>The same result as in your browser will be returned, as shown in the following screenshot:</p>
+<a class="reference internal image-reference" href="../_images/Practical-introduction-to-ZOO-3.png"><img alt="../_images/Practical-introduction-to-ZOO-3.png" class="align-center" src="../_images/Practical-introduction-to-ZOO-3.png" style="width: 395px; height: 251px;" /></a>
+<p>Invoking ZOO Kernel from command line can be helpful during development process of new Services.</p>
+</div>
+<div class="section" id="preparing-your-zoo-services-provider-directory">
+<h2><a class="toc-backref" href="#table-of-contents">Preparing your ZOO Services Provider directory</a><a class="headerlink" href="#preparing-your-zoo-services-provider-directory" title="Permalink to this headline">¶</a></h2>
+<p>In order to simplify the task, we will first comment the directory structure which
+should be used when creating a new Services Provider :</p>
+<blockquote>
+<div><ul class="simple">
+<li>The main Services Provider directory including :<ul>
+<li>A <code class="docutils literal"><span class="pre">cgi-env</span></code> directory which will contain all the zcfg metadata files and the service shared object (C Shared Library or Python module)</li>
+<li>The <code class="docutils literal"><span class="pre">Makefile</span></code> and the <code class="docutils literal"><span class="pre">*c</span></code> files needed to compile your Services Provider.</li>
+</ul>
+</li>
+</ul>
+</div></blockquote>
+<p>Please create a ws_sp main Services Provider directory in the existing zoo-services one located in <code class="docutils literal"><span class="pre">/home/user/zoows/sources/</span></code>, respecting the tree above .</p>
+<div class="highlight-guess"><div class="highlight"><pre>mkdir -p /home/user/zoows/sources/zoo-services/ws_sp/cgi-env
+</pre></div>
+</div>
+<p>The Makefile and the code of the C and Python Service Shared Object will be detailed in the next sections.</p>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="ogr_base_vect_ops.html" class="btn btn-neutral float-right" title="Creating OGR based Web Services">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="introduction.html" class="btn btn-neutral" title="Introduction"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+  <div class="pfoot">
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2009-2019, ZOO-Project team.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> inspired by <a href="https://readthedocs.org">Read the Docs</a>.
+</div>
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.7',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

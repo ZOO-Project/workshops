@@ -1,0 +1,1321 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Creating OGR based Web Services &mdash; ZOO-Project 1.7 documentation</title>
+  
+  <link href="http://fonts.googleapis.com/css?family=Days+One" rel="stylesheet" type="text/css">
+  
+  
+
+  
+
+  
+  
+    
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within ZOO-Project 1.7 documentation" href="../_static/opensearch.xml"/>
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="ZOO-Project 1.7 documentation" href="../index.html"/>
+        <link rel="up" title="ZOO-Project Workshop 2010" href="index.html"/>
+        <link rel="next" title="Building a WPS client using OpenLayers" href="building_wps_client_using_ol.html"/>
+        <link rel="prev" title="Using ZOO from an OSGeoLive virtual machine" href="using_zoo_from_osgeolivevm.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+	  <a class="shrink" href="http://zoo-project.org"><img src="http://zoo-project.org/img/zoo-sun-logo.png" class="img-responsive sun" style="display: inline;"> ZOO</a>
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../2017/index.html">ZOO-Project workshop 2017</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../2017/introduction.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2017/using_zoo_from_osgeolivevm.html">Configuration and ZOO-Kernel use</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2017/first_service.html">Creating your first ZOO Service</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2017/building_blocks_presentation.html">Building blocks presentation - Using OGR and PgRouting based Web Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2017/js_services_chaining.html">Playing with buildign blocks - Creating JavaScript Web Services</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../2016/index.html">ZOO-Project workshop 2016</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../2016/introduction.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2016/using_zoo_from_osgeolivevm.html">Configuration and ZOO-Kernel use</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2016/first_service.html">Creating your first ZOO Service</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2016/building_blocks_presentation.html">Building blocks presentation - Using OGR and PgRouting based Web Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2016/js_services_chaining.html">Playing with buildign blocks - Creating JavaScript Web Services</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../2015/index.html">ZOO-Project workshop 2015</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../2015/introduction.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2015/using_zoo_from_osgeolivevm.html">Configuration and ZOO-Kernel use</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2015/first_service.html">Creating your first ZOO Service</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2015/building_blocks_presentation.html">Building blocks presentation - Using OGR and PgRouting based Web Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2015/js_services_chaining.html">Playing with buildign blocks - Creating JavaScript Web Services</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../2014/index.html">ZOO-Project workshop 2014</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../2014/introduction.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2014/using_zoo_from_osgeolivevm.html">Configuration and ZOO-Kernel use</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2014/first_service.html">Creating your first ZOO Service</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2014/building_blocks_presentation.html">Building blocks presentation - Using OGR and PgRouting based Web Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2014/js_services_chaining.html">Playing with buildign blocks - Creating JavaScript Web Services</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../2013/index.html">ZOO-Project Workshop 2013</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../2013/introduction.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2013/using_zoo_from_osgeolivevm.html">Configuration and ZOO-Kernel use</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2013/first_service.html">Create your first ZOO Service</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2013/building_blocks_presentation.html">Building blocks presentation - Using OGR and PgRouting based Web Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2013/js_services_chaining.html">Playing with buildign blocks - Creating JavaScript Web Services</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../2012/index.html">ZOO-Project Workshop 2012</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../2012/introduction.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2012/using_zoo_from_osgeolivevm.html">Configuration and ZOO-Kernel use</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2012/first_service.html">Creating your first ZOO Service</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2012/building_blocks_presentation.html">Presenting building blocks - Using OGR based Web Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2012/js_services_chaining.html">Playing with buildign blocks - Creating JavaScript Web Services</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">ZOO-Project Workshop 2010</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="using_zoo_from_osgeolivevm.html">Using ZOO from an OSGeoLive virtual machine</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Creating OGR based Web Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="building_wps_client_using_ol.html">Building a WPS client using OpenLayers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exercise.html">Exercise</a></li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">ZOO-Project</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+
+    <li><a href="../index.html"> Workshops</a> &#8725; &#160;</li>
+      
+          <li><a href="index.html">ZOO-Project Workshop 2010</a> &#8725; &#160;</li>
+      
+    <li>Creating OGR based Web Services</li>
+      <li class="wy-breadcrumbs-aside">
+        $Date: 2015-06-26 17:56:32 +0200 (Ven, 26 jui 2015) $
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="creating-ogr-based-web-services">
+<span id="ogr-base-vect-ops"></span><h1><a class="toc-backref" href="#table-of-contents">Creating OGR based Web Services</a><a class="headerlink" href="#creating-ogr-based-web-services" title="Permalink to this headline">¶</a></h1>
+<div class="contents topic" id="table-of-contents">
+<p class="topic-title first">Table of Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#creating-ogr-based-web-services" id="id5">Creating OGR based Web Services</a><ul>
+<li><a class="reference internal" href="#introduction" id="id6">Introduction</a></li>
+<li><a class="reference internal" href="#preparing-zoo-metadata-file" id="id7">Preparing ZOO metadata file</a></li>
+<li><a class="reference internal" href="#implementing-single-geometry-services" id="id8">Implementing single geometry services</a><ul>
+<li><a class="reference internal" href="#boundary" id="id9">Boundary</a><ul>
+<li><a class="reference internal" href="#c-version" id="id10">C Version</a></li>
+<li><a class="reference internal" href="#python-version" id="id11">Python Version</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#testing-the-service-using-execute-request" id="id12">Testing the Service using Execute Request</a></li>
+<li><a class="reference internal" href="#creating-services-for-other-functions-convexhull-and-centroid" id="id13">Creating Services for other functions (ConvexHull and Centroid)</a><ul>
+<li><a class="reference internal" href="#id1" id="id14">C Version</a></li>
+<li><a class="reference internal" href="#id2" id="id15">Python Version</a></li>
+<li><a class="reference internal" href="#id3" id="id16">C Version</a></li>
+<li><a class="reference internal" href="#id4" id="id17">Python Version</a></li>
+<li><a class="reference internal" href="#the-buffer-metadatafile-file" id="id18">The Buffer MetadataFile file</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="introduction">
+<h2><a class="toc-backref" href="#table-of-contents">Introduction</a><a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>In this part, we are going to create a ZOO ServicesProvider containing several Services
+based on the OGR C API or on the OGR Python module, which have also been placed in the
+ZOO installation on OSGeoLive. The intended goal is to use OGR and its GEOS based simple
+spatial functions as WPS Services.</p>
+<p>We will first start with the Boundary spatial function, which will be explained, codded
+and tested gradually as a ZOO Service. The same procedure will then be used to enable
+the Buffer, Centroid and Convex Hull functions. Once done, some multiple geometries processes
+such as Intersection, Union, Difference and Symetric Difference will be implemented through
+an <a class="reference external" href="./exercise.html">exercise</a> at the end of the workshop.</p>
+<p>As already said in the introduction, you have the choice to code your service in C or
+Python (or both!) during this workshop. Explanations will be based on the C part, but
+will be very helpful for those who will choose Python. Please decide according to your
+habits and preferences and tell your choice to the instructors. The results will be the
+same in both case.</p>
+</div>
+<div class="section" id="preparing-zoo-metadata-file">
+<h2><a class="toc-backref" href="#table-of-contents">Preparing ZOO metadata file</a><a class="headerlink" href="#preparing-zoo-metadata-file" title="Permalink to this headline">¶</a></h2>
+<p>A ZOO Service is a combination of a ZOO metadata file (<code class="docutils literal"><span class="pre">.zcfg</span></code>) and the runtime module
+for the corresponding implementation, which is commonly called ZOO Service Provider. We
+will first prepare a <code class="docutils literal"><span class="pre">.zcfg</span></code> file step-by-step. Please open your preferred text editor
+and edit a file named <code class="docutils literal"><span class="pre">Boundary.zcfg</span></code> in your <code class="docutils literal"><span class="pre">/home/user/zoows/sources/zoo-services/ws_sp</span></code>
+directory. First, you need to name the service between brackets at the top of the file, as the
+following</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">[</span><span class="n">Boundary</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>This name is very important, it is the name of the Service and so the name of the function
+defined in the Services Provider. A title and a brief abstract must then be added to inform
+clients on what the service can do:</p>
+<div class="highlight-guess"><div class="highlight"><pre>Title = Compute boundary.
+Abstract = Returns the boundary of the geometry on which the method is invoked.
+</pre></div>
+</div>
+<p>Such metadata informations will be returned by a GetCapabilities request.</p>
+<p>You can also add other specific informations like the <code class="docutils literal"><span class="pre">processVersion</span></code>. You can set if
+your ZOO Service can store its results, by setting the <code class="docutils literal"><span class="pre">storeSupported</span></code> parameter to
+true or false. You can also decide if the function can be run as a background task and
+inform on its current status, according to the <code class="docutils literal"><span class="pre">statusSupported</span></code> value :</p>
+<div class="highlight-guess"><div class="highlight"><pre>processVersion = 1
+storeSupported = true
+statusSupported = true
+</pre></div>
+</div>
+<p>In the main section of the ZOO Service metadata file, you must also specify two important things:</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal"><span class="pre">serviceProvider</span></code>, which is the name of the C shared library containing the Service function or the Python module name.</li>
+<li><code class="docutils literal"><span class="pre">serviceType</span></code>, which defines the programming language to be used for the Service. (value can be C or Python depending on what language you have decided to use)</li>
+</ul>
+</div></blockquote>
+<p>C ServicesProvider Example :</p>
+<div class="highlight-guess"><div class="highlight"><pre>serviceProvider=ogr_ws_service_provider.zo
+serviceType=C
+</pre></div>
+</div>
+<p>In this case you will get an <code class="docutils literal"><span class="pre">ogr_ws_service_provider.zo</span></code> shared library containing
+the Boundary function, placed in the same directory than ZOO Kernel.</p>
+<p>Python ServicesProvider Example :</p>
+<div class="highlight-guess"><div class="highlight"><pre>serviceProvider=ogr_ws_service_provider
+serviceType=Python
+</pre></div>
+</div>
+<p>In this case, you will get an <code class="docutils literal"><span class="pre">ogr_ws_service_provider.py</span></code> file containing the Python code of your Boundary function.</p>
+<p>In the main section you can also add any other metadata information, as the following:</p>
+<div class="highlight-guess"><div class="highlight"><pre><span class="nt">&lt;MetaData&gt;</span>
+    Title = Demo
+<span class="nt">&lt;/MetaData&gt;</span>
+</pre></div>
+</div>
+<p>The main metadata informations have been declared, so you can now define data input
+which will be used by the ZOO Service. You can define any input needed by the Service.
+Please note that you can request ZOO Kernel using more data input than defined in
+the <code class="docutils literal"><span class="pre">.zcfg</span></code> file without any problem, those values will be passed to your service
+without filtering. In the Boundary Service example, a single polygon will be used as
+input, the one on which to apply the Boundary function.</p>
+<p>The data input declarations are included in a DataInputs block. They use the same
+syntax as the Service itself and the input name is between brackets. You can also
+fill a title, an abstract and a MetaData section for the input. You must set values
+for the <code class="docutils literal"><span class="pre">minOccurs</span></code> and <code class="docutils literal"><span class="pre">maxOccurs</span></code> parameters, as they will inform ZOO Kernel
+which parameters are required to be able to run the Service function.</p>
+<div class="highlight-none"><div class="highlight"><pre>[InputPolygon]
+  Title = Polygon to compute boundary
+  Abstract = URI to a set of GML that describes the polygon.
+  minOccurs = 1
+  maxOccurs = 1
+  &lt;MetaData&gt;
+      Test = My test
+  &lt;/MetaData&gt;
+</pre></div>
+</div>
+<p>The metadata defines what type of data the Service supports. In the Boundary example,
+the input polygon can be provided as a GML file or as a JSON string. Next step is
+thus to define the default and supported input formats. Both formats should be declared
+in a LitteralData or ComplexData block depending on their types. For this first example
+we will use ComplexData blocks only.</p>
+<div class="highlight-guess"><div class="highlight"><pre><span class="nt">&lt;ComplexData&gt;</span>
+ <span class="nt">&lt;Default&gt;</span>
+   mimeType = text/xml
+   encoding = UTF-8
+ <span class="nt">&lt;/Default&gt;</span>
+ <span class="nt">&lt;Supported&gt;</span>
+   mimeType = application/json
+   encoding = UTF-8
+ <span class="nt">&lt;/Supported&gt;</span>
+<span class="nt">&lt;/ComplexData&gt;</span>
+</pre></div>
+</div>
+<p>Then, the same metadata information must be defined for the output of the Service, inside a DataOutputs block, as the following:</p>
+<div class="highlight-none"><div class="highlight"><pre>[Result]
+ Title = The created geometry
+ Abstract = The geometry containing the boundary of the geometry on which the method  was invoked.
+ &lt;MetaData&gt;
+   Title = Result
+ &lt;/MetaData&gt;
+ &lt;ComplexData&gt;
+  &lt;Default&gt;
+   mimeType = application/json
+   encoding = UTF-8
+  &lt;/Default&gt;
+  &lt;Supported&gt;
+   mimeType = text/xml
+   encoding = UTF-8
+  &lt;/Supported&gt;
+ &lt;/ComplexData&gt;
+</pre></div>
+</div>
+<p>A complete copy of this <code class="docutils literal"><span class="pre">.zcfg</span></code> file can be found at the following URL: <a class="reference external" href="http://zoo-project.org/trac/browser/trunk/zoo-services/ogr/base-vect-ops/cgi-env/Boundary.zcfg">http://zoo-project.org/trac/browser/trunk/zoo-services/ogr/base-vect-ops/cgi-env/Boundary.zcfg</a>.</p>
+<p>Once the ZOO metadata file is modified, you have to copy it in the same directory
+than your ZOO Kernel (so in your case <code class="docutils literal"><span class="pre">/usr/lib/cgi-bin</span></code>). Then you should be
+able to run the following request :</p>
+<p><a class="reference external" href="http://localhost/zoo/?Request=DescribeProcess&amp;Service=WPS&amp;Identifier=Boundary&amp;version=1.0.0">http://localhost/zoo/?Request=DescribeProcess&amp;Service=WPS&amp;Identifier=Boundary&amp;version=1.0.0</a></p>
+<p>The returned ProcessDescriptions XML document should look like the following :</p>
+<a class="reference internal image-reference" href="../_images/Practical-introduction-to-ZOO-5.png"><img alt="../_images/Practical-introduction-to-ZOO-5.png" class="align-center" src="../_images/Practical-introduction-to-ZOO-5.png" style="width: 456px; height: 157px;" /></a>
+<p>Please note that the GetCapabilities and DescribeProcess only need a <code class="docutils literal"><span class="pre">.zcfg</span></code>
+file to be completed. Simple, isn&#8217;t it ? At this step, if you request ZOO Kernel
+for an Execute, you will get an ExceptionReport document as response, looking as the following :</p>
+<a class="reference internal image-reference" href="../_images/Practical-introduction-to-ZOO-6.png"><img alt="../_images/Practical-introduction-to-ZOO-6.png" class="align-center" src="../_images/Practical-introduction-to-ZOO-6.png" style="width: 546px; height: 80px;" /></a>
+<p>A similar error message will be returned if you try to run your Python Service :</p>
+<a class="reference internal image-reference" href="../_images/Practical-introduction-to-ZOO-7.png"><img alt="../_images/Practical-introduction-to-ZOO-7.png" class="align-center" src="../_images/Practical-introduction-to-ZOO-7.png" style="width: 489px; height: 87px;" /></a>
+</div>
+<div class="section" id="implementing-single-geometry-services">
+<h2><a class="toc-backref" href="#table-of-contents">Implementing single geometry services</a><a class="headerlink" href="#implementing-single-geometry-services" title="Permalink to this headline">¶</a></h2>
+<p>In order to learn the Services Provider creation and deployement step-by-step,
+we will first focus on creating a very simple one dedicated to the Boundary function.
+Similar procedure will then be used for the Buffer, Centroid and ConvexHull implementation.</p>
+<p>Your metadata is now ok, so you now must create the code of your Service. The most
+important thing you must be aware of when coding ZOO Services is that the function
+corresponding to your Service takes three parameters (internal maps datatype or
+<a class="reference external" href="http://docs.python.org/tutorial/datastructures.html#dictionaries">Python dictionaries</a>)
+and returns an integer value representing the status of execution (SERVICE_FAILED or SERVICE_SUCCEEDED):</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal"><span class="pre">conf</span></code> : The main environment configuration (corresponding to the <code class="docutils literal"><span class="pre">main.cfg</span></code> content)</li>
+<li><code class="docutils literal"><span class="pre">inputs</span></code> : The requested / default inputs</li>
+<li><code class="docutils literal"><span class="pre">outputs</span></code> : The requested / default outputs</li>
+</ul>
+</div></blockquote>
+<div class="section" id="boundary">
+<h3><a class="toc-backref" href="#table-of-contents">Boundary</a><a class="headerlink" href="#boundary" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="c-version">
+<h4><a class="toc-backref" href="#table-of-contents">C Version</a><a class="headerlink" href="#c-version" title="Permalink to this headline">¶</a></h4>
+<p>As explained before, ZOO Kernel will pass the parameters to your Service function
+in a specific datatype called maps. In order to code your Service in C language,
+you also need to learn how to access this datatype in read/write mode.</p>
+<p>The maps are simple map named linked list containing a name, a content map and a
+pointer to the next map in the list (or NULL if there is no more map in the list).
+Here is the datatype definition as you can find in the zoo-kernel/service.h file:</p>
+<div class="highlight-c"><div class="highlight"><pre><span class="k">typedef</span> <span class="k">struct</span> <span class="n">maps</span><span class="p">{</span>
+    <span class="kt">char</span><span class="o">*</span> <span class="n">name</span><span class="p">;</span>
+    <span class="k">struct</span> <span class="n">map</span><span class="o">*</span> <span class="n">content</span><span class="p">;</span>
+    <span class="k">struct</span> <span class="n">maps</span><span class="o">*</span> <span class="n">next</span><span class="p">;</span>
+<span class="p">}</span> <span class="n">maps</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>The map included in the maps is also a simple linked list and is used to store Key
+Value Pair values. A map is thus a couple of name and value and a pointer to the
+next map in the list. Here is the datatype definition you can find in the zoo-kernel/service.h file:</p>
+<div class="highlight-guess"><div class="highlight"><pre>typedef struct map{
+    char* name;       /* The key */
+    char* value;      /* The value */
+    struct map* next; /* Next couple */
+} map;
+</pre></div>
+</div>
+<p>As partially or fully filled datastructures will be passed by the ZOO Kernel to
+your Services, this means that you do not need to deal with maps creation but
+directly with existing map, in other words the content of each maps. The first
+function you need to know is getMapFromMaps (defined in the zoo-kernel/service.h file)
+which let you access to a specific map of a maps.</p>
+<p>This function takes three parameters listed bellow:</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal"><span class="pre">m</span></code> : a maps pointer representing the maps used to search the specific map</li>
+<li><code class="docutils literal"><span class="pre">name</span></code> : a char* representing the name of the map you are searching for</li>
+<li><code class="docutils literal"><span class="pre">key</span></code> : a specific key in the map named name</li>
+</ul>
+</div></blockquote>
+<p>For example, the following syntax will be used to access the InputPolygon value
+map of a maps named inputs, your C code should be:</p>
+<div class="highlight-guess"><div class="highlight"><pre>map* tmp=getMapFromMaps(inputs,&quot;InputPolygon&quot;,&quot;value&quot;);
+</pre></div>
+</div>
+<p>Once you get the map, you can access the name or the value fields, using the following syntax :</p>
+<div class="highlight-guess"><div class="highlight"><pre>tmp-&gt;name
+tmp-&gt;value
+</pre></div>
+</div>
+<p>As you know how to read and access the map fields from a maps, you can now learn
+how to write in such a datastructure. This is done by using the simple setMapInMaps
+function once again defined in zoo-kernel/service.h. The setMapInMaps function takes four parameters :</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal"><span class="pre">m</span></code> : a maps pointer you want to update,</li>
+<li><code class="docutils literal"><span class="pre">ns</span></code> : the name of the maps you want you want to update,</li>
+<li><code class="docutils literal"><span class="pre">n</span></code> : the name of the map you want to add or update the value,</li>
+<li><code class="docutils literal"><span class="pre">v</span></code> : the value you want to set for this map.</li>
+</ul>
+</div></blockquote>
+<p>Here is an example of how to add or edit the values of some map in the Result maps from outputs :</p>
+<div class="highlight-guess"><div class="highlight"><pre>setMapInMaps(outputs,&quot;Result&quot;,&quot;value&quot;,&quot;Hello from the C World !&quot;);
+setMapInMaps(outputs,&quot;Result&quot;,&quot;mimeType&quot;,&quot;text/plain&quot;);
+setMapInMaps(outputs,&quot;Result&quot;,&quot;encoding&quot;,&quot;UTF-8&quot;);
+</pre></div>
+</div>
+<p>Please note that the setMapInMaps function is able to create or update an existing map.
+Indeed, if a map called « value » allready exists, then its value will be updated automatically.</p>
+<p>Even if you will mainly use map from maps during this workshop, you can also add or
+update values in a map directly using the addToMap function defined in zoo-kernel/service.h.
+The addToMap function take three paramters :</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal"><span class="pre">m</span></code> : a map pointer you want to update,</li>
+<li><code class="docutils literal"><span class="pre">n</span></code> : the name of the map you want to add or update the value,</li>
+<li><code class="docutils literal"><span class="pre">v</span></code> : the value you want to set in this map.</li>
+</ul>
+</div></blockquote>
+<p>This datatype is really important cause it is used in every C based ZOO Services. It is
+also the same representation used in other languages but using their respectives datatypes.
+For Example in Python, the dictionaries datatype is used, so manipulation is much easier.</p>
+<p>Here is an example of the correspoding maps datatype used in Python language (this is a
+summarized version of the main configaration maps):</p>
+<div class="highlight-guess"><div class="highlight"><pre>main={
+  &quot;main&quot;: {
+    &quot;encoding&quot;: &quot;utf-8&quot;,
+    &quot;version&quot;: &quot;1.0.0&quot;,
+    &quot;serverAddress&quot;: &quot;http://www.zoo-project.org/zoo/&quot;,
+    &quot;lang&quot;: &quot;fr-FR,en-CA&quot;
+  },
+  &quot;identification&quot;: {&quot;title&quot;: &quot;The Zoo WPS Development Server&quot;,
+    &quot;abstract&quot;: &quot;Development version of ZooWPS.&quot;,
+    &quot;fees&quot;: &quot;None&quot;,
+    &quot;accessConstraints&quot;: &quot;none&quot;,
+    &quot;keywords&quot;: &quot;WPS,GIS,buffer&quot;
+  }
+}
+</pre></div>
+</div>
+<p>As you know how to deal with maps and map, you are ready to code the first ZOO Service by using the OGR Boundary function.</p>
+<p>As already said in introduction we will use the MapServer WFS server available on
+OSGeoLive, so full WFS Response will be used as inputs values. As we will use the
+simple OGR Geometry functions like  <a class="reference external" href="http://www.gdal.org/ogr/ogr__api_8h.html#a797af4266c02846d52b9cf3207ef958">OGR_G_GetBoundary</a>,
+only the Geometry object will be used rather than a full WFS Response. The first
+thing to do is to write a function which will extract the geometry definition
+from the full WFS Response. We will call it createGeometryFromWFS.</p>
+<p>Here is the code of such a function:</p>
+<div class="highlight-guess"><div class="highlight"><pre>OGRGeometryH createGeometryFromWFS(maps* conf,char* inputStr){
+  xmlInitParser();
+  xmlDocPtr doc = xmlParseMemory(inputStr,strlen(inputStr));
+  xmlChar *xmlbuff;
+  int buffersize;
+  xmlXPathContextPtr xpathCtx;
+  xmlXPathObjectPtr xpathObj;
+  char * xpathExpr=&quot;/*/*/*/*/*[local-name()=&#39;Polygon&#39; or local-name()=&#39;MultiPolygon&#39;]&quot;;
+  xpathCtx = xmlXPathNewContext(doc);
+  xpathObj = xmlXPathEvalExpression(BAD_CAST xpathExpr,xpathCtx);
+  if(!xpathObj-&gt;nodesetval){
+    errorException(conf, &quot;Unable to parse Input Polygon&quot;,&quot;InvalidParameterValue&quot;);
+    exit(0);
+  }
+  int size = (xpathObj-&gt;nodesetval) ? xpathObj-&gt;nodesetval-&gt;nodeNr : 0;
+  xmlDocPtr ndoc = xmlNewDoc(BAD_CAST &quot;1.0&quot;);
+  for(int k=size-1;k&gt;=0;k--){
+    xmlDocSetRootElement(ndoc, xpathObj-&gt;nodesetval-&gt;nodeTab[k]);
+  }
+  xmlDocDumpFormatMemory(ndoc, &amp;xmlbuff, &amp;buffersize, 1);
+  char *tmp=strdup(strstr((char*)xmlbuff,&quot;?&gt;&quot;)+2);
+  xmlXPathFreeObject(xpathObj);
+  xmlXPathFreeContext(xpathCtx);
+  xmlFree(xmlbuff);
+  xmlFreeDoc(doc);
+  xmlCleanupParser();
+  OGRGeometryH res=OGR_G_CreateFromGML(tmp);
+  if(res==NULL){
+    errorException(conf, &quot;Unable to call OGR_G_CreatFromGML&quot;,&quot;NoApplicableCode&quot;);
+    exit(0);
+  }
+  else
+    return res;
+}
+</pre></div>
+</div>
+<p>The only thing we will focus on is the call to the errorException function used
+in the function body. This function is declared in the zoo-kernel/service_internal.h
+and defined in zoo-kernel/service_internal.c file. It takes three parameters as follow:</p>
+<blockquote>
+<div><ul class="simple">
+<li>the main environment maps,</li>
+<li>a char* representing the error message to display,</li>
+<li>a char* representing the error code (as defined in the WPS specification – Table 62).</li>
+</ul>
+</div></blockquote>
+<p>In other words, if the WFS response cannot be parsed properly, then you will return
+an ExceptionReport document informing the client that a problem occured.</p>
+<p>The function to extract the geometry object from a WFS Response is written, so you
+can now start defining the Boundary Service. Here is the full code for the Boundary Service:</p>
+<div class="highlight-guess"><div class="highlight"><pre>int Boundary(maps*&amp; conf,maps*&amp; inputs,maps*&amp; outputs){
+  OGRGeometryH geometry,res;
+  map* tmp=getMapFromMaps(inputs,&quot;InputPolygon&quot;,&quot;value&quot;);
+  if(tmp==NULL){
+    setMapInMaps(m,&quot;lenv&quot;,&quot;message&quot;,&quot;Unable to parse InputPolygon&quot;);
+    return SERVICE_FAILED;
+  }
+  map* tmp1=getMapFromMaps(inputs,&quot;InputPolygon&quot;,&quot;mimeType&quot;);
+  if(strncmp(tmp1-&gt;value,&quot;application/json&quot;,16)==0)
+    geometry=OGR_G_CreateGeometryFromJson(tmp-&gt;value);
+  else
+    geometry=createGeometryFromWFS(conf,tmp-&gt;value);
+  if(geometry==NULL){
+    setMapInMaps(m,&quot;lenv&quot;,&quot;message&quot;,&quot;Unable to parse InputPolygon&quot;);
+    return SERVICE_FAILED;
+  }
+  res=OGR_G_GetBoundary(geometry);
+  tmp1=getMapFromMaps(outputs,&quot;Result&quot;,&quot;mimeType&quot;);
+  if(strncmp(tmp1-&gt;value,&quot;application/json&quot;,16)==0){
+    char *tmp=OGR_G_ExportToJson(res);
+    setMapInMaps(outputs,&quot;Result&quot;,&quot;value&quot;,tmp);
+    setMapInMaps(outputs,&quot;Result&quot;,&quot;mimeType&quot;,&quot;text/plain&quot;);
+    free(tmp);
+  }
+  else{
+    char *tmp=OGR_G_ExportToGML(res);
+    setMapInMaps(outputs,&quot;Result&quot;,&quot;value&quot;,tmp);
+    free(tmp);
+  }
+  outputs-&gt;next=NULL;
+  OGR_G_DestroyGeometry(geometry);
+  OGR_G_DestroyGeometry(res);
+  return SERVICE_SUCCEEDED;
+}
+</pre></div>
+</div>
+<p>As you can see in the code above, the mimeType of the data inputs passed to our Service is first checked:</p>
+<div class="highlight-guess"><div class="highlight"><pre>map* tmp1=getMapFromMaps(inputs,&quot;InputPolygon&quot;,&quot;mimeType&quot;);
+if(strncmp(tmp1-&gt;value,&quot;application/json&quot;,16)==0)
+  geometry=OGR_G_CreateGeometryFromJson(tmp-&gt;value);
+else
+  geometry=createGeometryFromWFS(conf,tmp-&gt;value);
+</pre></div>
+</div>
+<p>Basically, if we get an input with a mimeType set to application/json, then we will
+use our <code class="docutils literal"><span class="pre">OGR_G_CreateGeometryFromJson</span></code> in other case, our <code class="docutils literal"><span class="pre">createGeometryFromWFS</span></code> local function.</p>
+<p>Please note that in some sense the data inputs are not really of the same kind.
+Indeed as we used directly <code class="docutils literal"><span class="pre">OGR_G_CreateGeometryFromJson</span></code> it means that the JSON
+string include only the geometry object and not the full GeoJSON string. Nevertheless,
+you can easily change this code to be able to use a full GeoJSON string, simply by
+creating a function which will extract the geometry object from the GeoJSON string
+(using the json-c library for instance, which is also used by the OGR GeoJSON Driver).</p>
+<p>Once you can access the input geometry object, you can use the  <code class="docutils literal"><span class="pre">OGR_G_GetBoundary</span></code>
+function and store the result in the res geometry variable. Then, you only have to
+store the value in the right format : GeoJSON per default or GML as we declared it as a supported output format.</p>
+<p>Please note that ZOO Kernel will give you pre-filled outputs values, so you will
+only have to fill the value for the key named value, even if in our example we
+override the mimeType using the text/plain value rather than the application/json
+(to show that we can also edit other fields of a map). Indeed, depending on the
+format requested by the client (or the default one) we will provide JSON or GML representation of the geometry.</p>
+<div class="highlight-guess"><div class="highlight"><pre>tmp1=getMapFromMaps(outputs,&quot;Result&quot;,&quot;mimeType&quot;);
+if(strncmp(tmp1-&gt;value,&quot;application/json&quot;,16)==0){
+  char *tmp=OGR_G_ExportToJson(res);
+  setMapInMaps(outputs,&quot;Result&quot;,&quot;value&quot;,tmp);
+  setMapInMaps(outputs,&quot;Result&quot;,&quot;mimeType&quot;,&quot;text/plain&quot;);
+  free(tmp);
+}
+else{
+  char *tmp=OGR_G_ExportToGML(res);
+  setMapInMaps(outputs,&quot;Result&quot;,&quot;value&quot;,tmp);
+  free(tmp);
+}
+</pre></div>
+</div>
+<p>The Boundary ZOO Service is now implemented and you need to compile it to produce
+a Shared Library. As you just used functions defined in service.h (<code class="docutils literal"><span class="pre">getMapFromMaps</span></code>,
+<code class="docutils literal"><span class="pre">setMapInMaps</span></code> and <code class="docutils literal"><span class="pre">addToMap</span></code>), you must include this file in your C code. The
+same requirement is needed to be able to use the <code class="docutils literal"><span class="pre">errorException</span></code> function declared
+in <code class="docutils literal"><span class="pre">zoo-kernel/service_internal.h</span></code>, you also must link your service object file to
+the <code class="docutils literal"><span class="pre">zoo-kernel/service_internal.o</span></code> in order to use <code class="docutils literal"><span class="pre">errorException</span></code> on runtime.
+You must then include the required files to access the libxml2 and OGR C-API.</p>
+<p>For the need of the Shared Library, you have to put your code in a block declared as
+extern &#8220;C&#8221;. The final Service code should be stored in a service.c file located in
+the root of the Services Provider directory (so in <code class="docutils literal"><span class="pre">/home/zoows/sources/zoo-services/ws_sp</span></code>).
+It should look like this:</p>
+<div class="highlight-guess"><div class="highlight"><pre><span class="cp">#include</span> <span class="cpf">&quot;ogr_api.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;service.h&quot;</span><span class="cp"></span>
+<span class="k">extern</span> <span class="s">&quot;C&quot;</span> <span class="p">{</span>
+<span class="cp">#include</span> <span class="cpf">&lt;libxml/tree.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;libxml/parser.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;libxml/xpath.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;libxml/xpathInternals.h&gt;</span><span class="cp"></span>
+<span class="o">&lt;</span><span class="n">YOUR</span> <span class="n">SERVICE</span> <span class="n">CODE</span> <span class="n">AND</span> <span class="n">OTHER</span> <span class="n">UTILITIES</span> <span class="n">FUNCTIONS</span><span class="o">&gt;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The full source code of your Service is now ready and you must produce the corresponding
+Service Shared Object by compiling the code as a Shared Library. This can be done using the following command:</p>
+<div class="highlight-guess"><div class="highlight"><pre><span class="x">g++ </span><span class="p">$</span><span class="nv">CFLAGS</span><span class="x"> -shared -fpic -o cgi-env/!ServicesProvider.zo ./service.c </span><span class="p">$</span><span class="nv">LDFLAGS</span><span class="x"></span>
+</pre></div>
+</div>
+<p>Please note that the <code class="docutils literal"><span class="pre">CFLAGS</span></code> and <code class="docutils literal"><span class="pre">LDFLAGS</span></code> environment variables values must be set before.</p>
+<p>The <code class="docutils literal"><span class="pre">CFLAGS</span></code> must contain all the requested paths to find included headers, so the
+path to the directories where the <code class="docutils literal"><span class="pre">ogr_api.h</span></code>, <code class="docutils literal"><span class="pre">libxml2</span></code> directory, <code class="docutils literal"><span class="pre">service.h</span></code>
+and <code class="docutils literal"><span class="pre">service_internal.h</span></code> files are located. Thanks to the OSGeoLive environment,
+some of the provided tools can be used to retrieve those values : <code class="docutils literal"><span class="pre">xml2-config</span></code> and
+<code class="docutils literal"><span class="pre">gdal-config</span></code>, both used with the <code class="docutils literal"><span class="pre">--cflags</span></code> argument. They will produce the desired paths for you.</p>
+<p>If you follow the instructions to create your ZOO Services Provider main directory in
+<code class="docutils literal"><span class="pre">zoo-services</span></code>, then you should find the ZOO Kernel headers and source tree which is
+located in the <code class="docutils literal"><span class="pre">../../zoo-kernel</span></code> directory relatively to your current path (<code class="docutils literal"><span class="pre">/home/user/zoows/sources/zoo-services/ws_sp</span></code>).
+Note that you can also use a full path to the <code class="docutils literal"><span class="pre">zoo-kernel</span></code> directory but using relative
+path will let you move your sources tree somewhere else and keep your code compiling
+using exactly the same command line. So you must add a <code class="docutils literal"><span class="pre">-I../../zoo-kernel</span></code> to your
+<code class="docutils literal"><span class="pre">CFLAGS</span></code> to make the compiler able to find the <code class="docutils literal"><span class="pre">service.h</span></code> and <code class="docutils literal"><span class="pre">service_internal.h</span></code> files.</p>
+<p>The full <code class="docutils literal"><span class="pre">CFLAGS</span></code> definition should look like this:</p>
+<div class="highlight-guess"><div class="highlight"><pre>CFLAGS=`gdal-config --cflags` `xml2-config --clfags` -I../../zoo-kernel/
+</pre></div>
+</div>
+<p>Once you get the included paths correctly set in your <code class="docutils literal"><span class="pre">CFLAGS</span></code> , it is time to concentrate
+on the library we have to link against (defined in the <code class="docutils literal"><span class="pre">LDFLAGS</span></code> environment variable).
+In order to link against the gdal and libxml2 libraries, you can use the same tools than
+above using the <code class="docutils literal"><span class="pre">--libs</span></code> argument rather than <code class="docutils literal"><span class="pre">--cflags</span></code>. The full <code class="docutils literal"><span class="pre">LDFLAGS</span></code>
+definition must look like this :</p>
+<div class="highlight-guess"><div class="highlight"><pre>LDFLAGS=`gdal-config --libs` `xml2-config --libs` ../../zoo-kernel/service_internal.o
+</pre></div>
+</div>
+<p>Let&#8217;s now create a <code class="docutils literal"><span class="pre">Makefile</span></code> which will help you compiling your code over the time.
+Please write a short <code class="docutils literal"><span class="pre">Makefile</span></code> in the root of your ZOO Services Provider directory, containing the following lines:</p>
+<div class="highlight-guess"><div class="highlight"><pre>ZOO_SRC_ROOT=../../zoo-kernel/
+CFLAGS=-I<span class="cp">${</span><span class="n">ZOO_SRC_ROOT</span><span class="cp">}</span> `xml2-config --cflags` `gdal-config --cflags`
+LDFLAGS=`xml2-config --libs` `gdal-config --libs`<span class="cp">${</span><span class="n">ZOO_SRC_ROOT</span><span class="cp">}</span>/service_internal.o
+
+cgi-env/ogr_ws_service_provider.zo: service.c
+    g++ <span class="cp">${</span><span class="n">CFLAGS</span><span class="cp">}</span> -shared -fpic -o cgi-env/ogr_ws_service_provider.zo ./service.c $ {LDFLAGS}
+clean:
+    rm -f cgi-env/ogr_ws_service_provider.zo
+</pre></div>
+</div>
+<p>Using this <code class="docutils literal"><span class="pre">Makefile</span></code>, you should be able to run <code class="docutils literal"><span class="pre">make</span></code> from your ZOO Service Provider
+main directory and to get the resulting <code class="docutils literal"><span class="pre">ogr_ws_service_provider.zo</span></code> file located in the <code class="docutils literal"><span class="pre">cgi-env</span></code> directory.</p>
+<p>The metadata file and the ZOO Service Shared Object are now both located in the <code class="docutils literal"><span class="pre">cgi-env</span></code>
+directory. In order to deploy your new ServicesProvider, you only have to copy the ZOO
+Service Shared Object and its corresponding metadata file in the directory where ZOO
+Kernel is located, so in <code class="docutils literal"><span class="pre">/usr/lib/cgi-bin</span></code>. You must use a <code class="docutils literal"><span class="pre">sudo</span></code> command to achieve this task:</p>
+<div class="highlight-guess"><div class="highlight"><pre>sudo cp ./cgi-env/* /usr/lib/cgi-bin
+</pre></div>
+</div>
+<p>You should now understand more clearly the meannings of the ZOO Service Provider source tree !
+The <code class="docutils literal"><span class="pre">cgi-env</span></code> directory will let you deploy your new Services or Services Provider in
+an easy way , simply by copying the whole cgi-env content in your <code class="docutils literal"><span class="pre">cgi-bin</span></code> directory.</p>
+<p>Please note that you can add the following lines to your <code class="docutils literal"><span class="pre">Makefile</span></code> to be able to type
+<code class="docutils literal"><span class="pre">make</span> <span class="pre">install</span></code> directly and to get your new Services Provider available for use from ZOO Kernel:</p>
+<div class="highlight-none"><div class="highlight"><pre>install:
+    sudo cp ./cgi-env/* /usr/lib/cgi-bin
+</pre></div>
+</div>
+<p>Your ZOO Services Provider is now ready to use from an Execute request passed to ZOO Kernel.</p>
+</div>
+<div class="section" id="python-version">
+<h4><a class="toc-backref" href="#table-of-contents">Python Version</a><a class="headerlink" href="#python-version" title="Permalink to this headline">¶</a></h4>
+<p>For those using Python to implement their ZOO Services Provider, the full code to copy in
+<code class="docutils literal"><span class="pre">ogr_ws_service_provider.py</span></code> in <code class="docutils literal"><span class="pre">cgi-env</span></code> directory is shown bellow. Indeed, as
+Python is an interpreted language, you do not have to compile anything before deploying
+your service which makes the deployement step much easier:</p>
+<div class="highlight-guess"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">osgeo.ogr</span>
+<span class="kn">import</span> <span class="nn">libxml2</span>
+
+<span class="k">def</span> <span class="nf">createGeometryFromWFS</span><span class="p">(</span><span class="n">my_wfs_response</span><span class="p">):</span>
+    <span class="n">doc</span><span class="o">=</span><span class="n">libxml2</span><span class="o">.</span><span class="n">parseMemory</span><span class="p">(</span><span class="n">my_wfs_response</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">my_wfs_response</span><span class="p">))</span>
+    <span class="n">ctxt</span> <span class="o">=</span> <span class="n">doc</span><span class="o">.</span><span class="n">xpathNewContext</span><span class="p">()</span>
+    <span class="n">res</span><span class="o">=</span><span class="n">ctxt</span><span class="o">.</span><span class="n">xpathEval</span><span class="p">(</span><span class="s2">&quot;/*/*/*/*/*[local-name()=&#39;Polygon&#39; or local- name()=&#39;MultiPolygon&#39;]&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">res</span><span class="p">:</span>
+        <span class="n">geometry_as_string</span><span class="o">=</span><span class="n">node</span><span class="o">.</span><span class="n">serialize</span><span class="p">()</span>
+        <span class="n">geometry</span><span class="o">=</span><span class="n">osgeo</span><span class="o">.</span><span class="n">ogr</span><span class="o">.</span><span class="n">CreateGeometryFromGML</span><span class="p">(</span><span class="n">geometry_as_string</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">geometry</span>
+    <span class="k">return</span> <span class="n">geometry</span>
+
+<span class="k">def</span> <span class="nf">Boundary</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span><span class="n">inputs</span><span class="p">,</span><span class="n">outputs</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">inputs</span><span class="p">[</span><span class="s2">&quot;InputPolygon&quot;</span><span class="p">][</span><span class="s2">&quot;mimeType&quot;</span><span class="p">]</span><span class="o">==</span><span class="s2">&quot;application/json&quot;</span><span class="p">:</span>
+        <span class="n">geometry</span><span class="o">=</span><span class="n">osgeo</span><span class="o">.</span><span class="n">ogr</span><span class="o">.</span><span class="n">CreateGeometryFromJson</span><span class="p">(</span><span class="n">inputs</span><span class="p">[</span><span class="s2">&quot;InputPolygon&quot;</span><span class="p">][</span><span class="s2">&quot;value&quot;</span><span class="p">])</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">geometry</span><span class="o">=</span><span class="n">createGeometryFromWFS</span><span class="p">(</span><span class="n">inputs</span><span class="p">[</span><span class="s2">&quot;InputPolygon&quot;</span><span class="p">][</span><span class="s2">&quot;value&quot;</span><span class="p">])</span>
+    <span class="n">rgeom</span><span class="o">=</span><span class="n">geometry</span><span class="o">.</span><span class="n">GetBoundary</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">outputs</span><span class="p">[</span><span class="s2">&quot;Result&quot;</span><span class="p">][</span><span class="s2">&quot;mimeType&quot;</span><span class="p">]</span><span class="o">==</span><span class="s2">&quot;application/json&quot;</span><span class="p">:</span>
+        <span class="n">outputs</span><span class="p">[</span><span class="s2">&quot;Result&quot;</span><span class="p">][</span><span class="s2">&quot;value&quot;</span><span class="p">]</span><span class="o">=</span><span class="n">rgeom</span><span class="o">.</span><span class="n">ExportToJson</span><span class="p">()</span>
+        <span class="n">outputs</span><span class="p">[</span><span class="s2">&quot;Result&quot;</span><span class="p">][</span><span class="s2">&quot;mimeType&quot;</span><span class="p">]</span><span class="o">=</span><span class="s2">&quot;text/plain&quot;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">outputs</span><span class="p">[</span><span class="s2">&quot;Result&quot;</span><span class="p">][</span><span class="s2">&quot;value&quot;</span><span class="p">]</span><span class="o">=</span><span class="n">rgeom</span><span class="o">.</span><span class="n">ExportToGML</span><span class="p">()</span>
+    <span class="n">geometry</span><span class="o">.</span><span class="n">Destroy</span><span class="p">()</span>
+    <span class="n">rgeom</span><span class="o">.</span><span class="n">Destroy</span><span class="p">()</span>
+    <span class="k">return</span> <span class="mi">3</span>
+</pre></div>
+</div>
+<p>We do not dicuss the functions body here as we already gave all the details before and
+the code was volontary made in a similar way.</p>
+<p>As done before, you only have to copy the <code class="docutils literal"><span class="pre">cgi-env</span></code> files into your <code class="docutils literal"><span class="pre">cgi-bin</span></code> directory:</p>
+<div class="highlight-guess"><div class="highlight"><pre>sudo cp ./cgi-env/* /usr/lib/cgi-bin
+</pre></div>
+</div>
+<p>A simple <code class="docutils literal"><span class="pre">Makefile</span></code> containing the install section can be written as the following :</p>
+<div class="highlight-none"><div class="highlight"><pre>install:
+    sudo cp ./cgi-env/* /usr/lib/cgi-bin/
+</pre></div>
+</div>
+<p>Finally, simply run make install from the ZOO Services Provider main directory, in order to deploy your ZOO Service Provider.</p>
+</div>
+</div>
+<div class="section" id="testing-the-service-using-execute-request">
+<h3><a class="toc-backref" href="#table-of-contents">Testing the Service using Execute Request</a><a class="headerlink" href="#testing-the-service-using-execute-request" title="Permalink to this headline">¶</a></h3>
+<p><strong>The simple and unreadable way</strong></p>
+<p>Everybody should now get his own copy of the OGR Boundary Service stored as a ZOO
+Services Provider called <code class="docutils literal"><span class="pre">ogr_ws_service_provider</span></code> and deployed in the ZOO Kernel
+tree, so the following Execute request can be used to test the Service:</p>
+<p><a class="reference external" href="http://localhost/cgi-bin/zoo_loader.cgi?request=Execute&amp;service=WPS&amp;version=1.0.0&amp;Identifier=Boundary&amp;DataInputs=InputPolygon=Reference&#64;xlink:href=http%3A%2F%2Flocalhost%2Fcgi-bin%2Fmapserv%3Fmap%3D%2Fvar%2Fwww%2Fwfs.map%26SERVICE%3DWFS%26REQUEST%3DGetFeature%26VERSION%3D1.0.0%26typename%3Dregions%26SRS%3DEPSG%3A4326%26FeatureID%3Dregions.3192">link</a></p>
+<div class="highlight-guess"><div class="highlight"><pre>http://localhost/cgi-bin/zoo_loader.cgi?request=Execute&amp;service=WPS&amp;version=1.0.0&amp;Identifier=Boundary&amp;DataInputs=InputPolygon=Reference@xlink:href=http%3A%2F%2Flocalhost%2Fcgi-bin%2Fmapserv%3Fmap%3D%2Fvar%2Fwww%2Fwfs.map%26SERVICE%3DWFS%26REQUEST%3DGetFeature%26VERSION%3D1.0.0%26typename%3Dregions%26SRS%3DEPSG%3A4326%26FeatureID%3Dregions.3192
+</pre></div>
+</div>
+<p>As you can see in the url above, we use an URLEncoded WFS request to the MapServer
+WFS server available on OSGeoLive as a <code class="docutils literal"><span class="pre">xlink:href</span></code> key in the DataInputs KVP value,
+and set the <code class="docutils literal"><span class="pre">InputPolygon</span></code> value to Reference. The corresponding non encoded WFS request is as follow:</p>
+<div class="highlight-python"><div class="highlight"><pre>http://localhost/cgi-bin/mapserv?map=/var/www/wfs.map&amp;SERVICE=WFS&amp;REQUEST=GetFeature&amp;VERSION=1.0.0&amp;typename=regions&amp;SRS=EPSG:4326&amp;featureid=regions.3192
+</pre></div>
+</div>
+<p>Please note that you can add <code class="docutils literal"><span class="pre">lineage=true</span></code> to the previous request if you need
+to get information about the input values used to run your Service. Furthermore,
+you may need to store the ExecuteResponse document of your ZOO Service to re-use
+it later. In this case you must add <code class="docutils literal"><span class="pre">storeExecuteResponse=true</span></code> to the previous
+request. Note that is an important thing as the behavior of ZOO Kernel is not
+exactly the same than when running without this parameter settled to true. Indeed,
+in such a request, ZOO Kernel will give you an ExecuteResponse document which will
+contain the attribute statusLocation, which inform the client where the ongoing
+status or the final ExecuteResponse will be located.</p>
+<p>Here is an example of what the ExecuteResponse would look like in case <code class="docutils literal"><span class="pre">storeExecuteResponse</span></code> was set to true in the request:</p>
+<a class="reference internal image-reference" href="../_images/Practical-introduction-to-ZOO-7.png"><img alt="../_images/Practical-introduction-to-ZOO-7.png" class="align-center" src="../_images/Practical-introduction-to-ZOO-7.png" style="width: 610px; height: 146px;" /></a>
+<p>Then, according to the statusLocation, you should get the ExecuteResponse as you get
+before using the previous request. Note that can be really useful to provide some
+caching system for a client application.</p>
+<p>You didn&#8217;t specify any ResponseForm in the previous request, it is not requested
+and should return a ResponseDocument per default using the application/json mimeType
+as you defined in you zcfg file. Nevertheless, you can tell ZOO Kernel what kind of
+data you want to get in result of your query adding the attribute <code class="docutils literal"><span class="pre">mimeType=text/xml</span></code>
+to your <code class="docutils literal"><span class="pre">ResponseDocument</span></code> parameter. Adding this parameter to the previous request
+will give us the result as its GML representation :</p>
+<p><a class="reference external" href="http://localhost/cgi-bin/zoo_loader.cgi?request=Execute&amp;service=WPS&amp;version=1.0.0&amp;Identifier=Boundary&amp;DataInputs=InputPolygon=Reference&#64;xlink:href=http%3A%2F%2Flocalhost%2Fcgi-bin%2Fmapserv%3Fmap%3D%2Fvar%2Fwww%2Fwfs.map%26SERVICE%3DWFS%26REQUEST%3DGetFeature%26VERSION%3D1.0.0%26typename%3Dregions%26SRS%3DEPSG%3A4326%26FeatureID%3Dregions.3192&amp;ResponseDocument=Result&#64;mimeType=text/xml">link</a></p>
+<div class="highlight-guess"><div class="highlight"><pre>http://localhost/cgi-bin/zoo_loader.cgi?request=Execute&amp;service=WPS&amp;version=1.0.0&amp;Identifier=Boundary&amp;DataInputs=InputPolygon=Reference@xlink:href=http%3A%2F%2Flocalhost%2Fcgi-bin%2Fmapserv%3Fmap%3D%2Fvar%2Fwww%2Fwfs.map%26SERVICE%3DWFS%26REQUEST%3DGetFeature%26VERSION%3D1.0.0%26typename%3Dregions%26SRS%3DEPSG%3A4326%26FeatureID%3Dregions.3192&amp;ResponseDocument=Result@mimeType=text/xml
+</pre></div>
+</div>
+<p>As defined by the WPS specifications, you can also ask for a <code class="docutils literal"><span class="pre">RawDataOutput</span></code> to
+get only the data without the full <code class="docutils literal"><span class="pre">ResponseDocument</span></code>. To do that, you only have
+to replace the <code class="docutils literal"><span class="pre">ResponseDocument</span></code> of your request by <code class="docutils literal"><span class="pre">RawDataOutput</span></code>, like in
+the following request :</p>
+<p><a class="reference external" href="http://localhost/cgi-bin/zoo_loader.cgi?request=Execute&amp;service=WPS&amp;version=1.0.0&amp;Identifier=Boundary&amp;DataInputs=InputPolygon=Reference&#64;xlink:href=http%3A%2F%2Flocalhost%2Fcgi-bin%2Fmapserv%3Fmap%3D%2Fvar%2Fwww%2Fwfs.map%26SERVICE%3DWFS%26REQUEST%3DGetFeature%26VERSION%3D1.0.0%26typename%3Dregions%26SRS%3DEPSG%3A4326%26FeatureID%3Dregions.3192&amp;RawDataOutput=Result&#64;mimeType=application/json">link</a></p>
+<div class="highlight-guess"><div class="highlight"><pre>http://localhost/cgi-bin/zoo_loader.cgi?request=Execute&amp;service=WPS&amp;version=1.0.0&amp;Identifier=Boundary&amp;DataInputs=InputPolygon=Reference@xlink:href=http%3A%2F%2Flocalhost%2Fcgi-bin%2Fmapserv%3Fmap%3D%2Fvar%2Fwww%2Fwfs.map%26SERVICE%3DWFS%26REQUEST%3DGetFeature%26VERSION%3D1.0.0%26typename%3Dregions%26SRS%3DEPSG%3A4326%26FeatureID%3Dregions.3192&amp;RawDataOutput=Result@mimeType=application/json
+</pre></div>
+</div>
+<p>Please note that we go back to the default mimeType to directly obtain the JSON
+string as we will use this kind of request to develop our client application in
+the next section of this workshop.</p>
+<p>Now, you know how to ask ZOO Kernel to run service in background, ask for <code class="docutils literal"><span class="pre">RawDataOutput</span></code>
+specifying <code class="docutils literal"><span class="pre">mimeType</span></code> or any specific format to be returned by the Kernel. When you
+ask for <code class="docutils literal"><span class="pre">ResponseDocument</span></code>, you can also specify to the ZOO Kernel that you want the
+result to be stored on the server side.</p>
+<p>To do such a thing, you have to set the attribute <code class="docutils literal"><span class="pre">asReference</span></code> as true and then the
+resulting ExecuteResponse will contain a Reference node including the href attribute
+to let you access the produced file. To be able to handle this, you have to add the
+extension parameter in your <code class="docutils literal"><span class="pre">DataOutputs</span></code> node in the corresponding ZCFG file.</p>
+<p>Here is a sample url which provide such a result:</p>
+<p><a class="reference external" href="http://localhost/cgi-bin/zoo_loader.cgi?request=Execute&amp;service=WPS&amp;version=1.0.0&amp;Identifier=Boundary&amp;DataInputs=InputPolygon=Reference&#64;xlink:href=http%3A%2F%2Flocalhost%2Fcgi-bin%2Fmapserv%3Fmap%3D%2Fvar%2Fwww%2Fwfs.map%26SERVICE%3DWFS%26REQUEST%3DGetFeature%26VERSION%3D1.0.0%26typename%3Dregions%26SRS%3DEPSG%3A4326%26FeatureID%3Dregions.3192&amp;ResponseDocument=Result&#64;mimeType=application/json&#64;asReference=true">link</a></p>
+<div class="highlight-guess"><div class="highlight"><pre>http://localhost/cgi-bin/zoo_loader.cgi?request=Execute&amp;service=WPS&amp;version=1.0.0&amp;Identifier=Boundary&amp;DataInputs=InputPolygon=Reference@xlink:href=http%3A%2F%2Flocalhost%2Fcgi-bin%2Fmapserv%3Fmap%3D%2Fvar%2Fwww%2Fwfs.map%26SERVICE%3DWFS%26REQUEST%3DGetFeature%26VERSION%3D1.0.0%26typename%3Dregions%26SRS%3DEPSG%3A4326%26FeatureID%3Dregions.3192&amp;ResponseDocument=Result@mimeType=application/json@asReference=true
+</pre></div>
+</div>
+<p>You can see bellow what kind of result can be expected :</p>
+<a class="reference internal image-reference" href="../_images/screenshot-ZOO-asReference-attribute.png"><img alt="../_images/screenshot-ZOO-asReference-attribute.png" class="align-center" src="../_images/screenshot-ZOO-asReference-attribute.png" style="width: 620px; height: 217px;" /></a>
+<p><strong>Simplification and readability of request</strong></p>
+<p>As you can see in the simple example we used since the begining of this workshop,
+it is sometimes hard to write the Execute requests using the GET method as it
+makes really long and complexe URLs. In the next requests examples, we will
+thus use the POST XML requests. First , here is the XML request corresponding
+to the previous Execute we used:</p>
+<div class="highlight-guess"><div class="highlight"><pre><span class="nt">&lt;wps:Execute</span> <span class="na">service=</span><span class="s">&quot;WPS&quot;</span> <span class="na">version=</span><span class="s">&quot;1.0.0&quot;</span> <span class="na">xmlns:wps=</span><span class="s">&quot;http://www.opengis.net/wps/1.0.0&quot;</span> <span class="na">xmlns:ows=</span><span class="s">&quot;http://www.opengis.net/ows/1.1&quot;</span> <span class="na">xmlns:xlink=</span><span class="s">&quot;http://www.w3.org/1999/xlink&quot;</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:schemaLocation=</span><span class="s">&quot;http://www.opengis.net/wps/1.0.0 ../wpsExecute_request.xsd&quot;</span><span class="nt">&gt;</span>
+ <span class="nt">&lt;ows:Identifier&gt;</span>Boundary<span class="nt">&lt;/ows:Identifier&gt;</span>
+ <span class="nt">&lt;wps:DataInputs&gt;</span>
+  <span class="nt">&lt;wps:Input&gt;</span>
+   <span class="nt">&lt;ows:Identifier&gt;</span>InputPolygon<span class="nt">&lt;/ows:Identifier&gt;</span>
+   <span class="nt">&lt;ows:Title&gt;</span>Playground area<span class="nt">&lt;/ows:Title&gt;</span>
+   <span class="nt">&lt;wps:Reference</span> <span class="na">xlink:href=</span><span class="s">&quot;http://localhost/cgi-bin/mapserv?map=/var/www/wfs.map&amp;amp;SERVICE=WFS&amp;amp;REQUEST=GetFeature&amp;amp;VERSION=1.0.0&amp;amp;typename=regions&amp;amp;SRS=EPSG:4326&amp;amp;featureid=regions.3192&quot;</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;/wps:Input&gt;</span>
+ <span class="nt">&lt;/wps:DataInputs&gt;</span>
+ <span class="nt">&lt;wps:ResponseForm&gt;</span>
+  <span class="nt">&lt;wps:ResponseDocument&gt;</span>
+   <span class="nt">&lt;wps:Output&gt;</span>
+    <span class="nt">&lt;ows:Identifier&gt;</span>Result<span class="nt">&lt;/ows:Identifier&gt;</span>
+    <span class="nt">&lt;ows:Title&gt;</span>Area serviced by playground.<span class="nt">&lt;/ows:Title&gt;</span>
+    <span class="nt">&lt;ows:Abstract&gt;</span>Area within which most users of this playground will live.<span class="nt">&lt;/ows:Abstract&gt;</span>
+   <span class="nt">&lt;/wps:Output&gt;</span>
+  <span class="nt">&lt;/wps:ResponseDocument&gt;</span>
+ <span class="nt">&lt;/wps:ResponseForm&gt;</span>
+<span class="nt">&lt;/wps:Execute&gt;</span>
+</pre></div>
+</div>
+<p>In order to let you easily run the XML requests, a simple HTML form called
+<code class="docutils literal"><span class="pre">test_services.html</span></code> is available in your <code class="docutils literal"><span class="pre">/var/www</span></code> directory. You can
+access it using the following link :  <a class="reference external" href="http://localhost/test_services.html">http://localhost/test_services.html</a>.</p>
+<p>Please open this page in your browser, simply fill the XML request content into
+the textarea field and click the « run using XML Request » submit button. You will
+get exactly the same result as when running your Service using the GET request. The
+screenshot above show the HTML form including the request and the ExecuteResponse
+document displayed in the iframe at the bottom of the page:</p>
+<a class="reference internal image-reference" href="../_images/Practical-introduction-to-ZOO-8.png"><img alt="../_images/Practical-introduction-to-ZOO-8.png" class="align-center" src="../_images/Practical-introduction-to-ZOO-8.png" style="width: 573px; height: 308px;" /></a>
+<p>The xlink:href value is used in the simplest way to deal with such data input. Obviously,
+you can also use a full JSON string of the geometry, as shown in the following XML Request example :</p>
+<div class="highlight-guess"><div class="highlight"><pre><span class="nt">&lt;wps:Execute</span> <span class="na">service=</span><span class="s">&quot;WPS&quot;</span> <span class="na">version=</span><span class="s">&quot;1.0.0&quot;</span> <span class="na">xmlns:wps=</span><span class="s">&quot;http://www.opengis.net/wps/1.0.0&quot;</span> <span class="na">xmlns:ows=</span><span class="s">&quot;http://www.opengis.net/ows/1.1&quot;</span> <span class="na">xmlns:xlink=</span><span class="s">&quot;http://www.w3.org/1999/xlink&quot;</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:schemaLocation=</span><span class="s">&quot;http://www.opengis.net/wps/1.0.0 ../wpsExecute_request.xsda&quot;</span><span class="nt">&gt;</span>
+ <span class="nt">&lt;ows:Identifier&gt;</span>Boundary<span class="nt">&lt;/ows:Identifier&gt;</span>
+ <span class="nt">&lt;wps:DataInputs&gt;</span>
+  <span class="nt">&lt;wps:Input&gt;</span>
+   <span class="nt">&lt;ows:Identifier&gt;</span>InputPolygon<span class="nt">&lt;/ows:Identifier&gt;</span>
+   <span class="nt">&lt;wps:Data&gt;</span>
+    <span class="nt">&lt;wps:ComplexData</span> <span class="na">mimeType=</span><span class="s">&quot;application/json&quot;</span><span class="nt">&gt;</span>
+{ &quot;type&quot;: &quot;MultiPolygon&quot;, &quot;coordinates&quot;: [ [ [ [ -105.998360, 31.393818 ], [ -106.212753, 31.478128 ], [ -106.383041, 31.733763 ], [ -106.538971, 31.786198 ], [ -106.614441, 31.817728 ], [ -105.769730, 31.170780 ], [ -105.998360, 31.393818 ] ] ], [ [ [ -94.913429, 29.257572 ], [ -94.767380, 29.342451 ], [ -94.748405, 29.319490 ], [ -95.105415, 29.096958 ], [ -94.913429, 29.257572 ] ] ] ] }
+    <span class="nt">&lt;/wps:ComplexData&gt;</span>
+   <span class="nt">&lt;/wps:Data&gt;</span>
+  <span class="nt">&lt;/wps:Input&gt;</span>
+ <span class="nt">&lt;/wps:DataInputs&gt;</span>
+ <span class="nt">&lt;wps:ResponseForm&gt;</span>
+  <span class="nt">&lt;wps:ResponseDocument&gt;</span>
+   <span class="nt">&lt;wps:Output&gt;</span>
+    <span class="nt">&lt;ows:Identifier&gt;</span>Result<span class="nt">&lt;/ows:Identifier&gt;</span>
+    <span class="nt">&lt;ows:Title&gt;</span>Area serviced by playground.<span class="nt">&lt;/ows:Title&gt;</span>
+    <span class="nt">&lt;ows:Abstract&gt;</span>Area within which most users of this playground will live.<span class="nt">&lt;/ows:Abstract&gt;</span>
+   <span class="nt">&lt;/wps:Output&gt;</span>
+  <span class="nt">&lt;/wps:ResponseDocument&gt;</span>
+ <span class="nt">&lt;/wps:ResponseForm&gt;</span>
+<span class="nt">&lt;/wps:Execute&gt;</span>
+</pre></div>
+</div>
+<p>If everything went well, you should get the Boundary of the JSON geometry passed as
+argument, and so be sure that your Service support both GML and JSON as input data.
+Note that in the previous request, we added a <code class="docutils literal"><span class="pre">mimeType</span></code> attribute to the
+<code class="docutils literal"><span class="pre">ComplexData</span></code> node to specify that the input data is not in the default <code class="docutils literal"><span class="pre">text/xml</span></code>
+mimeType but passed as an <code class="docutils literal"><span class="pre">application/json</span></code> string directly. It is similar to add
+<code class="docutils literal"><span class="pre">&#64;mimeType=application/json</span></code> as we discussed before.</p>
+<p><strong>storeExecuteResponse parameter and GetStatus Service</strong></p>
+<p>If you go in your local <code class="docutils literal"><span class="pre">/home/user/zoows/sources/zoo-services/utils/status</span></code>, you&#8217;ll
+find the code for a ServiceProvider which will provide the GetStatus service and the
+longProcess one. The last is a simple example to learn how to use the status variable
+from lenv section of the main configuration maps and the updateStatus function you
+have to call to take your status value into account. The main service provider is
+the GetStatus one, it is able to give you information about the current status value
+from a service running in background mode.</p>
+<p>You have to know that the ZOO Kernel will detect the presence of the GetStatus service
+and if it is available it will then return the link the corresponding Execute request.</p>
+<p>So now you will deploy the GetStatus and longProcess service on your local environment.
+As for each services, you shall be able to deploy the services simply by copying the
+cgi-env directory into your Apache <code class="docutils literal"><span class="pre">cgi-bin</span></code> directory. You can use the following command :</p>
+<div class="highlight-guess"><div class="highlight"><pre>sudo cp ~user/zoows/sources/zoo-services/utils/status/cgi-env/*{zcfg,zo} /usr/lib/cgi-bin
+</pre></div>
+</div>
+<p>For simple Services it is the right way to deploy Service Providers. But in this specific
+case you&#8217;ll have also to add some special parameter in the main section of you main
+configuration file and to copy an xsl file used to replace on the fly in the ResponseDocument
+the percentCompleted attribute of the ProcessStarted node returned by the GetStatus service.</p>
+<p>So first edit you <code class="docutils literal"><span class="pre">main.cfg</span></code> file to add the following lines in your main section :</p>
+<div class="highlight-guess"><div class="highlight"><pre>rewriteUrl=call
+dataPath=/var/www/data
+</pre></div>
+</div>
+<p>Here you define the path where the service is able to find the xsl file, specified in the
+dataPath parameter. You also tell the ZOO Kernel that you want to use the rewriteUrl we
+defined in the previous section.</p>
+<p>To finish your deployment, you&#8217;ll have now to copy the xsl file in the defined dataPath
+directory. You can use the following command :</p>
+<div class="highlight-guess"><div class="highlight"><pre>cp ~/zoows/sources/zoo-services/utils/status/cgi-env/*xsl /var/www/data
+</pre></div>
+</div>
+<p>Now, if you run the following request to run the service longProcess :</p>
+<p><a class="reference external" href="http://localhost/zoo/?request=Execute&amp;service=WPS&amp;version=1.0.0&amp;Identifier=longProcess&amp;DataInputs=&amp;storeExecuteResponse=true">http://localhost/zoo/?request=Execute&amp;service=WPS&amp;version=1.0.0&amp;Identifier=longProcess&amp;DataInputs=&amp;storeExecuteResponse=true</a></p>
+<p>You shall get the a XML document looking like the following:</p>
+<a class="reference internal image-reference" href="../_images/Practical-introduction-to-ZOO-9.png"><img alt="../_images/Practical-introduction-to-ZOO-9.png" class="align-center" src="../_images/Practical-introduction-to-ZOO-9.png" style="width: 590px; height: 155px;" /></a>
+<p>If you poll the statusLocation url provider in the answer you&#8217;ll then be able to view
+the evolution of the percentCompleted attribute value growing, like you can see in the following screenshot.</p>
+<a class="reference internal image-reference" href="../_images/Practical-introduction-to-ZOO-10.png"><img alt="../_images/Practical-introduction-to-ZOO-10.png" class="align-center" src="../_images/Practical-introduction-to-ZOO-10.png" style="width: 589px; height: 146px;" /></a>
+<p>This won&#8217;t be used during this workshop but can be useful for really time consuming services.</p>
+</div>
+<div class="section" id="creating-services-for-other-functions-convexhull-and-centroid">
+<h3><a class="toc-backref" href="#table-of-contents">Creating Services for other functions (ConvexHull and Centroid)</a><a class="headerlink" href="#creating-services-for-other-functions-convexhull-and-centroid" title="Permalink to this headline">¶</a></h3>
+<p>As the Boundary sample service code is available, you can now easily add ConvexHull and
+Centroid functions as they take exactly the same number of arguments : Only one geometry.
+The details for implementing and deploying the ConvexHull Service are provided bellow,
+and we will let you do the same thing for the Centroid one.</p>
+<div class="section" id="id1">
+<h4><a class="toc-backref" href="#table-of-contents">C Version</a><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+<p>Please add first the following code to the service.c source code :</p>
+<div class="highlight-guess"><div class="highlight"><pre>int ConvexHull(maps*&amp; conf,maps*&amp; inputs,maps*&amp; outputs){
+  OGRGeometryH geometry,res;
+  map* tmp=getMapFromMaps(inputs,&quot;InputPolygon&quot;,&quot;value&quot;);
+  if(tmp==NULL){
+    setMapInMaps(conf,&quot;lenv&quot;,&quot;message&quot;,&quot;Unable to fetch InputPolygon value.&quot;);
+    return SERVICE_FAILED;
+  }
+  map* tmp1=getMapFromMaps(inputs,&quot;InputPolygon&quot;,&quot;mimeType&quot;);
+  if(strncmp(tmp1-&gt;value,&quot;application/json&quot;,16)==0)
+    geometry=OGR_G_CreateGeometryFromJson(tmp-&gt;value);
+  else
+    geometry=createGeometryFromWFS(conf,tmp-&gt;value);
+  if(geometry==NULL){
+    setMapInMaps(conf,&quot;lenv&quot;,&quot;message&quot;,&quot;Unable to parse InputPolygon value.&quot;);
+    return SERVICE_FAILED;
+  }
+  res=OGR_G_ConvexHull(geometry);
+  tmp1=getMapFromMaps(outputs,&quot;Result&quot;,&quot;mimeType&quot;);
+  if(strncmp(tmp1-&gt;value,&quot;application/json&quot;,16)==0){
+    char* tmp=OGR_G_ExportToJson(res);
+    setMapInMaps(outputs,&quot;Result&quot;,&quot;value&quot;,tmp);
+    setMapInMaps(outputs,&quot;Result&quot;,&quot;mimeType&quot;,&quot;text/plain&quot;);
+    free(tmp);
+  }
+  else{
+    char* tmp=OGR_G_ExportToGML(res);
+    setMapInMaps(outputs,&quot;Result&quot;,&quot;value&quot;,tmp);
+    free(tmp);
+  }
+  OGR_G_DestroyGeometry(geometry);
+  OGR_G_DestroyGeometry(res);
+  return SERVICE_SUCCEEDED;
+}
+</pre></div>
+</div>
+<p>This new code is exactly the same as for the Boundary Service. The only thing we modified
+is the line where the  <a class="reference external" href="http://www.gdal.org/ogr/ogr__api_8h.html#7a93026cfae8ee6ce25546dba1b2df7d">OGR_G_ConvexHull</a>
+function is called (rather than the OGR_G_GetBoundary you used before). It is better to not copy
+and paste the whole function and find a more generic way to define your new Services as the
+function body will be the same in every case. The following generic function is proposed to make things simpler:</p>
+<div class="highlight-guess"><div class="highlight"><pre>int applyOne(maps*&amp; conf,maps*&amp; inputs,maps*&amp; outputs,OGRGeometryH (*myFunc) (OGRGeometryH)){
+  OGRGeometryH geometry,res;
+  map* tmp=getMapFromMaps(inputs,&quot;InputPolygon&quot;,&quot;value&quot;);
+  if(tmp==NULL){
+    setMapInMaps(conf,&quot;lenv&quot;,&quot;message&quot;,&quot;Unable to fetch InputPolygon value.&quot;);
+    return SERVICE_FAILED;
+  }
+  map* tmp1=getMapFromMaps(inputs,&quot;InputPolygon&quot;,&quot;mimeType&quot;);
+  if(strncmp(tmp1-&gt;value,&quot;application/json&quot;,16)==0)
+    geometry=OGR_G_CreateGeometryFromJson(tmp-&gt;value);
+  else
+    geometry=createGeometryFromWFS(conf,tmp-&gt;value);
+  if(geometry==NULL){
+    setMapInMaps(conf,&quot;lenv&quot;,&quot;message&quot;,&quot;Unable to parse InputPolygon value.&quot;);
+    return SERVICE_FAILED;
+  }
+  res=(*myFunc)(geometry);
+  tmp1=getMapFromMaps(outputs,&quot;Result&quot;,&quot;mimeType&quot;);
+  if(strncmp(tmp1-&gt;value,&quot;application/json&quot;,16)==0){
+    char *tmp=OGR_G_ExportToJson(res);
+    setMapInMaps(outputs,&quot;Result&quot;,&quot;value&quot;,tmp);
+    setMapInMaps(outputs,&quot;Result&quot;,&quot;mimeType&quot;,&quot;text/plain&quot;);
+    free(tmp);
+  }
+  else{
+    char *tmp=OGR_G_ExportToGML(res);
+    setMapInMaps(outputs,&quot;Result&quot;,&quot;value&quot;,tmp);
+    free(tmp);
+  }
+  outputs-&gt;next=NULL;
+  OGR_G_DestroyGeometry(geometry);
+  OGR_G_DestroyGeometry(res);
+  return SERVICE_SUCCEEDED;
+}
+</pre></div>
+</div>
+<p>Then, a function pointer called myFunc rather than the full function name can be used.
+This way we can re-implement our Boundary Service this way:</p>
+<div class="highlight-guess"><div class="highlight"><pre>int Boundary(maps*&amp; conf,maps*&amp; inputs,maps*&amp; outputs){
+  return applyOne(conf,inputs,outputs,&amp;OGR_G_GetBoundary);
+}
+</pre></div>
+</div>
+<p>Using this applyOne local function defined in the service.c source code, we can define
+other Services this way:</p>
+<div class="highlight-guess"><div class="highlight"><pre>int ConvexHull(maps*&amp; conf,maps*&amp; inputs,maps*&amp; outputs){
+  return applyOne(conf,inputs,outputs,&amp;OGR_G_ConvexHull);
+}
+int Centroid(maps*&amp; conf,maps*&amp; inputs,maps*&amp; outputs){
+  return applyOne(conf,inputs,outputs,&amp;MY_OGR_G_Centroid);
+}
+</pre></div>
+</div>
+<p>The genericity of the applyOne function let you add two new Services in your ZOO Services Provider : ConvexHull and Centroid.</p>
+<p>Note that you should define MY_OGR_Centroid function before the Centroid one as  <a class="reference external" href="http://www.gdal.org/ogr/ogr__api_8h.html#23f5a19a81628af7f9cc59a37378cb2b">OGR_G_Centroid</a> don&#8217;t return a geometry object but set the value to an already existing one and support only Polygon as input, so to ensure we use the ConvexHull for MultiPolygon. So please use the code bellow:</p>
+<div class="highlight-guess"><div class="highlight"><pre>OGRGeometryH MY_OGR_G_Centroid(OGRGeometryH hTarget){
+  OGRGeometryH res;
+  res=OGR_G_CreateGeometryFromJson(&quot;{\&quot;type\&quot;: \&quot;Point\&quot;, \&quot;coordinates\&quot;: [0,0] }&quot;);
+  OGRwkbGeometryType gtype=OGR_G_GetGeometryType(hTarget);
+  if(gtype!=wkbPolygon){
+    hTarget=OGR_G_ConvexHull(hTarget);
+  }
+  OGR_G_Centroid(hTarget,res);
+  return res;
+}
+</pre></div>
+</div>
+<p>To deploy your Services, you only have to copy the <code class="docutils literal"><span class="pre">Boundary.zcfg</span></code> metadata file from
+your cgi-env directory as <code class="docutils literal"><span class="pre">ConvexHull.zcfg</span></code> and <code class="docutils literal"><span class="pre">Centroid.zcfg</span></code>. Then, you must
+rename the Service name on the first line to be able to run and test the Execute request
+in the same way you did before. You only have to set the Identifier value to ConvexHull
+or Centroid in your request depending on the Service you want to run.</p>
+<p>Note here that the GetCapabilities and DescribeProcess requests will return odd results
+as we didn&#8217;t modified any metadata informations, you can edit the <code class="docutils literal"><span class="pre">.zcfg</span></code> files to set
+correct values. By the way it can be used for testing purpose, as the input and output
+get the same name and default/supported formats.</p>
+</div>
+<div class="section" id="id2">
+<h4><a class="toc-backref" href="#table-of-contents">Python Version</a><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-guess"><div class="highlight"><pre>def ConvexHull(conf,inputs,outputs):
+    if inputs[&quot;InputPolygon&quot;][&quot;mimeType&quot;]==&quot;application/json&quot;:
+        geometry=osgeo.ogr.CreateGeometryFromJson(inputs[&quot;InputPolygon&quot;][&quot;value&quot;])
+    else:
+        geometry=createGeometryFromWFS(inputs[&quot;InputPolygon&quot;][&quot;value&quot;])
+    rgeom=geometry.ConvexHull()
+    if outputs[&quot;Result&quot;][&quot;mimeType&quot;]==&quot;application/json&quot;:
+        outputs[&quot;Result&quot;][&quot;value&quot;]=rgeom.ExportToJson()
+        outputs[&quot;Result&quot;][&quot;mimeType&quot;]=&quot;text/plain&quot;
+    else:
+        outputs[&quot;Result&quot;][&quot;value&quot;]=rgeom.ExportToGML()
+    geometry.Destroy()
+    rgeom.Destroy()
+    return 3
+</pre></div>
+</div>
+<p>Once again, you can easily copy and paste the function for Boundary and simply modify
+the line where the Geometry method was called. Nevertheless, as we did for the C language
+we will give you a simple way to get things more generic.</p>
+<p>First of all, the first step which consists in extracting the InputPolygon Geometry as
+it will be used in the same way in each Service functions, so we will first create a
+function which will do that for us. The same thing can also be done for filling the
+output value, so we will define another function to do that automaticaly. Here is the
+code of this two functions (extractInputs and outputResult) :</p>
+<div class="highlight-guess"><div class="highlight"><pre>def extractInputs(obj):
+    if obj[&quot;mimeType&quot;]==&quot;application/json&quot;:
+        return osgeo.ogr.CreateGeometryFromJson(obj[&quot;value&quot;])
+    else:
+        return createGeometryFromWFS(obj[&quot;value&quot;])
+    return null
+
+def outputResult(obj,geom):
+    if obj[&quot;mimeType&quot;]==&quot;application/json&quot;:
+        obj[&quot;value&quot;]=geom.ExportToJson()
+        obj[&quot;mimeType&quot;]=&quot;text/plain&quot;
+    else:
+        obj[&quot;value&quot;]=geom.ExportToGML()
+</pre></div>
+</div>
+<p>We can so minimize the code of the Boundary function to make it simplier using the following function definition :</p>
+<div class="highlight-guess"><div class="highlight"><pre>def Boundary(conf,inputs,outputs):
+    geometry=extractInputs(inputs[&quot;InputPolygon&quot;])
+    rgeom=geometry.GetBoundary()
+    outputResult(outputs[&quot;Result&quot;],rgeom)
+    geometry.Destroy()
+    rgeom.Destroy()
+    return 3
+</pre></div>
+</div>
+<p>Then definition of the ConvexHull and Centroid Services can be achieved using the following code:</p>
+<div class="highlight-guess"><div class="highlight"><pre>def ConvexHull(conf,inputs,outputs):
+    geometry=extractInputs(inputs[&quot;InputPolygon&quot;])
+    rgeom=geometry.ConvexHull()
+    outputResult(outputs[&quot;Result&quot;],rgeom)
+    geometry.Destroy()
+    rgeom.Destroy()
+    return 3
+
+def Centroid(conf,inputs,outputs):
+    geometry=extractInputs(inputs[&quot;InputPolygon&quot;])
+    if geometry.GetGeometryType()!=3:
+        geometry=geometry.ConvexHull()
+    rgeom=geometry.Centroid()
+    outputResult(outputs[&quot;Result&quot;],rgeom)
+    geometry.Destroy()
+    rgeom.Destroy()
+    return 3
+</pre></div>
+</div>
+<p>Note, that in Python you also need to use ConvexHull to deal with MultiPolygons.</p>
+<p>You must now copy the <code class="docutils literal"><span class="pre">Boundary.zcfg</span></code> file as we explained for the C version in <code class="docutils literal"><span class="pre">ConvexHull.zcfg</span></code> and <code class="docutils literal"><span class="pre">Centroid.zcfg</span></code> respectively and then, use make install command to re-deploy and test your Services Provider.</p>
+<p>Create the Buffer Service</p>
+<p>We can now work on the Buffer Service, which takes more arguments than the other ones.
+Indeed, the code is a bit different from the one used to implement the Boundary, ConvexHull and Centroid Services.</p>
+<p>The Buffer service also takes an input geometry, but uses a BufferDistance parameter.
+It will also allow you to define LitteralData block as the BufferDistance will be
+simple integer value. The read access to such kind of input value is made using the
+same function as used before.</p>
+</div>
+<div class="section" id="id3">
+<h4><a class="toc-backref" href="#table-of-contents">C Version</a><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
+<p>If you go back to the first Boundary Service source code, you should not find the
+following very complicated. Indeed, you simply have to add the access of the
+BufferDistance argument and modify the line whenthe  <a class="reference external" href="http://www.gdal.org/ogr/ogr__api_8h.html#1ca0bd5c0fcb4b1af3c3973e467b0ec0">OGR_G_Buffer</a>
+must be called (instead of OGR_G_GetBoundary). Here is the ful lcode :</p>
+<div class="highlight-guess"><div class="highlight"><pre>int Buffer(maps*&amp; conf,maps*&amp; inputs,maps*&amp; outputs){
+  OGRGeometryH geometry,res;
+  map* tmp1=getMapFromMaps(inputs,&quot;InputPolygon&quot;,&quot;value&quot;);
+  if(tmp==NULL){
+    setMapInMaps(conf,&quot;lenv&quot;,&quot;message&quot;,&quot;Unable to fetch InputPolygon value.&quot;);
+    return SERVICE_FAILED;
+  }
+  map* tmp1=getMapFromMaps(inputs,&quot;InputPolygon&quot;,&quot;mimeType&quot;);
+  if(strncmp(tmp-&gt;value,&quot;application/json&quot;,16)==0)
+    geometry=OGR_G_CreateGeometryFromJson(tmp-&gt;value);
+  else
+    geometry=createGeometryFromWFS(conf,tmp-&gt;value);
+  double bufferDistance=1;
+  tmp=getMapFromMaps(inputs,&quot;BufferDistance&quot;,&quot;value&quot;);
+  if(tmp!=NULL)
+    bufferDistance=atof(tmp-&gt;value);
+  res=OGR_G_Buffer(geometry,bufferDistance,30);
+  tmp1=getMapFromMaps(outputs,&quot;Result&quot;,&quot;mimeType&quot;);
+  if(strncmp(tmp1-&gt;value,&quot;application/json&quot;,16)==0){
+    char *tmp=OGR_G_ExportToJson(res);
+    setMapInMaps(outputs,&quot;Result&quot;,&quot;value&quot;,tmp);
+    setMapInMaps(outputs,&quot;Result&quot;,&quot;mimeType&quot;,&quot;text/plain&quot;);
+    free(tmp);
+  }
+  else{
+    char *tmp=OGR_G_ExportToGML(res);
+    setMapInMaps(outputs,&quot;Result&quot;,&quot;value&quot;,tmp);
+    free(tmp);
+  }
+  outputs-&gt;next=NULL;
+  OGR_G_DestroyGeometry(geometry);
+  OGR_G_DestroyGeometry(res);
+  return SERVICE_SUCCEEDED;
+}
+</pre></div>
+</div>
+<p>The new code must be inserted in your service.c file and need to be recompiled and
+replace the older version of your ZOO Service Provider in the /usr/lib/cgi-bin/ directory.
+You must of course place the corresponding ZOO Metadata File in the same directory.</p>
+<p>As we explained before, ZOO Kernel is permissive in the sense that you can pass more
+arguments than defined in you zcfg file, so let&#8217;s try using a copy of the <code class="docutils literal"><span class="pre">Boundary.zcfg</span></code>
+file renamed as <code class="docutils literal"><span class="pre">Buffer.zcfg</span></code> and containing the Buffer identifier. Then, please
+test your service using an Execute request as you did before. You will obtain the
+buffer result in a ResponseDocument.</p>
+<p>You may have noted that the above code check if a BufferDistance input was passed
+to the service. If not, we will use 1 as the default value, which explains why
+you do not have to use one more input to your previous queries.</p>
+<p>You can change the BufferDistance value used by your Service to compute Buffer
+of your geometry by adding it to the DataInputs value in your request. Note that
+using KVP syntaxe, each DataInputs are separated by a semicolon.</p>
+<p>So, the previous request:</p>
+<div class="highlight-guess"><div class="highlight"><pre>DataInputs=InputPolygon=Reference@xlink:href=http%3A%2F%2Flocalhost%2Fcgi-bin%2Fmapserv%3FSERVICE%3DWFS%26REQUEST%3DGetFeature%26VERSION%3D1.0.0%26typename%3Dregions%26SRS%3DEPSG%3A4326%26FeatureID%3Dregions.3192
+</pre></div>
+</div>
+<p>Can now be rewritten this way :</p>
+<div class="highlight-guess"><div class="highlight"><pre><span class="nt">DataInputs</span><span class="o">=</span><span class="nt">InputPolygon</span><span class="o">=</span><span class="nt">Reference</span><span class="k">@xlink</span><span class="nd">:href</span><span class="o">=</span><span class="nt">http</span><span class="o">%</span><span class="nt">3A</span><span class="o">%</span><span class="nt">2F</span><span class="o">%</span><span class="nt">2Flocalhost</span><span class="o">%</span><span class="nt">2Fcgi-bin</span><span class="o">%</span><span class="nt">2Fmapserv</span><span class="o">%</span><span class="nt">3FSERVICE</span><span class="o">%</span><span class="nt">3DWFS</span><span class="o">%</span><span class="nt">26REQUEST</span><span class="o">%</span><span class="nt">3DGetFeature</span><span class="o">%</span><span class="nt">26VERSION</span><span class="o">%</span><span class="nt">3D1</span><span class="nc">.0.0</span><span class="o">%</span><span class="nt">26typename</span><span class="o">%</span><span class="nt">3Dregions</span><span class="o">%</span><span class="nt">26SRS</span><span class="o">%</span><span class="nt">3DEPSG</span><span class="o">%</span><span class="nt">3A4326</span><span class="o">%</span><span class="nt">26FeatureID</span><span class="o">%</span><span class="nt">3Dregions</span><span class="nc">.3192</span><span class="p">;</span><span class="nt">BufferDistance</span><span class="o">=</span><span class="nt">2</span>
+</pre></div>
+</div>
+<p>Setting BufferDistance value to 2 would give you a different result, then don&#8217;t
+pass any other parameter as we defined 1 as the default value in the source code.</p>
+<p>Here you can find the same query in XML format to use from the  <a class="reference external" href="http://localhost/test_services.html">http://localhost/test_services.html</a> HTML form :</p>
+<div class="highlight-guess"><div class="highlight"><pre><span class="nt">&lt;wps:Execute</span> <span class="na">service=</span><span class="s">&quot;WPS&quot;</span> <span class="na">version=</span><span class="s">&quot;1.0.0&quot;</span> <span class="na">xmlns:wps=</span><span class="s">&quot;http://www.opengis.net/wps/1.0.0&quot;</span> <span class="na">xmlns:ows=</span><span class="s">&quot;http://www.opengis.net/ows/1.1&quot;</span> <span class="na">xmlns:xlink=</span><span class="s">&quot;http://www.w3.org/1999/xlink&quot;</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:schemaLocation=</span><span class="s">&quot;http://www.opengis.net/wps/1.0.0 ../wpsExecute_request.xsda&quot;</span><span class="nt">&gt;</span>
+ <span class="nt">&lt;ows:Identifier&gt;</span>Buffer<span class="nt">&lt;/ows:Identifier&gt;</span>
+ <span class="nt">&lt;wps:DataInputs&gt;</span>
+  <span class="nt">&lt;wps:Input&gt;</span>
+   <span class="nt">&lt;ows:Identifier&gt;</span>InputPolygon<span class="nt">&lt;/ows:Identifier&gt;</span>
+   <span class="nt">&lt;ows:Title&gt;</span>Playground area<span class="nt">&lt;/ows:Title&gt;</span>
+   <span class="nt">&lt;wps:Reference</span> <span class="na">xlink:href=</span><span class="s">&quot;http://localhost/cgi-bin/mapserv?map=/var/www/wfs.map&amp;amp;SERVICE=WFS&amp;amp;REQUEST=GetFeature&amp;amp;VERSION=1.0.0&amp;amp;typename=regions&amp;amp;SRS=EPSG:4326&amp;amp;featureid=regions.3192&quot;</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;/wps:Input&gt;</span>
+  <span class="nt">&lt;wps:Input&gt;</span>
+   <span class="nt">&lt;ows:Identifier&gt;</span>BufferDistance<span class="nt">&lt;/ows:Identifier&gt;</span>
+   <span class="nt">&lt;wps:Data&gt;</span>
+    <span class="nt">&lt;wps:LiteralData</span> <span class="na">uom=</span><span class="s">&quot;degree&quot;</span><span class="nt">&gt;</span>2<span class="nt">&lt;/wps:LiteralData&gt;</span>
+   <span class="nt">&lt;/wps:Data&gt;</span>
+  <span class="nt">&lt;/wps:Input&gt;</span>
+ <span class="nt">&lt;/wps:DataInputs&gt;</span>
+ <span class="nt">&lt;wps:ResponseForm&gt;</span>
+  <span class="nt">&lt;wps:ResponseDocument&gt;</span>
+   <span class="nt">&lt;wps:Output&gt;</span>
+    <span class="nt">&lt;ows:Identifier&gt;</span>Buffer<span class="nt">&lt;/ows:Identifier&gt;</span>
+    <span class="nt">&lt;ows:Title&gt;</span>Area serviced by playground.<span class="nt">&lt;/ows:Title&gt;</span>
+    <span class="nt">&lt;ows:Abstract&gt;</span>Area within which most users of this playground will live.<span class="nt">&lt;/ows:Abstract&gt;</span>
+   <span class="nt">&lt;/wps:Output&gt;</span>
+  <span class="nt">&lt;/wps:ResponseDocument&gt;</span>
+ <span class="nt">&lt;/wps:ResponseForm&gt;</span>
+<span class="nt">&lt;/wps:Execute&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h4><a class="toc-backref" href="#table-of-contents">Python Version</a><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
+<p>As we already defined the utility functions createGeometryFromWFS and outputResult,
+the code is as simple as this:</p>
+<div class="highlight-guess"><div class="highlight"><pre>def Buffer(conf,inputs,outputs):
+    geometry=extractInputs(inputs[&quot;InputPolygon&quot;])
+    try:
+        bdist=int(inputs[&quot;BufferDistance&quot;][&quot;value&quot;])
+    except:
+        bdist=10
+    rgeom=geometry.Buffer(bdist)
+    outputResult(outputs[&quot;Result&quot;],rgeom)
+    geometry.Destroy()
+    rgeom.Destroy()
+    return 3
+</pre></div>
+</div>
+<p>We simply added the use of inputs[&#8220;BufferDistance&#8221;][&#8220;value&#8221;] as arguments of the
+Geometry instance Buffer method. Once you get this code added to your ogr_ws_service_provider.py
+file, simply copy it in the ZOO Kernel directory (or type make install from your ZOO Service
+Provider root directory). Note that you also need the <code class="docutils literal"><span class="pre">Buffer.zcfg</span></code> file detailled in the next section.</p>
+</div>
+<div class="section" id="the-buffer-metadatafile-file">
+<h4><a class="toc-backref" href="#table-of-contents">The Buffer MetadataFile file</a><a class="headerlink" href="#the-buffer-metadatafile-file" title="Permalink to this headline">¶</a></h4>
+<p>You must add BufferDistance to the Service Metadata File to let clients know that
+this Service supports this parameter. To do this, please copy your orginal <code class="docutils literal"><span class="pre">Boundary.zcfg</span></code>
+file as <code class="docutils literal"><span class="pre">Buffer.zcfg</span></code> and add the following lines to the DataInputs block :</p>
+<div class="highlight-none"><div class="highlight"><pre>[BufferDistance]
+ Title = Buffer Distance
+ Abstract = Distance to be used to calculate buffer.
+ minOccurs = 0
+ maxOccurs = 1
+ &lt;LiteralData&gt;
+  DataType = float
+  &lt;Default&gt;
+   uom = degree
+   value = 10
+  &lt;/Default&gt;
+  &lt;Supported&gt;
+   uom = meter
+  &lt;/Supported&gt;
+ &lt;/LiteralData&gt;
+</pre></div>
+</div>
+<p>Note that as minOccurs is set to 0 which means that the input parameter is optional
+and don&#8217;t have to be passed. You must know that ZOO Kernel will pass the default
+value to the Service function for an optional parameter with a default value set.</p>
+<p>You can get a full copy of the <code class="docutils literal"><span class="pre">Buffer.zcfg</span></code> file here :</p>
+<p><a class="reference external" href="http://zoo-project.org/trac/browser/trunk/zoo-services/ogr/base-vect-ops/cgi-env/Buffer.zcfg">http://zoo-project.org/trac/browser/trunk/zoo-services/ogr/base-vect-ops/cgi-env/Buffer.zcfg</a></p>
+<p>You can now ask ZOO Kernel for GetCapabilities, DescribeProcess and Execute for the Buffer Service.</p>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="building_wps_client_using_ol.html" class="btn btn-neutral float-right" title="Building a WPS client using OpenLayers">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="using_zoo_from_osgeolivevm.html" class="btn btn-neutral" title="Using ZOO from an OSGeoLive virtual machine"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+  <div class="pfoot">
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2009-2019, ZOO-Project team.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> inspired by <a href="https://readthedocs.org">Read the Docs</a>.
+</div>
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.7',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
