@@ -18,14 +18,14 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within ZOO-Project 1.7 documentation" href="../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within ZOO-Project 1.7 documentation" href="../static/opensearch.xml"/>
     
 
   
 
   
   
-    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../static/css/theme.css" type="text/css" />
   
 
   
@@ -37,7 +37,7 @@
         <link rel="prev" title="Using ZOO from an OSGeoLive virtual machine" href="using_zoo_from_osgeolivevm.html"/> 
 
   
-  <script src="../_static/js/modernizr.min.js"></script>
+  <script src="../static/js/modernizr.min.js"></script>
 
 </head>
 
@@ -329,13 +329,13 @@ than your ZOO Kernel (so in your case <code class="docutils literal"><span class
 able to run the following request :</p>
 <p><a class="reference external" href="http://localhost/zoo/?Request=DescribeProcess&amp;Service=WPS&amp;Identifier=Boundary&amp;version=1.0.0">http://localhost/zoo/?Request=DescribeProcess&amp;Service=WPS&amp;Identifier=Boundary&amp;version=1.0.0</a></p>
 <p>The returned ProcessDescriptions XML document should look like the following :</p>
-<a class="reference internal image-reference" href="../_images/Practical-introduction-to-ZOO-5.png"><img alt="../_images/Practical-introduction-to-ZOO-5.png" class="align-center" src="../_images/Practical-introduction-to-ZOO-5.png" style="width: 456px; height: 157px;" /></a>
+<a class="reference internal image-reference" href="../images/Practical-introduction-to-ZOO-5.png"><img alt="../images/Practical-introduction-to-ZOO-5.png" class="align-center" src="../images/Practical-introduction-to-ZOO-5.png" style="width: 456px; height: 157px;" /></a>
 <p>Please note that the GetCapabilities and DescribeProcess only need a <code class="docutils literal"><span class="pre">.zcfg</span></code>
 file to be completed. Simple, isn&#8217;t it ? At this step, if you request ZOO Kernel
 for an Execute, you will get an ExceptionReport document as response, looking as the following :</p>
-<a class="reference internal image-reference" href="../_images/Practical-introduction-to-ZOO-6.png"><img alt="../_images/Practical-introduction-to-ZOO-6.png" class="align-center" src="../_images/Practical-introduction-to-ZOO-6.png" style="width: 546px; height: 80px;" /></a>
+<a class="reference internal image-reference" href="../images/Practical-introduction-to-ZOO-6.png"><img alt="../images/Practical-introduction-to-ZOO-6.png" class="align-center" src="../images/Practical-introduction-to-ZOO-6.png" style="width: 546px; height: 80px;" /></a>
 <p>A similar error message will be returned if you try to run your Python Service :</p>
-<a class="reference internal image-reference" href="../_images/Practical-introduction-to-ZOO-7.png"><img alt="../_images/Practical-introduction-to-ZOO-7.png" class="align-center" src="../_images/Practical-introduction-to-ZOO-7.png" style="width: 489px; height: 87px;" /></a>
+<a class="reference internal image-reference" href="../images/Practical-introduction-to-ZOO-7.png"><img alt="../images/Practical-introduction-to-ZOO-7.png" class="align-center" src="../images/Practical-introduction-to-ZOO-7.png" style="width: 489px; height: 87px;" /></a>
 </div>
 <div class="section" id="implementing-single-geometry-services">
 <h2><a class="toc-backref" href="#table-of-contents">Implementing single geometry services</a><a class="headerlink" href="#implementing-single-geometry-services" title="Permalink to this headline">¶</a></h2>
@@ -745,7 +745,7 @@ in such a request, ZOO Kernel will give you an ExecuteResponse document which wi
 contain the attribute statusLocation, which inform the client where the ongoing
 status or the final ExecuteResponse will be located.</p>
 <p>Here is an example of what the ExecuteResponse would look like in case <code class="docutils literal"><span class="pre">storeExecuteResponse</span></code> was set to true in the request:</p>
-<a class="reference internal image-reference" href="../_images/Practical-introduction-to-ZOO-7.png"><img alt="../_images/Practical-introduction-to-ZOO-7.png" class="align-center" src="../_images/Practical-introduction-to-ZOO-7.png" style="width: 610px; height: 146px;" /></a>
+<a class="reference internal image-reference" href="../images/Practical-introduction-to-ZOO-7.png"><img alt="../images/Practical-introduction-to-ZOO-7.png" class="align-center" src="../images/Practical-introduction-to-ZOO-7.png" style="width: 610px; height: 146px;" /></a>
 <p>Then, according to the statusLocation, you should get the ExecuteResponse as you get
 before using the previous request. Note that can be really useful to provide some
 caching system for a client application.</p>
@@ -784,7 +784,7 @@ extension parameter in your <code class="docutils literal"><span class="pre">Dat
 </pre></div>
 </div>
 <p>You can see bellow what kind of result can be expected :</p>
-<a class="reference internal image-reference" href="../_images/screenshot-ZOO-asReference-attribute.png"><img alt="../_images/screenshot-ZOO-asReference-attribute.png" class="align-center" src="../_images/screenshot-ZOO-asReference-attribute.png" style="width: 620px; height: 217px;" /></a>
+<a class="reference internal image-reference" href="../images/screenshot-ZOO-asReference-attribute.png"><img alt="../images/screenshot-ZOO-asReference-attribute.png" class="align-center" src="../images/screenshot-ZOO-asReference-attribute.png" style="width: 620px; height: 217px;" /></a>
 <p><strong>Simplification and readability of request</strong></p>
 <p>As you can see in the simple example we used since the begining of this workshop,
 it is sometimes hard to write the Execute requests using the GET method as it
@@ -820,7 +820,7 @@ the textarea field and click the « run using XML Request » submit button. You 
 get exactly the same result as when running your Service using the GET request. The
 screenshot above show the HTML form including the request and the ExecuteResponse
 document displayed in the iframe at the bottom of the page:</p>
-<a class="reference internal image-reference" href="../_images/Practical-introduction-to-ZOO-8.png"><img alt="../_images/Practical-introduction-to-ZOO-8.png" class="align-center" src="../_images/Practical-introduction-to-ZOO-8.png" style="width: 573px; height: 308px;" /></a>
+<a class="reference internal image-reference" href="../images/Practical-introduction-to-ZOO-8.png"><img alt="../images/Practical-introduction-to-ZOO-8.png" class="align-center" src="../images/Practical-introduction-to-ZOO-8.png" style="width: 573px; height: 308px;" /></a>
 <p>The xlink:href value is used in the simplest way to deal with such data input. Obviously,
 you can also use a full JSON string of the geometry, as shown in the following XML Request example :</p>
 <div class="highlight-guess"><div class="highlight"><pre><span class="nt">&lt;wps:Execute</span> <span class="na">service=</span><span class="s">&quot;WPS&quot;</span> <span class="na">version=</span><span class="s">&quot;1.0.0&quot;</span> <span class="na">xmlns:wps=</span><span class="s">&quot;http://www.opengis.net/wps/1.0.0&quot;</span> <span class="na">xmlns:ows=</span><span class="s">&quot;http://www.opengis.net/ows/1.1&quot;</span> <span class="na">xmlns:xlink=</span><span class="s">&quot;http://www.w3.org/1999/xlink&quot;</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:schemaLocation=</span><span class="s">&quot;http://www.opengis.net/wps/1.0.0 ../wpsExecute_request.xsda&quot;</span><span class="nt">&gt;</span>
@@ -889,10 +889,10 @@ directory. You can use the following command :</p>
 <p>Now, if you run the following request to run the service longProcess :</p>
 <p><a class="reference external" href="http://localhost/zoo/?request=Execute&amp;service=WPS&amp;version=1.0.0&amp;Identifier=longProcess&amp;DataInputs=&amp;storeExecuteResponse=true">http://localhost/zoo/?request=Execute&amp;service=WPS&amp;version=1.0.0&amp;Identifier=longProcess&amp;DataInputs=&amp;storeExecuteResponse=true</a></p>
 <p>You shall get the a XML document looking like the following:</p>
-<a class="reference internal image-reference" href="../_images/Practical-introduction-to-ZOO-9.png"><img alt="../_images/Practical-introduction-to-ZOO-9.png" class="align-center" src="../_images/Practical-introduction-to-ZOO-9.png" style="width: 590px; height: 155px;" /></a>
+<a class="reference internal image-reference" href="../images/Practical-introduction-to-ZOO-9.png"><img alt="../images/Practical-introduction-to-ZOO-9.png" class="align-center" src="../images/Practical-introduction-to-ZOO-9.png" style="width: 590px; height: 155px;" /></a>
 <p>If you poll the statusLocation url provider in the answer you&#8217;ll then be able to view
 the evolution of the percentCompleted attribute value growing, like you can see in the following screenshot.</p>
-<a class="reference internal image-reference" href="../_images/Practical-introduction-to-ZOO-10.png"><img alt="../_images/Practical-introduction-to-ZOO-10.png" class="align-center" src="../_images/Practical-introduction-to-ZOO-10.png" style="width: 589px; height: 146px;" /></a>
+<a class="reference internal image-reference" href="../images/Practical-introduction-to-ZOO-10.png"><img alt="../images/Practical-introduction-to-ZOO-10.png" class="align-center" src="../images/Practical-introduction-to-ZOO-10.png" style="width: 589px; height: 146px;" /></a>
 <p>This won&#8217;t be used during this workshop but can be useful for really time consuming services.</p>
 </div>
 <div class="section" id="creating-services-for-other-functions-convexhull-and-centroid">
@@ -1297,15 +1297,15 @@ value to the Service function for an optional parameter with a default value set
             HAS_SOURCE:  true
         };
     </script>
-      <script type="text/javascript" src="../_static/jquery.js"></script>
-      <script type="text/javascript" src="../_static/underscore.js"></script>
-      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../static/jquery.js"></script>
+      <script type="text/javascript" src="../static/underscore.js"></script>
+      <script type="text/javascript" src="../static/doctools.js"></script>
 
   
 
   
   
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
+    <script type="text/javascript" src="../static/js/theme.js"></script>
   
 
   

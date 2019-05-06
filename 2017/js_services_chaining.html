@@ -18,14 +18,14 @@
   
   
     
-      <link rel="search" type="application/opensearchdescription+xml" title="Search within ZOO-Project 1.7 documentation" href="../_static/opensearch.xml"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within ZOO-Project 1.7 documentation" href="../static/opensearch.xml"/>
     
 
   
 
   
   
-    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../static/css/theme.css" type="text/css" />
   
 
   
@@ -37,7 +37,7 @@
         <link rel="prev" title="Building blocks presentation - Using OGR and PgRouting based Web Services" href="building_blocks_presentation.html"/> 
 
   
-  <script src="../_static/js/modernizr.min.js"></script>
+  <script src="../static/js/modernizr.min.js"></script>
 
 </head>
 
@@ -205,7 +205,7 @@ using the services you seen before and the WFS server using the ZOO-API. The
 final goal is to query all POIs included in a buffer around a feature and
 to highlight them using a mask around this buffer. The following screenshot show
 you the expected result when using the routing interface:</p>
-<a class="reference internal image-reference" href="../_images/BufferMaskAndRequest_Routing_Level_154.png"><img alt="../_images/BufferMaskAndRequest_Routing_Level_154.png" class="align-center" src="../_images/BufferMaskAndRequest_Routing_Level_154.png" style="width: 650px;" /></a>
+<a class="reference internal image-reference" href="../images/BufferMaskAndRequest_Routing_Level_154.png"><img alt="../images/BufferMaskAndRequest_Routing_Level_154.png" class="align-center" src="../images/BufferMaskAndRequest_Routing_Level_154.png" style="width: 650px;" /></a>
 <p>You can decompose the result above in two different ones: the mask around the
 buffer and the points included in the buffer. So you will create two different
 Services: one called <code class="docutils literal"><span class="pre">BufferMask</span></code> and another one called <code class="docutils literal"><span class="pre">BufferRequest</span></code>.</p>
@@ -279,7 +279,7 @@ will simply return a rectangular mask around a selected feature. To build this
 mask you will use the Buffer service to create a buffer big enough around a
 selected geometry to cover a significant part of your map. You can see the
 expected result in the following screenshot:</p>
-<a class="reference internal image-reference" href="../_images/Mask_Level_125.png"><img alt="../_images/Mask_Level_125.png" class="align-center" src="../_images/Mask_Level_125.png" style="width: 650px;" /></a>
+<a class="reference internal image-reference" href="../images/Mask_Level_125.png"><img alt="../images/Mask_Level_125.png" class="align-center" src="../images/Mask_Level_125.png" style="width: 650px;" /></a>
 <p>As before, you will first start by writting the ZCFG, then you will write the
 JavaScript source code and finish by publishing your Services Provider.</p>
 <div class="section" id="the-zcfg">
@@ -507,7 +507,7 @@ the &#8220;Mask&#8221; button.</p>
 a hole in the mask you created in <a class="reference external" href="#mask-service">previous section</a>. This service
 will be used to highlight the buffer zone around a selected fature. You get a preview of
 the expected result in the following screenshot:</p>
-<a class="reference internal image-reference" href="../_images/BufferMask_Level_155.png"><img alt="../_images/BufferMask_Level_155.png" class="align-center" src="../_images/BufferMask_Level_155.png" style="width: 650px;" /></a>
+<a class="reference internal image-reference" href="../images/BufferMask_Level_155.png"><img alt="../images/BufferMask_Level_155.png" class="align-center" src="../images/BufferMask_Level_155.png" style="width: 650px;" /></a>
 <div class="section" id="id6">
 <h3><a class="toc-backref" href="#table-of-contents">The ZCFG</a><a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
 <p>Open the file named
@@ -647,7 +647,7 @@ use your service, please use the following <a class="reference external" href="h
 POIs included in the Buffer around a selected feature <a class="footnote-reference" href="#f8" id="id9">[6]</a>. You will use the <code class="docutils literal"><span class="pre">poi</span></code>
 layer served as WFS through your local mapserver installation. You can see in the
 following screenshot the expected result:</p>
-<a class="reference internal image-reference" href="../_images/BufferRequest_Level_155.png"><img alt="../_images/BufferRequest_Level_155.png" class="align-center" src="../_images/BufferRequest_Level_155.png" style="width: 650px;" /></a>
+<a class="reference internal image-reference" href="../images/BufferRequest_Level_155.png"><img alt="../images/BufferRequest_Level_155.png" class="align-center" src="../images/BufferRequest_Level_155.png" style="width: 650px;" /></a>
 <div class="section" id="id10">
 <h3><a class="toc-backref" href="#table-of-contents">The ZCFG</a><a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
 <p>Open the file named
@@ -858,15 +858,15 @@ presentation here, you will use only this default ones.</td></tr>
             HAS_SOURCE:  true
         };
     </script>
-      <script type="text/javascript" src="../_static/jquery.js"></script>
-      <script type="text/javascript" src="../_static/underscore.js"></script>
-      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../static/jquery.js"></script>
+      <script type="text/javascript" src="../static/underscore.js"></script>
+      <script type="text/javascript" src="../static/doctools.js"></script>
 
   
 
   
   
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
+    <script type="text/javascript" src="../static/js/theme.js"></script>
   
 
   
