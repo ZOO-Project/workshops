@@ -1,0 +1,150 @@
+.. _ogr_base_vect_ops:
+
+Building blocks presentation - Using OGR and PgRouting based Web Services 
+==========================================================================
+
+.. contents:: Table of Contents
+    :depth: 5
+    :backlinks: top
+
+Introduction
+---------------------------------------------------
+
+In this section, you will use the basic ZOO-Services : ``Buffer``, 
+``Intersection`` and ``Difference`` which use OGR and psycopg Python
+modules by using a User Interface using the ZOO-Client to invoke WPS
+requests.
+The intended goal of this section is to present and interact with your
+new building blocks before chaining them in the next section.
+
+To get this demo working, you need to follow the `PgRouting quick
+start
+<https://live.osgeo.org/en/quickstart/pgrouting_quickstart.html>`_ and
+then, to run the following command.
+
+.. code-block:: guess
+    
+    cd ~/Downloads
+    wget http://zoo-project.org/dl/2017/zoo-ws-2017.tar.bz2
+    sudo tar -xvjpf zoo-ws-2017.tar.bz2 -C /
+    wget http://zoo-project.org/dl/2017/ws2017.sql
+    psql city_routing -f ws2017.sql
+
+Then, you should use the following links to access the user
+interfaces and interact with your services, the first one is used to
+access basic spatial-tools demo client interface and  the second to
+access the routing application :
+
+    * `http://localhost/zoo-demo/ogr-example.html <http://localhost/zoo-demo/ogr-example.html>`__
+    * `http://localhost/zoo-demo-2017/routing.html <http://localhost/zoo-demo-2017/routing.html>`__
+    * `http://localhost/zoo-demo-2017/spatialtool-bs1.html <http://localhost/zoo-demo-2017/routing.html>`__
+
+Services Provider and configuration files
+---------------------------------------------------
+
+First you may verify if the ZOO-Services are available from your current setup.
+You can take a look at the ``Buffer.zcfg``, ``Intersection.zcfg`` and 
+``Difference.zcfg`` to get details about parameters.
+As you can see from the ZCFG files, you will use ZOO-Services provided by the 
+``ogr_service.zo`` C service provider. So if you want to modify the Python code
+you will have to edit the corresponding file (so ``service.py``). 
+You are invited to use similar requests as the one used in previous
+sections to learn about each services individually.
+
+The Buffer Service
+---------------------------------------------------
+
+First click on a street then once the street is displayed in blue, click the 
+'Buffer' button on top, you should get similar result as displayed in the following.
+
+.. image:: ./images/Buffer_Level_15.png
+   :width: 650px
+   :align: center
+
+The Intersection Service
+---------------------------------------------------
+
+Using the same client interface as before, once you get a Buffer, you can then 
+select a street intersecting the Buffer geometry to compute intersection by clicking on the Intersection button.
+
+    
+.. image:: ./images/Intersection_Level_15.png
+   :width: 650px
+   :align: center
+
+
+The Difference Service
+---------------------------------------------------
+
+Using the same instructions as for Intersetion, you can get the following result.
+
+.. image:: ./images/Difference_Level_15.png
+   :width: 650px
+   :align: center
+
+
+The Routing and Profile Services
+---------------------------------------------------
+
+First click on the blue flag then place your starting point on the
+map, do the same with the red flag to get the shortest path computed
+by the dedicated service and then display its profile. Note that when
+you pass the mouse over the profile display then you will see its
+corresponding position displayed on the map. You can also click on a
+specific step in your path to get the corresponding line displayed.
+
+.. image:: ./images/Routing_Basic.png
+   :width: 650px
+   :align: center
+
+If you take a look in the file: ``/usr/lib/cgi-bin/routing/do.zcfg``
+you may notice something new in the supported format which is
+reproduced here after. 
+ 
+.. code-block:: guess
+    
+    <Supported>
+     mimeType = image/png
+     asReference = true
+     msStyle = STYLE COLOR 125 250 105 OUTLINECOLOR 0 0 0 WIDTH 3 END
+     useMapServer = true
+     extension = json
+    </Supported>
+
+The ``mimeType`` is defined as ``image/png`` and there is two new
+parameter which are both optional:
+
+  * ``useMapServer``: which make you able to inform the ZOO-Kernel
+    that it have to use MapServer to publish your result as WMS / WFS or WCS (this last
+    won't be used in this workshop) rather than simply storing the
+    result as a file.
+  * ``msStyle``: which let you define your own MapServer ``STYLE`` block definition.
+
+When you need to access a result many time or for different purpose
+accross other services then it is really useful to ask ZOO-Kernel to
+publish your result as WMS, WFS or WCS.
+
+Note that no modification of the code of the do service was required
+to handle automatic pubilcation of the result as it is a vector format
+supported by OGR, only modification of the zcfg was required.
+
+This routing example is here to illustrate how easy it is to publish
+your result as WMS, WFS or WCS ressource. Indeed, when your routing 
+service was called, ZOO-Kernel published the result as WMS and WFS 
+ressources which was both used first for the UI purpose, the WMS to 
+display the resulting path on the map, the WFS for displaying details 
+about each steps. The WFS protocol is also used as the input value 
+for the profile computation. So, the computation was run once
+and accessed three times for different purposes and from different 
+clients.
+
+For more informations about the MapServer support, please refer to `the
+official  ZOO-Project Documentation <http://zoo-project.org/docs/kernel/mapserver.html>`_.
+
+Conclusion
+---------------------------------------------------
+
+Now you know this three services, and you get a simple interface to interact 
+with your MapServer WFS and your ZOO-Project WPS Servers, you are ready to use 
+the Services in a different way, by chaining them using the JavaScript ZOO-API to build 
+more complexe and powerfull services.
