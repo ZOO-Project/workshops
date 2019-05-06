@@ -7,7 +7,7 @@ ZOO-Project Workshop 2013
 :Original Title: **ZOO-Project: playing with building blocks to build pgRouting web application**
 :Author:  Gérald Fenoy, Nicolas Bozon, Venkatesh Raghavan
 :Contact: gerald.fenoy at geolabs.fr, nicolas.bozon at gmail.com, venka at osgeo.org
-:Last Updated: $Date: 2015-07-02 18:10:28 +0200 (Jeu, 02 jul 2015) $
+:Last Updated: $Date$
 :Events: FOSS4G 2013 Nottingham, FOSS4G-CEE 2013 Bucharest
 
 .. image:: ./images/foss4g2013-white-300.png

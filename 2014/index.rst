@@ -8,7 +8,7 @@ ZOO-Project workshop 2014
 		 Examples of Python based WPS using PgRouting**
 :Author:  Gérald Fenoy, Nicolas Bozon, Venkatesh Raghavan
 :Contact: gerald.fenoy at geolabs.fr, nicolas.bozon at gmail.com, venka at osgeo.org
-:Last Updated: $Date: 2015-07-02 18:10:28 +0200 (Jeu, 02 jul 2015) $
+:Last Updated: $Date$
 :Events: FOSS4G 2014 Portland
 
 .. image:: ./images/FOSS4G_Ad_200x100_2x.jpg

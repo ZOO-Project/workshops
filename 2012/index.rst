@@ -7,7 +7,7 @@ ZOO-Project Workshop 2012
 :Original Title: **Practical Introduction to ZOO-Project by playing with building blocks**
 :Author:  Nicolas Bozon, Gérald Fenoy, Venkatesh Raghavan
 :Contact: gerald.fenoy at geolabs.fr, nicolas.bozon at gmail.com
-:Last Updated: $Date: 2015-07-02 18:10:28 +0200 (Jeu, 02 jul 2015) $
+:Last Updated: $Date$
 :Events: FOSS4G 2012 Prague
 
 .. image:: ./images/foss4gcee2012.png
