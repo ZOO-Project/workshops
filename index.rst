@@ -11,6 +11,7 @@ the ZOO-Project for the first time in an `OSGeoLive
 .. toctree::
    :maxdepth: 1
 
+   2022/index
    2017/index
    2016/index
    2015/index
@@ -44,7 +45,7 @@ Attribution-ShareAlike 4.0 International Public License (`CC-BY-SA
 .. image:: ./_static/neogeo-logo.png
    :width: 156px
    :height: 56px 
-   :target: http://www-neogeo-online.net/  
+   :target: http://www.neogeo-online.net/  
 
 .. image:: ./_static/3liz-logo.png
    :width: 156px
