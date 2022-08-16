@@ -30,7 +30,7 @@ jobs:
         run: |
           mkdir -p workshops ; 
           docker run --rm -v $(pwd):/docs sphinxdoc/sphinx make html ; 
-          sudo mv _build/html workshops ;
+          sudo mv _build/html/* workshops/ ;
           sudo touch workshops/.nojekyll ;
           
       # Runs a set of commands using the runners shell
