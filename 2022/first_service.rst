@@ -321,7 +321,7 @@ Once you finish editing the file, you should copy it in the ``/usr/lib/cgi-bin``
 
 .. code-block:: none
     
-    sudo cp /home/user/zoo-ws/ws_sp/cgi-env/* /usr/lib/cgi-bin
+    cp docker/ws2022_sp/test_service.py docker/ws2022
 
 
 Interracting with your service using Execute requests
