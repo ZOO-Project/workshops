@@ -307,7 +307,7 @@ The Hello Service
 .......................................................
 
 You can copy and paste the following into the 
-``/home/user/zoo-ws/ws_sp/cgi-env/test_service.py`` file.
+``docker/ws2022_sp/test_service.py`` file.
 
 .. code-block:: python
     
@@ -317,7 +317,7 @@ You can copy and paste the following into the
 		"Hello "+inputs["name"]["value"]+" from the ZOO-Project Python world !"
         return zoo.SERVICE_SUCCEEDED
 
-Once you finish editing the file, you should copy it in the ``/usr/lib/cgi-bin`` directory: 
+Once you finish editing the file, you should copy it in the ``ws2022`` directory: 
 
 .. code-block:: none
     
