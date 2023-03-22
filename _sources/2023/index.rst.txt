@@ -10,7 +10,7 @@ ZOO-Project introduction to OGC API - Processes - Part 1: Core secutiy
 :Last Updated: $Date$
 :Events: OGC 125th members meeting Frascati
 
-.. image:: https://www.ogc.org/wp-content/uploads/2022/10/frascati-web-banner-1024x536.png
+.. image:: https://camo.githubusercontent.com/cef0191706f7699d98b3378519afc920890e87e6be5a92ef37673e6595affbe7/68747470733a2f2f7777772e6f67632e6f72672f77702d636f6e74656e742f75706c6f6164732f323032322f31302f66726173636174692d7765622d62616e6e65722d31303234783533362e706e67
    :target: https://eo4society.esa.int/event/125th-ogc-member-meeting-europe/
    :align: center
    :width: 50%
