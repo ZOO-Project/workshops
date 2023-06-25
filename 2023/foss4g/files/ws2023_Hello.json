@@ -1,0 +1,10 @@
+{
+    "inputs": {
+        "name": "attendees"
+    },
+    "outputs": {
+        "Result": {
+            "transmissionMode": "value"
+        }
+    }
+}
