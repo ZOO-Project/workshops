@@ -11,6 +11,7 @@ the ZOO-Project for the first time in an `OSGeoLive
 .. toctree::
    :maxdepth: 1
 
+   2024/foss4g-europe/index
    2023/foss4g/index
    2023/ogc-member-meeting/index
    2022/index
