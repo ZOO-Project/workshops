@@ -10,7 +10,7 @@ he demo UI working with your services.
     
     docker compose exec zookernel bash
     # From the container run the following commands:
-    curl -o /usr/lib/cgi-bin/foss4ws.js https://raw.githubusercontent.com/ZOO-Project/workshops/master/2023/foss4g/files/foss4ws.js
+    curl -o /usr/lib/cgi-bin/foss4gws.js https://raw.githubusercontent.com/ZOO-Project/workshops/master/2023/foss4g/files/foss4gws.js
     curl -o /usr/lib/cgi-bin/Mask.zcfg https://raw.githubusercontent.com/ZOO-Project/workshops/master/2023/foss4g/files/Mask.zcfg
     curl -o /usr/lib/cgi-bin/BufferMask.zcfg https://raw.githubusercontent.com/ZOO-Project/workshops/master/2023/foss4g/files/BufferMask.zcfg    
     curl -o /usr/lib/cgi-bin/BufferRequest.zcfg https://raw.githubusercontent.com/ZOO-Project/workshops/master/2023/foss4g/files/BufferRequest.zcfg

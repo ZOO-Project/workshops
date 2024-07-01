@@ -25,8 +25,6 @@
 
   
   
-    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  
 
   
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -53,7 +51,7 @@
   <div class="wy-grid-for-nav">
 
     
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
       <div class="wy-side-nav-search">
         
 
@@ -81,6 +79,15 @@
           
           
               <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../2024/foss4g-europe/index.html">ZOO-Project – Introduction to OGC API - Processes - Part 1: Core</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../2024/foss4g-europe/introduction.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2024/foss4g-europe/using_zoo_from_docker.html">Installation, configuration and ZOO-Kernel use</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2024/foss4g-europe/first_service.html">Creating your first ZOO-Service</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2024/foss4g-europe/building_blocks_presentation.html">Building blocks presentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2024/foss4g-europe/js_services_chaining.html">Playing with building blocks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2024/foss4g-europe/solutions.html">Issue playing with building blocks?</a></li>
+</ul>
+</li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">ZOO-Project – Introduction to OGC API - Processes - Part 1: Core</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="introduction.html">Introduction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="using_zoo_from_docker.html">Installation, configuration and ZOO-Kernel use</a></li>
@@ -198,7 +205,7 @@
           <div role="main" class="document">
             
   <section id="playing-with-building-blocks">
-<span id="js-service-chaining"></span><h1><a class="toc-backref" href="#table-of-contents" role="doc-backlink">Playing with building blocks</a><a class="headerlink" href="#playing-with-building-blocks" title="Permalink to this heading">¶</a></h1>
+<span id="js-service-chaining"></span><h1><a class="toc-backref" href="#table-of-contents" role="doc-backlink">Playing with building blocks</a><a class="headerlink" href="#playing-with-building-blocks" title="Link to this heading">¶</a></h1>
 <a class="reference internal image-reference" href="https://www.svgrepo.com/show/382879/building-blocks-lego-toy.svg"><img alt="https://www.svgrepo.com/show/382879/building-blocks-lego-toy.svg" class="align-left" src="https://www.svgrepo.com/show/382879/building-blocks-lego-toy.svg" width="50px" /></a>
 <nav class="contents" id="table-of-contents">
 <p class="topic-title">Table of Contents</p>
@@ -234,14 +241,15 @@
 </ul>
 </nav>
 <section id="introduction">
-<h2><a class="toc-backref" href="#table-of-contents" role="doc-backlink">Introduction</a><a class="headerlink" href="#introduction" title="Permalink to this heading">¶</a></h2>
+<h2><a class="toc-backref" href="#table-of-contents" role="doc-backlink">Introduction</a><a class="headerlink" href="#introduction" title="Link to this heading">¶</a></h2>
 <p>This section illustrate how you can use JavaScript on the server-side to chain
 services together to build new ones. You will create a ZOO Services Provider
 using the services you seen before and the WFS server using the ZOO-API. The
 final goal is to query all POIs included in a buffer around a feature and
 to highlight them using a mask around this buffer. The following screenshot show
 you the expected result:</p>
-<a class="reference internal image-reference" href="../../_images/BufferMaskAndRequest_Level_154.png"><img alt="../../_images/BufferMaskAndRequest_Level_154.png" class="align-center" src="../../_images/BufferMaskAndRequest_Level_154.png" style="width: 650px;" /></a>
+<a class="reference internal image-reference" href="../../_images/BufferMaskAndRequest_Level_154.png"><img alt="../../_images/BufferMaskAndRequest_Level_154.png" class="align-center" src="../../_images/BufferMaskAndRequest_Level_154.png" style="width: 650px;" />
+</a>
 <p>You can decompose the result above in two different ones: the mask around the
 buffer and the points included in the buffer. So you will create two different
 Services: one called <code class="docutils literal notranslate"><span class="pre">BufferMask</span></code> and another one called <code class="docutils literal notranslate"><span class="pre">BufferRequest</span></code>.</p>
@@ -254,7 +262,7 @@ Provider:</p>
 </div>
 </section>
 <section id="zoo-api-overview">
-<h2><a class="toc-backref" href="#table-of-contents" role="doc-backlink">ZOO-API Overview</a><a class="headerlink" href="#zoo-api-overview" title="Permalink to this heading">¶</a></h2>
+<h2><a class="toc-backref" href="#table-of-contents" role="doc-backlink">ZOO-API Overview</a><a class="headerlink" href="#zoo-api-overview" title="Link to this heading">¶</a></h2>
 <p>ZOO-API and ZOO-Kernel JavaScript support make you able to run services
 implemented in JavaScript on the server side. JavaScript is a popular programing
 language but mostly used on the client side. Let say from a browser, but here it
@@ -309,17 +317,18 @@ JavaScript  Service code:</p>
 BufferRequest service, let start with a simplier one.</p>
 </section>
 <section id="the-mask-service">
-<h2><a class="toc-backref" href="#table-of-contents" role="doc-backlink">The Mask Service</a><a class="headerlink" href="#the-mask-service" title="Permalink to this heading">¶</a></h2>
+<h2><a class="toc-backref" href="#table-of-contents" role="doc-backlink">The Mask Service</a><a class="headerlink" href="#the-mask-service" title="Link to this heading">¶</a></h2>
 <p>In this section you will learn how to create your first JavaScript service which
 will simply return a rectangular mask around a selected feature. To build this
 mask you will use the Buffer service to create a buffer big enough around a
 selected geometry to cover a significant part of your map. You can see the
 expected result in the following screenshot:</p>
-<a class="reference internal image-reference" href="../../_images/Mask_Level_127.png"><img alt="../../_images/Mask_Level_127.png" class="align-center" src="../../_images/Mask_Level_127.png" style="width: 650px;" /></a>
+<a class="reference internal image-reference" href="../../_images/Mask_Level_127.png"><img alt="../../_images/Mask_Level_127.png" class="align-center" src="../../_images/Mask_Level_127.png" style="width: 650px;" />
+</a>
 <p>As before, you will first start by writting the ZCFG, then you will write the
 JavaScript source code and finish by publishing your Services Provider.</p>
 <section id="the-zcfg">
-<h3><a class="toc-backref" href="#table-of-contents" role="doc-backlink">The ZCFG</a><a class="headerlink" href="#the-zcfg" title="Permalink to this heading">¶</a></h3>
+<h3><a class="toc-backref" href="#table-of-contents" role="doc-backlink">The ZCFG</a><a class="headerlink" href="#the-zcfg" title="Link to this heading">¶</a></h3>
 <p>Open a file named
 <code class="docutils literal notranslate"><span class="pre">myChain/Mask.zcfg</span></code>
 with your favorite text editor and add the following content:</p>
@@ -360,7 +369,7 @@ with your favorite text editor and add the following content:</p>
 <code class="docutils literal notranslate"><span class="pre">Result</span></code>: a GML and a GeoJSON respectively <a class="footnote-reference brackets" href="#f7" id="id5" role="doc-noteref"><span class="fn-bracket">[</span>5<span class="fn-bracket">]</span></a>.</p>
 </section>
 <section id="the-javascript-service">
-<h3><a class="toc-backref" href="#table-of-contents" role="doc-backlink">The JavaScript service</a><a class="headerlink" href="#the-javascript-service" title="Permalink to this heading">¶</a></h3>
+<h3><a class="toc-backref" href="#table-of-contents" role="doc-backlink">The JavaScript service</a><a class="headerlink" href="#the-javascript-service" title="Link to this heading">¶</a></h3>
 <p>As you will have to request the Buffer service many times from your service, you
 will first define <code class="docutils literal notranslate"><span class="pre">Buffer</span></code> and <code class="docutils literal notranslate"><span class="pre">BufferToBBOX</span></code> functions as
 follow. It uses the <code class="docutils literal notranslate"><span class="pre">ZOO.Process</span></code> to request the Buffer service you
@@ -437,13 +446,13 @@ add the following content:</p>
 </div>
 </section>
 <section id="publish-and-use-your-service">
-<h3><a class="toc-backref" href="#table-of-contents" role="doc-backlink">Publish and use your Service</a><a class="headerlink" href="#publish-and-use-your-service" title="Permalink to this heading">¶</a></h3>
+<h3><a class="toc-backref" href="#table-of-contents" role="doc-backlink">Publish and use your Service</a><a class="headerlink" href="#publish-and-use-your-service" title="Link to this heading">¶</a></h3>
 <p>Now you get both your ZCFG and your service code ready, you need to deploy your
 new Services Provider using the following command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> i <span class="k">in</span> <span class="k">$(</span>ls myChain<span class="k">)</span><span class="p">;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span>i<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="k">$(</span>ls<span class="w"> </span>myChain<span class="k">)</span><span class="p">;</span>
 <span class="k">do</span>
-    docker cp myChain/<span class="nv">$i</span> <span class="se">\</span>
-            zoo-project_zookernel_1:/usr/lib/cgi-bin/<span class="nv">$i</span> <span class="p">;</span>
+<span class="w">    </span>docker<span class="w"> </span>cp<span class="w"> </span>myChain/<span class="nv">$i</span><span class="w"> </span><span class="se">\</span>
+<span class="w">            </span>zoo-project_zookernel_1:/usr/lib/cgi-bin/<span class="nv">$i</span><span class="w"> </span><span class="p">;</span>
 <span class="k">done</span>
 </pre></div>
 </div>
@@ -452,14 +461,15 @@ the “Mask” button.</p>
 </section>
 </section>
 <section id="buffermask-service">
-<h2><a class="toc-backref" href="#table-of-contents" role="doc-backlink">BufferMask Service</a><a class="headerlink" href="#buffermask-service" title="Permalink to this heading">¶</a></h2>
+<h2><a class="toc-backref" href="#table-of-contents" role="doc-backlink">BufferMask Service</a><a class="headerlink" href="#buffermask-service" title="Link to this heading">¶</a></h2>
 <p>In this section you will implement a simple JavaScript service which will be able create
 a hole in the mask you created in <a class="reference external" href="#mask-service">previous section</a>. This service
 will be used to highlight the buffer zone around a selected fature. You get a preview of
 the expected result in the following screenshot:</p>
-<a class="reference internal image-reference" href="../../_images/BufferMask_Level_157.png"><img alt="../../_images/BufferMask_Level_157.png" class="align-center" src="../../_images/BufferMask_Level_157.png" style="width: 650px;" /></a>
+<a class="reference internal image-reference" href="../../_images/BufferMask_Level_157.png"><img alt="../../_images/BufferMask_Level_157.png" class="align-center" src="../../_images/BufferMask_Level_157.png" style="width: 650px;" />
+</a>
 <section id="id6">
-<h3><a class="toc-backref" href="#table-of-contents" role="doc-backlink">The ZCFG</a><a class="headerlink" href="#id6" title="Permalink to this heading">¶</a></h3>
+<h3><a class="toc-backref" href="#table-of-contents" role="doc-backlink">The ZCFG</a><a class="headerlink" href="#id6" title="Link to this heading">¶</a></h3>
 <p>Open the file named
 <code class="docutils literal notranslate"><span class="pre">myChain/BufferMask.zcfg</span></code>
 with your favorite text editor and copy / paste the following content:</p>
@@ -500,7 +510,7 @@ with your favorite text editor and copy / paste the following content:</p>
 <a class="reference external" href="#the-zcfg">previous section</a> for more informations.</p>
 </section>
 <section id="id7">
-<h3><a class="toc-backref" href="#table-of-contents" role="doc-backlink">The JavaScript service</a><a class="headerlink" href="#id7" title="Permalink to this heading">¶</a></h3>
+<h3><a class="toc-backref" href="#table-of-contents" role="doc-backlink">The JavaScript service</a><a class="headerlink" href="#id7" title="Link to this heading">¶</a></h3>
 <p>In this Service you will use same source code you used in the
 <a class="reference external" href="#the-javascript-service">previous section</a>. Indeed, you should
 compute the Mask as you did before then compute Buffer for creating a
@@ -546,20 +556,21 @@ hole in the mask to run the Difference service.</p>
 </div>
 </section>
 <section id="id8">
-<h3><a class="toc-backref" href="#table-of-contents" role="doc-backlink">Publish and use your Service</a><a class="headerlink" href="#id8" title="Permalink to this heading">¶</a></h3>
+<h3><a class="toc-backref" href="#table-of-contents" role="doc-backlink">Publish and use your Service</a><a class="headerlink" href="#id8" title="Link to this heading">¶</a></h3>
 <p>Now, you can publish your service as you did <a class="reference external" href="#publish-and-use-your-service">before</a>. To use your service, please use
 the following <a class="reference external" href="http://localhost/zoows-2023/">url</a>.</p>
 </section>
 </section>
 <section id="bufferrequest-service">
-<h2><a class="toc-backref" href="#table-of-contents" role="doc-backlink">BufferRequest service</a><a class="headerlink" href="#bufferrequest-service" title="Permalink to this heading">¶</a></h2>
+<h2><a class="toc-backref" href="#table-of-contents" role="doc-backlink">BufferRequest service</a><a class="headerlink" href="#bufferrequest-service" title="Link to this heading">¶</a></h2>
 <p>In this section, you will create a new Service: <code class="docutils literal notranslate"><span class="pre">BufferRequest</span></code> which will request
 POIs included in the Buffer around a selected feature <a class="footnote-reference brackets" href="#f8" id="id9" role="doc-noteref"><span class="fn-bracket">[</span>6<span class="fn-bracket">]</span></a>. You will use the <code class="docutils literal notranslate"><span class="pre">poi</span></code>
 layer served as WFS through your local mapserver installation. You can see in the
 following screenshot the expected result:</p>
-<a class="reference internal image-reference" href="../../_images/BufferRequest_Level_157.png"><img alt="../../_images/BufferRequest_Level_157.png" class="align-center" src="../../_images/BufferRequest_Level_157.png" style="width: 650px;" /></a>
+<a class="reference internal image-reference" href="../../_images/BufferRequest_Level_157.png"><img alt="../../_images/BufferRequest_Level_157.png" class="align-center" src="../../_images/BufferRequest_Level_157.png" style="width: 650px;" />
+</a>
 <section id="id10">
-<h3><a class="toc-backref" href="#table-of-contents" role="doc-backlink">The ZCFG</a><a class="headerlink" href="#id10" title="Permalink to this heading">¶</a></h3>
+<h3><a class="toc-backref" href="#table-of-contents" role="doc-backlink">The ZCFG</a><a class="headerlink" href="#id10" title="Link to this heading">¶</a></h3>
 <p>Open the file named
 <code class="docutils literal notranslate"><span class="pre">myChain/BufferRequest.zcfg</span></code>
 with your favorite text editor and copy / paste the following content:</p>
@@ -598,7 +609,7 @@ with your favorite text editor and copy / paste the following content:</p>
 </div>
 </section>
 <section id="the-javascript-code">
-<h3><a class="toc-backref" href="#table-of-contents" role="doc-backlink">The JavaScript code</a><a class="headerlink" href="#the-javascript-code" title="Permalink to this heading">¶</a></h3>
+<h3><a class="toc-backref" href="#table-of-contents" role="doc-backlink">The JavaScript code</a><a class="headerlink" href="#the-javascript-code" title="Link to this heading">¶</a></h3>
 <p>As in the previous Service, you will compute a buffer around the input feature. But then
 you will request POIs available in the Buffer extent using a WFS request to use them to
 run <code class="docutils literal notranslate"><span class="pre">Intersection</span></code> service using the initial Buffer. The WFS request is useful to limit
@@ -646,7 +657,7 @@ request  as <code class="docutils literal notranslate"><span class="pre">xlink:h
 </div>
 </section>
 <section id="id11">
-<h3><a class="toc-backref" href="#table-of-contents" role="doc-backlink">Publish and use your Service</a><a class="headerlink" href="#id11" title="Permalink to this heading">¶</a></h3>
+<h3><a class="toc-backref" href="#table-of-contents" role="doc-backlink">Publish and use your Service</a><a class="headerlink" href="#id11" title="Link to this heading">¶</a></h3>
 <p>Now, you can publish your service as you did <a class="reference external" href="#publish-and-use-your-service">before</a>. To use your service, please use
 the following <a class="reference external" href="http://localhost/zoows-2023/">url</a>.</p>
 <div class="admonition note">
@@ -657,35 +668,35 @@ in  <a class="reference external" href="#introduction">the initial screenshot</a
 </section>
 </section>
 <section id="conclusion">
-<h2><a class="toc-backref" href="#table-of-contents" role="doc-backlink">Conclusion</a><a class="headerlink" href="#conclusion" title="Permalink to this heading">¶</a></h2>
+<h2><a class="toc-backref" href="#table-of-contents" role="doc-backlink">Conclusion</a><a class="headerlink" href="#conclusion" title="Link to this heading">¶</a></h2>
 <p>After understanding how basic Geometric Operation Services works, here you built step by step new JavaScript services which reuse the previous ones and combine them in different ways. This was achieved using the ZOO-API, composed by C functions exposed by the ZOO-Kernel to the JavaScript services runtime environement and the JS files which can be optionally installed.</p>
 <p class="rubric">Footnotes</p>
 <aside class="footnote-list brackets">
-<aside class="footnote brackets" id="f3" role="note">
+<aside class="footnote brackets" id="f3" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
 <p>The <code class="docutils literal notranslate"><span class="pre">ZOO.Process</span></code> class uses <code class="docutils literal notranslate"><span class="pre">JSRequest</span></code> (cf. <a class="reference external" href="http://zoo-project.org/docs/api/zoo-format-wps.html">ref</a>). You will get example
 of use <a class="reference external" href="#the-javascript-service">later</a>.</p>
 </aside>
-<aside class="footnote brackets" id="f4" role="note">
+<aside class="footnote brackets" id="f4" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
 <p>So <code class="docutils literal notranslate"><span class="pre">conf</span></code>, <code class="docutils literal notranslate"><span class="pre">inputs</span></code> and <code class="docutils literal notranslate"><span class="pre">outputs</span></code> are simple JavaScript objects, similar
 to the Python dictionaries used in the <a class="reference external" href="ogr_base_vect_ops.html">previous section</a>.</p>
 </aside>
-<aside class="footnote brackets" id="f5" role="note">
+<aside class="footnote brackets" id="f5" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">3</a><span class="fn-bracket">]</span></span>
 <p>Such as <code class="docutils literal notranslate"><span class="pre">conf</span></code>, <code class="docutils literal notranslate"><span class="pre">inputs</span></code> and <code class="docutils literal notranslate"><span class="pre">outputs</span></code>.</p>
 </aside>
-<aside class="footnote brackets" id="f6" role="note">
+<aside class="footnote brackets" id="f6" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">4</a><span class="fn-bracket">]</span></span>
 <p>You can also return a conf Object if you get any informations updated from your JavaScript service (such as cookie for instance)</p>
 </aside>
-<aside class="footnote brackets" id="f7" role="note">
+<aside class="footnote brackets" id="f7" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id5">5</a><span class="fn-bracket">]</span></span>
 <p>Using one of the available <code class="docutils literal notranslate"><span class="pre">ZOO.formats</span></code> you are also able to support various
 <code class="docutils literal notranslate"><span class="pre">ComplexData</span></code> for both input and output of the service. To simplify the
 presentation here, you will use only this default ones.</p>
 </aside>
-<aside class="footnote brackets" id="f8" role="note">
+<aside class="footnote brackets" id="f8" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id9">6</a><span class="fn-bracket">]</span></span>
 <p>So in the hole you created in the previous section.</p>
 </aside>
@@ -739,9 +750,6 @@ presentation here, you will use only this default ones.</p>
         };
     </script>
       <script type="text/javascript" src="../../_static/documentation_options.js"></script>
-      <script type="text/javascript" src="../../_static/jquery.js"></script>
-      <script type="text/javascript" src="../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
       <script type="text/javascript" src="../../_static/sphinx_highlight.js"></script>
 

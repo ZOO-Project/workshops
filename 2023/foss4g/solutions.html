@@ -25,8 +25,6 @@
 
   
   
-    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  
 
   
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -53,7 +51,7 @@
   <div class="wy-grid-for-nav">
 
     
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
       <div class="wy-side-nav-search">
         
 
@@ -81,6 +79,15 @@
           
           
               <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../2024/foss4g-europe/index.html">ZOO-Project – Introduction to OGC API - Processes - Part 1: Core</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../2024/foss4g-europe/introduction.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2024/foss4g-europe/using_zoo_from_docker.html">Installation, configuration and ZOO-Kernel use</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2024/foss4g-europe/first_service.html">Creating your first ZOO-Service</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2024/foss4g-europe/building_blocks_presentation.html">Building blocks presentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2024/foss4g-europe/js_services_chaining.html">Playing with building blocks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2024/foss4g-europe/solutions.html">Issue playing with building blocks?</a></li>
+</ul>
+</li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">ZOO-Project – Introduction to OGC API - Processes - Part 1: Core</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="introduction.html">Introduction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="using_zoo_from_docker.html">Installation, configuration and ZOO-Kernel use</a></li>
@@ -198,15 +205,15 @@
           <div role="main" class="document">
             
   <section id="issue-playing-with-building-blocks">
-<span id="js-service-chaining-solutions"></span><h1>Issue playing with building blocks?<a class="headerlink" href="#issue-playing-with-building-blocks" title="Permalink to this heading">¶</a></h1>
+<span id="js-service-chaining-solutions"></span><h1>Issue playing with building blocks?<a class="headerlink" href="#issue-playing-with-building-blocks" title="Link to this heading">¶</a></h1>
 <p>In case you face any issues please use the following command to have
 he demo UI working with your services.</p>
-<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span><span class="nv">docker</span><span class="w"> </span><span class="nv">compose</span><span class="w"> </span><span class="k">exec</span><span class="w"> </span><span class="nv">zookernel</span><span class="w"> </span><span class="nv">bash</span><span class="w"></span>
-#<span class="w"> </span><span class="nv">From</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="nv">container</span><span class="w"> </span><span class="nv">run</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="nv">following</span><span class="w"> </span><span class="nv">commands</span>:<span class="w"></span>
-<span class="nv">curl</span><span class="w"> </span><span class="o">-</span><span class="nv">o</span><span class="w"> </span><span class="o">/</span><span class="nv">usr</span><span class="o">/</span><span class="nv">lib</span><span class="o">/</span><span class="nv">cgi</span><span class="o">-</span><span class="nv">bin</span><span class="o">/</span><span class="nv">foss4ws</span>.<span class="nv">js</span><span class="w"> </span><span class="nv">https</span>:<span class="o">//</span><span class="nv">raw</span>.<span class="nv">githubusercontent</span>.<span class="nv">com</span><span class="o">/</span><span class="nv">ZOO</span><span class="o">-</span><span class="nv">Project</span><span class="o">/</span><span class="nv">workshops</span><span class="o">/</span><span class="nv">master</span><span class="o">/</span><span class="mi">2023</span><span class="o">/</span><span class="nv">foss4g</span><span class="o">/</span><span class="nv">files</span><span class="o">/</span><span class="nv">foss4ws</span>.<span class="nv">js</span><span class="w"></span>
-<span class="nv">curl</span><span class="w"> </span><span class="o">-</span><span class="nv">o</span><span class="w"> </span><span class="o">/</span><span class="nv">usr</span><span class="o">/</span><span class="nv">lib</span><span class="o">/</span><span class="nv">cgi</span><span class="o">-</span><span class="nv">bin</span><span class="o">/</span><span class="nv">Mask</span>.<span class="nv">zcfg</span><span class="w"> </span><span class="nv">https</span>:<span class="o">//</span><span class="nv">raw</span>.<span class="nv">githubusercontent</span>.<span class="nv">com</span><span class="o">/</span><span class="nv">ZOO</span><span class="o">-</span><span class="nv">Project</span><span class="o">/</span><span class="nv">workshops</span><span class="o">/</span><span class="nv">master</span><span class="o">/</span><span class="mi">2023</span><span class="o">/</span><span class="nv">foss4g</span><span class="o">/</span><span class="nv">files</span><span class="o">/</span><span class="nv">Mask</span>.<span class="nv">zcfg</span><span class="w"></span>
-<span class="nv">curl</span><span class="w"> </span><span class="o">-</span><span class="nv">o</span><span class="w"> </span><span class="o">/</span><span class="nv">usr</span><span class="o">/</span><span class="nv">lib</span><span class="o">/</span><span class="nv">cgi</span><span class="o">-</span><span class="nv">bin</span><span class="o">/</span><span class="nv">BufferMask</span>.<span class="nv">zcfg</span><span class="w"> </span><span class="nv">https</span>:<span class="o">//</span><span class="nv">raw</span>.<span class="nv">githubusercontent</span>.<span class="nv">com</span><span class="o">/</span><span class="nv">ZOO</span><span class="o">-</span><span class="nv">Project</span><span class="o">/</span><span class="nv">workshops</span><span class="o">/</span><span class="nv">master</span><span class="o">/</span><span class="mi">2023</span><span class="o">/</span><span class="nv">foss4g</span><span class="o">/</span><span class="nv">files</span><span class="o">/</span><span class="nv">BufferMask</span>.<span class="nv">zcfg</span><span class="w"></span>
-<span class="nv">curl</span><span class="w"> </span><span class="o">-</span><span class="nv">o</span><span class="w"> </span><span class="o">/</span><span class="nv">usr</span><span class="o">/</span><span class="nv">lib</span><span class="o">/</span><span class="nv">cgi</span><span class="o">-</span><span class="nv">bin</span><span class="o">/</span><span class="nv">BufferRequest</span>.<span class="nv">zcfg</span><span class="w"> </span><span class="nv">https</span>:<span class="o">//</span><span class="nv">raw</span>.<span class="nv">githubusercontent</span>.<span class="nv">com</span><span class="o">/</span><span class="nv">ZOO</span><span class="o">-</span><span class="nv">Project</span><span class="o">/</span><span class="nv">workshops</span><span class="o">/</span><span class="nv">master</span><span class="o">/</span><span class="mi">2023</span><span class="o">/</span><span class="nv">foss4g</span><span class="o">/</span><span class="nv">files</span><span class="o">/</span><span class="nv">BufferRequest</span>.<span class="nv">zcfg</span><span class="w"></span>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span><span class="nv">docker</span><span class="w"> </span><span class="nv">compose</span><span class="w"> </span><span class="k">exec</span><span class="w"> </span><span class="nv">zookernel</span><span class="w"> </span><span class="nv">bash</span>
+#<span class="w"> </span><span class="nv">From</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="nv">container</span><span class="w"> </span><span class="nv">run</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="nv">following</span><span class="w"> </span><span class="nv">commands</span>:
+<span class="nv">curl</span><span class="w"> </span><span class="o">-</span><span class="nv">o</span><span class="w"> </span><span class="o">/</span><span class="nv">usr</span><span class="o">/</span><span class="nv">lib</span><span class="o">/</span><span class="nv">cgi</span><span class="o">-</span><span class="nv">bin</span><span class="o">/</span><span class="nv">foss4gws</span>.<span class="nv">js</span><span class="w"> </span><span class="nv">https</span>:<span class="o">//</span><span class="nv">raw</span>.<span class="nv">githubusercontent</span>.<span class="nv">com</span><span class="o">/</span><span class="nv">ZOO</span><span class="o">-</span><span class="nv">Project</span><span class="o">/</span><span class="nv">workshops</span><span class="o">/</span><span class="nv">master</span><span class="o">/</span><span class="mi">2023</span><span class="o">/</span><span class="nv">foss4g</span><span class="o">/</span><span class="nv">files</span><span class="o">/</span><span class="nv">foss4gws</span>.<span class="nv">js</span>
+<span class="nv">curl</span><span class="w"> </span><span class="o">-</span><span class="nv">o</span><span class="w"> </span><span class="o">/</span><span class="nv">usr</span><span class="o">/</span><span class="nv">lib</span><span class="o">/</span><span class="nv">cgi</span><span class="o">-</span><span class="nv">bin</span><span class="o">/</span><span class="nv">Mask</span>.<span class="nv">zcfg</span><span class="w"> </span><span class="nv">https</span>:<span class="o">//</span><span class="nv">raw</span>.<span class="nv">githubusercontent</span>.<span class="nv">com</span><span class="o">/</span><span class="nv">ZOO</span><span class="o">-</span><span class="nv">Project</span><span class="o">/</span><span class="nv">workshops</span><span class="o">/</span><span class="nv">master</span><span class="o">/</span><span class="mi">2023</span><span class="o">/</span><span class="nv">foss4g</span><span class="o">/</span><span class="nv">files</span><span class="o">/</span><span class="nv">Mask</span>.<span class="nv">zcfg</span>
+<span class="nv">curl</span><span class="w"> </span><span class="o">-</span><span class="nv">o</span><span class="w"> </span><span class="o">/</span><span class="nv">usr</span><span class="o">/</span><span class="nv">lib</span><span class="o">/</span><span class="nv">cgi</span><span class="o">-</span><span class="nv">bin</span><span class="o">/</span><span class="nv">BufferMask</span>.<span class="nv">zcfg</span><span class="w"> </span><span class="nv">https</span>:<span class="o">//</span><span class="nv">raw</span>.<span class="nv">githubusercontent</span>.<span class="nv">com</span><span class="o">/</span><span class="nv">ZOO</span><span class="o">-</span><span class="nv">Project</span><span class="o">/</span><span class="nv">workshops</span><span class="o">/</span><span class="nv">master</span><span class="o">/</span><span class="mi">2023</span><span class="o">/</span><span class="nv">foss4g</span><span class="o">/</span><span class="nv">files</span><span class="o">/</span><span class="nv">BufferMask</span>.<span class="nv">zcfg</span>
+<span class="nv">curl</span><span class="w"> </span><span class="o">-</span><span class="nv">o</span><span class="w"> </span><span class="o">/</span><span class="nv">usr</span><span class="o">/</span><span class="nv">lib</span><span class="o">/</span><span class="nv">cgi</span><span class="o">-</span><span class="nv">bin</span><span class="o">/</span><span class="nv">BufferRequest</span>.<span class="nv">zcfg</span><span class="w"> </span><span class="nv">https</span>:<span class="o">//</span><span class="nv">raw</span>.<span class="nv">githubusercontent</span>.<span class="nv">com</span><span class="o">/</span><span class="nv">ZOO</span><span class="o">-</span><span class="nv">Project</span><span class="o">/</span><span class="nv">workshops</span><span class="o">/</span><span class="nv">master</span><span class="o">/</span><span class="mi">2023</span><span class="o">/</span><span class="nv">foss4g</span><span class="o">/</span><span class="nv">files</span><span class="o">/</span><span class="nv">BufferRequest</span>.<span class="nv">zcfg</span>
 </pre></div>
 </div>
 <p>Load the <a class="reference external" href="http://localhost/zoows-2023/#">url</a> again, it should work
@@ -259,9 +266,6 @@ properly now.</p>
         };
     </script>
       <script type="text/javascript" src="../../_static/documentation_options.js"></script>
-      <script type="text/javascript" src="../../_static/jquery.js"></script>
-      <script type="text/javascript" src="../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
       <script type="text/javascript" src="../../_static/sphinx_highlight.js"></script>
 

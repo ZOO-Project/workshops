@@ -25,8 +25,6 @@
 
   
   
-    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  
 
   
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -53,7 +51,7 @@
   <div class="wy-grid-for-nav">
 
     
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
       <div class="wy-side-nav-search">
         
 
@@ -81,6 +79,15 @@
           
           
               <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../2024/foss4g-europe/index.html">ZOO-Project – Introduction to OGC API - Processes - Part 1: Core</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../2024/foss4g-europe/introduction.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2024/foss4g-europe/using_zoo_from_docker.html">Installation, configuration and ZOO-Kernel use</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2024/foss4g-europe/first_service.html">Creating your first ZOO-Service</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2024/foss4g-europe/building_blocks_presentation.html">Building blocks presentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2024/foss4g-europe/js_services_chaining.html">Playing with building blocks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2024/foss4g-europe/solutions.html">Issue playing with building blocks?</a></li>
+</ul>
+</li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">ZOO-Project – Introduction to OGC API - Processes - Part 1: Core</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="introduction.html">Introduction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="using_zoo_from_docker.html">Installation, configuration and ZOO-Kernel use</a></li>
@@ -198,7 +205,7 @@
           <div role="main" class="document">
             
   <section id="creating-your-first-zoo-service">
-<span id="first-service"></span><h1><a class="toc-backref" href="#table-of-contents" role="doc-backlink">Creating your first ZOO Service</a><a class="headerlink" href="#creating-your-first-zoo-service" title="Permalink to this heading">¶</a></h1>
+<span id="first-service"></span><h1><a class="toc-backref" href="#table-of-contents" role="doc-backlink">Creating your first ZOO Service</a><a class="headerlink" href="#creating-your-first-zoo-service" title="Link to this heading">¶</a></h1>
 <nav class="contents" id="table-of-contents">
 <p class="topic-title">Table of Contents</p>
 <ul class="simple">
@@ -226,7 +233,7 @@
 </ul>
 </nav>
 <section id="introduction">
-<h2><a class="toc-backref" href="#table-of-contents" role="doc-backlink">Introduction</a><a class="headerlink" href="#introduction" title="Permalink to this heading">¶</a></h2>
+<h2><a class="toc-backref" href="#table-of-contents" role="doc-backlink">Introduction</a><a class="headerlink" href="#introduction" title="Link to this heading">¶</a></h2>
 <p>In this secion, you will create and publish a simple ZOO-Service named
 <code class="docutils literal notranslate"><span class="pre">Hello</span></code> which will simply return a hello message containing the
 input value provided. It will be usefull to present in deeper details
@@ -234,7 +241,7 @@ general concept on how ZOO-Kernel works and handles execution
 requests.</p>
 </section>
 <section id="service-and-publication-process-overview">
-<h2><a class="toc-backref" href="#table-of-contents" role="doc-backlink">Service and publication process overview</a><a class="headerlink" href="#service-and-publication-process-overview" title="Permalink to this heading">¶</a></h2>
+<h2><a class="toc-backref" href="#table-of-contents" role="doc-backlink">Service and publication process overview</a><a class="headerlink" href="#service-and-publication-process-overview" title="Link to this heading">¶</a></h2>
 <p>Before starting developing a ZOO Service, you should remember that in
 ZOO-Project, a Service is a couple made of:</p>
 <blockquote>
@@ -265,7 +272,7 @@ creating a directory to store the files of your Services Provider:</p>
 by copying the corresponding files in the same directory as the ZOO-Kernel.</p>
 </section>
 <section id="creating-your-first-zcfg-file">
-<h2><a class="toc-backref" href="#table-of-contents" role="doc-backlink">Creating your first ZCFG file</a><a class="headerlink" href="#creating-your-first-zcfg-file" title="Permalink to this heading">¶</a></h2>
+<h2><a class="toc-backref" href="#table-of-contents" role="doc-backlink">Creating your first ZCFG file</a><a class="headerlink" href="#creating-your-first-zcfg-file" title="Link to this heading">¶</a></h2>
 <p>You will start by creating the ZCFG file for the <code class="docutils literal notranslate"><span class="pre">Hello</span></code> Service. Edit the
 <code class="docutils literal notranslate"><span class="pre">docker/ws2023_sp/Hello.zcfg</span></code> file
 and add the following content:</p>
@@ -324,33 +331,37 @@ service should also be listed from Capabilities document.</p>
 </div>
 </section>
 <section id="test-requests">
-<h2><a class="toc-backref" href="#table-of-contents" role="doc-backlink">Test requests</a><a class="headerlink" href="#test-requests" title="Permalink to this heading">¶</a></h2>
+<h2><a class="toc-backref" href="#table-of-contents" role="doc-backlink">Test requests</a><a class="headerlink" href="#test-requests" title="Link to this heading">¶</a></h2>
 <p>In this section you will tests each WPS requests : GetCapabilities,
 DescribeProcess and Execute. Note that only GetCapabilities and DescribeProcess
 should work at this step.</p>
 <section id="test-accessing-the-processes-list">
-<h3><a class="toc-backref" href="#table-of-contents" role="doc-backlink">Test accessing the processes list</a><a class="headerlink" href="#test-accessing-the-processes-list" title="Permalink to this heading">¶</a></h3>
+<h3><a class="toc-backref" href="#table-of-contents" role="doc-backlink">Test accessing the processes list</a><a class="headerlink" href="#test-accessing-the-processes-list" title="Link to this heading">¶</a></h3>
 <p>To access the processes list, you can use the following endpoint:
 <a class="reference external" href="http://localhost/ogc-api/processes">/processes</a>.</p>
 <p>Now, you should find your <a href="#id1"><span class="problematic" id="id2">`</span></a>ws2023.Hello`processes listed as shown bellow.</p>
-<a class="reference internal image-reference" href="../../_images/oapip-processes-list-hello.png"><img alt="../../_images/oapip-processes-list-hello.png" class="align-center" src="../../_images/oapip-processes-list-hello.png" style="width: 450px;" /></a>
+<a class="reference internal image-reference" href="../../_images/oapip-processes-list-hello.png"><img alt="../../_images/oapip-processes-list-hello.png" class="align-center" src="../../_images/oapip-processes-list-hello.png" style="width: 450px;" />
+</a>
 <p>You can also directly use the following URL:
 <a class="reference external" href="http://localhost/ogc-api/processes.html">/processes.html</a> to
 search for your service, as illustrated bellow.</p>
-<a class="reference internal image-reference" href="../../_images/oapip-processes-list-hello-search-html.png"><img alt="../../_images/oapip-processes-list-hello-search-html.png" class="align-center" src="../../_images/oapip-processes-list-hello-search-html.png" style="width: 450px;" /></a>
+<a class="reference internal image-reference" href="../../_images/oapip-processes-list-hello-search-html.png"><img alt="../../_images/oapip-processes-list-hello-search-html.png" class="align-center" src="../../_images/oapip-processes-list-hello-search-html.png" style="width: 450px;" />
+</a>
 </section>
 <section id="test-accessing-the-detailled-description-of-the-process">
-<h3><a class="toc-backref" href="#table-of-contents" role="doc-backlink">Test accessing the detailled description of the process</a><a class="headerlink" href="#test-accessing-the-detailled-description-of-the-process" title="Permalink to this heading">¶</a></h3>
+<h3><a class="toc-backref" href="#table-of-contents" role="doc-backlink">Test accessing the detailled description of the process</a><a class="headerlink" href="#test-accessing-the-detailled-description-of-the-process" title="Link to this heading">¶</a></h3>
 <p>To access the detailled description of the ws2023.Hello process, you
 can use the following endpoint: <a class="reference external" href="http://localhost/ogc-api/processes/ws2023.Hello">/processes/ws2023.Hello</a>.</p>
-<a class="reference internal image-reference" href="../../_images/oapip-processes-description-hello-json.png"><img alt="../../_images/oapip-processes-description-hello-json.png" class="align-center" src="../../_images/oapip-processes-description-hello-json.png" style="width: 450px;" /></a>
+<a class="reference internal image-reference" href="../../_images/oapip-processes-description-hello-json.png"><img alt="../../_images/oapip-processes-description-hello-json.png" class="align-center" src="../../_images/oapip-processes-description-hello-json.png" style="width: 450px;" />
+</a>
 <p>To access the HTML form giving you the capability to generate an
 execute request based on the description of the ws2023.Hello process, you
 can use the following URL: <a class="reference external" href="http://localhost/ogc-api/processes/ws2023.Hello.html">/processes/ws2023.Hello.html</a>.</p>
-<a class="reference internal image-reference" href="../../_images/oapip-processes-description-hello-html.png"><img alt="../../_images/oapip-processes-description-hello-html.png" class="align-center" src="../../_images/oapip-processes-description-hello-html.png" style="width: 450px;" /></a>
+<a class="reference internal image-reference" href="../../_images/oapip-processes-description-hello-html.png"><img alt="../../_images/oapip-processes-description-hello-html.png" class="align-center" src="../../_images/oapip-processes-description-hello-html.png" style="width: 450px;" />
+</a>
 </section>
 <section id="test-to-execute-the-process">
-<h3><a class="toc-backref" href="#table-of-contents" role="doc-backlink">Test to Execute the process</a><a class="headerlink" href="#test-to-execute-the-process" title="Permalink to this heading">¶</a></h3>
+<h3><a class="toc-backref" href="#table-of-contents" role="doc-backlink">Test to Execute the process</a><a class="headerlink" href="#test-to-execute-the-process" title="Link to this heading">¶</a></h3>
 <p>Obviously, you cannot run your Service because the Python file was not published
 yet. If you try the following <code class="docutils literal notranslate"><span class="pre">Execute</span></code> request from the Basic HTML
 UI, you should get the same result as illutrated bellow.</p>
@@ -366,13 +377,14 @@ UI, you should get the same result as illutrated bellow.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-<a class="reference internal image-reference" href="../../_images/oapip-processes-execute-hello-html-not-found.png"><img alt="../../_images/oapip-processes-execute-hello-html-not-found.png" class="align-center" src="../../_images/oapip-processes-execute-hello-html-not-found.png" style="width: 850px;" /></a>
+<a class="reference internal image-reference" href="../../_images/oapip-processes-execute-hello-html-not-found.png"><img alt="../../_images/oapip-processes-execute-hello-html-not-found.png" class="align-center" src="../../_images/oapip-processes-execute-hello-html-not-found.png" style="width: 850px;" />
+</a>
 </section>
 </section>
 <section id="implementing-the-python-service">
-<h2><a class="toc-backref" href="#table-of-contents" role="doc-backlink">Implementing the Python Service</a><a class="headerlink" href="#implementing-the-python-service" title="Permalink to this heading">¶</a></h2>
+<h2><a class="toc-backref" href="#table-of-contents" role="doc-backlink">Implementing the Python Service</a><a class="headerlink" href="#implementing-the-python-service" title="Link to this heading">¶</a></h2>
 <section id="general-principles">
-<h3><a class="toc-backref" href="#table-of-contents" role="doc-backlink">General Principles</a><a class="headerlink" href="#general-principles" title="Permalink to this heading">¶</a></h3>
+<h3><a class="toc-backref" href="#table-of-contents" role="doc-backlink">General Principles</a><a class="headerlink" href="#general-principles" title="Link to this heading">¶</a></h3>
 <p>The most important thing you must know when implementing a new ZOO-Services
 using the Python language is that the function corresponding to your Service
 returns an integer value representing the status of execution
@@ -436,12 +448,12 @@ file stored in a <code class="docutils literal notranslate"><span class="pre">co
 </pre></div>
 </div>
 <p>In the following you get a sample outputs value passed to a Python or a JavaScript Service:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="p">{</span><span class="w"></span>
-<span class="linenos">2</span><span class="w">  </span><span class="s1">&#39;Result&#39;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="linenos">3</span><span class="w">    </span><span class="s1">&#39;dataType&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;string&#39;</span><span class="p">,</span><span class="w"></span>
-<span class="linenos">4</span><span class="w">    </span><span class="s1">&#39;inRequest&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;true&#39;</span><span class="w"></span>
-<span class="linenos">5</span><span class="w">  </span><span class="p">}</span><span class="w"></span>
-<span class="linenos">6</span><span class="p">}</span><span class="w"></span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="p">{</span>
+<span class="linenos">2</span><span class="w">  </span><span class="s1">&#39;Result&#39;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">3</span><span class="w">    </span><span class="s1">&#39;dataType&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;string&#39;</span><span class="p">,</span>
+<span class="linenos">4</span><span class="w">    </span><span class="s1">&#39;inRequest&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;true&#39;</span>
+<span class="linenos">5</span><span class="w">  </span><span class="p">}</span>
+<span class="linenos">6</span><span class="p">}</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -460,7 +472,7 @@ using the <code class="docutils literal notranslate"><span class="pre">update_st
 JavaScript or C services.</p>
 </section>
 <section id="the-hello-service">
-<h3><a class="toc-backref" href="#table-of-contents" role="doc-backlink">The Hello Service</a><a class="headerlink" href="#the-hello-service" title="Permalink to this heading">¶</a></h3>
+<h3><a class="toc-backref" href="#table-of-contents" role="doc-backlink">The Hello Service</a><a class="headerlink" href="#the-hello-service" title="Link to this heading">¶</a></h3>
 <p>You can copy and paste the following into the
 <code class="docutils literal notranslate"><span class="pre">docker/ws2023_sp/test_service.py</span></code> file.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">zoo</span>
@@ -476,11 +488,12 @@ JavaScript or C services.</p>
 </div>
 <p>If you try to run the previous request again from the HTML Basic UI,
 you should get a result similar to what is presented bellow.</p>
-<a class="reference internal image-reference" href="../../_images/oapip-processes-execute-hello-html-value.png"><img alt="../../_images/oapip-processes-execute-hello-html-value.png" class="align-center" src="../../_images/oapip-processes-execute-hello-html-value.png" style="width: 850px;" /></a>
+<a class="reference internal image-reference" href="../../_images/oapip-processes-execute-hello-html-value.png"><img alt="../../_images/oapip-processes-execute-hello-html-value.png" class="align-center" src="../../_images/oapip-processes-execute-hello-html-value.png" style="width: 850px;" />
+</a>
 </section>
 </section>
 <section id="conclusion">
-<h2><a class="toc-backref" href="#table-of-contents" role="doc-backlink">Conclusion</a><a class="headerlink" href="#conclusion" title="Permalink to this heading">¶</a></h2>
+<h2><a class="toc-backref" href="#table-of-contents" role="doc-backlink">Conclusion</a><a class="headerlink" href="#conclusion" title="Link to this heading">¶</a></h2>
 <p>Even if this first service was really simple it was useful to illustrate how the
 ZOO-Kernel fill <code class="docutils literal notranslate"><span class="pre">conf</span></code>, <code class="docutils literal notranslate"><span class="pre">inputs</span></code> and <code class="docutils literal notranslate"><span class="pre">outputs</span></code> parameter prior to load
 and run your function service, how to write a ZCFG file, how to publish a Services
@@ -491,19 +504,19 @@ in the <a class="reference external" href="building_blocks_presentation.html">ne
 using the XML syntax.</p>
 <p class="rubric">Footnotes</p>
 <aside class="footnote-list brackets">
-<aside class="footnote brackets" id="f1" role="note">
+<aside class="footnote brackets" id="f1" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">1</a><span class="fn-bracket">]</span></span>
 <p><code class="docutils literal notranslate"><span class="pre">SERVICE_FAILED=4</span></code></p>
 </aside>
-<aside class="footnote brackets" id="f2" role="note">
+<aside class="footnote brackets" id="f2" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">2</a><span class="fn-bracket">]</span></span>
 <p><code class="docutils literal notranslate"><span class="pre">SERVICE_SUCCEEDED=3</span></code></p>
 </aside>
-<aside class="footnote brackets" id="f4" role="note">
+<aside class="footnote brackets" id="f4" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id5">3</a><span class="fn-bracket">]</span></span>
 <p>sample use of update_status is available <a class="reference external" href="http://zoo-project.org/trac/browser/trunk/zoo-project/zoo-services/utils/status/cgi-env/service.py#L1">here</a></p>
 </aside>
-<aside class="footnote brackets" id="f3" role="note">
+<aside class="footnote brackets" id="f3" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></span>
 <p>To get on-going status url in <code class="docutils literal notranslate"><span class="pre">statusLocation</span></code>, you’ll
 need to setup the <a class="reference external" href="http://www.zoo-project.org/trac/browser/trunk/zoo-project/zoo-services/utils/status">utils/status</a>
@@ -563,9 +576,6 @@ reference  <a class="reference external" href="http://zoo-project.org/docs/servi
         };
     </script>
       <script type="text/javascript" src="../../_static/documentation_options.js"></script>
-      <script type="text/javascript" src="../../_static/jquery.js"></script>
-      <script type="text/javascript" src="../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
       <script type="text/javascript" src="../../_static/sphinx_highlight.js"></script>
 

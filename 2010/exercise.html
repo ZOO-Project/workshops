@@ -25,8 +25,6 @@
 
   
   
-    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  
 
   
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -52,7 +50,7 @@
   <div class="wy-grid-for-nav">
 
     
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
       <div class="wy-side-nav-search">
         
 
@@ -80,6 +78,15 @@
           
           
               <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../2024/foss4g-europe/index.html">ZOO-Project – Introduction to OGC API - Processes - Part 1: Core</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../2024/foss4g-europe/introduction.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2024/foss4g-europe/using_zoo_from_docker.html">Installation, configuration and ZOO-Kernel use</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2024/foss4g-europe/first_service.html">Creating your first ZOO-Service</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2024/foss4g-europe/building_blocks_presentation.html">Building blocks presentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2024/foss4g-europe/js_services_chaining.html">Playing with building blocks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2024/foss4g-europe/solutions.html">Issue playing with building blocks?</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../2023/foss4g/index.html">ZOO-Project – Introduction to OGC API - Processes - Part 1: Core</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../2023/foss4g/introduction.html">Introduction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../2023/foss4g/using_zoo_from_docker.html">Installation, configuration and ZOO-Kernel use</a></li>
@@ -197,7 +204,7 @@
           <div role="main" class="document">
             
   <section id="exercise">
-<span id="id1"></span><h1>Exercise<a class="headerlink" href="#exercise" title="Permalink to this heading">¶</a></h1>
+<span id="id1"></span><h1>Exercise<a class="headerlink" href="#exercise" title="Link to this heading">¶</a></h1>
 <p>You know everything now about writting zcfg matadata files and get short pieces
 of code in <code class="docutils literal notranslate"><span class="pre">service.c</span></code> or <code class="docutils literal notranslate"><span class="pre">ogr_service_provider.py</span></code> depending if you choosen
 C or Python programming language respectively.</p>
@@ -211,7 +218,7 @@ C or Python programming language respectively.</p>
 </ul>
 </div></blockquote>
 <section id="c-version">
-<h2>C version<a class="headerlink" href="#c-version" title="Permalink to this heading">¶</a></h2>
+<h2>C version<a class="headerlink" href="#c-version" title="Link to this heading">¶</a></h2>
 <p>Your are now invited to edit the source.c file you have created during this workshop
 to add the multiple geometries, using the following OGR C-API functions :</p>
 <blockquote>
@@ -228,7 +235,7 @@ invited to update other values in the ZOO Metadata File to set the proper
 metadata informations.</p>
 </section>
 <section id="python-version">
-<h2>Python Version<a class="headerlink" href="#python-version" title="Permalink to this heading">¶</a></h2>
+<h2>Python Version<a class="headerlink" href="#python-version" title="Link to this heading">¶</a></h2>
 <p>Your are invited to edit the <code class="docutils literal notranslate"><span class="pre">ogr_ws_service_provider.py</span></code> file you created
 during this workshop to add the multiple geometries using the following
 <code class="docutils literal notranslate"><span class="pre">osgeo.ogr</span></code> Geometry methods applied on the first Geometry instance :</p>
@@ -246,7 +253,7 @@ invited to update other values in the ZOO metadata file to set the proper metada
 informations.</p>
 </section>
 <section id="testing-your-services">
-<h2>Testing your services<a class="headerlink" href="#testing-your-services" title="Permalink to this heading">¶</a></h2>
+<h2>Testing your services<a class="headerlink" href="#testing-your-services" title="Link to this heading">¶</a></h2>
 <p>Once the multiple geometries Services are deployed on your local environment,
 please reload the <code class="docutils literal notranslate"><span class="pre">zoo-ogr.html</span></code> file created during the previous section
 from your browser and test your brand new ZOO Services.</p>
@@ -297,9 +304,6 @@ from your browser and test your brand new ZOO Services.</p>
         };
     </script>
       <script type="text/javascript" src="../_static/documentation_options.js"></script>
-      <script type="text/javascript" src="../_static/jquery.js"></script>
-      <script type="text/javascript" src="../_static/underscore.js"></script>
-      <script type="text/javascript" src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../_static/doctools.js"></script>
       <script type="text/javascript" src="../_static/sphinx_highlight.js"></script>
 

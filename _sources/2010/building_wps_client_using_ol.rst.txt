@@ -40,11 +40,9 @@ The following JavaScript code must then be added in a ``<script></script>`` sect
 
 .. code-block:: guess
 
-    var map, layer, select, hover, multi, control;
-    
+    var map, layer, select, hover, multi, control;    
     var typename="regions";
-    var main_url="http://localhost/cgi-bin/mapserv?map=/var/www/wfs.map";
-    
+    var main_url="http://localhost/cgi-bin/mapserv?map=/var/www/wfs.map";    
     function init(){
       map = new OpenLayers.Map('map', {
         controls: [
@@ -64,7 +62,7 @@ The following JavaScript code must then be added in a ``<script></script>`` sect
             buffer: 0,
             singleTile: true
           }
-    );
+      );
       map.addLayers([layer]);
       map.setCenter(new OpenLayers.LonLat(138,33.5),5);
     }

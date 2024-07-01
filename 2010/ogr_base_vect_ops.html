@@ -25,8 +25,6 @@
 
   
   
-    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  
 
   
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -53,7 +51,7 @@
   <div class="wy-grid-for-nav">
 
     
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
       <div class="wy-side-nav-search">
         
 
@@ -81,6 +79,15 @@
           
           
               <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../2024/foss4g-europe/index.html">ZOO-Project – Introduction to OGC API - Processes - Part 1: Core</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../2024/foss4g-europe/introduction.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2024/foss4g-europe/using_zoo_from_docker.html">Installation, configuration and ZOO-Kernel use</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2024/foss4g-europe/first_service.html">Creating your first ZOO-Service</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2024/foss4g-europe/building_blocks_presentation.html">Building blocks presentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2024/foss4g-europe/js_services_chaining.html">Playing with building blocks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2024/foss4g-europe/solutions.html">Issue playing with building blocks?</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../2023/foss4g/index.html">ZOO-Project – Introduction to OGC API - Processes - Part 1: Core</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../2023/foss4g/introduction.html">Introduction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../2023/foss4g/using_zoo_from_docker.html">Installation, configuration and ZOO-Kernel use</a></li>
@@ -198,7 +205,7 @@
           <div role="main" class="document">
             
   <section id="creating-ogr-based-web-services">
-<span id="ogr-base-vect-ops"></span><h1><a class="toc-backref" href="#table-of-contents" role="doc-backlink">Creating OGR based Web Services</a><a class="headerlink" href="#creating-ogr-based-web-services" title="Permalink to this heading">¶</a></h1>
+<span id="ogr-base-vect-ops"></span><h1><a class="toc-backref" href="#table-of-contents" role="doc-backlink">Creating OGR based Web Services</a><a class="headerlink" href="#creating-ogr-based-web-services" title="Link to this heading">¶</a></h1>
 <nav class="contents" id="table-of-contents">
 <p class="topic-title">Table of Contents</p>
 <ul class="simple">
@@ -231,7 +238,7 @@
 </ul>
 </nav>
 <section id="introduction">
-<h2><a class="toc-backref" href="#table-of-contents" role="doc-backlink">Introduction</a><a class="headerlink" href="#introduction" title="Permalink to this heading">¶</a></h2>
+<h2><a class="toc-backref" href="#table-of-contents" role="doc-backlink">Introduction</a><a class="headerlink" href="#introduction" title="Link to this heading">¶</a></h2>
 <p>In this part, we are going to create a ZOO ServicesProvider containing several Services
 based on the OGR C API or on the OGR Python module, which have also been placed in the
 ZOO installation on OSGeoLive. The intended goal is to use OGR and its GEOS based simple
@@ -248,7 +255,7 @@ habits and preferences and tell your choice to the instructors. The results will
 same in both case.</p>
 </section>
 <section id="preparing-zoo-metadata-file">
-<h2><a class="toc-backref" href="#table-of-contents" role="doc-backlink">Preparing ZOO metadata file</a><a class="headerlink" href="#preparing-zoo-metadata-file" title="Permalink to this heading">¶</a></h2>
+<h2><a class="toc-backref" href="#table-of-contents" role="doc-backlink">Preparing ZOO metadata file</a><a class="headerlink" href="#preparing-zoo-metadata-file" title="Link to this heading">¶</a></h2>
 <p>A ZOO Service is a combination of a ZOO metadata file (<code class="docutils literal notranslate"><span class="pre">.zcfg</span></code>) and the runtime module
 for the corresponding implementation, which is commonly called ZOO Service Provider. We
 will first prepare a <code class="docutils literal notranslate"><span class="pre">.zcfg</span></code> file step-by-step. Please open your preferred text editor
@@ -270,9 +277,9 @@ Abstract = Returns the boundary of the geometry on which the method is invoked.
 your ZOO Service can store its results, by setting the <code class="docutils literal notranslate"><span class="pre">storeSupported</span></code> parameter to
 true or false. You can also decide if the function can be run as a background task and
 inform on its current status, according to the <code class="docutils literal notranslate"><span class="pre">statusSupported</span></code> value :</p>
-<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span><span class="k">proc</span><span class="nv">essVersion</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
-<span class="nf">storeSupported</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">true</span><span class="w"></span>
-<span class="nf">statusSupported</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">true</span><span class="w"></span>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span><span class="k">proc</span><span class="nv">essVersion</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span>
+<span class="nf">storeSupported</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">true</span>
+<span class="nf">statusSupported</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">true</span>
 </pre></div>
 </div>
 <p>In the main section of the ZOO Service metadata file, you must also specify two important things:</p>
@@ -297,7 +304,7 @@ serviceType=Python
 <p>In this case, you will get an <code class="docutils literal notranslate"><span class="pre">ogr_ws_service_provider.py</span></code> file containing the Python code of your Boundary function.</p>
 <p>In the main section you can also add any other metadata information, as the following:</p>
 <div class="highlight-guess notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;MetaData&gt;</span>
-    Title = Demo
+<span class="w">    </span>Title<span class="w"> </span>=<span class="w"> </span>Demo
 <span class="nt">&lt;/MetaData&gt;</span>
 </pre></div>
 </div>
@@ -328,14 +335,14 @@ thus to define the default and supported input formats. Both formats should be d
 in a LitteralData or ComplexData block depending on their types. For this first example
 we will use ComplexData blocks only.</p>
 <div class="highlight-guess notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;ComplexData&gt;</span>
- <span class="nt">&lt;Default&gt;</span>
-   mimeType = text/xml
-   encoding = UTF-8
- <span class="nt">&lt;/Default&gt;</span>
- <span class="nt">&lt;Supported&gt;</span>
-   mimeType = application/json
-   encoding = UTF-8
- <span class="nt">&lt;/Supported&gt;</span>
+<span class="w"> </span><span class="nt">&lt;Default&gt;</span>
+<span class="w">   </span>mimeType<span class="w"> </span>=<span class="w"> </span>text/xml
+<span class="w">   </span>encoding<span class="w"> </span>=<span class="w"> </span>UTF-8
+<span class="w"> </span><span class="nt">&lt;/Default&gt;</span>
+<span class="w"> </span><span class="nt">&lt;Supported&gt;</span>
+<span class="w">   </span>mimeType<span class="w"> </span>=<span class="w"> </span>application/json
+<span class="w">   </span>encoding<span class="w"> </span>=<span class="w"> </span>UTF-8
+<span class="w"> </span><span class="nt">&lt;/Supported&gt;</span>
 <span class="nt">&lt;/ComplexData&gt;</span>
 </pre></div>
 </div>
@@ -364,16 +371,19 @@ than your ZOO Kernel (so in your case <code class="docutils literal notranslate"
 able to run the following request :</p>
 <p><a class="reference external" href="http://localhost/zoo/?Request=DescribeProcess&amp;Service=WPS&amp;Identifier=Boundary&amp;version=1.0.0">http://localhost/zoo/?Request=DescribeProcess&amp;Service=WPS&amp;Identifier=Boundary&amp;version=1.0.0</a></p>
 <p>The returned ProcessDescriptions XML document should look like the following :</p>
-<a class="reference internal image-reference" href="../_images/Practical-introduction-to-ZOO-5.png"><img alt="../_images/Practical-introduction-to-ZOO-5.png" class="align-center" src="../_images/Practical-introduction-to-ZOO-5.png" style="width: 456px; height: 157px;" /></a>
+<a class="reference internal image-reference" href="../_images/Practical-introduction-to-ZOO-5.png"><img alt="../_images/Practical-introduction-to-ZOO-5.png" class="align-center" src="../_images/Practical-introduction-to-ZOO-5.png" style="width: 456px; height: 157px;" />
+</a>
 <p>Please note that the GetCapabilities and DescribeProcess only need a <code class="docutils literal notranslate"><span class="pre">.zcfg</span></code>
 file to be completed. Simple, isn’t it ? At this step, if you request ZOO Kernel
 for an Execute, you will get an ExceptionReport document as response, looking as the following :</p>
-<a class="reference internal image-reference" href="../_images/Practical-introduction-to-ZOO-6.png"><img alt="../_images/Practical-introduction-to-ZOO-6.png" class="align-center" src="../_images/Practical-introduction-to-ZOO-6.png" style="width: 546px; height: 80px;" /></a>
+<a class="reference internal image-reference" href="../_images/Practical-introduction-to-ZOO-6.png"><img alt="../_images/Practical-introduction-to-ZOO-6.png" class="align-center" src="../_images/Practical-introduction-to-ZOO-6.png" style="width: 546px; height: 80px;" />
+</a>
 <p>A similar error message will be returned if you try to run your Python Service :</p>
-<a class="reference internal image-reference" href="../_images/Practical-introduction-to-ZOO-7.png"><img alt="../_images/Practical-introduction-to-ZOO-7.png" class="align-center" src="../_images/Practical-introduction-to-ZOO-7.png" style="width: 489px; height: 87px;" /></a>
+<a class="reference internal image-reference" href="../_images/Practical-introduction-to-ZOO-7.png"><img alt="../_images/Practical-introduction-to-ZOO-7.png" class="align-center" src="../_images/Practical-introduction-to-ZOO-7.png" style="width: 489px; height: 87px;" />
+</a>
 </section>
 <section id="implementing-single-geometry-services">
-<h2><a class="toc-backref" href="#table-of-contents" role="doc-backlink">Implementing single geometry services</a><a class="headerlink" href="#implementing-single-geometry-services" title="Permalink to this heading">¶</a></h2>
+<h2><a class="toc-backref" href="#table-of-contents" role="doc-backlink">Implementing single geometry services</a><a class="headerlink" href="#implementing-single-geometry-services" title="Link to this heading">¶</a></h2>
 <p>In order to learn the Services Provider creation and deployement step-by-step,
 we will first focus on creating a very simple one dedicated to the Boundary function.
 Similar procedure will then be used for the Buffer, Centroid and ConvexHull implementation.</p>
@@ -390,30 +400,30 @@ and returns an integer value representing the status of execution (SERVICE_FAILE
 </ul>
 </div></blockquote>
 <section id="boundary">
-<h3><a class="toc-backref" href="#table-of-contents" role="doc-backlink">Boundary</a><a class="headerlink" href="#boundary" title="Permalink to this heading">¶</a></h3>
+<h3><a class="toc-backref" href="#table-of-contents" role="doc-backlink">Boundary</a><a class="headerlink" href="#boundary" title="Link to this heading">¶</a></h3>
 <section id="c-version">
-<h4><a class="toc-backref" href="#table-of-contents" role="doc-backlink">C Version</a><a class="headerlink" href="#c-version" title="Permalink to this heading">¶</a></h4>
+<h4><a class="toc-backref" href="#table-of-contents" role="doc-backlink">C Version</a><a class="headerlink" href="#c-version" title="Link to this heading">¶</a></h4>
 <p>As explained before, ZOO Kernel will pass the parameters to your Service function
 in a specific datatype called maps. In order to code your Service in C language,
 you also need to learn how to access this datatype in read/write mode.</p>
 <p>The maps are simple map named linked list containing a name, a content map and a
 pointer to the next map in the list (or NULL if there is no more map in the list).
 Here is the datatype definition as you can find in the zoo-kernel/service.h file:</p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">maps</span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">name</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">map</span><span class="o">*</span><span class="w"> </span><span class="n">content</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">maps</span><span class="o">*</span><span class="w"> </span><span class="n">next</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"> </span><span class="n">maps</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">maps</span><span class="p">{</span>
+<span class="w">    </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
+<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">map</span><span class="o">*</span><span class="w"> </span><span class="n">content</span><span class="p">;</span>
+<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">maps</span><span class="o">*</span><span class="w"> </span><span class="n">next</span><span class="p">;</span>
+<span class="p">}</span><span class="w"> </span><span class="n">maps</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>The map included in the maps is also a simple linked list and is used to store Key
 Value Pair values. A map is thus a couple of name and value and a pointer to the
 next map in the list. Here is the datatype definition you can find in the zoo-kernel/service.h file:</p>
-<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span><span class="nv">typedef</span><span class="w"> </span><span class="nv">struct</span><span class="w"> </span><span class="nv">map</span>{<span class="w"></span>
-<span class="w">    </span><span class="nv">char</span><span class="o">*</span><span class="w"> </span><span class="nv">name</span><span class="c1">;       /* The key */</span><span class="w"></span>
-<span class="w">    </span><span class="nv">char</span><span class="o">*</span><span class="w"> </span><span class="nv">value</span><span class="c1">;      /* The value */</span><span class="w"></span>
-<span class="w">    </span><span class="nv">struct</span><span class="w"> </span><span class="nv">map</span><span class="o">*</span><span class="w"> </span><span class="k">next</span><span class="c1">; /* Next couple */</span><span class="w"></span>
-}<span class="w"> </span><span class="nv">map</span><span class="c1">;</span><span class="w"></span>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span><span class="nx">typedef</span><span class="w"> </span><span class="nx">struct</span><span class="w"> </span><span class="nx">map</span><span class="p">{</span>
+<span class="w">    </span><span class="nx">char</span><span class="o">*</span><span class="w"> </span><span class="nx">name</span><span class="p">;</span><span class="w">       </span><span class="cm">/* The key */</span>
+<span class="w">    </span><span class="nx">char</span><span class="o">*</span><span class="w"> </span><span class="nx">value</span><span class="p">;</span><span class="w">      </span><span class="cm">/* The value */</span>
+<span class="w">    </span><span class="nx">struct</span><span class="w"> </span><span class="nx">map</span><span class="o">*</span><span class="w"> </span><span class="nx">next</span><span class="p">;</span><span class="w"> </span><span class="cm">/* Next couple */</span>
+<span class="p">}</span><span class="w"> </span><span class="nx">map</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>As partially or fully filled datastructures will be passed by the ZOO Kernel to
@@ -435,8 +445,8 @@ map of a maps named inputs, your C code should be:</p>
 </pre></div>
 </div>
 <p>Once you get the map, you can access the name or the value fields, using the following syntax :</p>
-<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span><span class="n">tmp</span><span class="o">-&gt;</span><span class="n">name</span><span class="w"></span>
-<span class="n">tmp</span><span class="o">-&gt;</span><span class="n">value</span><span class="w"></span>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span><span class="n">tmp</span><span class="o">-&gt;</span><span class="n">name</span>
+<span class="n">tmp</span><span class="o">-&gt;</span><span class="n">value</span>
 </pre></div>
 </div>
 <p>As you know how to read and access the map fields from a maps, you can now learn
@@ -497,40 +507,40 @@ only the Geometry object will be used rather than a full WFS Response. The first
 thing to do is to write a function which will extract the geometry definition
 from the full WFS Response. We will call it createGeometryFromWFS.</p>
 <p>Here is the code of such a function:</p>
-<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>OGRGeometryH createGeometryFromWFS(maps* conf,char* inputStr){
-  xmlInitParser();
-  xmlDocPtr doc = xmlParseMemory(inputStr,strlen(inputStr));
-  xmlChar *xmlbuff;
-  int buffersize;
-  xmlXPathContextPtr xpathCtx;
-  xmlXPathObjectPtr xpathObj;
-  char * xpathExpr=&quot;/*/*/*/*/*[local-name()=&#39;Polygon&#39; or local-name()=&#39;MultiPolygon&#39;]&quot;;
-  xpathCtx = xmlXPathNewContext(doc);
-  xpathObj = xmlXPathEvalExpression(BAD_CAST xpathExpr,xpathCtx);
-  if(!xpathObj-&gt;nodesetval){
-    errorException(conf, &quot;Unable to parse Input Polygon&quot;,&quot;InvalidParameterValue&quot;);
-    exit(0);
-  }
-  int size = (xpathObj-&gt;nodesetval) ? xpathObj-&gt;nodesetval-&gt;nodeNr : 0;
-  xmlDocPtr ndoc = xmlNewDoc(BAD_CAST &quot;1.0&quot;);
-  for(int k=size-1;k&gt;=0;k--){
-    xmlDocSetRootElement(ndoc, xpathObj-&gt;nodesetval-&gt;nodeTab[k]);
-  }
-  xmlDocDumpFormatMemory(ndoc, &amp;xmlbuff, &amp;buffersize, 1);
-  char *tmp=strdup(strstr((char*)xmlbuff,&quot;?&gt;&quot;)+2);
-  xmlXPathFreeObject(xpathObj);
-  xmlXPathFreeContext(xpathCtx);
-  xmlFree(xmlbuff);
-  xmlFreeDoc(doc);
-  xmlCleanupParser();
-  OGRGeometryH res=OGR_G_CreateFromGML(tmp);
-  if(res==NULL){
-    errorException(conf, &quot;Unable to call OGR_G_CreatFromGML&quot;,&quot;NoApplicableCode&quot;);
-    exit(0);
-  }
-  else
-    return res;
-}
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span><span class="n">OGRGeometryH</span><span class="w"> </span><span class="n">createGeometryFromWFS</span><span class="p">(</span><span class="n">maps</span><span class="o">*</span><span class="w"> </span><span class="n">conf</span><span class="p">,</span><span class="nc">char</span><span class="o">*</span><span class="w"> </span><span class="n">inputStr</span><span class="p">)</span><span class="err">{</span>
+<span class="w">  </span><span class="n">xmlInitParser</span><span class="p">();</span>
+<span class="w">  </span><span class="n">xmlDocPtr</span><span class="w"> </span><span class="n">doc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">xmlParseMemory</span><span class="p">(</span><span class="n">inputStr</span><span class="p">,</span><span class="n">strlen</span><span class="p">(</span><span class="n">inputStr</span><span class="p">));</span>
+<span class="w">  </span><span class="n">xmlChar</span><span class="w"> </span><span class="o">*</span><span class="n">xmlbuff</span><span class="p">;</span>
+<span class="w">  </span><span class="nc">int</span><span class="w"> </span><span class="n">buffersize</span><span class="p">;</span>
+<span class="w">  </span><span class="n">xmlXPathContextPtr</span><span class="w"> </span><span class="n">xpathCtx</span><span class="p">;</span>
+<span class="w">  </span><span class="n">xmlXPathObjectPtr</span><span class="w"> </span><span class="n">xpathObj</span><span class="p">;</span>
+<span class="w">  </span><span class="nc">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">xpathExpr</span><span class="o">=</span><span class="ss">&quot;/*/*/*/*/*[local-name()=&#39;Polygon&#39; or local-name()=&#39;MultiPolygon&#39;]&quot;</span><span class="p">;</span>
+<span class="w">  </span><span class="n">xpathCtx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">xmlXPathNewContext</span><span class="p">(</span><span class="n">doc</span><span class="p">);</span>
+<span class="w">  </span><span class="n">xpathObj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">xmlXPathEvalExpression</span><span class="p">(</span><span class="n">BAD_CAST</span><span class="w"> </span><span class="n">xpathExpr</span><span class="p">,</span><span class="n">xpathCtx</span><span class="p">);</span>
+<span class="w">  </span><span class="k">if</span><span class="p">(</span><span class="err">!</span><span class="n">xpathObj</span><span class="o">-&gt;</span><span class="n">nodesetval</span><span class="p">)</span><span class="err">{</span>
+<span class="w">    </span><span class="n">errorException</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;Unable to parse Input Polygon&quot;</span><span class="p">,</span><span class="ss">&quot;InvalidParameterValue&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="w">  </span><span class="err">}</span>
+<span class="w">  </span><span class="nc">int</span><span class="w"> </span><span class="k">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">xpathObj</span><span class="o">-&gt;</span><span class="n">nodesetval</span><span class="p">)</span><span class="w"> </span><span class="vm">?</span><span class="w"> </span><span class="n">xpathObj</span><span class="o">-&gt;</span><span class="n">nodesetval</span><span class="o">-&gt;</span><span class="n">nodeNr</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">  </span><span class="n">xmlDocPtr</span><span class="w"> </span><span class="n">ndoc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">xmlNewDoc</span><span class="p">(</span><span class="n">BAD_CAST</span><span class="w"> </span><span class="ss">&quot;1.0&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="k">for</span><span class="p">(</span><span class="nc">int</span><span class="w"> </span><span class="n">k</span><span class="o">=</span><span class="k">size</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span><span class="n">k</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">;</span><span class="n">k</span><span class="o">--</span><span class="p">)</span><span class="err">{</span>
+<span class="w">    </span><span class="n">xmlDocSetRootElement</span><span class="p">(</span><span class="n">ndoc</span><span class="p">,</span><span class="w"> </span><span class="n">xpathObj</span><span class="o">-&gt;</span><span class="n">nodesetval</span><span class="o">-&gt;</span><span class="n">nodeTab</span><span class="o">[</span><span class="n">k</span><span class="o">]</span><span class="p">);</span>
+<span class="w">  </span><span class="err">}</span>
+<span class="w">  </span><span class="n">xmlDocDumpFormatMemory</span><span class="p">(</span><span class="n">ndoc</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">xmlbuff</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">buffersize</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<span class="w">  </span><span class="nc">char</span><span class="w"> </span><span class="o">*</span><span class="n">tmp</span><span class="o">=</span><span class="n">strdup</span><span class="p">(</span><span class="n">strstr</span><span class="p">((</span><span class="nc">char</span><span class="o">*</span><span class="p">)</span><span class="n">xmlbuff</span><span class="p">,</span><span class="ss">&quot;?&gt;&quot;</span><span class="p">)</span><span class="o">+</span><span class="mi">2</span><span class="p">);</span>
+<span class="w">  </span><span class="n">xmlXPathFreeObject</span><span class="p">(</span><span class="n">xpathObj</span><span class="p">);</span>
+<span class="w">  </span><span class="n">xmlXPathFreeContext</span><span class="p">(</span><span class="n">xpathCtx</span><span class="p">);</span>
+<span class="w">  </span><span class="n">xmlFree</span><span class="p">(</span><span class="n">xmlbuff</span><span class="p">);</span>
+<span class="w">  </span><span class="n">xmlFreeDoc</span><span class="p">(</span><span class="n">doc</span><span class="p">);</span>
+<span class="w">  </span><span class="n">xmlCleanupParser</span><span class="p">();</span>
+<span class="w">  </span><span class="n">OGRGeometryH</span><span class="w"> </span><span class="n">res</span><span class="o">=</span><span class="n">OGR_G_CreateFromGML</span><span class="p">(</span><span class="n">tmp</span><span class="p">);</span>
+<span class="w">  </span><span class="k">if</span><span class="p">(</span><span class="n">res</span><span class="o">==</span><span class="k">NULL</span><span class="p">)</span><span class="err">{</span>
+<span class="w">    </span><span class="n">errorException</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;Unable to call OGR_G_CreatFromGML&quot;</span><span class="p">,</span><span class="ss">&quot;NoApplicableCode&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="w">  </span><span class="err">}</span>
+<span class="w">  </span><span class="k">else</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">res</span><span class="p">;</span>
+<span class="err">}</span>
 </pre></div>
 </div>
 <p>The only thing we will focus on is the call to the errorException function used
@@ -547,48 +557,48 @@ and defined in zoo-kernel/service_internal.c file. It takes three parameters as 
 an ExceptionReport document informing the client that a problem occured.</p>
 <p>The function to extract the geometry object from a WFS Response is written, so you
 can now start defining the Boundary Service. Here is the full code for the Boundary Service:</p>
-<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span><span class="n">int</span><span class="w"> </span><span class="n">Boundary</span><span class="p">(</span><span class="n">maps</span><span class="o">*&amp;</span><span class="w"> </span><span class="n">conf</span><span class="p">,</span><span class="n">maps</span><span class="o">*&amp;</span><span class="w"> </span><span class="n">inputs</span><span class="p">,</span><span class="n">maps</span><span class="o">*&amp;</span><span class="w"> </span><span class="n">outputs</span><span class="p">){</span><span class="w"></span>
-<span class="w">  </span><span class="n">OGRGeometryH</span><span class="w"> </span><span class="n">geometry</span><span class="p">,</span><span class="n">res</span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="nf">map</span><span class="o">*</span><span class="w"> </span><span class="n">tmp</span><span class="o">=</span><span class="n">getMapFromMaps</span><span class="p">(</span><span class="n">inputs</span><span class="p">,</span><span class="s">&quot;InputPolygon&quot;</span><span class="p">,</span><span class="s">&quot;value&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="nf">if</span><span class="p">(</span><span class="n">tmp</span><span class="o">==</span><span class="n">NULL</span><span class="p">){</span><span class="w"></span>
-<span class="w">    </span><span class="n">setMapInMaps</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="s">&quot;lenv&quot;</span><span class="p">,</span><span class="s">&quot;message&quot;</span><span class="p">,</span><span class="s">&quot;Unable to parse InputPolygon&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="kr">return</span><span class="w"> </span><span class="n">SERVICE_FAILED</span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"></span>
-<span class="w">  </span><span class="nf">map</span><span class="o">*</span><span class="w"> </span><span class="n">tmp1</span><span class="o">=</span><span class="n">getMapFromMaps</span><span class="p">(</span><span class="n">inputs</span><span class="p">,</span><span class="s">&quot;InputPolygon&quot;</span><span class="p">,</span><span class="s">&quot;mimeType&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="nf">if</span><span class="p">(</span><span class="n">strncmp</span><span class="p">(</span><span class="n">tmp1</span><span class="o">-&gt;</span><span class="n">value</span><span class="p">,</span><span class="s">&quot;application/json&quot;</span><span class="p">,</span><span class="mi">16</span><span class="p">)</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="n">geometry</span><span class="o">=</span><span class="n">OGR_G_CreateGeometryFromJson</span><span class="p">(</span><span class="n">tmp</span><span class="o">-&gt;</span><span class="n">value</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="n">else</span><span class="w"></span>
-<span class="w">    </span><span class="n">geometry</span><span class="o">=</span><span class="n">createGeometryFromWFS</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span><span class="n">tmp</span><span class="o">-&gt;</span><span class="n">value</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="nf">if</span><span class="p">(</span><span class="n">geometry</span><span class="o">==</span><span class="n">NULL</span><span class="p">){</span><span class="w"></span>
-<span class="w">    </span><span class="n">setMapInMaps</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="s">&quot;lenv&quot;</span><span class="p">,</span><span class="s">&quot;message&quot;</span><span class="p">,</span><span class="s">&quot;Unable to parse InputPolygon&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="kr">return</span><span class="w"> </span><span class="n">SERVICE_FAILED</span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"></span>
-<span class="w">  </span><span class="n">res</span><span class="o">=</span><span class="n">OGR_G_GetBoundary</span><span class="p">(</span><span class="n">geometry</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="n">tmp1</span><span class="o">=</span><span class="n">getMapFromMaps</span><span class="p">(</span><span class="n">outputs</span><span class="p">,</span><span class="s">&quot;Result&quot;</span><span class="p">,</span><span class="s">&quot;mimeType&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="nf">if</span><span class="p">(</span><span class="n">strncmp</span><span class="p">(</span><span class="n">tmp1</span><span class="o">-&gt;</span><span class="n">value</span><span class="p">,</span><span class="s">&quot;application/json&quot;</span><span class="p">,</span><span class="mi">16</span><span class="p">)</span><span class="o">==</span><span class="mi">0</span><span class="p">){</span><span class="w"></span>
-<span class="w">    </span><span class="n">char</span><span class="w"> </span><span class="o">*</span><span class="n">tmp</span><span class="o">=</span><span class="n">OGR_G_ExportToJson</span><span class="p">(</span><span class="n">res</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">setMapInMaps</span><span class="p">(</span><span class="n">outputs</span><span class="p">,</span><span class="s">&quot;Result&quot;</span><span class="p">,</span><span class="s">&quot;value&quot;</span><span class="p">,</span><span class="n">tmp</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">setMapInMaps</span><span class="p">(</span><span class="n">outputs</span><span class="p">,</span><span class="s">&quot;Result&quot;</span><span class="p">,</span><span class="s">&quot;mimeType&quot;</span><span class="p">,</span><span class="s">&quot;text/plain&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">free</span><span class="p">(</span><span class="n">tmp</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"></span>
-<span class="w">  </span><span class="n">else</span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">char</span><span class="w"> </span><span class="o">*</span><span class="n">tmp</span><span class="o">=</span><span class="n">OGR_G_ExportToGML</span><span class="p">(</span><span class="n">res</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">setMapInMaps</span><span class="p">(</span><span class="n">outputs</span><span class="p">,</span><span class="s">&quot;Result&quot;</span><span class="p">,</span><span class="s">&quot;value&quot;</span><span class="p">,</span><span class="n">tmp</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">free</span><span class="p">(</span><span class="n">tmp</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"></span>
-<span class="w">  </span><span class="n">outputs</span><span class="o">-&gt;</span><span class="n">next</span><span class="o">=</span><span class="n">NULL</span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="n">OGR_G_DestroyGeometry</span><span class="p">(</span><span class="n">geometry</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="n">OGR_G_DestroyGeometry</span><span class="p">(</span><span class="n">res</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="kr">return</span><span class="w"> </span><span class="n">SERVICE_SUCCEEDED</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>int Boundary(maps*&amp; conf,maps*&amp; inputs,maps*&amp; outputs){
+  OGRGeometryH geometry,res;
+  map* tmp=getMapFromMaps(inputs,&quot;InputPolygon&quot;,&quot;value&quot;);
+  if(tmp==NULL){
+    setMapInMaps(m,&quot;lenv&quot;,&quot;message&quot;,&quot;Unable to parse InputPolygon&quot;);
+    return SERVICE_FAILED;
+  }
+  map* tmp1=getMapFromMaps(inputs,&quot;InputPolygon&quot;,&quot;mimeType&quot;);
+  if(strncmp(tmp1-&gt;value,&quot;application/json&quot;,16)==0)
+    geometry=OGR_G_CreateGeometryFromJson(tmp-&gt;value);
+  else
+    geometry=createGeometryFromWFS(conf,tmp-&gt;value);
+  if(geometry==NULL){
+    setMapInMaps(m,&quot;lenv&quot;,&quot;message&quot;,&quot;Unable to parse InputPolygon&quot;);
+    return SERVICE_FAILED;
+  }
+  res=OGR_G_GetBoundary(geometry);
+  tmp1=getMapFromMaps(outputs,&quot;Result&quot;,&quot;mimeType&quot;);
+  if(strncmp(tmp1-&gt;value,&quot;application/json&quot;,16)==0){
+    char *tmp=OGR_G_ExportToJson(res);
+    setMapInMaps(outputs,&quot;Result&quot;,&quot;value&quot;,tmp);
+    setMapInMaps(outputs,&quot;Result&quot;,&quot;mimeType&quot;,&quot;text/plain&quot;);
+    free(tmp);
+  }
+  else{
+    char *tmp=OGR_G_ExportToGML(res);
+    setMapInMaps(outputs,&quot;Result&quot;,&quot;value&quot;,tmp);
+    free(tmp);
+  }
+  outputs-&gt;next=NULL;
+  OGR_G_DestroyGeometry(geometry);
+  OGR_G_DestroyGeometry(res);
+  return SERVICE_SUCCEEDED;
+}
 </pre></div>
 </div>
 <p>As you can see in the code above, the mimeType of the data inputs passed to our Service is first checked:</p>
-<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span><span class="nf">map</span><span class="o">*</span><span class="w"> </span><span class="n">tmp1</span><span class="o">=</span><span class="n">getMapFromMaps</span><span class="p">(</span><span class="n">inputs</span><span class="p">,</span><span class="s">&quot;InputPolygon&quot;</span><span class="p">,</span><span class="s">&quot;mimeType&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="nf">if</span><span class="p">(</span><span class="n">strncmp</span><span class="p">(</span><span class="n">tmp1</span><span class="o">-&gt;</span><span class="n">value</span><span class="p">,</span><span class="s">&quot;application/json&quot;</span><span class="p">,</span><span class="mi">16</span><span class="p">)</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span><span class="w"></span>
-<span class="w">  </span><span class="n">geometry</span><span class="o">=</span><span class="n">OGR_G_CreateGeometryFromJson</span><span class="p">(</span><span class="n">tmp</span><span class="o">-&gt;</span><span class="n">value</span><span class="p">);</span><span class="w"></span>
-<span class="n">else</span><span class="w"></span>
-<span class="w">  </span><span class="n">geometry</span><span class="o">=</span><span class="n">createGeometryFromWFS</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span><span class="n">tmp</span><span class="o">-&gt;</span><span class="n">value</span><span class="p">);</span><span class="w"></span>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>map* tmp1=getMapFromMaps(inputs,&quot;InputPolygon&quot;,&quot;mimeType&quot;);
+if(strncmp(tmp1-&gt;value,&quot;application/json&quot;,16)==0)
+  geometry=OGR_G_CreateGeometryFromJson(tmp-&gt;value);
+else
+  geometry=createGeometryFromWFS(conf,tmp-&gt;value);
 </pre></div>
 </div>
 <p>Basically, if we get an input with a mimeType set to application/json, then we will
@@ -607,18 +617,18 @@ only have to fill the value for the key named value, even if in our example we
 override the mimeType using the text/plain value rather than the application/json
 (to show that we can also edit other fields of a map). Indeed, depending on the
 format requested by the client (or the default one) we will provide JSON or GML representation of the geometry.</p>
-<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span><span class="n">tmp1</span><span class="o">=</span><span class="n">getMapFromMaps</span><span class="p">(</span><span class="n">outputs</span><span class="p">,</span><span class="s">&quot;Result&quot;</span><span class="p">,</span><span class="s">&quot;mimeType&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="nf">if</span><span class="p">(</span><span class="n">strncmp</span><span class="p">(</span><span class="n">tmp1</span><span class="o">-&gt;</span><span class="n">value</span><span class="p">,</span><span class="s">&quot;application/json&quot;</span><span class="p">,</span><span class="mi">16</span><span class="p">)</span><span class="o">==</span><span class="mi">0</span><span class="p">){</span><span class="w"></span>
-<span class="w">  </span><span class="n">char</span><span class="w"> </span><span class="o">*</span><span class="n">tmp</span><span class="o">=</span><span class="n">OGR_G_ExportToJson</span><span class="p">(</span><span class="n">res</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="n">setMapInMaps</span><span class="p">(</span><span class="n">outputs</span><span class="p">,</span><span class="s">&quot;Result&quot;</span><span class="p">,</span><span class="s">&quot;value&quot;</span><span class="p">,</span><span class="n">tmp</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="n">setMapInMaps</span><span class="p">(</span><span class="n">outputs</span><span class="p">,</span><span class="s">&quot;Result&quot;</span><span class="p">,</span><span class="s">&quot;mimeType&quot;</span><span class="p">,</span><span class="s">&quot;text/plain&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="n">free</span><span class="p">(</span><span class="n">tmp</span><span class="p">);</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-<span class="n">else</span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="n">char</span><span class="w"> </span><span class="o">*</span><span class="n">tmp</span><span class="o">=</span><span class="n">OGR_G_ExportToGML</span><span class="p">(</span><span class="n">res</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="n">setMapInMaps</span><span class="p">(</span><span class="n">outputs</span><span class="p">,</span><span class="s">&quot;Result&quot;</span><span class="p">,</span><span class="s">&quot;value&quot;</span><span class="p">,</span><span class="n">tmp</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="n">free</span><span class="p">(</span><span class="n">tmp</span><span class="p">);</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>tmp1=getMapFromMaps(outputs,&quot;Result&quot;,&quot;mimeType&quot;);
+if(strncmp(tmp1-&gt;value,&quot;application/json&quot;,16)==0){
+  char *tmp=OGR_G_ExportToJson(res);
+  setMapInMaps(outputs,&quot;Result&quot;,&quot;value&quot;,tmp);
+  setMapInMaps(outputs,&quot;Result&quot;,&quot;mimeType&quot;,&quot;text/plain&quot;);
+  free(tmp);
+}
+else{
+  char *tmp=OGR_G_ExportToGML(res);
+  setMapInMaps(outputs,&quot;Result&quot;,&quot;value&quot;,tmp);
+  free(tmp);
+}
 </pre></div>
 </div>
 <p>The Boundary ZOO Service is now implemented and you need to compile it to produce
@@ -632,15 +642,15 @@ You must then include the required files to access the libxml2 and OGR C-API.</p
 extern “C”. The final Service code should be stored in a service.c file located in
 the root of the Services Provider directory (so in <code class="docutils literal notranslate"><span class="pre">/home/zoows/sources/zoo-services/ws_sp</span></code>).
 It should look like this:</p>
-<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;ogr_api.h&quot;</span><span class="cp"></span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;service.h&quot;</span><span class="cp"></span>
-<span class="k">extern</span><span class="w"> </span><span class="s">&quot;C&quot;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;libxml/tree.h&gt;</span><span class="cp"></span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;libxml/parser.h&gt;</span><span class="cp"></span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;libxml/xpath.h&gt;</span><span class="cp"></span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;libxml/xpathInternals.h&gt;</span><span class="cp"></span>
-<span class="o">&lt;</span><span class="n">YOUR</span><span class="w"> </span><span class="n">SERVICE</span><span class="w"> </span><span class="n">CODE</span><span class="w"> </span><span class="n">AND</span><span class="w"> </span><span class="n">OTHER</span><span class="w"> </span><span class="n">UTILITIES</span><span class="w"> </span><span class="n">FUNCTIONS</span><span class="o">&gt;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;ogr_api.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;service.h&quot;</span>
+<span class="k">extern</span><span class="w"> </span><span class="s">&quot;C&quot;</span><span class="w"> </span><span class="p">{</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;libxml/tree.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;libxml/parser.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;libxml/xpath.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;libxml/xpathInternals.h&gt;</span>
+<span class="o">&lt;</span><span class="n">YOUR</span><span class="w"> </span><span class="n">SERVICE</span><span class="w"> </span><span class="n">CODE</span><span class="w"> </span><span class="n">AND</span><span class="w"> </span><span class="n">OTHER</span><span class="w"> </span><span class="n">UTILITIES</span><span class="w"> </span><span class="n">FUNCTIONS</span><span class="o">&gt;</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>The full source code of your Service is now ready and you must produce the corresponding
@@ -670,19 +680,19 @@ on the library we have to link against (defined in the <code class="docutils lit
 In order to link against the gdal and libxml2 libraries, you can use the same tools than
 above using the <code class="docutils literal notranslate"><span class="pre">--libs</span></code> argument rather than <code class="docutils literal notranslate"><span class="pre">--cflags</span></code>. The full <code class="docutils literal notranslate"><span class="pre">LDFLAGS</span></code>
 definition must look like this :</p>
-<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>LDFLAGS=`gdal-config --libs` `xml2-config --libs` ../../zoo-kernel/service_internal.o
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>LDFLAGS=`gdal-config --libs` <span class="sb">`xml2-config --libs`</span> ../../zoo-kernel/service_internal.o
 </pre></div>
 </div>
 <p>Let’s now create a <code class="docutils literal notranslate"><span class="pre">Makefile</span></code> which will help you compiling your code over the time.
 Please write a short <code class="docutils literal notranslate"><span class="pre">Makefile</span></code> in the root of your ZOO Services Provider directory, containing the following lines:</p>
 <div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>ZOO_SRC_ROOT=../../zoo-kernel/
-CFLAGS=-I<span class="cp">${</span><span class="n">ZOO_SRC_ROOT</span><span class="cp">}</span> `xml2-config --cflags` `gdal-config --cflags`
-LDFLAGS=`xml2-config --libs` `gdal-config --libs`<span class="cp">${</span><span class="n">ZOO_SRC_ROOT</span><span class="cp">}</span>/service_internal.o
+CFLAGS=-I<span class="cp">${</span><span class="n">ZOO_SRC_ROOT</span><span class="cp">}</span><span class="w"> </span>`xml2-config<span class="w"> </span>--cflags`<span class="w"> </span>`gdal-config<span class="w"> </span>--cflags`
+LDFLAGS=`xml2-config<span class="w"> </span>--libs`<span class="w"> </span>`gdal-config<span class="w"> </span>--libs`<span class="cp">${</span><span class="n">ZOO_SRC_ROOT</span><span class="cp">}</span>/service_internal.o
 
-cgi-env/ogr_ws_service_provider.zo: service.c
-    g++ <span class="cp">${</span><span class="n">CFLAGS</span><span class="cp">}</span> -shared -fpic -o cgi-env/ogr_ws_service_provider.zo ./service.c $ {LDFLAGS}
+cgi-env/ogr_ws_service_provider.zo:<span class="w"> </span>service.c
+<span class="w">    </span>g++<span class="w"> </span><span class="cp">${</span><span class="n">CFLAGS</span><span class="cp">}</span><span class="w"> </span>-shared<span class="w"> </span>-fpic<span class="w"> </span>-o<span class="w"> </span>cgi-env/ogr_ws_service_provider.zo<span class="w"> </span>./service.c<span class="w"> </span>$<span class="w"> </span>{LDFLAGS}
 clean:
-    rm -f cgi-env/ogr_ws_service_provider.zo
+<span class="w">    </span>rm<span class="w"> </span>-f<span class="w"> </span>cgi-env/ogr_ws_service_provider.zo
 </pre></div>
 </div>
 <p>Using this <code class="docutils literal notranslate"><span class="pre">Makefile</span></code>, you should be able to run <code class="docutils literal notranslate"><span class="pre">make</span></code> from your ZOO Service Provider
@@ -706,7 +716,7 @@ an easy way , simply by copying the whole cgi-env content in your <code class="d
 <p>Your ZOO Services Provider is now ready to use from an Execute request passed to ZOO Kernel.</p>
 </section>
 <section id="python-version">
-<h4><a class="toc-backref" href="#table-of-contents" role="doc-backlink">Python Version</a><a class="headerlink" href="#python-version" title="Permalink to this heading">¶</a></h4>
+<h4><a class="toc-backref" href="#table-of-contents" role="doc-backlink">Python Version</a><a class="headerlink" href="#python-version" title="Link to this heading">¶</a></h4>
 <p>For those using Python to implement their ZOO Services Provider, the full code to copy in
 <code class="docutils literal notranslate"><span class="pre">ogr_ws_service_provider.py</span></code> in <code class="docutils literal notranslate"><span class="pre">cgi-env</span></code> directory is shown bellow. Indeed, as
 Python is an interpreted language, you do not have to compile anything before deploying
@@ -755,13 +765,13 @@ the code was volontary made in a similar way.</p>
 </section>
 </section>
 <section id="testing-the-service-using-execute-request">
-<h3><a class="toc-backref" href="#table-of-contents" role="doc-backlink">Testing the Service using Execute Request</a><a class="headerlink" href="#testing-the-service-using-execute-request" title="Permalink to this heading">¶</a></h3>
+<h3><a class="toc-backref" href="#table-of-contents" role="doc-backlink">Testing the Service using Execute Request</a><a class="headerlink" href="#testing-the-service-using-execute-request" title="Link to this heading">¶</a></h3>
 <p><strong>The simple and unreadable way</strong></p>
 <p>Everybody should now get his own copy of the OGR Boundary Service stored as a ZOO
 Services Provider called <code class="docutils literal notranslate"><span class="pre">ogr_ws_service_provider</span></code> and deployed in the ZOO Kernel
 tree, so the following Execute request can be used to test the Service:</p>
 <p><a class="reference external" href="http://localhost/cgi-bin/zoo_loader.cgi?request=Execute&amp;service=WPS&amp;version=1.0.0&amp;Identifier=Boundary&amp;DataInputs=InputPolygon=Reference&#64;xlink:href=http%3A%2F%2Flocalhost%2Fcgi-bin%2Fmapserv%3Fmap%3D%2Fvar%2Fwww%2Fwfs.map%26SERVICE%3DWFS%26REQUEST%3DGetFeature%26VERSION%3D1.0.0%26typename%3Dregions%26SRS%3DEPSG%3A4326%26FeatureID%3Dregions.3192">link</a></p>
-<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>http://localhost/cgi-bin/zoo_loader.cgi?request=Execute&amp;service=WPS&amp;version=1.0.0&amp;Identifier=Boundary&amp;DataInputs=InputPolygon=Reference@xlink:href=http%3A%2F%2Flocalhost%2Fcgi-bin%2Fmapserv%3Fmap%3D%2Fvar%2Fwww%2Fwfs.map%26SERVICE%3DWFS%26REQUEST%3DGetFeature%26VERSION%3D1.0.0%26typename%3Dregions%26SRS%3DEPSG%3A4326%26FeatureID%3Dregions.3192
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">localhost</span><span class="o">/</span><span class="n">cgi</span><span class="o">-</span><span class="n">bin</span><span class="o">/</span><span class="n">zoo_loader</span><span class="o">.</span><span class="n">cgi</span><span class="err">?</span><span class="n">request</span><span class="o">=</span><span class="n">Execute</span><span class="o">&amp;</span><span class="n">service</span><span class="o">=</span><span class="n">WPS</span><span class="o">&amp;</span><span class="n">version</span><span class="o">=</span><span class="mf">1.0</span><span class="o">.</span><span class="mi">0</span><span class="o">&amp;</span><span class="n">Identifier</span><span class="o">=</span><span class="n">Boundary</span><span class="o">&amp;</span><span class="n">DataInputs</span><span class="o">=</span><span class="n">InputPolygon</span><span class="o">=</span><span class="n">Reference</span><span class="err">@</span><span class="n">xlink</span><span class="p">:</span><span class="n">href</span><span class="o">=</span><span class="n">http</span><span class="o">%</span><span class="mi">3</span><span class="n">A</span><span class="o">%</span><span class="mi">2</span><span class="n">F</span><span class="o">%</span><span class="mi">2</span><span class="n">Flocalhost</span><span class="o">%</span><span class="mi">2</span><span class="n">Fcgi</span><span class="o">-</span><span class="n">bin</span><span class="o">%</span><span class="mi">2</span><span class="n">Fmapserv</span><span class="o">%</span><span class="mi">3</span><span class="n">Fmap</span><span class="o">%</span><span class="mi">3</span><span class="n">D</span><span class="o">%</span><span class="mi">2</span><span class="n">Fvar</span><span class="o">%</span><span class="mi">2</span><span class="n">Fwww</span><span class="o">%</span><span class="mi">2</span><span class="n">Fwfs</span><span class="o">.</span><span class="n">map</span><span class="o">%</span><span class="mi">26</span><span class="n">SERVICE</span><span class="o">%</span><span class="mi">3</span><span class="n">DWFS</span><span class="o">%</span><span class="mi">26</span><span class="n">REQUEST</span><span class="o">%</span><span class="mi">3</span><span class="n">DGetFeature</span><span class="o">%</span><span class="mi">26</span><span class="n">VERSION</span><span class="o">%</span><span class="mi">3</span><span class="n">D1</span><span class="o">.</span><span class="mf">0.0</span><span class="o">%</span><span class="mi">26</span><span class="n">typename</span><span class="o">%</span><span class="mi">3</span><span class="n">Dregions</span><span class="o">%</span><span class="mi">26</span><span class="n">SRS</span><span class="o">%</span><span class="mi">3</span><span class="n">DEPSG</span><span class="o">%</span><span class="mi">3</span><span class="n">A4326</span><span class="o">%</span><span class="mi">26</span><span class="n">FeatureID</span><span class="o">%</span><span class="mi">3</span><span class="n">Dregions</span><span class="o">.</span><span class="mi">3192</span>
 </pre></div>
 </div>
 <p>As you can see in the url above, we use an URLEncoded WFS request to the MapServer
@@ -780,7 +790,8 @@ in such a request, ZOO Kernel will give you an ExecuteResponse document which wi
 contain the attribute statusLocation, which inform the client where the ongoing
 status or the final ExecuteResponse will be located.</p>
 <p>Here is an example of what the ExecuteResponse would look like in case <code class="docutils literal notranslate"><span class="pre">storeExecuteResponse</span></code> was set to true in the request:</p>
-<a class="reference internal image-reference" href="../_images/Practical-introduction-to-ZOO-7.png"><img alt="../_images/Practical-introduction-to-ZOO-7.png" class="align-center" src="../_images/Practical-introduction-to-ZOO-7.png" style="width: 610px; height: 146px;" /></a>
+<a class="reference internal image-reference" href="../_images/Practical-introduction-to-ZOO-7.png"><img alt="../_images/Practical-introduction-to-ZOO-7.png" class="align-center" src="../_images/Practical-introduction-to-ZOO-7.png" style="width: 610px; height: 146px;" />
+</a>
 <p>Then, according to the statusLocation, you should get the ExecuteResponse as you get
 before using the previous request. Note that can be really useful to provide some
 caching system for a client application.</p>
@@ -791,7 +802,7 @@ data you want to get in result of your query adding the attribute <code class="d
 to your <code class="docutils literal notranslate"><span class="pre">ResponseDocument</span></code> parameter. Adding this parameter to the previous request
 will give us the result as its GML representation :</p>
 <p><a class="reference external" href="http://localhost/cgi-bin/zoo_loader.cgi?request=Execute&amp;service=WPS&amp;version=1.0.0&amp;Identifier=Boundary&amp;DataInputs=InputPolygon=Reference&#64;xlink:href=http%3A%2F%2Flocalhost%2Fcgi-bin%2Fmapserv%3Fmap%3D%2Fvar%2Fwww%2Fwfs.map%26SERVICE%3DWFS%26REQUEST%3DGetFeature%26VERSION%3D1.0.0%26typename%3Dregions%26SRS%3DEPSG%3A4326%26FeatureID%3Dregions.3192&amp;ResponseDocument=Result&#64;mimeType=text/xml">link</a></p>
-<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>http://localhost/cgi-bin/zoo_loader.cgi?request=Execute&amp;service=WPS&amp;version=1.0.0&amp;Identifier=Boundary&amp;DataInputs=InputPolygon=Reference@xlink:href=http%3A%2F%2Flocalhost%2Fcgi-bin%2Fmapserv%3Fmap%3D%2Fvar%2Fwww%2Fwfs.map%26SERVICE%3DWFS%26REQUEST%3DGetFeature%26VERSION%3D1.0.0%26typename%3Dregions%26SRS%3DEPSG%3A4326%26FeatureID%3Dregions.3192&amp;ResponseDocument=Result@mimeType=text/xml
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">localhost</span><span class="o">/</span><span class="n">cgi</span><span class="o">-</span><span class="n">bin</span><span class="o">/</span><span class="n">zoo_loader</span><span class="o">.</span><span class="n">cgi</span><span class="err">?</span><span class="n">request</span><span class="o">=</span><span class="n">Execute</span><span class="o">&amp;</span><span class="n">service</span><span class="o">=</span><span class="n">WPS</span><span class="o">&amp;</span><span class="n">version</span><span class="o">=</span><span class="mf">1.0</span><span class="o">.</span><span class="mi">0</span><span class="o">&amp;</span><span class="n">Identifier</span><span class="o">=</span><span class="n">Boundary</span><span class="o">&amp;</span><span class="n">DataInputs</span><span class="o">=</span><span class="n">InputPolygon</span><span class="o">=</span><span class="n">Reference</span><span class="err">@</span><span class="n">xlink</span><span class="p">:</span><span class="n">href</span><span class="o">=</span><span class="n">http</span><span class="o">%</span><span class="mi">3</span><span class="n">A</span><span class="o">%</span><span class="mi">2</span><span class="n">F</span><span class="o">%</span><span class="mi">2</span><span class="n">Flocalhost</span><span class="o">%</span><span class="mi">2</span><span class="n">Fcgi</span><span class="o">-</span><span class="n">bin</span><span class="o">%</span><span class="mi">2</span><span class="n">Fmapserv</span><span class="o">%</span><span class="mi">3</span><span class="n">Fmap</span><span class="o">%</span><span class="mi">3</span><span class="n">D</span><span class="o">%</span><span class="mi">2</span><span class="n">Fvar</span><span class="o">%</span><span class="mi">2</span><span class="n">Fwww</span><span class="o">%</span><span class="mi">2</span><span class="n">Fwfs</span><span class="o">.</span><span class="n">map</span><span class="o">%</span><span class="mi">26</span><span class="n">SERVICE</span><span class="o">%</span><span class="mi">3</span><span class="n">DWFS</span><span class="o">%</span><span class="mi">26</span><span class="n">REQUEST</span><span class="o">%</span><span class="mi">3</span><span class="n">DGetFeature</span><span class="o">%</span><span class="mi">26</span><span class="n">VERSION</span><span class="o">%</span><span class="mi">3</span><span class="n">D1</span><span class="o">.</span><span class="mf">0.0</span><span class="o">%</span><span class="mi">26</span><span class="n">typename</span><span class="o">%</span><span class="mi">3</span><span class="n">Dregions</span><span class="o">%</span><span class="mi">26</span><span class="n">SRS</span><span class="o">%</span><span class="mi">3</span><span class="n">DEPSG</span><span class="o">%</span><span class="mi">3</span><span class="n">A4326</span><span class="o">%</span><span class="mi">26</span><span class="n">FeatureID</span><span class="o">%</span><span class="mi">3</span><span class="n">Dregions</span><span class="o">.</span><span class="mi">3192</span><span class="o">&amp;</span><span class="n">ResponseDocument</span><span class="o">=</span><span class="n">Result</span><span class="err">@</span><span class="n">mimeType</span><span class="o">=</span><span class="n">text</span><span class="o">/</span><span class="n">xml</span>
 </pre></div>
 </div>
 <p>As defined by the WPS specifications, you can also ask for a <code class="docutils literal notranslate"><span class="pre">RawDataOutput</span></code> to
@@ -799,7 +810,7 @@ get only the data without the full <code class="docutils literal notranslate"><s
 to replace the <code class="docutils literal notranslate"><span class="pre">ResponseDocument</span></code> of your request by <code class="docutils literal notranslate"><span class="pre">RawDataOutput</span></code>, like in
 the following request :</p>
 <p><a class="reference external" href="http://localhost/cgi-bin/zoo_loader.cgi?request=Execute&amp;service=WPS&amp;version=1.0.0&amp;Identifier=Boundary&amp;DataInputs=InputPolygon=Reference&#64;xlink:href=http%3A%2F%2Flocalhost%2Fcgi-bin%2Fmapserv%3Fmap%3D%2Fvar%2Fwww%2Fwfs.map%26SERVICE%3DWFS%26REQUEST%3DGetFeature%26VERSION%3D1.0.0%26typename%3Dregions%26SRS%3DEPSG%3A4326%26FeatureID%3Dregions.3192&amp;RawDataOutput=Result&#64;mimeType=application/json">link</a></p>
-<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>http://localhost/cgi-bin/zoo_loader.cgi?request=Execute&amp;service=WPS&amp;version=1.0.0&amp;Identifier=Boundary&amp;DataInputs=InputPolygon=Reference@xlink:href=http%3A%2F%2Flocalhost%2Fcgi-bin%2Fmapserv%3Fmap%3D%2Fvar%2Fwww%2Fwfs.map%26SERVICE%3DWFS%26REQUEST%3DGetFeature%26VERSION%3D1.0.0%26typename%3Dregions%26SRS%3DEPSG%3A4326%26FeatureID%3Dregions.3192&amp;RawDataOutput=Result@mimeType=application/json
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">localhost</span><span class="o">/</span><span class="n">cgi</span><span class="o">-</span><span class="n">bin</span><span class="o">/</span><span class="n">zoo_loader</span><span class="o">.</span><span class="n">cgi</span><span class="err">?</span><span class="n">request</span><span class="o">=</span><span class="n">Execute</span><span class="o">&amp;</span><span class="n">service</span><span class="o">=</span><span class="n">WPS</span><span class="o">&amp;</span><span class="n">version</span><span class="o">=</span><span class="mf">1.0</span><span class="o">.</span><span class="mi">0</span><span class="o">&amp;</span><span class="n">Identifier</span><span class="o">=</span><span class="n">Boundary</span><span class="o">&amp;</span><span class="n">DataInputs</span><span class="o">=</span><span class="n">InputPolygon</span><span class="o">=</span><span class="n">Reference</span><span class="err">@</span><span class="n">xlink</span><span class="p">:</span><span class="n">href</span><span class="o">=</span><span class="n">http</span><span class="o">%</span><span class="mi">3</span><span class="n">A</span><span class="o">%</span><span class="mi">2</span><span class="n">F</span><span class="o">%</span><span class="mi">2</span><span class="n">Flocalhost</span><span class="o">%</span><span class="mi">2</span><span class="n">Fcgi</span><span class="o">-</span><span class="n">bin</span><span class="o">%</span><span class="mi">2</span><span class="n">Fmapserv</span><span class="o">%</span><span class="mi">3</span><span class="n">Fmap</span><span class="o">%</span><span class="mi">3</span><span class="n">D</span><span class="o">%</span><span class="mi">2</span><span class="n">Fvar</span><span class="o">%</span><span class="mi">2</span><span class="n">Fwww</span><span class="o">%</span><span class="mi">2</span><span class="n">Fwfs</span><span class="o">.</span><span class="n">map</span><span class="o">%</span><span class="mi">26</span><span class="n">SERVICE</span><span class="o">%</span><span class="mi">3</span><span class="n">DWFS</span><span class="o">%</span><span class="mi">26</span><span class="n">REQUEST</span><span class="o">%</span><span class="mi">3</span><span class="n">DGetFeature</span><span class="o">%</span><span class="mi">26</span><span class="n">VERSION</span><span class="o">%</span><span class="mi">3</span><span class="n">D1</span><span class="o">.</span><span class="mf">0.0</span><span class="o">%</span><span class="mi">26</span><span class="n">typename</span><span class="o">%</span><span class="mi">3</span><span class="n">Dregions</span><span class="o">%</span><span class="mi">26</span><span class="n">SRS</span><span class="o">%</span><span class="mi">3</span><span class="n">DEPSG</span><span class="o">%</span><span class="mi">3</span><span class="n">A4326</span><span class="o">%</span><span class="mi">26</span><span class="n">FeatureID</span><span class="o">%</span><span class="mi">3</span><span class="n">Dregions</span><span class="o">.</span><span class="mi">3192</span><span class="o">&amp;</span><span class="n">RawDataOutput</span><span class="o">=</span><span class="n">Result</span><span class="err">@</span><span class="n">mimeType</span><span class="o">=</span><span class="n">application</span><span class="o">/</span><span class="n">json</span>
 </pre></div>
 </div>
 <p>Please note that we go back to the default mimeType to directly obtain the JSON
@@ -815,35 +826,36 @@ to let you access the produced file. To be able to handle this, you have to add 
 extension parameter in your <code class="docutils literal notranslate"><span class="pre">DataOutputs</span></code> node in the corresponding ZCFG file.</p>
 <p>Here is a sample url which provide such a result:</p>
 <p><a class="reference external" href="http://localhost/cgi-bin/zoo_loader.cgi?request=Execute&amp;service=WPS&amp;version=1.0.0&amp;Identifier=Boundary&amp;DataInputs=InputPolygon=Reference&#64;xlink:href=http%3A%2F%2Flocalhost%2Fcgi-bin%2Fmapserv%3Fmap%3D%2Fvar%2Fwww%2Fwfs.map%26SERVICE%3DWFS%26REQUEST%3DGetFeature%26VERSION%3D1.0.0%26typename%3Dregions%26SRS%3DEPSG%3A4326%26FeatureID%3Dregions.3192&amp;ResponseDocument=Result&#64;mimeType=application/json&#64;asReference=true">link</a></p>
-<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>http://localhost/cgi-bin/zoo_loader.cgi?request=Execute&amp;service=WPS&amp;version=1.0.0&amp;Identifier=Boundary&amp;DataInputs=InputPolygon=Reference@xlink:href=http%3A%2F%2Flocalhost%2Fcgi-bin%2Fmapserv%3Fmap%3D%2Fvar%2Fwww%2Fwfs.map%26SERVICE%3DWFS%26REQUEST%3DGetFeature%26VERSION%3D1.0.0%26typename%3Dregions%26SRS%3DEPSG%3A4326%26FeatureID%3Dregions.3192&amp;ResponseDocument=Result@mimeType=application/json@asReference=true
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">localhost</span><span class="o">/</span><span class="n">cgi</span><span class="o">-</span><span class="n">bin</span><span class="o">/</span><span class="n">zoo_loader</span><span class="o">.</span><span class="n">cgi</span><span class="err">?</span><span class="n">request</span><span class="o">=</span><span class="n">Execute</span><span class="o">&amp;</span><span class="n">service</span><span class="o">=</span><span class="n">WPS</span><span class="o">&amp;</span><span class="n">version</span><span class="o">=</span><span class="mf">1.0</span><span class="o">.</span><span class="mi">0</span><span class="o">&amp;</span><span class="n">Identifier</span><span class="o">=</span><span class="n">Boundary</span><span class="o">&amp;</span><span class="n">DataInputs</span><span class="o">=</span><span class="n">InputPolygon</span><span class="o">=</span><span class="n">Reference</span><span class="err">@</span><span class="n">xlink</span><span class="p">:</span><span class="n">href</span><span class="o">=</span><span class="n">http</span><span class="o">%</span><span class="mi">3</span><span class="n">A</span><span class="o">%</span><span class="mi">2</span><span class="n">F</span><span class="o">%</span><span class="mi">2</span><span class="n">Flocalhost</span><span class="o">%</span><span class="mi">2</span><span class="n">Fcgi</span><span class="o">-</span><span class="n">bin</span><span class="o">%</span><span class="mi">2</span><span class="n">Fmapserv</span><span class="o">%</span><span class="mi">3</span><span class="n">Fmap</span><span class="o">%</span><span class="mi">3</span><span class="n">D</span><span class="o">%</span><span class="mi">2</span><span class="n">Fvar</span><span class="o">%</span><span class="mi">2</span><span class="n">Fwww</span><span class="o">%</span><span class="mi">2</span><span class="n">Fwfs</span><span class="o">.</span><span class="n">map</span><span class="o">%</span><span class="mi">26</span><span class="n">SERVICE</span><span class="o">%</span><span class="mi">3</span><span class="n">DWFS</span><span class="o">%</span><span class="mi">26</span><span class="n">REQUEST</span><span class="o">%</span><span class="mi">3</span><span class="n">DGetFeature</span><span class="o">%</span><span class="mi">26</span><span class="n">VERSION</span><span class="o">%</span><span class="mi">3</span><span class="n">D1</span><span class="o">.</span><span class="mf">0.0</span><span class="o">%</span><span class="mi">26</span><span class="n">typename</span><span class="o">%</span><span class="mi">3</span><span class="n">Dregions</span><span class="o">%</span><span class="mi">26</span><span class="n">SRS</span><span class="o">%</span><span class="mi">3</span><span class="n">DEPSG</span><span class="o">%</span><span class="mi">3</span><span class="n">A4326</span><span class="o">%</span><span class="mi">26</span><span class="n">FeatureID</span><span class="o">%</span><span class="mi">3</span><span class="n">Dregions</span><span class="o">.</span><span class="mi">3192</span><span class="o">&amp;</span><span class="n">ResponseDocument</span><span class="o">=</span><span class="n">Result</span><span class="err">@</span><span class="n">mimeType</span><span class="o">=</span><span class="n">application</span><span class="o">/</span><span class="n">json</span><span class="err">@</span><span class="n">asReference</span><span class="o">=</span><span class="bp">true</span>
 </pre></div>
 </div>
 <p>You can see bellow what kind of result can be expected :</p>
-<a class="reference internal image-reference" href="../_images/screenshot-ZOO-asReference-attribute.png"><img alt="../_images/screenshot-ZOO-asReference-attribute.png" class="align-center" src="../_images/screenshot-ZOO-asReference-attribute.png" style="width: 620px; height: 217px;" /></a>
+<a class="reference internal image-reference" href="../_images/screenshot-ZOO-asReference-attribute.png"><img alt="../_images/screenshot-ZOO-asReference-attribute.png" class="align-center" src="../_images/screenshot-ZOO-asReference-attribute.png" style="width: 620px; height: 217px;" />
+</a>
 <p><strong>Simplification and readability of request</strong></p>
 <p>As you can see in the simple example we used since the begining of this workshop,
 it is sometimes hard to write the Execute requests using the GET method as it
 makes really long and complexe URLs. In the next requests examples, we will
 thus use the POST XML requests. First , here is the XML request corresponding
 to the previous Execute we used:</p>
-<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;wps:Execute</span> <span class="na">service=</span><span class="s">&quot;WPS&quot;</span> <span class="na">version=</span><span class="s">&quot;1.0.0&quot;</span> <span class="na">xmlns:wps=</span><span class="s">&quot;http://www.opengis.net/wps/1.0.0&quot;</span> <span class="na">xmlns:ows=</span><span class="s">&quot;http://www.opengis.net/ows/1.1&quot;</span> <span class="na">xmlns:xlink=</span><span class="s">&quot;http://www.w3.org/1999/xlink&quot;</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:schemaLocation=</span><span class="s">&quot;http://www.opengis.net/wps/1.0.0 ../wpsExecute_request.xsd&quot;</span><span class="nt">&gt;</span>
- <span class="nt">&lt;ows:Identifier&gt;</span>Boundary<span class="nt">&lt;/ows:Identifier&gt;</span>
- <span class="nt">&lt;wps:DataInputs&gt;</span>
-  <span class="nt">&lt;wps:Input&gt;</span>
-   <span class="nt">&lt;ows:Identifier&gt;</span>InputPolygon<span class="nt">&lt;/ows:Identifier&gt;</span>
-   <span class="nt">&lt;ows:Title&gt;</span>Playground area<span class="nt">&lt;/ows:Title&gt;</span>
-   <span class="nt">&lt;wps:Reference</span> <span class="na">xlink:href=</span><span class="s">&quot;http://localhost/cgi-bin/mapserv?map=/var/www/wfs.map&amp;amp;SERVICE=WFS&amp;amp;REQUEST=GetFeature&amp;amp;VERSION=1.0.0&amp;amp;typename=regions&amp;amp;SRS=EPSG:4326&amp;amp;featureid=regions.3192&quot;</span><span class="nt">/&gt;</span>
-  <span class="nt">&lt;/wps:Input&gt;</span>
- <span class="nt">&lt;/wps:DataInputs&gt;</span>
- <span class="nt">&lt;wps:ResponseForm&gt;</span>
-  <span class="nt">&lt;wps:ResponseDocument&gt;</span>
-   <span class="nt">&lt;wps:Output&gt;</span>
-    <span class="nt">&lt;ows:Identifier&gt;</span>Result<span class="nt">&lt;/ows:Identifier&gt;</span>
-    <span class="nt">&lt;ows:Title&gt;</span>Area serviced by playground.<span class="nt">&lt;/ows:Title&gt;</span>
-    <span class="nt">&lt;ows:Abstract&gt;</span>Area within which most users of this playground will live.<span class="nt">&lt;/ows:Abstract&gt;</span>
-   <span class="nt">&lt;/wps:Output&gt;</span>
-  <span class="nt">&lt;/wps:ResponseDocument&gt;</span>
- <span class="nt">&lt;/wps:ResponseForm&gt;</span>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;wps:Execute</span><span class="w"> </span><span class="na">service=</span><span class="s">&quot;WPS&quot;</span><span class="w"> </span><span class="na">version=</span><span class="s">&quot;1.0.0&quot;</span><span class="w"> </span><span class="na">xmlns:wps=</span><span class="s">&quot;http://www.opengis.net/wps/1.0.0&quot;</span><span class="w"> </span><span class="na">xmlns:ows=</span><span class="s">&quot;http://www.opengis.net/ows/1.1&quot;</span><span class="w"> </span><span class="na">xmlns:xlink=</span><span class="s">&quot;http://www.w3.org/1999/xlink&quot;</span><span class="w"> </span><span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><span class="w"> </span><span class="na">xsi:schemaLocation=</span><span class="s">&quot;http://www.opengis.net/wps/1.0.0 ../wpsExecute_request.xsd&quot;</span><span class="nt">&gt;</span>
+<span class="w"> </span><span class="nt">&lt;ows:Identifier&gt;</span>Boundary<span class="nt">&lt;/ows:Identifier&gt;</span>
+<span class="w"> </span><span class="nt">&lt;wps:DataInputs&gt;</span>
+<span class="w">  </span><span class="nt">&lt;wps:Input&gt;</span>
+<span class="w">   </span><span class="nt">&lt;ows:Identifier&gt;</span>InputPolygon<span class="nt">&lt;/ows:Identifier&gt;</span>
+<span class="w">   </span><span class="nt">&lt;ows:Title&gt;</span>Playground<span class="w"> </span>area<span class="nt">&lt;/ows:Title&gt;</span>
+<span class="w">   </span><span class="nt">&lt;wps:Reference</span><span class="w"> </span><span class="na">xlink:href=</span><span class="s">&quot;http://localhost/cgi-bin/mapserv?map=/var/www/wfs.map&amp;amp;SERVICE=WFS&amp;amp;REQUEST=GetFeature&amp;amp;VERSION=1.0.0&amp;amp;typename=regions&amp;amp;SRS=EPSG:4326&amp;amp;featureid=regions.3192&quot;</span><span class="nt">/&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/wps:Input&gt;</span>
+<span class="w"> </span><span class="nt">&lt;/wps:DataInputs&gt;</span>
+<span class="w"> </span><span class="nt">&lt;wps:ResponseForm&gt;</span>
+<span class="w">  </span><span class="nt">&lt;wps:ResponseDocument&gt;</span>
+<span class="w">   </span><span class="nt">&lt;wps:Output&gt;</span>
+<span class="w">    </span><span class="nt">&lt;ows:Identifier&gt;</span>Result<span class="nt">&lt;/ows:Identifier&gt;</span>
+<span class="w">    </span><span class="nt">&lt;ows:Title&gt;</span>Area<span class="w"> </span>serviced<span class="w"> </span>by<span class="w"> </span>playground.<span class="nt">&lt;/ows:Title&gt;</span>
+<span class="w">    </span><span class="nt">&lt;ows:Abstract&gt;</span>Area<span class="w"> </span>within<span class="w"> </span>which<span class="w"> </span>most<span class="w"> </span>users<span class="w"> </span>of<span class="w"> </span>this<span class="w"> </span>playground<span class="w"> </span>will<span class="w"> </span>live.<span class="nt">&lt;/ows:Abstract&gt;</span>
+<span class="w">   </span><span class="nt">&lt;/wps:Output&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/wps:ResponseDocument&gt;</span>
+<span class="w"> </span><span class="nt">&lt;/wps:ResponseForm&gt;</span>
 <span class="nt">&lt;/wps:Execute&gt;</span>
 </pre></div>
 </div>
@@ -855,30 +867,31 @@ the textarea field and click the « run using XML Request » submit button. You 
 get exactly the same result as when running your Service using the GET request. The
 screenshot above show the HTML form including the request and the ExecuteResponse
 document displayed in the iframe at the bottom of the page:</p>
-<a class="reference internal image-reference" href="../_images/Practical-introduction-to-ZOO-8.png"><img alt="../_images/Practical-introduction-to-ZOO-8.png" class="align-center" src="../_images/Practical-introduction-to-ZOO-8.png" style="width: 573px; height: 308px;" /></a>
+<a class="reference internal image-reference" href="../_images/Practical-introduction-to-ZOO-8.png"><img alt="../_images/Practical-introduction-to-ZOO-8.png" class="align-center" src="../_images/Practical-introduction-to-ZOO-8.png" style="width: 573px; height: 308px;" />
+</a>
 <p>The xlink:href value is used in the simplest way to deal with such data input. Obviously,
 you can also use a full JSON string of the geometry, as shown in the following XML Request example :</p>
-<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;wps:Execute</span> <span class="na">service=</span><span class="s">&quot;WPS&quot;</span> <span class="na">version=</span><span class="s">&quot;1.0.0&quot;</span> <span class="na">xmlns:wps=</span><span class="s">&quot;http://www.opengis.net/wps/1.0.0&quot;</span> <span class="na">xmlns:ows=</span><span class="s">&quot;http://www.opengis.net/ows/1.1&quot;</span> <span class="na">xmlns:xlink=</span><span class="s">&quot;http://www.w3.org/1999/xlink&quot;</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:schemaLocation=</span><span class="s">&quot;http://www.opengis.net/wps/1.0.0 ../wpsExecute_request.xsda&quot;</span><span class="nt">&gt;</span>
- <span class="nt">&lt;ows:Identifier&gt;</span>Boundary<span class="nt">&lt;/ows:Identifier&gt;</span>
- <span class="nt">&lt;wps:DataInputs&gt;</span>
-  <span class="nt">&lt;wps:Input&gt;</span>
-   <span class="nt">&lt;ows:Identifier&gt;</span>InputPolygon<span class="nt">&lt;/ows:Identifier&gt;</span>
-   <span class="nt">&lt;wps:Data&gt;</span>
-    <span class="nt">&lt;wps:ComplexData</span> <span class="na">mimeType=</span><span class="s">&quot;application/json&quot;</span><span class="nt">&gt;</span>
-{ &quot;type&quot;: &quot;MultiPolygon&quot;, &quot;coordinates&quot;: [ [ [ [ -105.998360, 31.393818 ], [ -106.212753, 31.478128 ], [ -106.383041, 31.733763 ], [ -106.538971, 31.786198 ], [ -106.614441, 31.817728 ], [ -105.769730, 31.170780 ], [ -105.998360, 31.393818 ] ] ], [ [ [ -94.913429, 29.257572 ], [ -94.767380, 29.342451 ], [ -94.748405, 29.319490 ], [ -95.105415, 29.096958 ], [ -94.913429, 29.257572 ] ] ] ] }
-    <span class="nt">&lt;/wps:ComplexData&gt;</span>
-   <span class="nt">&lt;/wps:Data&gt;</span>
-  <span class="nt">&lt;/wps:Input&gt;</span>
- <span class="nt">&lt;/wps:DataInputs&gt;</span>
- <span class="nt">&lt;wps:ResponseForm&gt;</span>
-  <span class="nt">&lt;wps:ResponseDocument&gt;</span>
-   <span class="nt">&lt;wps:Output&gt;</span>
-    <span class="nt">&lt;ows:Identifier&gt;</span>Result<span class="nt">&lt;/ows:Identifier&gt;</span>
-    <span class="nt">&lt;ows:Title&gt;</span>Area serviced by playground.<span class="nt">&lt;/ows:Title&gt;</span>
-    <span class="nt">&lt;ows:Abstract&gt;</span>Area within which most users of this playground will live.<span class="nt">&lt;/ows:Abstract&gt;</span>
-   <span class="nt">&lt;/wps:Output&gt;</span>
-  <span class="nt">&lt;/wps:ResponseDocument&gt;</span>
- <span class="nt">&lt;/wps:ResponseForm&gt;</span>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;wps:Execute</span><span class="w"> </span><span class="na">service=</span><span class="s">&quot;WPS&quot;</span><span class="w"> </span><span class="na">version=</span><span class="s">&quot;1.0.0&quot;</span><span class="w"> </span><span class="na">xmlns:wps=</span><span class="s">&quot;http://www.opengis.net/wps/1.0.0&quot;</span><span class="w"> </span><span class="na">xmlns:ows=</span><span class="s">&quot;http://www.opengis.net/ows/1.1&quot;</span><span class="w"> </span><span class="na">xmlns:xlink=</span><span class="s">&quot;http://www.w3.org/1999/xlink&quot;</span><span class="w"> </span><span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><span class="w"> </span><span class="na">xsi:schemaLocation=</span><span class="s">&quot;http://www.opengis.net/wps/1.0.0 ../wpsExecute_request.xsda&quot;</span><span class="nt">&gt;</span>
+<span class="w"> </span><span class="nt">&lt;ows:Identifier&gt;</span>Boundary<span class="nt">&lt;/ows:Identifier&gt;</span>
+<span class="w"> </span><span class="nt">&lt;wps:DataInputs&gt;</span>
+<span class="w">  </span><span class="nt">&lt;wps:Input&gt;</span>
+<span class="w">   </span><span class="nt">&lt;ows:Identifier&gt;</span>InputPolygon<span class="nt">&lt;/ows:Identifier&gt;</span>
+<span class="w">   </span><span class="nt">&lt;wps:Data&gt;</span>
+<span class="w">    </span><span class="nt">&lt;wps:ComplexData</span><span class="w"> </span><span class="na">mimeType=</span><span class="s">&quot;application/json&quot;</span><span class="nt">&gt;</span>
+{<span class="w"> </span>&quot;type&quot;:<span class="w"> </span>&quot;MultiPolygon&quot;,<span class="w"> </span>&quot;coordinates&quot;:<span class="w"> </span>[<span class="w"> </span>[<span class="w"> </span>[<span class="w"> </span>[<span class="w"> </span>-105.998360,<span class="w"> </span>31.393818<span class="w"> </span>],<span class="w"> </span>[<span class="w"> </span>-106.212753,<span class="w"> </span>31.478128<span class="w"> </span>],<span class="w"> </span>[<span class="w"> </span>-106.383041,<span class="w"> </span>31.733763<span class="w"> </span>],<span class="w"> </span>[<span class="w"> </span>-106.538971,<span class="w"> </span>31.786198<span class="w"> </span>],<span class="w"> </span>[<span class="w"> </span>-106.614441,<span class="w"> </span>31.817728<span class="w"> </span>],<span class="w"> </span>[<span class="w"> </span>-105.769730,<span class="w"> </span>31.170780<span class="w"> </span>],<span class="w"> </span>[<span class="w"> </span>-105.998360,<span class="w"> </span>31.393818<span class="w"> </span>]<span class="w"> </span>]<span class="w"> </span>],<span class="w"> </span>[<span class="w"> </span>[<span class="w"> </span>[<span class="w"> </span>-94.913429,<span class="w"> </span>29.257572<span class="w"> </span>],<span class="w"> </span>[<span class="w"> </span>-94.767380,<span class="w"> </span>29.342451<span class="w"> </span>],<span class="w"> </span>[<span class="w"> </span>-94.748405,<span class="w"> </span>29.319490<span class="w"> </span>],<span class="w"> </span>[<span class="w"> </span>-95.105415,<span class="w"> </span>29.096958<span class="w"> </span>],<span class="w"> </span>[<span class="w"> </span>-94.913429,<span class="w"> </span>29.257572<span class="w"> </span>]<span class="w"> </span>]<span class="w"> </span>]<span class="w"> </span>]<span class="w"> </span>}
+<span class="w">    </span><span class="nt">&lt;/wps:ComplexData&gt;</span>
+<span class="w">   </span><span class="nt">&lt;/wps:Data&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/wps:Input&gt;</span>
+<span class="w"> </span><span class="nt">&lt;/wps:DataInputs&gt;</span>
+<span class="w"> </span><span class="nt">&lt;wps:ResponseForm&gt;</span>
+<span class="w">  </span><span class="nt">&lt;wps:ResponseDocument&gt;</span>
+<span class="w">   </span><span class="nt">&lt;wps:Output&gt;</span>
+<span class="w">    </span><span class="nt">&lt;ows:Identifier&gt;</span>Result<span class="nt">&lt;/ows:Identifier&gt;</span>
+<span class="w">    </span><span class="nt">&lt;ows:Title&gt;</span>Area<span class="w"> </span>serviced<span class="w"> </span>by<span class="w"> </span>playground.<span class="nt">&lt;/ows:Title&gt;</span>
+<span class="w">    </span><span class="nt">&lt;ows:Abstract&gt;</span>Area<span class="w"> </span>within<span class="w"> </span>which<span class="w"> </span>most<span class="w"> </span>users<span class="w"> </span>of<span class="w"> </span>this<span class="w"> </span>playground<span class="w"> </span>will<span class="w"> </span>live.<span class="nt">&lt;/ows:Abstract&gt;</span>
+<span class="w">   </span><span class="nt">&lt;/wps:Output&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/wps:ResponseDocument&gt;</span>
+<span class="w"> </span><span class="nt">&lt;/wps:ResponseForm&gt;</span>
 <span class="nt">&lt;/wps:Execute&gt;</span>
 </pre></div>
 </div>
@@ -909,8 +922,8 @@ case you’ll have also to add some special parameter in the main section of you
 configuration file and to copy an xsl file used to replace on the fly in the ResponseDocument
 the percentCompleted attribute of the ProcessStarted node returned by the GetStatus service.</p>
 <p>So first edit you <code class="docutils literal notranslate"><span class="pre">main.cfg</span></code> file to add the following lines in your main section :</p>
-<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span><span class="n">rewriteUrl</span><span class="o">=</span><span class="n">call</span><span class="w"></span>
-<span class="n">dataPath</span><span class="o">=/</span><span class="k">var</span><span class="o">/</span><span class="n">www</span><span class="o">/</span><span class="n">data</span><span class="w"></span>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span><span class="n">rewriteUrl</span><span class="o">=</span><span class="n">call</span>
+<span class="n">dataPath</span><span class="o">=/</span><span class="k">var</span><span class="o">/</span><span class="n">www</span><span class="o">/</span><span class="n">data</span>
 </pre></div>
 </div>
 <p>Here you define the path where the service is able to find the xsl file, specified in the
@@ -918,60 +931,62 @@ dataPath parameter. You also tell the ZOO Kernel that you want to use the rewrit
 defined in the previous section.</p>
 <p>To finish your deployment, you’ll have now to copy the xsl file in the defined dataPath
 directory. You can use the following command :</p>
-<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span><span class="n">cp</span><span class="w"> </span><span class="o">~/</span><span class="n">zoows</span><span class="o">/</span><span class="n">sources</span><span class="o">/</span><span class="n">zoo</span><span class="o">-</span><span class="n">services</span><span class="o">/</span><span class="n">utils</span><span class="o">/</span><span class="n">status</span><span class="o">/</span><span class="n">cgi</span><span class="o">-</span><span class="n">env</span><span class="o">/*</span><span class="n">xsl</span><span class="w"> </span><span class="o">/</span><span class="k">var</span><span class="o">/</span><span class="n">www</span><span class="o">/</span><span class="n">data</span><span class="w"></span>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span><span class="n">cp</span><span class="w"> </span><span class="o">~/</span><span class="n">zoows</span><span class="o">/</span><span class="n">sources</span><span class="o">/</span><span class="n">zoo</span><span class="o">-</span><span class="n">services</span><span class="o">/</span><span class="n">utils</span><span class="o">/</span><span class="n">status</span><span class="o">/</span><span class="n">cgi</span><span class="o">-</span><span class="n">env</span><span class="o">/*</span><span class="n">xsl</span><span class="w"> </span><span class="o">/</span><span class="k">var</span><span class="o">/</span><span class="n">www</span><span class="o">/</span><span class="n">data</span>
 </pre></div>
 </div>
 <p>Now, if you run the following request to run the service longProcess :</p>
 <p><a class="reference external" href="http://localhost/zoo/?request=Execute&amp;service=WPS&amp;version=1.0.0&amp;Identifier=longProcess&amp;DataInputs=&amp;storeExecuteResponse=true">http://localhost/zoo/?request=Execute&amp;service=WPS&amp;version=1.0.0&amp;Identifier=longProcess&amp;DataInputs=&amp;storeExecuteResponse=true</a></p>
 <p>You shall get the a XML document looking like the following:</p>
-<a class="reference internal image-reference" href="../_images/Practical-introduction-to-ZOO-9.png"><img alt="../_images/Practical-introduction-to-ZOO-9.png" class="align-center" src="../_images/Practical-introduction-to-ZOO-9.png" style="width: 590px; height: 155px;" /></a>
+<a class="reference internal image-reference" href="../_images/Practical-introduction-to-ZOO-9.png"><img alt="../_images/Practical-introduction-to-ZOO-9.png" class="align-center" src="../_images/Practical-introduction-to-ZOO-9.png" style="width: 590px; height: 155px;" />
+</a>
 <p>If you poll the statusLocation url provider in the answer you’ll then be able to view
 the evolution of the percentCompleted attribute value growing, like you can see in the following screenshot.</p>
-<a class="reference internal image-reference" href="../_images/Practical-introduction-to-ZOO-10.png"><img alt="../_images/Practical-introduction-to-ZOO-10.png" class="align-center" src="../_images/Practical-introduction-to-ZOO-10.png" style="width: 589px; height: 146px;" /></a>
+<a class="reference internal image-reference" href="../_images/Practical-introduction-to-ZOO-10.png"><img alt="../_images/Practical-introduction-to-ZOO-10.png" class="align-center" src="../_images/Practical-introduction-to-ZOO-10.png" style="width: 589px; height: 146px;" />
+</a>
 <p>This won’t be used during this workshop but can be useful for really time consuming services.</p>
 </section>
 <section id="creating-services-for-other-functions-convexhull-and-centroid">
-<h3><a class="toc-backref" href="#table-of-contents" role="doc-backlink">Creating Services for other functions (ConvexHull and Centroid)</a><a class="headerlink" href="#creating-services-for-other-functions-convexhull-and-centroid" title="Permalink to this heading">¶</a></h3>
+<h3><a class="toc-backref" href="#table-of-contents" role="doc-backlink">Creating Services for other functions (ConvexHull and Centroid)</a><a class="headerlink" href="#creating-services-for-other-functions-convexhull-and-centroid" title="Link to this heading">¶</a></h3>
 <p>As the Boundary sample service code is available, you can now easily add ConvexHull and
 Centroid functions as they take exactly the same number of arguments : Only one geometry.
 The details for implementing and deploying the ConvexHull Service are provided bellow,
 and we will let you do the same thing for the Centroid one.</p>
 <section id="id1">
-<h4><a class="toc-backref" href="#table-of-contents" role="doc-backlink">C Version</a><a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h4>
+<h4><a class="toc-backref" href="#table-of-contents" role="doc-backlink">C Version</a><a class="headerlink" href="#id1" title="Link to this heading">¶</a></h4>
 <p>Please add first the following code to the service.c source code :</p>
-<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span><span class="n">int</span><span class="w"> </span><span class="n">ConvexHull</span><span class="p">(</span><span class="n">maps</span><span class="o">*&amp;</span><span class="w"> </span><span class="n">conf</span><span class="p">,</span><span class="n">maps</span><span class="o">*&amp;</span><span class="w"> </span><span class="n">inputs</span><span class="p">,</span><span class="n">maps</span><span class="o">*&amp;</span><span class="w"> </span><span class="n">outputs</span><span class="p">){</span><span class="w"></span>
-<span class="w">  </span><span class="n">OGRGeometryH</span><span class="w"> </span><span class="n">geometry</span><span class="p">,</span><span class="n">res</span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="nf">map</span><span class="o">*</span><span class="w"> </span><span class="n">tmp</span><span class="o">=</span><span class="n">getMapFromMaps</span><span class="p">(</span><span class="n">inputs</span><span class="p">,</span><span class="s">&quot;InputPolygon&quot;</span><span class="p">,</span><span class="s">&quot;value&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="nf">if</span><span class="p">(</span><span class="n">tmp</span><span class="o">==</span><span class="n">NULL</span><span class="p">){</span><span class="w"></span>
-<span class="w">    </span><span class="n">setMapInMaps</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span><span class="s">&quot;lenv&quot;</span><span class="p">,</span><span class="s">&quot;message&quot;</span><span class="p">,</span><span class="s">&quot;Unable to fetch InputPolygon value.&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="kr">return</span><span class="w"> </span><span class="n">SERVICE_FAILED</span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"></span>
-<span class="w">  </span><span class="nf">map</span><span class="o">*</span><span class="w"> </span><span class="n">tmp1</span><span class="o">=</span><span class="n">getMapFromMaps</span><span class="p">(</span><span class="n">inputs</span><span class="p">,</span><span class="s">&quot;InputPolygon&quot;</span><span class="p">,</span><span class="s">&quot;mimeType&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="nf">if</span><span class="p">(</span><span class="n">strncmp</span><span class="p">(</span><span class="n">tmp1</span><span class="o">-&gt;</span><span class="n">value</span><span class="p">,</span><span class="s">&quot;application/json&quot;</span><span class="p">,</span><span class="mi">16</span><span class="p">)</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="n">geometry</span><span class="o">=</span><span class="n">OGR_G_CreateGeometryFromJson</span><span class="p">(</span><span class="n">tmp</span><span class="o">-&gt;</span><span class="n">value</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="n">else</span><span class="w"></span>
-<span class="w">    </span><span class="n">geometry</span><span class="o">=</span><span class="n">createGeometryFromWFS</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span><span class="n">tmp</span><span class="o">-&gt;</span><span class="n">value</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="nf">if</span><span class="p">(</span><span class="n">geometry</span><span class="o">==</span><span class="n">NULL</span><span class="p">){</span><span class="w"></span>
-<span class="w">    </span><span class="n">setMapInMaps</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span><span class="s">&quot;lenv&quot;</span><span class="p">,</span><span class="s">&quot;message&quot;</span><span class="p">,</span><span class="s">&quot;Unable to parse InputPolygon value.&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="kr">return</span><span class="w"> </span><span class="n">SERVICE_FAILED</span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"></span>
-<span class="w">  </span><span class="n">res</span><span class="o">=</span><span class="n">OGR_G_ConvexHull</span><span class="p">(</span><span class="n">geometry</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="n">tmp1</span><span class="o">=</span><span class="n">getMapFromMaps</span><span class="p">(</span><span class="n">outputs</span><span class="p">,</span><span class="s">&quot;Result&quot;</span><span class="p">,</span><span class="s">&quot;mimeType&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="nf">if</span><span class="p">(</span><span class="n">strncmp</span><span class="p">(</span><span class="n">tmp1</span><span class="o">-&gt;</span><span class="n">value</span><span class="p">,</span><span class="s">&quot;application/json&quot;</span><span class="p">,</span><span class="mi">16</span><span class="p">)</span><span class="o">==</span><span class="mi">0</span><span class="p">){</span><span class="w"></span>
-<span class="w">    </span><span class="n">char</span><span class="o">*</span><span class="w"> </span><span class="n">tmp</span><span class="o">=</span><span class="n">OGR_G_ExportToJson</span><span class="p">(</span><span class="n">res</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">setMapInMaps</span><span class="p">(</span><span class="n">outputs</span><span class="p">,</span><span class="s">&quot;Result&quot;</span><span class="p">,</span><span class="s">&quot;value&quot;</span><span class="p">,</span><span class="n">tmp</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">setMapInMaps</span><span class="p">(</span><span class="n">outputs</span><span class="p">,</span><span class="s">&quot;Result&quot;</span><span class="p">,</span><span class="s">&quot;mimeType&quot;</span><span class="p">,</span><span class="s">&quot;text/plain&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">free</span><span class="p">(</span><span class="n">tmp</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"></span>
-<span class="w">  </span><span class="n">else</span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">char</span><span class="o">*</span><span class="w"> </span><span class="n">tmp</span><span class="o">=</span><span class="n">OGR_G_ExportToGML</span><span class="p">(</span><span class="n">res</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">setMapInMaps</span><span class="p">(</span><span class="n">outputs</span><span class="p">,</span><span class="s">&quot;Result&quot;</span><span class="p">,</span><span class="s">&quot;value&quot;</span><span class="p">,</span><span class="n">tmp</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">free</span><span class="p">(</span><span class="n">tmp</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"></span>
-<span class="w">  </span><span class="n">OGR_G_DestroyGeometry</span><span class="p">(</span><span class="n">geometry</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="n">OGR_G_DestroyGeometry</span><span class="p">(</span><span class="n">res</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="kr">return</span><span class="w"> </span><span class="n">SERVICE_SUCCEEDED</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>int ConvexHull(maps*&amp; conf,maps*&amp; inputs,maps*&amp; outputs){
+  OGRGeometryH geometry,res;
+  map* tmp=getMapFromMaps(inputs,&quot;InputPolygon&quot;,&quot;value&quot;);
+  if(tmp==NULL){
+    setMapInMaps(conf,&quot;lenv&quot;,&quot;message&quot;,&quot;Unable to fetch InputPolygon value.&quot;);
+    return SERVICE_FAILED;
+  }
+  map* tmp1=getMapFromMaps(inputs,&quot;InputPolygon&quot;,&quot;mimeType&quot;);
+  if(strncmp(tmp1-&gt;value,&quot;application/json&quot;,16)==0)
+    geometry=OGR_G_CreateGeometryFromJson(tmp-&gt;value);
+  else
+    geometry=createGeometryFromWFS(conf,tmp-&gt;value);
+  if(geometry==NULL){
+    setMapInMaps(conf,&quot;lenv&quot;,&quot;message&quot;,&quot;Unable to parse InputPolygon value.&quot;);
+    return SERVICE_FAILED;
+  }
+  res=OGR_G_ConvexHull(geometry);
+  tmp1=getMapFromMaps(outputs,&quot;Result&quot;,&quot;mimeType&quot;);
+  if(strncmp(tmp1-&gt;value,&quot;application/json&quot;,16)==0){
+    char* tmp=OGR_G_ExportToJson(res);
+    setMapInMaps(outputs,&quot;Result&quot;,&quot;value&quot;,tmp);
+    setMapInMaps(outputs,&quot;Result&quot;,&quot;mimeType&quot;,&quot;text/plain&quot;);
+    free(tmp);
+  }
+  else{
+    char* tmp=OGR_G_ExportToGML(res);
+    setMapInMaps(outputs,&quot;Result&quot;,&quot;value&quot;,tmp);
+    free(tmp);
+  }
+  OGR_G_DestroyGeometry(geometry);
+  OGR_G_DestroyGeometry(res);
+  return SERVICE_SUCCEEDED;
+}
 </pre></div>
 </div>
 <p>This new code is exactly the same as for the Boundary Service. The only thing we modified
@@ -979,71 +994,71 @@ is the line where the  <a class="reference external" href="http://www.gdal.org/o
 function is called (rather than the OGR_G_GetBoundary you used before). It is better to not copy
 and paste the whole function and find a more generic way to define your new Services as the
 function body will be the same in every case. The following generic function is proposed to make things simpler:</p>
-<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span><span class="n">int</span><span class="w"> </span><span class="n">applyOne</span><span class="p">(</span><span class="n">maps</span><span class="o">*&amp;</span><span class="w"> </span><span class="n">conf</span><span class="p">,</span><span class="n">maps</span><span class="o">*&amp;</span><span class="w"> </span><span class="n">inputs</span><span class="p">,</span><span class="n">maps</span><span class="o">*&amp;</span><span class="w"> </span><span class="n">outputs</span><span class="p">,</span><span class="n">OGRGeometryH</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">myFunc</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="n">OGRGeometryH</span><span class="p">)){</span><span class="w"></span>
-<span class="w">  </span><span class="n">OGRGeometryH</span><span class="w"> </span><span class="n">geometry</span><span class="p">,</span><span class="n">res</span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="nf">map</span><span class="o">*</span><span class="w"> </span><span class="n">tmp</span><span class="o">=</span><span class="n">getMapFromMaps</span><span class="p">(</span><span class="n">inputs</span><span class="p">,</span><span class="s">&quot;InputPolygon&quot;</span><span class="p">,</span><span class="s">&quot;value&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="nf">if</span><span class="p">(</span><span class="n">tmp</span><span class="o">==</span><span class="n">NULL</span><span class="p">){</span><span class="w"></span>
-<span class="w">    </span><span class="n">setMapInMaps</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span><span class="s">&quot;lenv&quot;</span><span class="p">,</span><span class="s">&quot;message&quot;</span><span class="p">,</span><span class="s">&quot;Unable to fetch InputPolygon value.&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="kr">return</span><span class="w"> </span><span class="n">SERVICE_FAILED</span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"></span>
-<span class="w">  </span><span class="nf">map</span><span class="o">*</span><span class="w"> </span><span class="n">tmp1</span><span class="o">=</span><span class="n">getMapFromMaps</span><span class="p">(</span><span class="n">inputs</span><span class="p">,</span><span class="s">&quot;InputPolygon&quot;</span><span class="p">,</span><span class="s">&quot;mimeType&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="nf">if</span><span class="p">(</span><span class="n">strncmp</span><span class="p">(</span><span class="n">tmp1</span><span class="o">-&gt;</span><span class="n">value</span><span class="p">,</span><span class="s">&quot;application/json&quot;</span><span class="p">,</span><span class="mi">16</span><span class="p">)</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="n">geometry</span><span class="o">=</span><span class="n">OGR_G_CreateGeometryFromJson</span><span class="p">(</span><span class="n">tmp</span><span class="o">-&gt;</span><span class="n">value</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="n">else</span><span class="w"></span>
-<span class="w">    </span><span class="n">geometry</span><span class="o">=</span><span class="n">createGeometryFromWFS</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span><span class="n">tmp</span><span class="o">-&gt;</span><span class="n">value</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="nf">if</span><span class="p">(</span><span class="n">geometry</span><span class="o">==</span><span class="n">NULL</span><span class="p">){</span><span class="w"></span>
-<span class="w">    </span><span class="n">setMapInMaps</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span><span class="s">&quot;lenv&quot;</span><span class="p">,</span><span class="s">&quot;message&quot;</span><span class="p">,</span><span class="s">&quot;Unable to parse InputPolygon value.&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="kr">return</span><span class="w"> </span><span class="n">SERVICE_FAILED</span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"></span>
-<span class="w">  </span><span class="n">res</span><span class="o">=</span><span class="p">(</span><span class="o">*</span><span class="n">myFunc</span><span class="p">)(</span><span class="n">geometry</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="n">tmp1</span><span class="o">=</span><span class="n">getMapFromMaps</span><span class="p">(</span><span class="n">outputs</span><span class="p">,</span><span class="s">&quot;Result&quot;</span><span class="p">,</span><span class="s">&quot;mimeType&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="nf">if</span><span class="p">(</span><span class="n">strncmp</span><span class="p">(</span><span class="n">tmp1</span><span class="o">-&gt;</span><span class="n">value</span><span class="p">,</span><span class="s">&quot;application/json&quot;</span><span class="p">,</span><span class="mi">16</span><span class="p">)</span><span class="o">==</span><span class="mi">0</span><span class="p">){</span><span class="w"></span>
-<span class="w">    </span><span class="n">char</span><span class="w"> </span><span class="o">*</span><span class="n">tmp</span><span class="o">=</span><span class="n">OGR_G_ExportToJson</span><span class="p">(</span><span class="n">res</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">setMapInMaps</span><span class="p">(</span><span class="n">outputs</span><span class="p">,</span><span class="s">&quot;Result&quot;</span><span class="p">,</span><span class="s">&quot;value&quot;</span><span class="p">,</span><span class="n">tmp</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">setMapInMaps</span><span class="p">(</span><span class="n">outputs</span><span class="p">,</span><span class="s">&quot;Result&quot;</span><span class="p">,</span><span class="s">&quot;mimeType&quot;</span><span class="p">,</span><span class="s">&quot;text/plain&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">free</span><span class="p">(</span><span class="n">tmp</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"></span>
-<span class="w">  </span><span class="n">else</span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">char</span><span class="w"> </span><span class="o">*</span><span class="n">tmp</span><span class="o">=</span><span class="n">OGR_G_ExportToGML</span><span class="p">(</span><span class="n">res</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">setMapInMaps</span><span class="p">(</span><span class="n">outputs</span><span class="p">,</span><span class="s">&quot;Result&quot;</span><span class="p">,</span><span class="s">&quot;value&quot;</span><span class="p">,</span><span class="n">tmp</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">free</span><span class="p">(</span><span class="n">tmp</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"></span>
-<span class="w">  </span><span class="n">outputs</span><span class="o">-&gt;</span><span class="n">next</span><span class="o">=</span><span class="n">NULL</span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="n">OGR_G_DestroyGeometry</span><span class="p">(</span><span class="n">geometry</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="n">OGR_G_DestroyGeometry</span><span class="p">(</span><span class="n">res</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="kr">return</span><span class="w"> </span><span class="n">SERVICE_SUCCEEDED</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>int applyOne(maps*&amp; conf,maps*&amp; inputs,maps*&amp; outputs,OGRGeometryH (*myFunc) (OGRGeometryH)){
+  OGRGeometryH geometry,res;
+  map* tmp=getMapFromMaps(inputs,&quot;InputPolygon&quot;,&quot;value&quot;);
+  if(tmp==NULL){
+    setMapInMaps(conf,&quot;lenv&quot;,&quot;message&quot;,&quot;Unable to fetch InputPolygon value.&quot;);
+    return SERVICE_FAILED;
+  }
+  map* tmp1=getMapFromMaps(inputs,&quot;InputPolygon&quot;,&quot;mimeType&quot;);
+  if(strncmp(tmp1-&gt;value,&quot;application/json&quot;,16)==0)
+    geometry=OGR_G_CreateGeometryFromJson(tmp-&gt;value);
+  else
+    geometry=createGeometryFromWFS(conf,tmp-&gt;value);
+  if(geometry==NULL){
+    setMapInMaps(conf,&quot;lenv&quot;,&quot;message&quot;,&quot;Unable to parse InputPolygon value.&quot;);
+    return SERVICE_FAILED;
+  }
+  res=(*myFunc)(geometry);
+  tmp1=getMapFromMaps(outputs,&quot;Result&quot;,&quot;mimeType&quot;);
+  if(strncmp(tmp1-&gt;value,&quot;application/json&quot;,16)==0){
+    char *tmp=OGR_G_ExportToJson(res);
+    setMapInMaps(outputs,&quot;Result&quot;,&quot;value&quot;,tmp);
+    setMapInMaps(outputs,&quot;Result&quot;,&quot;mimeType&quot;,&quot;text/plain&quot;);
+    free(tmp);
+  }
+  else{
+    char *tmp=OGR_G_ExportToGML(res);
+    setMapInMaps(outputs,&quot;Result&quot;,&quot;value&quot;,tmp);
+    free(tmp);
+  }
+  outputs-&gt;next=NULL;
+  OGR_G_DestroyGeometry(geometry);
+  OGR_G_DestroyGeometry(res);
+  return SERVICE_SUCCEEDED;
+}
 </pre></div>
 </div>
 <p>Then, a function pointer called myFunc rather than the full function name can be used.
 This way we can re-implement our Boundary Service this way:</p>
-<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span><span class="nv">int</span><span class="w"> </span><span class="nv">Boundary</span><span class="ss">(</span><span class="nv">maps</span><span class="o">*&amp;</span><span class="w"> </span><span class="nv">conf</span>,<span class="nv">maps</span><span class="o">*&amp;</span><span class="w"> </span><span class="nv">inputs</span>,<span class="nv">maps</span><span class="o">*&amp;</span><span class="w"> </span><span class="nv">outputs</span><span class="ss">)</span>{<span class="w"></span>
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nv">applyOne</span><span class="ss">(</span><span class="nv">conf</span>,<span class="nv">inputs</span>,<span class="nv">outputs</span>,<span class="o">&amp;</span><span class="nv">OGR_G_GetBoundary</span><span class="ss">)</span><span class="c1">;</span><span class="w"></span>
-}<span class="w"></span>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>int Boundary(maps*&amp; conf,maps*&amp; inputs,maps*&amp; outputs){
+  return applyOne(conf,inputs,outputs,&amp;OGR_G_GetBoundary);
+}
 </pre></div>
 </div>
 <p>Using this applyOne local function defined in the service.c source code, we can define
 other Services this way:</p>
-<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span><span class="nv">int</span><span class="w"> </span><span class="nv">ConvexHull</span><span class="ss">(</span><span class="nv">maps</span><span class="o">*&amp;</span><span class="w"> </span><span class="nv">conf</span>,<span class="nv">maps</span><span class="o">*&amp;</span><span class="w"> </span><span class="nv">inputs</span>,<span class="nv">maps</span><span class="o">*&amp;</span><span class="w"> </span><span class="nv">outputs</span><span class="ss">)</span>{<span class="w"></span>
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nv">applyOne</span><span class="ss">(</span><span class="nv">conf</span>,<span class="nv">inputs</span>,<span class="nv">outputs</span>,<span class="o">&amp;</span><span class="nv">OGR_G_ConvexHull</span><span class="ss">)</span><span class="c1">;</span><span class="w"></span>
-}<span class="w"></span>
-<span class="nv">int</span><span class="w"> </span><span class="nv">Centroid</span><span class="ss">(</span><span class="nv">maps</span><span class="o">*&amp;</span><span class="w"> </span><span class="nv">conf</span>,<span class="nv">maps</span><span class="o">*&amp;</span><span class="w"> </span><span class="nv">inputs</span>,<span class="nv">maps</span><span class="o">*&amp;</span><span class="w"> </span><span class="nv">outputs</span><span class="ss">)</span>{<span class="w"></span>
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nv">applyOne</span><span class="ss">(</span><span class="nv">conf</span>,<span class="nv">inputs</span>,<span class="nv">outputs</span>,<span class="o">&amp;</span><span class="nv">MY_OGR_G_Centroid</span><span class="ss">)</span><span class="c1">;</span><span class="w"></span>
-}<span class="w"></span>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>int ConvexHull(maps*&amp; conf,maps*&amp; inputs,maps*&amp; outputs){
+  return applyOne(conf,inputs,outputs,&amp;OGR_G_ConvexHull);
+}
+int Centroid(maps*&amp; conf,maps*&amp; inputs,maps*&amp; outputs){
+  return applyOne(conf,inputs,outputs,&amp;MY_OGR_G_Centroid);
+}
 </pre></div>
 </div>
 <p>The genericity of the applyOne function let you add two new Services in your ZOO Services Provider : ConvexHull and Centroid.</p>
 <p>Note that you should define MY_OGR_Centroid function before the Centroid one as  <a class="reference external" href="http://www.gdal.org/ogr/ogr__api_8h.html#23f5a19a81628af7f9cc59a37378cb2b">OGR_G_Centroid</a> don’t return a geometry object but set the value to an already existing one and support only Polygon as input, so to ensure we use the ConvexHull for MultiPolygon. So please use the code bellow:</p>
-<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span><span class="nv">OGRGeometryH</span><span class="w"> </span><span class="nv">MY_OGR_G_Centroid</span><span class="ss">(</span><span class="nv">OGRGeometryH</span><span class="w"> </span><span class="nv">hTarget</span><span class="ss">)</span>{<span class="w"></span>
-<span class="w">  </span><span class="nv">OGRGeometryH</span><span class="w"> </span><span class="nv">res</span><span class="c1">;</span><span class="w"></span>
-<span class="w">  </span><span class="nv">res</span><span class="o">=</span><span class="nv">OGR_G_CreateGeometryFromJson</span><span class="ss">(</span><span class="s2">&quot;{\&quot;</span><span class="nv">type</span>\<span class="s2">&quot;: \&quot;</span><span class="nv">Point</span>\<span class="s2">&quot;, \&quot;</span><span class="nv">coordinates</span>\<span class="s2">&quot;: [0,0] }&quot;</span><span class="ss">)</span><span class="c1">;</span><span class="w"></span>
-<span class="w">  </span><span class="nv">OGRwkbGeometryType</span><span class="w"> </span><span class="nv">gtype</span><span class="o">=</span><span class="nv">OGR_G_GetGeometryType</span><span class="ss">(</span><span class="nv">hTarget</span><span class="ss">)</span><span class="c1">;</span><span class="w"></span>
-<span class="w">  </span><span class="k">if</span><span class="ss">(</span><span class="nv">gtype</span><span class="o">!=</span><span class="nv">wkbPolygon</span><span class="ss">)</span>{<span class="w"></span>
-<span class="w">    </span><span class="nv">hTarget</span><span class="o">=</span><span class="nv">OGR_G_ConvexHull</span><span class="ss">(</span><span class="nv">hTarget</span><span class="ss">)</span><span class="c1">;</span><span class="w"></span>
-<span class="w">  </span>}<span class="w"></span>
-<span class="w">  </span><span class="nv">OGR_G_Centroid</span><span class="ss">(</span><span class="nv">hTarget</span>,<span class="nv">res</span><span class="ss">)</span><span class="c1">;</span><span class="w"></span>
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nv">res</span><span class="c1">;</span><span class="w"></span>
-}<span class="w"></span>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span><span class="nx">OGRGeometryH</span><span class="w"> </span><span class="nx">MY_OGR_G_Centroid</span><span class="p">(</span><span class="nx">OGRGeometryH</span><span class="w"> </span><span class="nx">hTarget</span><span class="p">){</span>
+<span class="w">  </span><span class="nx">OGRGeometryH</span><span class="w"> </span><span class="nx">res</span><span class="p">;</span>
+<span class="w">  </span><span class="nx">res</span><span class="p">=</span><span class="nx">OGR_G_CreateGeometryFromJson</span><span class="p">(</span><span class="s">&quot;{\&quot;type\&quot;: \&quot;Point\&quot;, \&quot;coordinates\&quot;: [0,0] }&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">OGRwkbGeometryType</span><span class="w"> </span><span class="nx">gtype</span><span class="p">=</span><span class="nx">OGR_G_GetGeometryType</span><span class="p">(</span><span class="nx">hTarget</span><span class="p">);</span>
+<span class="w">  </span><span class="k">if</span><span class="p">(</span><span class="nx">gtype</span><span class="o">!=</span><span class="nx">wkbPolygon</span><span class="p">){</span>
+<span class="w">    </span><span class="nx">hTarget</span><span class="p">=</span><span class="nx">OGR_G_ConvexHull</span><span class="p">(</span><span class="nx">hTarget</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="nx">OGR_G_Centroid</span><span class="p">(</span><span class="nx">hTarget</span><span class="p">,</span><span class="nx">res</span><span class="p">);</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">res</span><span class="p">;</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>To deploy your Services, you only have to copy the <code class="docutils literal notranslate"><span class="pre">Boundary.zcfg</span></code> metadata file from
@@ -1057,21 +1072,21 @@ correct values. By the way it can be used for testing purpose, as the input and 
 get the same name and default/supported formats.</p>
 </section>
 <section id="id2">
-<h4><a class="toc-backref" href="#table-of-contents" role="doc-backlink">Python Version</a><a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h4>
-<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span><span class="nv">def</span><span class="w"> </span><span class="nv">ConvexHull</span><span class="ss">(</span><span class="nv">conf</span>,<span class="nv">inputs</span>,<span class="nv">outputs</span><span class="ss">)</span>:<span class="w"></span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="nv">inputs</span>[<span class="s2">&quot;InputPolygon&quot;</span>][<span class="s2">&quot;mimeType&quot;</span>]<span class="o">==</span><span class="s2">&quot;application/json&quot;</span>:<span class="w"></span>
-<span class="w">        </span><span class="nv">geometry</span><span class="o">=</span><span class="nv">osgeo</span>.<span class="nv">ogr</span>.<span class="nv">CreateGeometryFromJson</span><span class="ss">(</span><span class="nv">inputs</span>[<span class="s2">&quot;InputPolygon&quot;</span>][<span class="s2">&quot;value&quot;</span>]<span class="ss">)</span><span class="w"></span>
-<span class="w">    </span><span class="k">else</span>:<span class="w"></span>
-<span class="w">        </span><span class="nv">geometry</span><span class="o">=</span><span class="nv">createGeometryFromWFS</span><span class="ss">(</span><span class="nv">inputs</span>[<span class="s2">&quot;InputPolygon&quot;</span>][<span class="s2">&quot;value&quot;</span>]<span class="ss">)</span><span class="w"></span>
-<span class="w">    </span><span class="nv">rgeom</span><span class="o">=</span><span class="nv">geometry</span>.<span class="nv">ConvexHull</span><span class="ss">()</span><span class="w"></span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="nv">outputs</span>[<span class="s2">&quot;Result&quot;</span>][<span class="s2">&quot;mimeType&quot;</span>]<span class="o">==</span><span class="s2">&quot;application/json&quot;</span>:<span class="w"></span>
-<span class="w">        </span><span class="nv">outputs</span>[<span class="s2">&quot;Result&quot;</span>][<span class="s2">&quot;value&quot;</span>]<span class="o">=</span><span class="nv">rgeom</span>.<span class="nv">ExportToJson</span><span class="ss">()</span><span class="w"></span>
-<span class="w">        </span><span class="nv">outputs</span>[<span class="s2">&quot;Result&quot;</span>][<span class="s2">&quot;mimeType&quot;</span>]<span class="o">=</span><span class="s2">&quot;text/plain&quot;</span><span class="w"></span>
-<span class="w">    </span><span class="k">else</span>:<span class="w"></span>
-<span class="w">        </span><span class="nv">outputs</span>[<span class="s2">&quot;Result&quot;</span>][<span class="s2">&quot;value&quot;</span>]<span class="o">=</span><span class="nv">rgeom</span>.<span class="nv">ExportToGML</span><span class="ss">()</span><span class="w"></span>
-<span class="w">    </span><span class="nv">geometry</span>.<span class="nv">Destroy</span><span class="ss">()</span><span class="w"></span>
-<span class="w">    </span><span class="nv">rgeom</span>.<span class="nv">Destroy</span><span class="ss">()</span><span class="w"></span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">3</span><span class="w"></span>
+<h4><a class="toc-backref" href="#table-of-contents" role="doc-backlink">Python Version</a><a class="headerlink" href="#id2" title="Link to this heading">¶</a></h4>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span><span class="nv">def</span><span class="w"> </span><span class="nv">ConvexHull</span><span class="ss">(</span><span class="nv">conf</span>,<span class="nv">inputs</span>,<span class="nv">outputs</span><span class="ss">)</span>:
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="nv">inputs</span>[<span class="s2">&quot;InputPolygon&quot;</span>][<span class="s2">&quot;mimeType&quot;</span>]<span class="o">==</span><span class="s2">&quot;application/json&quot;</span>:
+<span class="w">        </span><span class="nv">geometry</span><span class="o">=</span><span class="nv">osgeo</span>.<span class="nv">ogr</span>.<span class="nv">CreateGeometryFromJson</span><span class="ss">(</span><span class="nv">inputs</span>[<span class="s2">&quot;InputPolygon&quot;</span>][<span class="s2">&quot;value&quot;</span>]<span class="ss">)</span>
+<span class="w">    </span><span class="k">else</span>:
+<span class="w">        </span><span class="nv">geometry</span><span class="o">=</span><span class="nv">createGeometryFromWFS</span><span class="ss">(</span><span class="nv">inputs</span>[<span class="s2">&quot;InputPolygon&quot;</span>][<span class="s2">&quot;value&quot;</span>]<span class="ss">)</span>
+<span class="w">    </span><span class="nv">rgeom</span><span class="o">=</span><span class="nv">geometry</span>.<span class="nv">ConvexHull</span><span class="ss">()</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="nv">outputs</span>[<span class="s2">&quot;Result&quot;</span>][<span class="s2">&quot;mimeType&quot;</span>]<span class="o">==</span><span class="s2">&quot;application/json&quot;</span>:
+<span class="w">        </span><span class="nv">outputs</span>[<span class="s2">&quot;Result&quot;</span>][<span class="s2">&quot;value&quot;</span>]<span class="o">=</span><span class="nv">rgeom</span>.<span class="nv">ExportToJson</span><span class="ss">()</span>
+<span class="w">        </span><span class="nv">outputs</span>[<span class="s2">&quot;Result&quot;</span>][<span class="s2">&quot;mimeType&quot;</span>]<span class="o">=</span><span class="s2">&quot;text/plain&quot;</span>
+<span class="w">    </span><span class="k">else</span>:
+<span class="w">        </span><span class="nv">outputs</span>[<span class="s2">&quot;Result&quot;</span>][<span class="s2">&quot;value&quot;</span>]<span class="o">=</span><span class="nv">rgeom</span>.<span class="nv">ExportToGML</span><span class="ss">()</span>
+<span class="w">    </span><span class="nv">geometry</span>.<span class="nv">Destroy</span><span class="ss">()</span>
+<span class="w">    </span><span class="nv">rgeom</span>.<span class="nv">Destroy</span><span class="ss">()</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">3</span>
 </pre></div>
 </div>
 <p>Once again, you can easily copy and paste the function for Boundary and simply modify
@@ -1082,49 +1097,49 @@ it will be used in the same way in each Service functions, so we will first crea
 function which will do that for us. The same thing can also be done for filling the
 output value, so we will define another function to do that automaticaly. Here is the
 code of this two functions (extractInputs and outputResult) :</p>
-<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span><span class="nv">def</span><span class="w"> </span><span class="nv">extractInputs</span><span class="ss">(</span><span class="nv">obj</span><span class="ss">)</span>:<span class="w"></span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="nv">obj</span>[<span class="s2">&quot;mimeType&quot;</span>]<span class="o">==</span><span class="s2">&quot;application/json&quot;</span>:<span class="w"></span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nv">osgeo</span>.<span class="nv">ogr</span>.<span class="nv">CreateGeometryFromJson</span><span class="ss">(</span><span class="nv">obj</span>[<span class="s2">&quot;value&quot;</span>]<span class="ss">)</span><span class="w"></span>
-<span class="w">    </span><span class="k">else</span>:<span class="w"></span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nv">createGeometryFromWFS</span><span class="ss">(</span><span class="nv">obj</span>[<span class="s2">&quot;value&quot;</span>]<span class="ss">)</span><span class="w"></span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nv">null</span><span class="w"></span>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span><span class="nv">def</span><span class="w"> </span><span class="nv">extractInputs</span><span class="ss">(</span><span class="nv">obj</span><span class="ss">)</span>:
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="nv">obj</span>[<span class="s2">&quot;mimeType&quot;</span>]<span class="o">==</span><span class="s2">&quot;application/json&quot;</span>:
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nv">osgeo</span>.<span class="nv">ogr</span>.<span class="nv">CreateGeometryFromJson</span><span class="ss">(</span><span class="nv">obj</span>[<span class="s2">&quot;value&quot;</span>]<span class="ss">)</span>
+<span class="w">    </span><span class="k">else</span>:
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nv">createGeometryFromWFS</span><span class="ss">(</span><span class="nv">obj</span>[<span class="s2">&quot;value&quot;</span>]<span class="ss">)</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nv">null</span>
 
-<span class="nv">def</span><span class="w"> </span><span class="nv">outputResult</span><span class="ss">(</span><span class="nv">obj</span>,<span class="nv">geom</span><span class="ss">)</span>:<span class="w"></span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="nv">obj</span>[<span class="s2">&quot;mimeType&quot;</span>]<span class="o">==</span><span class="s2">&quot;application/json&quot;</span>:<span class="w"></span>
-<span class="w">        </span><span class="nv">obj</span>[<span class="s2">&quot;value&quot;</span>]<span class="o">=</span><span class="nv">geom</span>.<span class="nv">ExportToJson</span><span class="ss">()</span><span class="w"></span>
-<span class="w">        </span><span class="nv">obj</span>[<span class="s2">&quot;mimeType&quot;</span>]<span class="o">=</span><span class="s2">&quot;text/plain&quot;</span><span class="w"></span>
-<span class="w">    </span><span class="k">else</span>:<span class="w"></span>
-<span class="w">        </span><span class="nv">obj</span>[<span class="s2">&quot;value&quot;</span>]<span class="o">=</span><span class="nv">geom</span>.<span class="nv">ExportToGML</span><span class="ss">()</span><span class="w"></span>
+<span class="nv">def</span><span class="w"> </span><span class="nv">outputResult</span><span class="ss">(</span><span class="nv">obj</span>,<span class="nv">geom</span><span class="ss">)</span>:
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="nv">obj</span>[<span class="s2">&quot;mimeType&quot;</span>]<span class="o">==</span><span class="s2">&quot;application/json&quot;</span>:
+<span class="w">        </span><span class="nv">obj</span>[<span class="s2">&quot;value&quot;</span>]<span class="o">=</span><span class="nv">geom</span>.<span class="nv">ExportToJson</span><span class="ss">()</span>
+<span class="w">        </span><span class="nv">obj</span>[<span class="s2">&quot;mimeType&quot;</span>]<span class="o">=</span><span class="s2">&quot;text/plain&quot;</span>
+<span class="w">    </span><span class="k">else</span>:
+<span class="w">        </span><span class="nv">obj</span>[<span class="s2">&quot;value&quot;</span>]<span class="o">=</span><span class="nv">geom</span>.<span class="nv">ExportToGML</span><span class="ss">()</span>
 </pre></div>
 </div>
 <p>We can so minimize the code of the Boundary function to make it simplier using the following function definition :</p>
-<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span><span class="nv">def</span><span class="w"> </span><span class="nv">Boundary</span><span class="ss">(</span><span class="nv">conf</span>,<span class="nv">inputs</span>,<span class="nv">outputs</span><span class="ss">)</span>:<span class="w"></span>
-<span class="w">    </span><span class="nv">geometry</span><span class="o">=</span><span class="nv">extractInputs</span><span class="ss">(</span><span class="nv">inputs</span>[<span class="s2">&quot;InputPolygon&quot;</span>]<span class="ss">)</span><span class="w"></span>
-<span class="w">    </span><span class="nv">rgeom</span><span class="o">=</span><span class="nv">geometry</span>.<span class="nv">GetBoundary</span><span class="ss">()</span><span class="w"></span>
-<span class="w">    </span><span class="nv">outputResult</span><span class="ss">(</span><span class="nv">outputs</span>[<span class="s2">&quot;Result&quot;</span>],<span class="nv">rgeom</span><span class="ss">)</span><span class="w"></span>
-<span class="w">    </span><span class="nv">geometry</span>.<span class="nv">Destroy</span><span class="ss">()</span><span class="w"></span>
-<span class="w">    </span><span class="nv">rgeom</span>.<span class="nv">Destroy</span><span class="ss">()</span><span class="w"></span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">3</span><span class="w"></span>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span><span class="nv">def</span><span class="w"> </span><span class="nv">Boundary</span><span class="ss">(</span><span class="nv">conf</span>,<span class="nv">inputs</span>,<span class="nv">outputs</span><span class="ss">)</span>:
+<span class="w">    </span><span class="nv">geometry</span><span class="o">=</span><span class="nv">extractInputs</span><span class="ss">(</span><span class="nv">inputs</span>[<span class="s2">&quot;InputPolygon&quot;</span>]<span class="ss">)</span>
+<span class="w">    </span><span class="nv">rgeom</span><span class="o">=</span><span class="nv">geometry</span>.<span class="nv">GetBoundary</span><span class="ss">()</span>
+<span class="w">    </span><span class="nv">outputResult</span><span class="ss">(</span><span class="nv">outputs</span>[<span class="s2">&quot;Result&quot;</span>],<span class="nv">rgeom</span><span class="ss">)</span>
+<span class="w">    </span><span class="nv">geometry</span>.<span class="nv">Destroy</span><span class="ss">()</span>
+<span class="w">    </span><span class="nv">rgeom</span>.<span class="nv">Destroy</span><span class="ss">()</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">3</span>
 </pre></div>
 </div>
 <p>Then definition of the ConvexHull and Centroid Services can be achieved using the following code:</p>
-<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span><span class="nv">def</span><span class="w"> </span><span class="nv">ConvexHull</span><span class="ss">(</span><span class="nv">conf</span>,<span class="nv">inputs</span>,<span class="nv">outputs</span><span class="ss">)</span>:<span class="w"></span>
-<span class="w">    </span><span class="nv">geometry</span><span class="o">=</span><span class="nv">extractInputs</span><span class="ss">(</span><span class="nv">inputs</span>[<span class="s2">&quot;InputPolygon&quot;</span>]<span class="ss">)</span><span class="w"></span>
-<span class="w">    </span><span class="nv">rgeom</span><span class="o">=</span><span class="nv">geometry</span>.<span class="nv">ConvexHull</span><span class="ss">()</span><span class="w"></span>
-<span class="w">    </span><span class="nv">outputResult</span><span class="ss">(</span><span class="nv">outputs</span>[<span class="s2">&quot;Result&quot;</span>],<span class="nv">rgeom</span><span class="ss">)</span><span class="w"></span>
-<span class="w">    </span><span class="nv">geometry</span>.<span class="nv">Destroy</span><span class="ss">()</span><span class="w"></span>
-<span class="w">    </span><span class="nv">rgeom</span>.<span class="nv">Destroy</span><span class="ss">()</span><span class="w"></span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">3</span><span class="w"></span>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span><span class="nv">def</span><span class="w"> </span><span class="nv">ConvexHull</span><span class="ss">(</span><span class="nv">conf</span>,<span class="nv">inputs</span>,<span class="nv">outputs</span><span class="ss">)</span>:
+<span class="w">    </span><span class="nv">geometry</span><span class="o">=</span><span class="nv">extractInputs</span><span class="ss">(</span><span class="nv">inputs</span>[<span class="s2">&quot;InputPolygon&quot;</span>]<span class="ss">)</span>
+<span class="w">    </span><span class="nv">rgeom</span><span class="o">=</span><span class="nv">geometry</span>.<span class="nv">ConvexHull</span><span class="ss">()</span>
+<span class="w">    </span><span class="nv">outputResult</span><span class="ss">(</span><span class="nv">outputs</span>[<span class="s2">&quot;Result&quot;</span>],<span class="nv">rgeom</span><span class="ss">)</span>
+<span class="w">    </span><span class="nv">geometry</span>.<span class="nv">Destroy</span><span class="ss">()</span>
+<span class="w">    </span><span class="nv">rgeom</span>.<span class="nv">Destroy</span><span class="ss">()</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">3</span>
 
-<span class="nv">def</span><span class="w"> </span><span class="nv">Centroid</span><span class="ss">(</span><span class="nv">conf</span>,<span class="nv">inputs</span>,<span class="nv">outputs</span><span class="ss">)</span>:<span class="w"></span>
-<span class="w">    </span><span class="nv">geometry</span><span class="o">=</span><span class="nv">extractInputs</span><span class="ss">(</span><span class="nv">inputs</span>[<span class="s2">&quot;InputPolygon&quot;</span>]<span class="ss">)</span><span class="w"></span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="nv">geometry</span>.<span class="nv">GetGeometryType</span><span class="ss">()</span><span class="o">!=</span><span class="mi">3</span>:<span class="w"></span>
-<span class="w">        </span><span class="nv">geometry</span><span class="o">=</span><span class="nv">geometry</span>.<span class="nv">ConvexHull</span><span class="ss">()</span><span class="w"></span>
-<span class="w">    </span><span class="nv">rgeom</span><span class="o">=</span><span class="nv">geometry</span>.<span class="nv">Centroid</span><span class="ss">()</span><span class="w"></span>
-<span class="w">    </span><span class="nv">outputResult</span><span class="ss">(</span><span class="nv">outputs</span>[<span class="s2">&quot;Result&quot;</span>],<span class="nv">rgeom</span><span class="ss">)</span><span class="w"></span>
-<span class="w">    </span><span class="nv">geometry</span>.<span class="nv">Destroy</span><span class="ss">()</span><span class="w"></span>
-<span class="w">    </span><span class="nv">rgeom</span>.<span class="nv">Destroy</span><span class="ss">()</span><span class="w"></span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">3</span><span class="w"></span>
+<span class="nv">def</span><span class="w"> </span><span class="nv">Centroid</span><span class="ss">(</span><span class="nv">conf</span>,<span class="nv">inputs</span>,<span class="nv">outputs</span><span class="ss">)</span>:
+<span class="w">    </span><span class="nv">geometry</span><span class="o">=</span><span class="nv">extractInputs</span><span class="ss">(</span><span class="nv">inputs</span>[<span class="s2">&quot;InputPolygon&quot;</span>]<span class="ss">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="nv">geometry</span>.<span class="nv">GetGeometryType</span><span class="ss">()</span><span class="o">!=</span><span class="mi">3</span>:
+<span class="w">        </span><span class="nv">geometry</span><span class="o">=</span><span class="nv">geometry</span>.<span class="nv">ConvexHull</span><span class="ss">()</span>
+<span class="w">    </span><span class="nv">rgeom</span><span class="o">=</span><span class="nv">geometry</span>.<span class="nv">Centroid</span><span class="ss">()</span>
+<span class="w">    </span><span class="nv">outputResult</span><span class="ss">(</span><span class="nv">outputs</span>[<span class="s2">&quot;Result&quot;</span>],<span class="nv">rgeom</span><span class="ss">)</span>
+<span class="w">    </span><span class="nv">geometry</span>.<span class="nv">Destroy</span><span class="ss">()</span>
+<span class="w">    </span><span class="nv">rgeom</span>.<span class="nv">Destroy</span><span class="ss">()</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">3</span>
 </pre></div>
 </div>
 <p>Note, that in Python you also need to use ConvexHull to deal with MultiPolygons.</p>
@@ -1138,45 +1153,45 @@ simple integer value. The read access to such kind of input value is made using 
 same function as used before.</p>
 </section>
 <section id="id3">
-<h4><a class="toc-backref" href="#table-of-contents" role="doc-backlink">C Version</a><a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h4>
+<h4><a class="toc-backref" href="#table-of-contents" role="doc-backlink">C Version</a><a class="headerlink" href="#id3" title="Link to this heading">¶</a></h4>
 <p>If you go back to the first Boundary Service source code, you should not find the
 following very complicated. Indeed, you simply have to add the access of the
 BufferDistance argument and modify the line whenthe  <a class="reference external" href="http://www.gdal.org/ogr/ogr__api_8h.html#1ca0bd5c0fcb4b1af3c3973e467b0ec0">OGR_G_Buffer</a>
 must be called (instead of OGR_G_GetBoundary). Here is the ful lcode :</p>
-<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span><span class="n">int</span><span class="w"> </span><span class="n">Buffer</span><span class="p">(</span><span class="n">maps</span><span class="o">*&amp;</span><span class="w"> </span><span class="n">conf</span><span class="p">,</span><span class="n">maps</span><span class="o">*&amp;</span><span class="w"> </span><span class="n">inputs</span><span class="p">,</span><span class="n">maps</span><span class="o">*&amp;</span><span class="w"> </span><span class="n">outputs</span><span class="p">){</span><span class="w"></span>
-<span class="w">  </span><span class="n">OGRGeometryH</span><span class="w"> </span><span class="n">geometry</span><span class="p">,</span><span class="n">res</span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="nf">map</span><span class="o">*</span><span class="w"> </span><span class="n">tmp1</span><span class="o">=</span><span class="n">getMapFromMaps</span><span class="p">(</span><span class="n">inputs</span><span class="p">,</span><span class="s">&quot;InputPolygon&quot;</span><span class="p">,</span><span class="s">&quot;value&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="nf">if</span><span class="p">(</span><span class="n">tmp</span><span class="o">==</span><span class="n">NULL</span><span class="p">){</span><span class="w"></span>
-<span class="w">    </span><span class="n">setMapInMaps</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span><span class="s">&quot;lenv&quot;</span><span class="p">,</span><span class="s">&quot;message&quot;</span><span class="p">,</span><span class="s">&quot;Unable to fetch InputPolygon value.&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="kr">return</span><span class="w"> </span><span class="n">SERVICE_FAILED</span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"></span>
-<span class="w">  </span><span class="nf">map</span><span class="o">*</span><span class="w"> </span><span class="n">tmp1</span><span class="o">=</span><span class="n">getMapFromMaps</span><span class="p">(</span><span class="n">inputs</span><span class="p">,</span><span class="s">&quot;InputPolygon&quot;</span><span class="p">,</span><span class="s">&quot;mimeType&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="nf">if</span><span class="p">(</span><span class="n">strncmp</span><span class="p">(</span><span class="n">tmp</span><span class="o">-&gt;</span><span class="n">value</span><span class="p">,</span><span class="s">&quot;application/json&quot;</span><span class="p">,</span><span class="mi">16</span><span class="p">)</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="n">geometry</span><span class="o">=</span><span class="n">OGR_G_CreateGeometryFromJson</span><span class="p">(</span><span class="n">tmp</span><span class="o">-&gt;</span><span class="n">value</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="n">else</span><span class="w"></span>
-<span class="w">    </span><span class="n">geometry</span><span class="o">=</span><span class="n">createGeometryFromWFS</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span><span class="n">tmp</span><span class="o">-&gt;</span><span class="n">value</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="n">double</span><span class="w"> </span><span class="n">bufferDistance</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="n">tmp</span><span class="o">=</span><span class="n">getMapFromMaps</span><span class="p">(</span><span class="n">inputs</span><span class="p">,</span><span class="s">&quot;BufferDistance&quot;</span><span class="p">,</span><span class="s">&quot;value&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="nf">if</span><span class="p">(</span><span class="n">tmp</span><span class="o">!=</span><span class="n">NULL</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="n">bufferDistance</span><span class="o">=</span><span class="n">atof</span><span class="p">(</span><span class="n">tmp</span><span class="o">-&gt;</span><span class="n">value</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="n">res</span><span class="o">=</span><span class="n">OGR_G_Buffer</span><span class="p">(</span><span class="n">geometry</span><span class="p">,</span><span class="n">bufferDistance</span><span class="p">,</span><span class="mi">30</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="n">tmp1</span><span class="o">=</span><span class="n">getMapFromMaps</span><span class="p">(</span><span class="n">outputs</span><span class="p">,</span><span class="s">&quot;Result&quot;</span><span class="p">,</span><span class="s">&quot;mimeType&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="nf">if</span><span class="p">(</span><span class="n">strncmp</span><span class="p">(</span><span class="n">tmp1</span><span class="o">-&gt;</span><span class="n">value</span><span class="p">,</span><span class="s">&quot;application/json&quot;</span><span class="p">,</span><span class="mi">16</span><span class="p">)</span><span class="o">==</span><span class="mi">0</span><span class="p">){</span><span class="w"></span>
-<span class="w">    </span><span class="n">char</span><span class="w"> </span><span class="o">*</span><span class="n">tmp</span><span class="o">=</span><span class="n">OGR_G_ExportToJson</span><span class="p">(</span><span class="n">res</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">setMapInMaps</span><span class="p">(</span><span class="n">outputs</span><span class="p">,</span><span class="s">&quot;Result&quot;</span><span class="p">,</span><span class="s">&quot;value&quot;</span><span class="p">,</span><span class="n">tmp</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">setMapInMaps</span><span class="p">(</span><span class="n">outputs</span><span class="p">,</span><span class="s">&quot;Result&quot;</span><span class="p">,</span><span class="s">&quot;mimeType&quot;</span><span class="p">,</span><span class="s">&quot;text/plain&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">free</span><span class="p">(</span><span class="n">tmp</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"></span>
-<span class="w">  </span><span class="n">else</span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">char</span><span class="w"> </span><span class="o">*</span><span class="n">tmp</span><span class="o">=</span><span class="n">OGR_G_ExportToGML</span><span class="p">(</span><span class="n">res</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">setMapInMaps</span><span class="p">(</span><span class="n">outputs</span><span class="p">,</span><span class="s">&quot;Result&quot;</span><span class="p">,</span><span class="s">&quot;value&quot;</span><span class="p">,</span><span class="n">tmp</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">free</span><span class="p">(</span><span class="n">tmp</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"></span>
-<span class="w">  </span><span class="n">outputs</span><span class="o">-&gt;</span><span class="n">next</span><span class="o">=</span><span class="n">NULL</span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="n">OGR_G_DestroyGeometry</span><span class="p">(</span><span class="n">geometry</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="n">OGR_G_DestroyGeometry</span><span class="p">(</span><span class="n">res</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="kr">return</span><span class="w"> </span><span class="n">SERVICE_SUCCEEDED</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>int Buffer(maps*&amp; conf,maps*&amp; inputs,maps*&amp; outputs){
+  OGRGeometryH geometry,res;
+  map* tmp1=getMapFromMaps(inputs,&quot;InputPolygon&quot;,&quot;value&quot;);
+  if(tmp==NULL){
+    setMapInMaps(conf,&quot;lenv&quot;,&quot;message&quot;,&quot;Unable to fetch InputPolygon value.&quot;);
+    return SERVICE_FAILED;
+  }
+  map* tmp1=getMapFromMaps(inputs,&quot;InputPolygon&quot;,&quot;mimeType&quot;);
+  if(strncmp(tmp-&gt;value,&quot;application/json&quot;,16)==0)
+    geometry=OGR_G_CreateGeometryFromJson(tmp-&gt;value);
+  else
+    geometry=createGeometryFromWFS(conf,tmp-&gt;value);
+  double bufferDistance=1;
+  tmp=getMapFromMaps(inputs,&quot;BufferDistance&quot;,&quot;value&quot;);
+  if(tmp!=NULL)
+    bufferDistance=atof(tmp-&gt;value);
+  res=OGR_G_Buffer(geometry,bufferDistance,30);
+  tmp1=getMapFromMaps(outputs,&quot;Result&quot;,&quot;mimeType&quot;);
+  if(strncmp(tmp1-&gt;value,&quot;application/json&quot;,16)==0){
+    char *tmp=OGR_G_ExportToJson(res);
+    setMapInMaps(outputs,&quot;Result&quot;,&quot;value&quot;,tmp);
+    setMapInMaps(outputs,&quot;Result&quot;,&quot;mimeType&quot;,&quot;text/plain&quot;);
+    free(tmp);
+  }
+  else{
+    char *tmp=OGR_G_ExportToGML(res);
+    setMapInMaps(outputs,&quot;Result&quot;,&quot;value&quot;,tmp);
+    free(tmp);
+  }
+  outputs-&gt;next=NULL;
+  OGR_G_DestroyGeometry(geometry);
+  OGR_G_DestroyGeometry(res);
+  return SERVICE_SUCCEEDED;
+}
 </pre></div>
 </div>
 <p>The new code must be inserted in your service.c file and need to be recompiled and
@@ -1194,59 +1209,59 @@ you do not have to use one more input to your previous queries.</p>
 of your geometry by adding it to the DataInputs value in your request. Note that
 using KVP syntaxe, each DataInputs are separated by a semicolon.</p>
 <p>So, the previous request:</p>
-<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>DataInputs=InputPolygon=Reference@xlink:href=http%3A%2F%2Flocalhost%2Fcgi-bin%2Fmapserv%3FSERVICE%3DWFS%26REQUEST%3DGetFeature%26VERSION%3D1.0.0%26typename%3Dregions%26SRS%3DEPSG%3A4326%26FeatureID%3Dregions.3192
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span><span class="nx">DataInputs</span><span class="p">=</span><span class="nx">InputPolygon</span><span class="p">=</span><span class="nx">Reference</span><span class="err">@</span><span class="nx">xlink</span><span class="p">:</span><span class="nx">href</span><span class="p">=</span><span class="nx">http</span><span class="o">%</span><span class="mi">3</span><span class="nx">A</span><span class="o">%</span><span class="mi">2</span><span class="nx">F</span><span class="o">%</span><span class="mi">2</span><span class="nx">Flocalhost</span><span class="o">%</span><span class="mi">2</span><span class="nx">Fcgi</span><span class="o">-</span><span class="nx">bin</span><span class="o">%</span><span class="mi">2</span><span class="nx">Fmapserv</span><span class="o">%</span><span class="mi">3</span><span class="nx">FSERVICE</span><span class="o">%</span><span class="mi">3</span><span class="nx">DWFS</span><span class="o">%</span><span class="mi">26</span><span class="nx">REQUEST</span><span class="o">%</span><span class="mi">3</span><span class="nx">DGetFeature</span><span class="o">%</span><span class="mi">26</span><span class="nx">VERSION</span><span class="o">%</span><span class="mi">3</span><span class="nx">D1</span><span class="m m-Double">.0.0</span><span class="o">%</span><span class="mi">26</span><span class="nx">typename</span><span class="o">%</span><span class="mi">3</span><span class="nx">Dregions</span><span class="o">%</span><span class="mi">26</span><span class="nx">SRS</span><span class="o">%</span><span class="mi">3</span><span class="nx">DEPSG</span><span class="o">%</span><span class="mi">3</span><span class="nx">A4326</span><span class="o">%</span><span class="mi">26</span><span class="nx">FeatureID</span><span class="o">%</span><span class="mi">3</span><span class="nx">Dregions</span><span class="m m-Double">.3192</span>
 </pre></div>
 </div>
 <p>Can now be rewritten this way :</p>
-<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>DataInputs=InputPolygon=Reference@xlink:href=http%3A%2F%2Flocalhost%2Fcgi-bin%2Fmapserv%3FSERVICE%3DWFS%26REQUEST%3DGetFeature%26VERSION%3D1.0.0%26typename%3Dregions%26SRS%3DEPSG%3A4326%26FeatureID%3Dregions.3192;BufferDistance=2
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span><span class="nx">DataInputs</span><span class="p">=</span><span class="nx">InputPolygon</span><span class="p">=</span><span class="nx">Reference</span><span class="err">@</span><span class="nx">xlink</span><span class="p">:</span><span class="nx">href</span><span class="p">=</span><span class="nx">http</span><span class="o">%</span><span class="mi">3</span><span class="nx">A</span><span class="o">%</span><span class="mi">2</span><span class="nx">F</span><span class="o">%</span><span class="mi">2</span><span class="nx">Flocalhost</span><span class="o">%</span><span class="mi">2</span><span class="nx">Fcgi</span><span class="o">-</span><span class="nx">bin</span><span class="o">%</span><span class="mi">2</span><span class="nx">Fmapserv</span><span class="o">%</span><span class="mi">3</span><span class="nx">FSERVICE</span><span class="o">%</span><span class="mi">3</span><span class="nx">DWFS</span><span class="o">%</span><span class="mi">26</span><span class="nx">REQUEST</span><span class="o">%</span><span class="mi">3</span><span class="nx">DGetFeature</span><span class="o">%</span><span class="mi">26</span><span class="nx">VERSION</span><span class="o">%</span><span class="mi">3</span><span class="nx">D1</span><span class="m m-Double">.0.0</span><span class="o">%</span><span class="mi">26</span><span class="nx">typename</span><span class="o">%</span><span class="mi">3</span><span class="nx">Dregions</span><span class="o">%</span><span class="mi">26</span><span class="nx">SRS</span><span class="o">%</span><span class="mi">3</span><span class="nx">DEPSG</span><span class="o">%</span><span class="mi">3</span><span class="nx">A4326</span><span class="o">%</span><span class="mi">26</span><span class="nx">FeatureID</span><span class="o">%</span><span class="mi">3</span><span class="nx">Dregions</span><span class="m m-Double">.3192</span><span class="p">;</span><span class="nx">BufferDistance</span><span class="p">=</span><span class="mi">2</span>
 </pre></div>
 </div>
 <p>Setting BufferDistance value to 2 would give you a different result, then don’t
 pass any other parameter as we defined 1 as the default value in the source code.</p>
 <p>Here you can find the same query in XML format to use from the  <a class="reference external" href="http://localhost/test_services.html">http://localhost/test_services.html</a> HTML form :</p>
-<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;wps:Execute</span> <span class="na">service=</span><span class="s">&quot;WPS&quot;</span> <span class="na">version=</span><span class="s">&quot;1.0.0&quot;</span> <span class="na">xmlns:wps=</span><span class="s">&quot;http://www.opengis.net/wps/1.0.0&quot;</span> <span class="na">xmlns:ows=</span><span class="s">&quot;http://www.opengis.net/ows/1.1&quot;</span> <span class="na">xmlns:xlink=</span><span class="s">&quot;http://www.w3.org/1999/xlink&quot;</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:schemaLocation=</span><span class="s">&quot;http://www.opengis.net/wps/1.0.0 ../wpsExecute_request.xsda&quot;</span><span class="nt">&gt;</span>
- <span class="nt">&lt;ows:Identifier&gt;</span>Buffer<span class="nt">&lt;/ows:Identifier&gt;</span>
- <span class="nt">&lt;wps:DataInputs&gt;</span>
-  <span class="nt">&lt;wps:Input&gt;</span>
-   <span class="nt">&lt;ows:Identifier&gt;</span>InputPolygon<span class="nt">&lt;/ows:Identifier&gt;</span>
-   <span class="nt">&lt;ows:Title&gt;</span>Playground area<span class="nt">&lt;/ows:Title&gt;</span>
-   <span class="nt">&lt;wps:Reference</span> <span class="na">xlink:href=</span><span class="s">&quot;http://localhost/cgi-bin/mapserv?map=/var/www/wfs.map&amp;amp;SERVICE=WFS&amp;amp;REQUEST=GetFeature&amp;amp;VERSION=1.0.0&amp;amp;typename=regions&amp;amp;SRS=EPSG:4326&amp;amp;featureid=regions.3192&quot;</span><span class="nt">/&gt;</span>
-  <span class="nt">&lt;/wps:Input&gt;</span>
-  <span class="nt">&lt;wps:Input&gt;</span>
-   <span class="nt">&lt;ows:Identifier&gt;</span>BufferDistance<span class="nt">&lt;/ows:Identifier&gt;</span>
-   <span class="nt">&lt;wps:Data&gt;</span>
-    <span class="nt">&lt;wps:LiteralData</span> <span class="na">uom=</span><span class="s">&quot;degree&quot;</span><span class="nt">&gt;</span>2<span class="nt">&lt;/wps:LiteralData&gt;</span>
-   <span class="nt">&lt;/wps:Data&gt;</span>
-  <span class="nt">&lt;/wps:Input&gt;</span>
- <span class="nt">&lt;/wps:DataInputs&gt;</span>
- <span class="nt">&lt;wps:ResponseForm&gt;</span>
-  <span class="nt">&lt;wps:ResponseDocument&gt;</span>
-   <span class="nt">&lt;wps:Output&gt;</span>
-    <span class="nt">&lt;ows:Identifier&gt;</span>Buffer<span class="nt">&lt;/ows:Identifier&gt;</span>
-    <span class="nt">&lt;ows:Title&gt;</span>Area serviced by playground.<span class="nt">&lt;/ows:Title&gt;</span>
-    <span class="nt">&lt;ows:Abstract&gt;</span>Area within which most users of this playground will live.<span class="nt">&lt;/ows:Abstract&gt;</span>
-   <span class="nt">&lt;/wps:Output&gt;</span>
-  <span class="nt">&lt;/wps:ResponseDocument&gt;</span>
- <span class="nt">&lt;/wps:ResponseForm&gt;</span>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;wps:Execute</span><span class="w"> </span><span class="na">service=</span><span class="s">&quot;WPS&quot;</span><span class="w"> </span><span class="na">version=</span><span class="s">&quot;1.0.0&quot;</span><span class="w"> </span><span class="na">xmlns:wps=</span><span class="s">&quot;http://www.opengis.net/wps/1.0.0&quot;</span><span class="w"> </span><span class="na">xmlns:ows=</span><span class="s">&quot;http://www.opengis.net/ows/1.1&quot;</span><span class="w"> </span><span class="na">xmlns:xlink=</span><span class="s">&quot;http://www.w3.org/1999/xlink&quot;</span><span class="w"> </span><span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><span class="w"> </span><span class="na">xsi:schemaLocation=</span><span class="s">&quot;http://www.opengis.net/wps/1.0.0 ../wpsExecute_request.xsda&quot;</span><span class="nt">&gt;</span>
+<span class="w"> </span><span class="nt">&lt;ows:Identifier&gt;</span>Buffer<span class="nt">&lt;/ows:Identifier&gt;</span>
+<span class="w"> </span><span class="nt">&lt;wps:DataInputs&gt;</span>
+<span class="w">  </span><span class="nt">&lt;wps:Input&gt;</span>
+<span class="w">   </span><span class="nt">&lt;ows:Identifier&gt;</span>InputPolygon<span class="nt">&lt;/ows:Identifier&gt;</span>
+<span class="w">   </span><span class="nt">&lt;ows:Title&gt;</span>Playground<span class="w"> </span>area<span class="nt">&lt;/ows:Title&gt;</span>
+<span class="w">   </span><span class="nt">&lt;wps:Reference</span><span class="w"> </span><span class="na">xlink:href=</span><span class="s">&quot;http://localhost/cgi-bin/mapserv?map=/var/www/wfs.map&amp;amp;SERVICE=WFS&amp;amp;REQUEST=GetFeature&amp;amp;VERSION=1.0.0&amp;amp;typename=regions&amp;amp;SRS=EPSG:4326&amp;amp;featureid=regions.3192&quot;</span><span class="nt">/&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/wps:Input&gt;</span>
+<span class="w">  </span><span class="nt">&lt;wps:Input&gt;</span>
+<span class="w">   </span><span class="nt">&lt;ows:Identifier&gt;</span>BufferDistance<span class="nt">&lt;/ows:Identifier&gt;</span>
+<span class="w">   </span><span class="nt">&lt;wps:Data&gt;</span>
+<span class="w">    </span><span class="nt">&lt;wps:LiteralData</span><span class="w"> </span><span class="na">uom=</span><span class="s">&quot;degree&quot;</span><span class="nt">&gt;</span>2<span class="nt">&lt;/wps:LiteralData&gt;</span>
+<span class="w">   </span><span class="nt">&lt;/wps:Data&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/wps:Input&gt;</span>
+<span class="w"> </span><span class="nt">&lt;/wps:DataInputs&gt;</span>
+<span class="w"> </span><span class="nt">&lt;wps:ResponseForm&gt;</span>
+<span class="w">  </span><span class="nt">&lt;wps:ResponseDocument&gt;</span>
+<span class="w">   </span><span class="nt">&lt;wps:Output&gt;</span>
+<span class="w">    </span><span class="nt">&lt;ows:Identifier&gt;</span>Buffer<span class="nt">&lt;/ows:Identifier&gt;</span>
+<span class="w">    </span><span class="nt">&lt;ows:Title&gt;</span>Area<span class="w"> </span>serviced<span class="w"> </span>by<span class="w"> </span>playground.<span class="nt">&lt;/ows:Title&gt;</span>
+<span class="w">    </span><span class="nt">&lt;ows:Abstract&gt;</span>Area<span class="w"> </span>within<span class="w"> </span>which<span class="w"> </span>most<span class="w"> </span>users<span class="w"> </span>of<span class="w"> </span>this<span class="w"> </span>playground<span class="w"> </span>will<span class="w"> </span>live.<span class="nt">&lt;/ows:Abstract&gt;</span>
+<span class="w">   </span><span class="nt">&lt;/wps:Output&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/wps:ResponseDocument&gt;</span>
+<span class="w"> </span><span class="nt">&lt;/wps:ResponseForm&gt;</span>
 <span class="nt">&lt;/wps:Execute&gt;</span>
 </pre></div>
 </div>
 </section>
 <section id="id4">
-<h4><a class="toc-backref" href="#table-of-contents" role="doc-backlink">Python Version</a><a class="headerlink" href="#id4" title="Permalink to this heading">¶</a></h4>
+<h4><a class="toc-backref" href="#table-of-contents" role="doc-backlink">Python Version</a><a class="headerlink" href="#id4" title="Link to this heading">¶</a></h4>
 <p>As we already defined the utility functions createGeometryFromWFS and outputResult,
 the code is as simple as this:</p>
-<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span><span class="nv">def</span><span class="w"> </span><span class="nv">Buffer</span><span class="ss">(</span><span class="nv">conf</span>,<span class="nv">inputs</span>,<span class="nv">outputs</span><span class="ss">)</span>:<span class="w"></span>
-<span class="w">    </span><span class="nv">geometry</span><span class="o">=</span><span class="nv">extractInputs</span><span class="ss">(</span><span class="nv">inputs</span>[<span class="s2">&quot;InputPolygon&quot;</span>]<span class="ss">)</span><span class="w"></span>
-<span class="w">    </span><span class="nv">try</span>:<span class="w"></span>
-<span class="w">        </span><span class="nv">bdist</span><span class="o">=</span><span class="nv">int</span><span class="ss">(</span><span class="nv">inputs</span>[<span class="s2">&quot;BufferDistance&quot;</span>][<span class="s2">&quot;value&quot;</span>]<span class="ss">)</span><span class="w"></span>
-<span class="w">    </span><span class="nv">except</span>:<span class="w"></span>
-<span class="w">        </span><span class="nv">bdist</span><span class="o">=</span><span class="mi">10</span><span class="w"></span>
-<span class="w">    </span><span class="nv">rgeom</span><span class="o">=</span><span class="nv">geometry</span>.<span class="nv">Buffer</span><span class="ss">(</span><span class="nv">bdist</span><span class="ss">)</span><span class="w"></span>
-<span class="w">    </span><span class="nv">outputResult</span><span class="ss">(</span><span class="nv">outputs</span>[<span class="s2">&quot;Result&quot;</span>],<span class="nv">rgeom</span><span class="ss">)</span><span class="w"></span>
-<span class="w">    </span><span class="nv">geometry</span>.<span class="nv">Destroy</span><span class="ss">()</span><span class="w"></span>
-<span class="w">    </span><span class="nv">rgeom</span>.<span class="nv">Destroy</span><span class="ss">()</span><span class="w"></span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">3</span><span class="w"></span>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span><span class="nv">def</span><span class="w"> </span><span class="nv">Buffer</span><span class="ss">(</span><span class="nv">conf</span>,<span class="nv">inputs</span>,<span class="nv">outputs</span><span class="ss">)</span>:
+<span class="w">    </span><span class="nv">geometry</span><span class="o">=</span><span class="nv">extractInputs</span><span class="ss">(</span><span class="nv">inputs</span>[<span class="s2">&quot;InputPolygon&quot;</span>]<span class="ss">)</span>
+<span class="w">    </span><span class="nv">try</span>:
+<span class="w">        </span><span class="nv">bdist</span><span class="o">=</span><span class="nv">int</span><span class="ss">(</span><span class="nv">inputs</span>[<span class="s2">&quot;BufferDistance&quot;</span>][<span class="s2">&quot;value&quot;</span>]<span class="ss">)</span>
+<span class="w">    </span><span class="nv">except</span>:
+<span class="w">        </span><span class="nv">bdist</span><span class="o">=</span><span class="mi">10</span>
+<span class="w">    </span><span class="nv">rgeom</span><span class="o">=</span><span class="nv">geometry</span>.<span class="nv">Buffer</span><span class="ss">(</span><span class="nv">bdist</span><span class="ss">)</span>
+<span class="w">    </span><span class="nv">outputResult</span><span class="ss">(</span><span class="nv">outputs</span>[<span class="s2">&quot;Result&quot;</span>],<span class="nv">rgeom</span><span class="ss">)</span>
+<span class="w">    </span><span class="nv">geometry</span>.<span class="nv">Destroy</span><span class="ss">()</span>
+<span class="w">    </span><span class="nv">rgeom</span>.<span class="nv">Destroy</span><span class="ss">()</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">3</span>
 </pre></div>
 </div>
 <p>We simply added the use of inputs[“BufferDistance”][“value”] as arguments of the
@@ -1255,7 +1270,7 @@ file, simply copy it in the ZOO Kernel directory (or type make install from your
 Provider root directory). Note that you also need the <code class="docutils literal notranslate"><span class="pre">Buffer.zcfg</span></code> file detailled in the next section.</p>
 </section>
 <section id="the-buffer-metadatafile-file">
-<h4><a class="toc-backref" href="#table-of-contents" role="doc-backlink">The Buffer MetadataFile file</a><a class="headerlink" href="#the-buffer-metadatafile-file" title="Permalink to this heading">¶</a></h4>
+<h4><a class="toc-backref" href="#table-of-contents" role="doc-backlink">The Buffer MetadataFile file</a><a class="headerlink" href="#the-buffer-metadatafile-file" title="Link to this heading">¶</a></h4>
 <p>You must add BufferDistance to the Service Metadata File to let clients know that
 this Service supports this parameter. To do this, please copy your orginal <code class="docutils literal notranslate"><span class="pre">Boundary.zcfg</span></code>
 file as <code class="docutils literal notranslate"><span class="pre">Buffer.zcfg</span></code> and add the following lines to the DataInputs block :</p>
@@ -1333,9 +1348,6 @@ value to the Service function for an optional parameter with a default value set
         };
     </script>
       <script type="text/javascript" src="../_static/documentation_options.js"></script>
-      <script type="text/javascript" src="../_static/jquery.js"></script>
-      <script type="text/javascript" src="../_static/underscore.js"></script>
-      <script type="text/javascript" src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../_static/doctools.js"></script>
       <script type="text/javascript" src="../_static/sphinx_highlight.js"></script>
 

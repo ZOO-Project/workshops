@@ -25,8 +25,6 @@
 
   
   
-    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  
 
   
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -53,7 +51,7 @@
   <div class="wy-grid-for-nav">
 
     
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
       <div class="wy-side-nav-search">
         
 
@@ -81,6 +79,15 @@
           
           
               <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../2024/foss4g-europe/index.html">ZOO-Project – Introduction to OGC API - Processes - Part 1: Core</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../2024/foss4g-europe/introduction.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2024/foss4g-europe/using_zoo_from_docker.html">Installation, configuration and ZOO-Kernel use</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2024/foss4g-europe/first_service.html">Creating your first ZOO-Service</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2024/foss4g-europe/building_blocks_presentation.html">Building blocks presentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2024/foss4g-europe/js_services_chaining.html">Playing with building blocks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2024/foss4g-europe/solutions.html">Issue playing with building blocks?</a></li>
+</ul>
+</li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">ZOO-Project – Introduction to OGC API - Processes - Part 1: Core</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="introduction.html">Introduction</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Installation, configuration and ZOO-Kernel use</a></li>
@@ -198,7 +205,7 @@
           <div role="main" class="document">
             
   <section id="installation-configuration-and-zoo-kernel-use">
-<span id="using-zoo-from-docker"></span><h1><a class="toc-backref" href="#table-of-contents" role="doc-backlink">Installation, configuration and ZOO-Kernel use</a><a class="headerlink" href="#installation-configuration-and-zoo-kernel-use" title="Permalink to this heading">¶</a></h1>
+<span id="using-zoo-from-docker"></span><h1><a class="toc-backref" href="#table-of-contents" role="doc-backlink">Installation, configuration and ZOO-Kernel use</a><a class="headerlink" href="#installation-configuration-and-zoo-kernel-use" title="Link to this heading">¶</a></h1>
 <nav class="contents" id="table-of-contents">
 <p class="topic-title">Table of Contents</p>
 <ul class="simple">
@@ -213,7 +220,7 @@
 </ul>
 </nav>
 <section id="zoo-project-installation">
-<h2><a class="toc-backref" href="#table-of-contents" role="doc-backlink">ZOO-Project Installation</a><a class="headerlink" href="#zoo-project-installation" title="Permalink to this heading">¶</a></h2>
+<h2><a class="toc-backref" href="#table-of-contents" role="doc-backlink">ZOO-Project Installation</a><a class="headerlink" href="#zoo-project-installation" title="Link to this heading">¶</a></h2>
 <p>As said in introduction, you will use the the ZOO-Project Docker
 Compose evironment using the official <a class="reference external" href="https://hub.docker.com/r/zooproject/zoo-project">ZOO-Project Docker Image</a>. To install the
 ZOO-Project with the workshop2023 specific data and configuration
@@ -233,7 +240,7 @@ you run the previous command: 80 and 8888.</p>
 </div>
 </section>
 <section id="zoo-project-configuration">
-<h2><a class="toc-backref" href="#table-of-contents" role="doc-backlink">ZOO-Project Configuration</a><a class="headerlink" href="#zoo-project-configuration" title="Permalink to this heading">¶</a></h2>
+<h2><a class="toc-backref" href="#table-of-contents" role="doc-backlink">ZOO-Project Configuration</a><a class="headerlink" href="#zoo-project-configuration" title="Link to this heading">¶</a></h2>
 <p>General ZOO-Kernel settings are set in the <code class="docutils literal notranslate"><span class="pre">main.cfg</span></code> file located in the same directory as the ZOO-Kernel, so in <code class="docutils literal notranslate"><span class="pre">/usr/lib/cgi-bin/</span></code>. This informations will be accessible from each services at runtime, so when you wil use Execute requests. You can see a typical <code class="docutils literal notranslate"><span class="pre">main.cfg</span></code> content in the following:</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -415,7 +422,7 @@ before running your service. You can then easilly access this informations from 
 service source code. This functionality won’t be used in the following presentation.</p>
 </section>
 <section id="specific-ogc-api-processes-configuration-file">
-<h2><a class="toc-backref" href="#table-of-contents" role="doc-backlink">Specific OGC API - Processes configuration file</a><a class="headerlink" href="#specific-ogc-api-processes-configuration-file" title="Permalink to this heading">¶</a></h2>
+<h2><a class="toc-backref" href="#table-of-contents" role="doc-backlink">Specific OGC API - Processes configuration file</a><a class="headerlink" href="#specific-ogc-api-processes-configuration-file" title="Link to this heading">¶</a></h2>
 <p>In addition to the tranditional <code class="docutils literal notranslate"><span class="pre">main.cfg</span></code> file for global
 configuration and settings, the ZOO-Project now requires a new
 configuration  file to support the OGC API - Processes - Part 1:
@@ -436,17 +443,19 @@ may have to restart the docker-compose environment.</p>
 </div>
 </section>
 <section id="accessing-ogc-api-processes">
-<h2><a class="toc-backref" href="#table-of-contents" role="doc-backlink">Accessing OGC API - Processes</a><a class="headerlink" href="#accessing-ogc-api-processes" title="Permalink to this heading">¶</a></h2>
+<h2><a class="toc-backref" href="#table-of-contents" role="doc-backlink">Accessing OGC API - Processes</a><a class="headerlink" href="#accessing-ogc-api-processes" title="Link to this heading">¶</a></h2>
 <p>You can access your local <a class="reference external" href="https://ogcapi.ogc.org/processes/">OGC API - Processes - Part 1: Core</a> Server Instance by opening your
 favotire browser and loading <a class="reference external" href="https://swagger.io/tools/swagger-ui/">Swagger-UI</a> from the following URL:
 <a class="reference external" href="http://localhost/ogc-api/api.html">http://localhost/ogc-api/api.html</a>.</p>
-<a class="reference internal image-reference" href="../../_images/oapip-swagger-ui.png"><img alt="../../_images/oapip-swagger-ui.png" class="align-center" src="../../_images/oapip-swagger-ui.png" style="width: 450px;" /></a>
+<a class="reference internal image-reference" href="../../_images/oapip-swagger-ui.png"><img alt="../../_images/oapip-swagger-ui.png" class="align-center" src="../../_images/oapip-swagger-ui.png" style="width: 450px;" />
+</a>
 <p>You can also access the Basic HTML UI provided by the ZOO-Project by
 accessing the following URL: <a class="reference external" href="http://localhost/ogc-api/index.html">http://localhost/ogc-api/index.html</a>.</p>
-<a class="reference internal image-reference" href="../../_images/oapip-basic-landingPage.png"><img alt="../../_images/oapip-basic-landingPage.png" class="align-center" src="../../_images/oapip-basic-landingPage.png" style="width: 850px;" /></a>
+<a class="reference internal image-reference" href="../../_images/oapip-basic-landingPage.png"><img alt="../../_images/oapip-basic-landingPage.png" class="align-center" src="../../_images/oapip-basic-landingPage.png" style="width: 850px;" />
+</a>
 <p class="rubric">Footnotes</p>
 <aside class="footnote-list brackets">
-<aside class="footnote brackets" id="f1" role="note">
+<aside class="footnote brackets" id="f1" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
 <p>when you use GET requests passed through <code class="docutils literal notranslate"><span class="pre">xlink:href</span></code> the ZOO-Kernel will
 execute the request only once, the first time you will ask for this ressource and it will
@@ -454,29 +463,29 @@ store on disk the result. The next time you will need the same feature, the cach
 will be used which make your process running faster. If <code class="docutils literal notranslate"><span class="pre">cachedir</span></code> was not
 specified in the <code class="docutils literal notranslate"><span class="pre">main.cfg</span></code> then <code class="docutils literal notranslate"><span class="pre">tmpPath</span></code> value will be used.</p>
 </aside>
-<aside class="footnote brackets" id="f2" role="note">
+<aside class="footnote brackets" id="f2" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
 <p>since version 1.3.0, when MapServer is activated, your service can automatically
 return a WMS, WFS or WCS request to expose your data. Your can set here the specific
 version number you want to use to request your local MapServer setup. It depends
 mostly on the client capability to deal with specific OGC Web Services version.</p>
 </aside>
-<aside class="footnote brackets" id="f3" role="note">
+<aside class="footnote brackets" id="f3" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">3</a><span class="fn-bracket">]</span></span>
 <p>since version 1.3.0, when MapServer is activated, the same metadata will be used
 for setting metadata for OGC Web Services.</p>
 </aside>
-<aside class="footnote brackets" id="f8" role="note">
+<aside class="footnote brackets" id="f8" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">4</a><span class="fn-bracket">]</span></span>
 <p>you can take a quick look into the mapmint <code class="docutils literal notranslate"><span class="pre">main.cfg</span></code> file
 which is available in <cite>/usr/lib/cgi-bin/mm/</cite> directory to have
 example of sections use.</p>
 </aside>
-<aside class="footnote brackets" id="f4" role="note">
+<aside class="footnote brackets" id="f4" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id5">5</a><span class="fn-bracket">]</span></span>
 <p>If you’re not familiar with ZOO-Project, you can <a class="reference external" href="using_zoo_from_osgeolivevm#testing-the-zoo-installation-with-getcapabilities">pass</a>  this part and come to it after the next section.</p>
 </aside>
-<aside class="footnote brackets" id="f9" role="note">
+<aside class="footnote brackets" id="f9" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span>6<span class="fn-bracket">]</span></span>
 <p>sub-directories listing is available from <a class="reference external" href="http://zoo-project.org/trac/changeset/469">revision 469</a>.</p>
 </aside>
@@ -530,9 +539,6 @@ example of sections use.</p>
         };
     </script>
       <script type="text/javascript" src="../../_static/documentation_options.js"></script>
-      <script type="text/javascript" src="../../_static/jquery.js"></script>
-      <script type="text/javascript" src="../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
       <script type="text/javascript" src="../../_static/sphinx_highlight.js"></script>
 

@@ -25,8 +25,6 @@
 
   
   
-    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  
 
   
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -53,7 +51,7 @@
   <div class="wy-grid-for-nav">
 
     
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
       <div class="wy-side-nav-search">
         
 
@@ -81,6 +79,15 @@
           
           
               <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../2024/foss4g-europe/index.html">ZOO-Project – Introduction to OGC API - Processes - Part 1: Core</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../2024/foss4g-europe/introduction.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2024/foss4g-europe/using_zoo_from_docker.html">Installation, configuration and ZOO-Kernel use</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2024/foss4g-europe/first_service.html">Creating your first ZOO-Service</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2024/foss4g-europe/building_blocks_presentation.html">Building blocks presentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2024/foss4g-europe/js_services_chaining.html">Playing with building blocks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2024/foss4g-europe/solutions.html">Issue playing with building blocks?</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../2023/foss4g/index.html">ZOO-Project – Introduction to OGC API - Processes - Part 1: Core</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../2023/foss4g/introduction.html">Introduction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../2023/foss4g/using_zoo_from_docker.html">Installation, configuration and ZOO-Kernel use</a></li>
@@ -198,7 +205,7 @@
           <div role="main" class="document">
             
   <section id="playing-with-buildign-blocks-creating-javascript-web-services">
-<span id="ogr-base-vect-ops"></span><h1><a class="toc-backref" href="#table-of-contents" role="doc-backlink">Playing with buildign blocks - Creating JavaScript Web Services</a><a class="headerlink" href="#playing-with-buildign-blocks-creating-javascript-web-services" title="Permalink to this heading">¶</a></h1>
+<span id="ogr-base-vect-ops"></span><h1><a class="toc-backref" href="#table-of-contents" role="doc-backlink">Playing with buildign blocks - Creating JavaScript Web Services</a><a class="headerlink" href="#playing-with-buildign-blocks-creating-javascript-web-services" title="Link to this heading">¶</a></h1>
 <nav class="contents" id="table-of-contents">
 <p class="topic-title">Table of Contents</p>
 <ul class="simple">
@@ -234,16 +241,18 @@
 </ul>
 </nav>
 <section id="introduction">
-<h2><a class="toc-backref" href="#table-of-contents" role="doc-backlink">Introduction</a><a class="headerlink" href="#introduction" title="Permalink to this heading">¶</a></h2>
+<h2><a class="toc-backref" href="#table-of-contents" role="doc-backlink">Introduction</a><a class="headerlink" href="#introduction" title="Link to this heading">¶</a></h2>
 <p>This section illustrate how you can use JavaScript on the server-side to chain
 services together to build new ones. You will create a ZOO Services Provider
 using the services you seen before and the WFS server using the ZOO-API. The
 final goal is to query all POIs included in a buffer around a feature and
 to highlight them using a mask around this buffer. The following screenshot show
 you the expected result:</p>
-<a class="reference internal image-reference" href="../_images/BufferMaskAndRequest_Level_152.png"><img alt="../_images/BufferMaskAndRequest_Level_152.png" class="align-center" src="../_images/BufferMaskAndRequest_Level_152.png" style="width: 650px;" /></a>
+<a class="reference internal image-reference" href="../_images/BufferMaskAndRequest_Level_152.png"><img alt="../_images/BufferMaskAndRequest_Level_152.png" class="align-center" src="../_images/BufferMaskAndRequest_Level_152.png" style="width: 650px;" />
+</a>
 <p>For the routing interface result should look like this:</p>
-<a class="reference internal image-reference" href="../_images/BufferMaskAndRequest_Routing_Level_151.png"><img alt="../_images/BufferMaskAndRequest_Routing_Level_151.png" class="align-center" src="../_images/BufferMaskAndRequest_Routing_Level_151.png" style="width: 650px;" /></a>
+<a class="reference internal image-reference" href="../_images/BufferMaskAndRequest_Routing_Level_151.png"><img alt="../_images/BufferMaskAndRequest_Routing_Level_151.png" class="align-center" src="../_images/BufferMaskAndRequest_Routing_Level_151.png" style="width: 650px;" />
+</a>
 <p>You can decompose the result above in two different ones: the mask around the
 buffer and the points included in the buffer. So you will create two different
 Services: one called <code class="docutils literal notranslate"><span class="pre">BufferMask</span></code> and another one called <code class="docutils literal notranslate"><span class="pre">BufferRequest</span></code>.</p>
@@ -256,7 +265,7 @@ Provider:</p>
 </div>
 </section>
 <section id="zoo-api-overview">
-<h2><a class="toc-backref" href="#table-of-contents" role="doc-backlink">ZOO-API Overview</a><a class="headerlink" href="#zoo-api-overview" title="Permalink to this heading">¶</a></h2>
+<h2><a class="toc-backref" href="#table-of-contents" role="doc-backlink">ZOO-API Overview</a><a class="headerlink" href="#zoo-api-overview" title="Link to this heading">¶</a></h2>
 <p>ZOO-API and ZOO-Kernel JavaScript support make you able to run services
 implemented in JavaScript on the server side. JavaScript is a popular programing
 language but mostly used on the client side. Let say from a browser, but here it
@@ -309,17 +318,18 @@ Service code:</p>
 BufferRequest service, let start with a simplier one.</p>
 </section>
 <section id="the-mask-service">
-<h2><a class="toc-backref" href="#table-of-contents" role="doc-backlink">The Mask Service</a><a class="headerlink" href="#the-mask-service" title="Permalink to this heading">¶</a></h2>
+<h2><a class="toc-backref" href="#table-of-contents" role="doc-backlink">The Mask Service</a><a class="headerlink" href="#the-mask-service" title="Link to this heading">¶</a></h2>
 <p>In this section you will learn how to create your first JavaScript service which
 will simply return a rectangular mask around a selected feature. To build this
 mask you will use the Buffer service to create a buffer big enough around a
 selected geometry to cover a significant part of your map. You can see the
 expected result in the following screenshot:</p>
-<a class="reference internal image-reference" href="../_images/Mask_Level_122.png"><img alt="../_images/Mask_Level_122.png" class="align-center" src="../_images/Mask_Level_122.png" style="width: 650px;" /></a>
+<a class="reference internal image-reference" href="../_images/Mask_Level_122.png"><img alt="../_images/Mask_Level_122.png" class="align-center" src="../_images/Mask_Level_122.png" style="width: 650px;" />
+</a>
 <p>As before, you will first start by writting the ZCFG, then you will write the
 JavaScript source code and finish by publishing your Services Provider.</p>
 <section id="the-zcfg">
-<h3><a class="toc-backref" href="#table-of-contents" role="doc-backlink">The ZCFG</a><a class="headerlink" href="#the-zcfg" title="Permalink to this heading">¶</a></h3>
+<h3><a class="toc-backref" href="#table-of-contents" role="doc-backlink">The ZCFG</a><a class="headerlink" href="#the-zcfg" title="Link to this heading">¶</a></h3>
 <p>Open a file named
 <code class="docutils literal notranslate"><span class="pre">~/zoo-ws/jschains/cgi-env/Mask.zcfg</span></code>
 with your favorite text editor and add the following content:</p>
@@ -360,36 +370,36 @@ with your favorite text editor and add the following content:</p>
 <code class="docutils literal notranslate"><span class="pre">Result</span></code>: a GML and a GeoJSON respectively <a class="footnote-reference brackets" href="#f7" id="id5" role="doc-noteref"><span class="fn-bracket">[</span>5<span class="fn-bracket">]</span></a>.</p>
 </section>
 <section id="the-javascript-service">
-<h3><a class="toc-backref" href="#table-of-contents" role="doc-backlink">The JavaScript service</a><a class="headerlink" href="#the-javascript-service" title="Permalink to this heading">¶</a></h3>
+<h3><a class="toc-backref" href="#table-of-contents" role="doc-backlink">The JavaScript service</a><a class="headerlink" href="#the-javascript-service" title="Link to this heading">¶</a></h3>
 <p>As you will have to request the Buffer service many times from your service, you
 will first define a <code class="docutils literal notranslate"><span class="pre">Buffer</span></code> function as follow. It uses the <code class="docutils literal notranslate"><span class="pre">ZOO.Process</span></code>
 to request the Buffer service you seen in the previous section.</p>
 <p>Open a file named
 <code class="docutils literal notranslate"><span class="pre">~/zoo-ws/jschains/cgi-env/foss4gws.js</span></code> and
 add the following content:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kd">var</span><span class="w"> </span><span class="nx">zoo_url</span><span class="o">=</span><span class="s1">&#39;http://localhost/cgi-bin/zoo_loader.cgi&#39;</span><span class="p">;</span><span class="w"></span>
-<span class="linenos"> 2</span><span class="kd">var</span><span class="w"> </span><span class="nx">mapfile</span><span class="o">=</span><span class="s2">&quot;/var/data/maps/project_WS2014.map&quot;</span><span class="p">;</span><span class="w"></span>
-<span class="linenos"> 3</span><span class="kd">var</span><span class="w"> </span><span class="nx">mapserv_url</span><span class="o">=</span><span class="s2">&quot;http://localhost/cgi-bin/mapserv?map=&quot;</span><span class="o">+</span><span class="nx">mapfile</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kd">var</span><span class="w"> </span><span class="nx">zoo_url</span><span class="o">=</span><span class="s1">&#39;http://localhost/cgi-bin/zoo_loader.cgi&#39;</span><span class="p">;</span>
+<span class="linenos"> 2</span><span class="kd">var</span><span class="w"> </span><span class="nx">mapfile</span><span class="o">=</span><span class="s2">&quot;/var/data/maps/project_WS2014.map&quot;</span><span class="p">;</span>
+<span class="linenos"> 3</span><span class="kd">var</span><span class="w"> </span><span class="nx">mapserv_url</span><span class="o">=</span><span class="s2">&quot;http://localhost/cgi-bin/mapserv?map=&quot;</span><span class="o">+</span><span class="nx">mapfile</span><span class="p">;</span>
 <span class="linenos"> 4</span>
-<span class="linenos"> 5</span><span class="kd">function</span><span class="w"> </span><span class="nx">Buffer</span><span class="p">(</span><span class="nx">inputData</span><span class="p">,</span><span class="nx">bDist</span><span class="p">){</span><span class="w"></span>
+<span class="linenos"> 5</span><span class="kd">function</span><span class="w"> </span><span class="nx">Buffer</span><span class="p">(</span><span class="nx">inputData</span><span class="p">,</span><span class="nx">bDist</span><span class="p">){</span>
 <span class="linenos"> 6</span>
-<span class="linenos"> 7</span><span class="w">  </span><span class="c1">// Create all required ZOO.formats</span><span class="w"></span>
-<span class="linenos"> 8</span><span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">fJ</span><span class="o">=</span><span class="ow">new</span><span class="w"> </span><span class="nx">ZOO</span><span class="p">.</span><span class="nx">Format</span><span class="p">.</span><span class="nb">JSON</span><span class="p">();</span><span class="w"></span>
-<span class="linenos"> 9</span><span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">fGJ</span><span class="o">=</span><span class="ow">new</span><span class="w"> </span><span class="nx">ZOO</span><span class="p">.</span><span class="nx">Format</span><span class="p">.</span><span class="nx">GeoJSON</span><span class="p">();</span><span class="w"></span>
-<span class="linenos">10</span><span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">fWPS</span><span class="o">=</span><span class="ow">new</span><span class="w"> </span><span class="nx">ZOO</span><span class="p">.</span><span class="nx">Format</span><span class="p">.</span><span class="nx">WPS</span><span class="p">();</span><span class="w"></span>
+<span class="linenos"> 7</span><span class="w">  </span><span class="c1">// Create all required ZOO.formats</span>
+<span class="linenos"> 8</span><span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">fJ</span><span class="o">=</span><span class="ow">new</span><span class="w"> </span><span class="nx">ZOO</span><span class="p">.</span><span class="nx">Format</span><span class="p">.</span><span class="nb">JSON</span><span class="p">();</span>
+<span class="linenos"> 9</span><span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">fGJ</span><span class="o">=</span><span class="ow">new</span><span class="w"> </span><span class="nx">ZOO</span><span class="p">.</span><span class="nx">Format</span><span class="p">.</span><span class="nx">GeoJSON</span><span class="p">();</span>
+<span class="linenos">10</span><span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">fWPS</span><span class="o">=</span><span class="ow">new</span><span class="w"> </span><span class="nx">ZOO</span><span class="p">.</span><span class="nx">Format</span><span class="p">.</span><span class="nx">WPS</span><span class="p">();</span>
 <span class="linenos">11</span>
-<span class="linenos">12</span><span class="w">  </span><span class="c1">// Pass the value as json</span><span class="w"></span>
-<span class="linenos">13</span><span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">myInputs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="linenos">14</span><span class="w">      </span><span class="nx">InputPolygon</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;complex&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="nx">fGJ</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">inputData</span><span class="p">),</span><span class="w"> </span><span class="nx">mimeType</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;application/json&quot;</span><span class="p">},</span><span class="w"></span>
-<span class="linenos">15</span><span class="w">      </span><span class="nx">BufferDistance</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;float&#39;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;value&quot;</span><span class="o">:</span><span class="w"> </span><span class="nx">bDist</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
-<span class="linenos">16</span><span class="w">  </span><span class="p">};</span><span class="w"></span>
-<span class="linenos">17</span><span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">myOutputs</span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Result</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;RawDataOutput&#39;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;mimeType&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;application/json&quot;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">};</span><span class="w"></span>
-<span class="linenos">18</span><span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">myProcess</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">ZOO</span><span class="p">.</span><span class="nx">Process</span><span class="p">(</span><span class="nx">zoo_url</span><span class="p">,</span><span class="s1">&#39;BufferPy&#39;</span><span class="p">);</span><span class="w"></span>
-<span class="linenos">19</span><span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">myExecuteResult</span><span class="o">=</span><span class="nx">myProcess</span><span class="p">.</span><span class="nx">Execute</span><span class="p">(</span><span class="nx">myInputs</span><span class="p">,</span><span class="nx">myOutputs</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">12</span><span class="w">  </span><span class="c1">// Pass the value as json</span>
+<span class="linenos">13</span><span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">myInputs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">14</span><span class="w">      </span><span class="nx">InputPolygon</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;complex&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="nx">fGJ</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">inputData</span><span class="p">),</span><span class="w"> </span><span class="nx">mimeType</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;application/json&quot;</span><span class="p">},</span>
+<span class="linenos">15</span><span class="w">      </span><span class="nx">BufferDistance</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;float&#39;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;value&quot;</span><span class="o">:</span><span class="w"> </span><span class="nx">bDist</span><span class="w"> </span><span class="p">}</span>
+<span class="linenos">16</span><span class="w">  </span><span class="p">};</span>
+<span class="linenos">17</span><span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">myOutputs</span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Result</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;RawDataOutput&#39;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;mimeType&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;application/json&quot;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">};</span>
+<span class="linenos">18</span><span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">myProcess</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">ZOO</span><span class="p">.</span><span class="nx">Process</span><span class="p">(</span><span class="nx">zoo_url</span><span class="p">,</span><span class="s1">&#39;BufferPy&#39;</span><span class="p">);</span>
+<span class="linenos">19</span><span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">myExecuteResult</span><span class="o">=</span><span class="nx">myProcess</span><span class="p">.</span><span class="nx">Execute</span><span class="p">(</span><span class="nx">myInputs</span><span class="p">,</span><span class="nx">myOutputs</span><span class="p">);</span>
 <span class="linenos">20</span>
-<span class="linenos">21</span><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">fGJ</span><span class="p">.</span><span class="nx">read</span><span class="p">(</span><span class="nx">myExecuteResult</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">21</span><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">fGJ</span><span class="p">.</span><span class="nx">read</span><span class="p">(</span><span class="nx">myExecuteResult</span><span class="p">);</span>
 <span class="linenos">22</span>
-<span class="linenos">23</span><span class="p">}</span><span class="w"></span>
+<span class="linenos">23</span><span class="p">}</span>
 </pre></div>
 </div>
 <p>From line 12 to 16, you give a GeoJSON string (created from <code class="docutils literal notranslate"><span class="pre">inputData</span></code>) for
@@ -402,42 +412,42 @@ instance providing the ZOO-Kernel url and the Service name. Then, on line 19, yo
 run the request passing inputs and outputs previously defined (from line 12 to 15). On line 21 you return the GeoJSON red.</p>
 <p>Now, you get your <code class="docutils literal notranslate"><span class="pre">Buffer</span></code> function, it is time to create your first JavaScript
 service. So, edit your <code class="docutils literal notranslate"><span class="pre">foss4gws.js</span></code> file you created before and add the following content:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kd">function</span><span class="w"> </span><span class="nx">Mask</span><span class="p">(</span><span class="nx">conf</span><span class="p">,</span><span class="nx">inputs</span><span class="p">,</span><span class="nx">outputs</span><span class="p">){</span><span class="w"></span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kd">function</span><span class="w"> </span><span class="nx">Mask</span><span class="p">(</span><span class="nx">conf</span><span class="p">,</span><span class="nx">inputs</span><span class="p">,</span><span class="nx">outputs</span><span class="p">){</span>
 <span class="linenos"> 2</span>
-<span class="linenos"> 3</span><span class="w">  </span><span class="c1">// Create all required ZOO.formats</span><span class="w"></span>
-<span class="linenos"> 4</span><span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">fGML</span><span class="o">=</span><span class="ow">new</span><span class="w"> </span><span class="nx">ZOO</span><span class="p">.</span><span class="nx">Format</span><span class="p">.</span><span class="nx">GML</span><span class="p">();</span><span class="w"></span>
-<span class="linenos"> 5</span><span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">fGJ</span><span class="o">=</span><span class="ow">new</span><span class="w"> </span><span class="nx">ZOO</span><span class="p">.</span><span class="nx">Format</span><span class="p">.</span><span class="nx">GeoJSON</span><span class="p">();</span><span class="w"></span>
+<span class="linenos"> 3</span><span class="w">  </span><span class="c1">// Create all required ZOO.formats</span>
+<span class="linenos"> 4</span><span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">fGML</span><span class="o">=</span><span class="ow">new</span><span class="w"> </span><span class="nx">ZOO</span><span class="p">.</span><span class="nx">Format</span><span class="p">.</span><span class="nx">GML</span><span class="p">();</span>
+<span class="linenos"> 5</span><span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">fGJ</span><span class="o">=</span><span class="ow">new</span><span class="w"> </span><span class="nx">ZOO</span><span class="p">.</span><span class="nx">Format</span><span class="p">.</span><span class="nx">GeoJSON</span><span class="p">();</span>
 <span class="linenos"> 6</span>
-<span class="linenos"> 7</span><span class="w">  </span><span class="c1">// Read the input GML</span><span class="w"></span>
-<span class="linenos"> 8</span><span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">inputData</span><span class="o">=</span><span class="nx">fGML</span><span class="p">.</span><span class="nx">read</span><span class="p">(</span><span class="nx">inputs</span><span class="p">[</span><span class="s2">&quot;InputData&quot;</span><span class="p">][</span><span class="s2">&quot;value&quot;</span><span class="p">]);</span><span class="w"></span>
+<span class="linenos"> 7</span><span class="w">  </span><span class="c1">// Read the input GML</span>
+<span class="linenos"> 8</span><span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">inputData</span><span class="o">=</span><span class="nx">fGML</span><span class="p">.</span><span class="nx">read</span><span class="p">(</span><span class="nx">inputs</span><span class="p">[</span><span class="s2">&quot;InputData&quot;</span><span class="p">][</span><span class="s2">&quot;value&quot;</span><span class="p">]);</span>
 <span class="linenos"> 9</span>
-<span class="linenos">10</span><span class="w">  </span><span class="c1">// Compute Buffer</span><span class="w"></span>
-<span class="linenos">11</span><span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">bufferResultAsJSON</span><span class="o">=</span><span class="nx">Buffer</span><span class="p">(</span><span class="nx">inputData</span><span class="p">,</span><span class="mf">0.015</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">10</span><span class="w">  </span><span class="c1">// Compute Buffer</span>
+<span class="linenos">11</span><span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">bufferResultAsJSON</span><span class="o">=</span><span class="nx">Buffer</span><span class="p">(</span><span class="nx">inputData</span><span class="p">,</span><span class="mf">0.015</span><span class="p">);</span>
 <span class="linenos">12</span>
-<span class="linenos">13</span><span class="w">  </span><span class="c1">// Create the Buffer result BBOX and store its geometry in a ZOO.Feature</span><span class="w"></span>
-<span class="linenos">14</span><span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">bbox</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">ZOO</span><span class="p">.</span><span class="nx">Bounds</span><span class="p">();</span><span class="w"></span>
-<span class="linenos">15</span><span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">bounds</span><span class="o">=</span><span class="nx">bufferResultAsJSON</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="nx">geometry</span><span class="p">.</span><span class="nx">getVertices</span><span class="p">();</span><span class="w"></span>
-<span class="linenos">16</span><span class="w">  </span><span class="k">for</span><span class="p">(</span><span class="kd">var</span><span class="w"> </span><span class="nx">t</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nx">bounds</span><span class="p">){</span><span class="w"></span>
-<span class="linenos">17</span><span class="w">    </span><span class="nx">bbox</span><span class="p">.</span><span class="nx">extend</span><span class="p">(</span><span class="nx">bounds</span><span class="p">[</span><span class="nx">t</span><span class="p">]);</span><span class="w"></span>
-<span class="linenos">18</span><span class="w">  </span><span class="p">}</span><span class="w"></span>
-<span class="linenos">19</span><span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">finalG</span><span class="o">=</span><span class="nx">bbox</span><span class="p">.</span><span class="nx">toGeometry</span><span class="p">();</span><span class="w"></span>
-<span class="linenos">20</span><span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">result</span><span class="o">=</span><span class="ow">new</span><span class="w"> </span><span class="nx">ZOO</span><span class="p">.</span><span class="nx">Feature</span><span class="p">(</span><span class="nx">finalG</span><span class="p">,{</span><span class="s2">&quot;name&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Result1000&quot;</span><span class="p">});</span><span class="w"></span>
+<span class="linenos">13</span><span class="w">  </span><span class="c1">// Create the Buffer result BBOX and store its geometry in a ZOO.Feature</span>
+<span class="linenos">14</span><span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">bbox</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">ZOO</span><span class="p">.</span><span class="nx">Bounds</span><span class="p">();</span>
+<span class="linenos">15</span><span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">bounds</span><span class="o">=</span><span class="nx">bufferResultAsJSON</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="nx">geometry</span><span class="p">.</span><span class="nx">getVertices</span><span class="p">();</span>
+<span class="linenos">16</span><span class="w">  </span><span class="k">for</span><span class="p">(</span><span class="kd">var</span><span class="w"> </span><span class="nx">t</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nx">bounds</span><span class="p">){</span>
+<span class="linenos">17</span><span class="w">    </span><span class="nx">bbox</span><span class="p">.</span><span class="nx">extend</span><span class="p">(</span><span class="nx">bounds</span><span class="p">[</span><span class="nx">t</span><span class="p">]);</span>
+<span class="linenos">18</span><span class="w">  </span><span class="p">}</span>
+<span class="linenos">19</span><span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">finalG</span><span class="o">=</span><span class="nx">bbox</span><span class="p">.</span><span class="nx">toGeometry</span><span class="p">();</span>
+<span class="linenos">20</span><span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">result</span><span class="o">=</span><span class="ow">new</span><span class="w"> </span><span class="nx">ZOO</span><span class="p">.</span><span class="nx">Feature</span><span class="p">(</span><span class="nx">finalG</span><span class="p">,{</span><span class="s2">&quot;name&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Result1000&quot;</span><span class="p">});</span>
 <span class="linenos">21</span>
-<span class="linenos">22</span><span class="w">  </span><span class="c1">// Return the created feature</span><span class="w"></span>
-<span class="linenos">23</span><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="linenos">24</span><span class="w">      </span><span class="nx">result</span><span class="o">:</span><span class="w"> </span><span class="nx">ZOO</span><span class="p">.</span><span class="nx">SERVICE_SUCCEEDED</span><span class="p">,</span><span class="w"></span>
-<span class="linenos">25</span><span class="w">      </span><span class="nx">outputs</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">&quot;Result&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">mimeType</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;application/json&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="nx">fGJ</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
-<span class="linenos">26</span><span class="w">  </span><span class="p">};</span><span class="w"></span>
+<span class="linenos">22</span><span class="w">  </span><span class="c1">// Return the created feature</span>
+<span class="linenos">23</span><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">24</span><span class="w">      </span><span class="nx">result</span><span class="o">:</span><span class="w"> </span><span class="nx">ZOO</span><span class="p">.</span><span class="nx">SERVICE_SUCCEEDED</span><span class="p">,</span>
+<span class="linenos">25</span><span class="w">      </span><span class="nx">outputs</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">&quot;Result&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">mimeType</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;application/json&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="nx">fGJ</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span>
+<span class="linenos">26</span><span class="w">  </span><span class="p">};</span>
 <span class="linenos">27</span>
-<span class="linenos">28</span><span class="p">}</span><span class="w"></span>
+<span class="linenos">28</span><span class="p">}</span>
 </pre></div>
 </div>
 </section>
 <section id="publish-and-use-your-service">
-<h3><a class="toc-backref" href="#table-of-contents" role="doc-backlink">Publish and use your Service</a><a class="headerlink" href="#publish-and-use-your-service" title="Permalink to this heading">¶</a></h3>
+<h3><a class="toc-backref" href="#table-of-contents" role="doc-backlink">Publish and use your Service</a><a class="headerlink" href="#publish-and-use-your-service" title="Link to this heading">¶</a></h3>
 <p>Now you get both your ZCFG and your service code ready, you need to deploy your
 new Services Provider using the following command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo cp ~/zoo-ws/jschains/cgi-env/* /usr/lib/cgi-bin
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>cp<span class="w"> </span>~/zoo-ws/jschains/cgi-env/*<span class="w"> </span>/usr/lib/cgi-bin
 </pre></div>
 </div>
 <p>Now you are ready to use your JavaScript service by loading the following <a class="reference external" href="http://localhost/zoo-ws/spatialtools.html">url</a>, click on a street then click on
@@ -445,14 +455,15 @@ the “Mask” button.</p>
 </section>
 </section>
 <section id="buffermask-service">
-<h2><a class="toc-backref" href="#table-of-contents" role="doc-backlink">BufferMask Service</a><a class="headerlink" href="#buffermask-service" title="Permalink to this heading">¶</a></h2>
+<h2><a class="toc-backref" href="#table-of-contents" role="doc-backlink">BufferMask Service</a><a class="headerlink" href="#buffermask-service" title="Link to this heading">¶</a></h2>
 <p>In this section you will implement a simple JavaScript service which will be able create
 a hole in the mask you created in <a class="reference external" href="#mask-service">previous section</a>. This service
 will be used to highlight the buffer zone around a selected fature. You get a preview of
 the expected result in the following screenshot:</p>
-<a class="reference internal image-reference" href="../_images/BufferMask_Level_152.png"><img alt="../_images/BufferMask_Level_152.png" class="align-center" src="../_images/BufferMask_Level_152.png" style="width: 650px;" /></a>
+<a class="reference internal image-reference" href="../_images/BufferMask_Level_152.png"><img alt="../_images/BufferMask_Level_152.png" class="align-center" src="../_images/BufferMask_Level_152.png" style="width: 650px;" />
+</a>
 <section id="id6">
-<h3><a class="toc-backref" href="#table-of-contents" role="doc-backlink">The ZCFG</a><a class="headerlink" href="#id6" title="Permalink to this heading">¶</a></h3>
+<h3><a class="toc-backref" href="#table-of-contents" role="doc-backlink">The ZCFG</a><a class="headerlink" href="#id6" title="Link to this heading">¶</a></h3>
 <p>Open the file named
 <code class="docutils literal notranslate"><span class="pre">~/zoo-ws/jschains/cgi-env/BufferMask.zcfg</span></code>
 with your favorite text editor and copy / paste the following content:</p>
@@ -493,78 +504,79 @@ with your favorite text editor and copy / paste the following content:</p>
 <a class="reference external" href="#the-zcfg">previous section</a> for more informations.</p>
 </section>
 <section id="id7">
-<h3><a class="toc-backref" href="#table-of-contents" role="doc-backlink">The JavaScript service</a><a class="headerlink" href="#id7" title="Permalink to this heading">¶</a></h3>
+<h3><a class="toc-backref" href="#table-of-contents" role="doc-backlink">The JavaScript service</a><a class="headerlink" href="#id7" title="Link to this heading">¶</a></h3>
 <p>In this Service you will use same source code (until line 19) you used in the
 <a class="reference external" href="#the-javascript-service">previous section</a>. Indeed, you should compute the Mask
 as you did before then compute Buffer for creating a hole in the mask (on line 22) to run
 the Difference service (from line 25 to 40).</p>
-<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span> function BufferMask(conf,inputs,outputs){
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="w"> </span><span class="k">function</span><span class="w"> </span><span class="n">BufferMask</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span><span class="n">inputs</span><span class="p">,</span><span class="n">outputs</span><span class="p">)</span><span class="err">{</span>
 <span class="linenos"> 2</span>
-<span class="linenos"> 3</span>   // Create all required ZOO.formats
-<span class="linenos"> 4</span>   var fGML=new ZOO.Format.GML();
-<span class="linenos"> 5</span>   var fGJ=new ZOO.Format.GeoJSON();
+<span class="linenos"> 3</span><span class="w">   </span><span class="o">//</span><span class="w"> </span><span class="k">Create</span><span class="w"> </span><span class="ow">all</span><span class="w"> </span><span class="n">required</span><span class="w"> </span><span class="n">ZOO</span><span class="p">.</span><span class="n">formats</span>
+<span class="linenos"> 4</span><span class="w">   </span><span class="nf">var</span><span class="w"> </span><span class="n">fGML</span><span class="o">=</span><span class="k">new</span><span class="w"> </span><span class="n">ZOO</span><span class="p">.</span><span class="nf">Format</span><span class="p">.</span><span class="n">GML</span><span class="p">();</span>
+<span class="linenos"> 5</span><span class="w">   </span><span class="nf">var</span><span class="w"> </span><span class="n">fGJ</span><span class="o">=</span><span class="k">new</span><span class="w"> </span><span class="n">ZOO</span><span class="p">.</span><span class="nf">Format</span><span class="p">.</span><span class="n">GeoJSON</span><span class="p">();</span>
 <span class="linenos"> 6</span>
-<span class="linenos"> 7</span>   // Read the input GML
-<span class="linenos"> 8</span>   var inputData=fGML.read(inputs[&quot;InputData&quot;][&quot;value&quot;]);
+<span class="linenos"> 7</span><span class="w">   </span><span class="o">//</span><span class="w"> </span><span class="k">Read</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="k">input</span><span class="w"> </span><span class="n">GML</span>
+<span class="linenos"> 8</span><span class="w">   </span><span class="nf">var</span><span class="w"> </span><span class="n">inputData</span><span class="o">=</span><span class="n">fGML</span><span class="p">.</span><span class="k">read</span><span class="p">(</span><span class="n">inputs</span><span class="o">[</span><span class="n">&quot;InputData&quot;</span><span class="o">][</span><span class="n">&quot;value&quot;</span><span class="o">]</span><span class="p">);</span>
 <span class="linenos"> 9</span>
-<span class="linenos">10</span>   // Compute Buffer
-<span class="linenos">11</span>   var bufferResultAsJSON=Buffer(inputData,0.015);
+<span class="linenos">10</span><span class="w">   </span><span class="o">//</span><span class="w"> </span><span class="k">Compute</span><span class="w"> </span><span class="n">Buffer</span>
+<span class="linenos">11</span><span class="w">   </span><span class="nf">var</span><span class="w"> </span><span class="n">bufferResultAsJSON</span><span class="o">=</span><span class="n">Buffer</span><span class="p">(</span><span class="n">inputData</span><span class="p">,</span><span class="mf">0.015</span><span class="p">);</span>
 <span class="linenos">12</span>
-<span class="linenos">13</span>   // Create the Buffer result BBOX
-<span class="linenos">14</span>   var bbox = new ZOO.Bounds();
-<span class="linenos">15</span>   var bounds=bufferResultAsJSON[0].geometry.getVertices();
-<span class="linenos">16</span>   for(var t in bounds){
-<span class="linenos">17</span>     bbox.extend(bounds[t]);
-<span class="linenos">18</span>   }
-<span class="linenos">19</span>   var finalG=bbox.toGeometry();
+<span class="linenos">13</span><span class="w">   </span><span class="o">//</span><span class="w"> </span><span class="k">Create</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">Buffer</span><span class="w"> </span><span class="k">result</span><span class="w"> </span><span class="n">BBOX</span>
+<span class="linenos">14</span><span class="w">   </span><span class="nf">var</span><span class="w"> </span><span class="n">bbox</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ZOO</span><span class="p">.</span><span class="n">Bounds</span><span class="p">();</span>
+<span class="linenos">15</span><span class="w">   </span><span class="nf">var</span><span class="w"> </span><span class="n">bounds</span><span class="o">=</span><span class="n">bufferResultAsJSON</span><span class="o">[</span><span class="n">0</span><span class="o">]</span><span class="p">.</span><span class="n">geometry</span><span class="p">.</span><span class="n">getVertices</span><span class="p">();</span>
+<span class="linenos">16</span><span class="w">   </span><span class="k">for</span><span class="p">(</span><span class="nf">var</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">bounds</span><span class="p">)</span><span class="err">{</span>
+<span class="linenos">17</span><span class="w">     </span><span class="n">bbox</span><span class="p">.</span><span class="n">extend</span><span class="p">(</span><span class="n">bounds</span><span class="o">[</span><span class="n">t</span><span class="o">]</span><span class="p">);</span>
+<span class="linenos">18</span><span class="w">   </span><span class="err">}</span>
+<span class="linenos">19</span><span class="w">   </span><span class="nf">var</span><span class="w"> </span><span class="n">finalG</span><span class="o">=</span><span class="n">bbox</span><span class="p">.</span><span class="n">toGeometry</span><span class="p">();</span>
 <span class="linenos">20</span>
-<span class="linenos">21</span>  // Compute Buffer standard buffer
-<span class="linenos">22</span>  var bufferResultAsJSON=Buffer(inputData,0.0015);
+<span class="linenos">21</span><span class="w">  </span><span class="o">//</span><span class="w"> </span><span class="k">Compute</span><span class="w"> </span><span class="n">Buffer</span><span class="w"> </span><span class="n">standard</span><span class="w"> </span><span class="n">buffer</span>
+<span class="linenos">22</span><span class="w">  </span><span class="nf">var</span><span class="w"> </span><span class="n">bufferResultAsJSON</span><span class="o">=</span><span class="n">Buffer</span><span class="p">(</span><span class="n">inputData</span><span class="p">,</span><span class="mf">0.0015</span><span class="p">);</span>
 <span class="linenos">23</span>
-<span class="linenos">24</span>  // Request Difference service using Buffer result and features in the BBOX
-<span class="linenos">25</span>  var result=new ZOO.Feature(finalG,{&quot;name&quot;: &quot;Result1000&quot;});
-<span class="linenos">26</span>  var myProcess2 = new ZOO.Process(zoo_url,&#39;DifferencePy&#39;);
-<span class="linenos">27</span>  var myInputs2 = {
-<span class="linenos">28</span>      InputEntity1: {
-<span class="linenos">29</span>          type: &#39;complex&#39;,
-<span class="linenos">30</span>          value: fGJ.write(finalG),
-<span class="linenos">31</span>          mimeType: &quot;application/json&quot;
-<span class="linenos">32</span>      },
-<span class="linenos">33</span>      InputEntity2: {
-<span class="linenos">34</span>          type: &#39;complex&#39;,
-<span class="linenos">35</span>          value: fGJ.write(bufferResultAsJSON),
-<span class="linenos">36</span>          mimeType: &quot;application/json&quot;
-<span class="linenos">37</span>      }
-<span class="linenos">38</span>  };
-<span class="linenos">39</span>  var myOutputs2= {Result: {type: &#39;RawDataOutput&#39;,  mimeType: &quot;application/json&quot; } };
-<span class="linenos">40</span>  var myExecuteResult4=myProcess2.Execute(myInputs2,myOutputs2);
+<span class="linenos">24</span><span class="w">  </span><span class="o">//</span><span class="w"> </span><span class="n">Request</span><span class="w"> </span><span class="nf">Difference</span><span class="w"> </span><span class="n">service</span><span class="w"> </span><span class="k">using</span><span class="w"> </span><span class="n">Buffer</span><span class="w"> </span><span class="k">result</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">features</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">BBOX</span>
+<span class="linenos">25</span><span class="w">  </span><span class="nf">var</span><span class="w"> </span><span class="k">result</span><span class="o">=</span><span class="k">new</span><span class="w"> </span><span class="n">ZOO</span><span class="p">.</span><span class="n">Feature</span><span class="p">(</span><span class="n">finalG</span><span class="p">,</span><span class="err">{</span><span class="ss">&quot;name&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;Result1000&quot;</span><span class="err">}</span><span class="p">);</span>
+<span class="linenos">26</span><span class="w">  </span><span class="nf">var</span><span class="w"> </span><span class="n">myProcess2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ZOO</span><span class="p">.</span><span class="n">Process</span><span class="p">(</span><span class="n">zoo_url</span><span class="p">,</span><span class="s1">&#39;DifferencePy&#39;</span><span class="p">);</span>
+<span class="linenos">27</span><span class="w">  </span><span class="nf">var</span><span class="w"> </span><span class="n">myInputs2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">{</span>
+<span class="linenos">28</span><span class="w">      </span><span class="nl">InputEntity1</span><span class="p">:</span><span class="w"> </span><span class="err">{</span>
+<span class="linenos">29</span><span class="w">          </span><span class="nl">type</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;complex&#39;</span><span class="p">,</span>
+<span class="linenos">30</span><span class="w">          </span><span class="k">value</span><span class="err">:</span><span class="w"> </span><span class="n">fGJ</span><span class="p">.</span><span class="k">write</span><span class="p">(</span><span class="n">finalG</span><span class="p">),</span>
+<span class="linenos">31</span><span class="w">          </span><span class="nl">mimeType</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;application/json&quot;</span>
+<span class="linenos">32</span><span class="w">      </span><span class="err">}</span><span class="p">,</span>
+<span class="linenos">33</span><span class="w">      </span><span class="nl">InputEntity2</span><span class="p">:</span><span class="w"> </span><span class="err">{</span>
+<span class="linenos">34</span><span class="w">          </span><span class="nl">type</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;complex&#39;</span><span class="p">,</span>
+<span class="linenos">35</span><span class="w">          </span><span class="k">value</span><span class="err">:</span><span class="w"> </span><span class="n">fGJ</span><span class="p">.</span><span class="k">write</span><span class="p">(</span><span class="n">bufferResultAsJSON</span><span class="p">),</span>
+<span class="linenos">36</span><span class="w">          </span><span class="nl">mimeType</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;application/json&quot;</span>
+<span class="linenos">37</span><span class="w">      </span><span class="err">}</span>
+<span class="linenos">38</span><span class="w">  </span><span class="err">}</span><span class="p">;</span>
+<span class="linenos">39</span><span class="w">  </span><span class="nf">var</span><span class="w"> </span><span class="n">myOutputs2</span><span class="o">=</span><span class="w"> </span><span class="err">{</span><span class="k">Result</span><span class="err">:</span><span class="w"> </span><span class="err">{</span><span class="nl">type</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;RawDataOutput&#39;</span><span class="p">,</span><span class="w">  </span><span class="nl">mimeType</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;application/json&quot;</span><span class="w"> </span><span class="err">}</span><span class="w"> </span><span class="err">}</span><span class="p">;</span>
+<span class="linenos">40</span><span class="w">  </span><span class="nf">var</span><span class="w"> </span><span class="n">myExecuteResult4</span><span class="o">=</span><span class="n">myProcess2</span><span class="p">.</span><span class="k">Execute</span><span class="p">(</span><span class="n">myInputs2</span><span class="p">,</span><span class="n">myOutputs2</span><span class="p">);</span>
 <span class="linenos">41</span>
-<span class="linenos">42</span>   // Return the bbox
-<span class="linenos">43</span>   var result=new ZOO.Feature(finalG,{&quot;name&quot;: &quot;Result1000&quot;});
-<span class="linenos">44</span>   return {
-<span class="linenos">45</span>       result: ZOO.SERVICE_SUCCEEDED,
-<span class="linenos">46</span>       outputs: { &quot;Result&quot;: {mimeType: &quot;application/json&quot;, value: myExecuteResult4 } }
-<span class="linenos">47</span>   };
+<span class="linenos">42</span><span class="w">   </span><span class="o">//</span><span class="w"> </span><span class="k">Return</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">bbox</span>
+<span class="linenos">43</span><span class="w">   </span><span class="nf">var</span><span class="w"> </span><span class="k">result</span><span class="o">=</span><span class="k">new</span><span class="w"> </span><span class="n">ZOO</span><span class="p">.</span><span class="n">Feature</span><span class="p">(</span><span class="n">finalG</span><span class="p">,</span><span class="err">{</span><span class="ss">&quot;name&quot;</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;Result1000&quot;</span><span class="err">}</span><span class="p">);</span>
+<span class="linenos">44</span><span class="w">   </span><span class="k">return</span><span class="w"> </span><span class="err">{</span>
+<span class="linenos">45</span><span class="w">       </span><span class="k">result</span><span class="err">:</span><span class="w"> </span><span class="n">ZOO</span><span class="p">.</span><span class="n">SERVICE_SUCCEEDED</span><span class="p">,</span>
+<span class="linenos">46</span><span class="w">       </span><span class="nl">outputs</span><span class="p">:</span><span class="w"> </span><span class="err">{</span><span class="w"> </span><span class="ss">&quot;Result&quot;</span><span class="err">:</span><span class="w"> </span><span class="err">{</span><span class="nl">mimeType</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;application/json&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">value</span><span class="err">:</span><span class="w"> </span><span class="n">myExecuteResult4</span><span class="w"> </span><span class="err">}</span><span class="w"> </span><span class="err">}</span>
+<span class="linenos">47</span><span class="w">   </span><span class="err">}</span><span class="p">;</span>
 <span class="linenos">48</span>
-<span class="linenos">49</span> }
+<span class="linenos">49</span><span class="w"> </span><span class="err">}</span>
 </pre></div>
 </div>
 </section>
 <section id="id8">
-<h3><a class="toc-backref" href="#table-of-contents" role="doc-backlink">Publish and use your Service</a><a class="headerlink" href="#id8" title="Permalink to this heading">¶</a></h3>
+<h3><a class="toc-backref" href="#table-of-contents" role="doc-backlink">Publish and use your Service</a><a class="headerlink" href="#id8" title="Link to this heading">¶</a></h3>
 <p>Now, you can publish your service as you did <a class="reference external" href="#publish-your-service">before</a>. To
 use your service, please use the following <a class="reference external" href="http://localhost/zoo-ws/spatialtools.html">url</a>.</p>
 </section>
 </section>
 <section id="bufferrequest-service">
-<h2><a class="toc-backref" href="#table-of-contents" role="doc-backlink">BufferRequest service</a><a class="headerlink" href="#bufferrequest-service" title="Permalink to this heading">¶</a></h2>
+<h2><a class="toc-backref" href="#table-of-contents" role="doc-backlink">BufferRequest service</a><a class="headerlink" href="#bufferrequest-service" title="Link to this heading">¶</a></h2>
 <p>In this section, you will create a new Service: <code class="docutils literal notranslate"><span class="pre">BufferRequest</span></code> which will request
 POIs included in the Buffer around a selected feature <a class="footnote-reference brackets" href="#f8" id="id9" role="doc-noteref"><span class="fn-bracket">[</span>6<span class="fn-bracket">]</span></a>. You will use the <code class="docutils literal notranslate"><span class="pre">poi</span></code>
 layer served as WFS through your local mapserver installation. You can see in the
 following screenshot the expected result:</p>
-<a class="reference internal image-reference" href="../_images/BufferRequest_Level_152.png"><img alt="../_images/BufferRequest_Level_152.png" class="align-center" src="../_images/BufferRequest_Level_152.png" style="width: 650px;" /></a>
+<a class="reference internal image-reference" href="../_images/BufferRequest_Level_152.png"><img alt="../_images/BufferRequest_Level_152.png" class="align-center" src="../_images/BufferRequest_Level_152.png" style="width: 650px;" />
+</a>
 <section id="id10">
-<h3><a class="toc-backref" href="#table-of-contents" role="doc-backlink">The ZCFG</a><a class="headerlink" href="#id10" title="Permalink to this heading">¶</a></h3>
+<h3><a class="toc-backref" href="#table-of-contents" role="doc-backlink">The ZCFG</a><a class="headerlink" href="#id10" title="Link to this heading">¶</a></h3>
 <p>Open the file named
 <code class="docutils literal notranslate"><span class="pre">~/zoo-ws/jschains/cgi-env/BufferRequest.zcfg</span></code>
 with your favorite text editor and copy / paste the following content:</p>
@@ -603,56 +615,56 @@ with your favorite text editor and copy / paste the following content:</p>
 </div>
 </section>
 <section id="the-javascript-code">
-<h3><a class="toc-backref" href="#table-of-contents" role="doc-backlink">The JavaScript code</a><a class="headerlink" href="#the-javascript-code" title="Permalink to this heading">¶</a></h3>
+<h3><a class="toc-backref" href="#table-of-contents" role="doc-backlink">The JavaScript code</a><a class="headerlink" href="#the-javascript-code" title="Link to this heading">¶</a></h3>
 <p>As in the previous Service, you will compute a buffer around the input feature. But then
 you will request POIs available in the Buffer extent using a WFS request to use them to
 run <code class="docutils literal notranslate"><span class="pre">Intersection</span></code> service using the initial Buffer. The WFS request is useful to limit
 the number of points to use when requesting the <code class="docutils literal notranslate"><span class="pre">Intersection</span></code> Service.</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kd">function</span><span class="w"> </span><span class="nx">BufferRequest</span><span class="p">(</span><span class="nx">conf</span><span class="p">,</span><span class="nx">inputs</span><span class="p">,</span><span class="nx">outputs</span><span class="p">){</span><span class="w"></span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kd">function</span><span class="w"> </span><span class="nx">BufferRequest</span><span class="p">(</span><span class="nx">conf</span><span class="p">,</span><span class="nx">inputs</span><span class="p">,</span><span class="nx">outputs</span><span class="p">){</span>
 <span class="linenos"> 2</span>
-<span class="linenos"> 3</span><span class="w">  </span><span class="c1">// Create all required ZOO.formats</span><span class="w"></span>
-<span class="linenos"> 4</span><span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">fGJ</span><span class="o">=</span><span class="ow">new</span><span class="w"> </span><span class="nx">ZOO</span><span class="p">.</span><span class="nx">Format</span><span class="p">.</span><span class="nx">GeoJSON</span><span class="p">();</span><span class="w"></span>
-<span class="linenos"> 5</span><span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">fGML</span><span class="o">=</span><span class="ow">new</span><span class="w"> </span><span class="nx">ZOO</span><span class="p">.</span><span class="nx">Format</span><span class="p">.</span><span class="nx">GML</span><span class="p">();</span><span class="w"></span>
+<span class="linenos"> 3</span><span class="w">  </span><span class="c1">// Create all required ZOO.formats</span>
+<span class="linenos"> 4</span><span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">fGJ</span><span class="o">=</span><span class="ow">new</span><span class="w"> </span><span class="nx">ZOO</span><span class="p">.</span><span class="nx">Format</span><span class="p">.</span><span class="nx">GeoJSON</span><span class="p">();</span>
+<span class="linenos"> 5</span><span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">fGML</span><span class="o">=</span><span class="ow">new</span><span class="w"> </span><span class="nx">ZOO</span><span class="p">.</span><span class="nx">Format</span><span class="p">.</span><span class="nx">GML</span><span class="p">();</span>
 <span class="linenos"> 6</span>
-<span class="linenos"> 7</span><span class="w">  </span><span class="c1">// Read the input GML</span><span class="w"></span>
-<span class="linenos"> 8</span><span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">inputData</span><span class="o">=</span><span class="nx">fGML</span><span class="p">.</span><span class="nx">read</span><span class="p">(</span><span class="nx">inputs</span><span class="p">[</span><span class="s2">&quot;InputData&quot;</span><span class="p">][</span><span class="s2">&quot;value&quot;</span><span class="p">]);</span><span class="w"></span>
+<span class="linenos"> 7</span><span class="w">  </span><span class="c1">// Read the input GML</span>
+<span class="linenos"> 8</span><span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">inputData</span><span class="o">=</span><span class="nx">fGML</span><span class="p">.</span><span class="nx">read</span><span class="p">(</span><span class="nx">inputs</span><span class="p">[</span><span class="s2">&quot;InputData&quot;</span><span class="p">][</span><span class="s2">&quot;value&quot;</span><span class="p">]);</span>
 <span class="linenos"> 9</span>
-<span class="linenos">10</span><span class="w">  </span><span class="c1">// Compute Buffer</span><span class="w"></span>
-<span class="linenos">11</span><span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">bufferResultAsJSON</span><span class="o">=</span><span class="nx">Buffer</span><span class="p">(</span><span class="nx">inputData</span><span class="p">,</span><span class="mf">0.0015</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">10</span><span class="w">  </span><span class="c1">// Compute Buffer</span>
+<span class="linenos">11</span><span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">bufferResultAsJSON</span><span class="o">=</span><span class="nx">Buffer</span><span class="p">(</span><span class="nx">inputData</span><span class="p">,</span><span class="mf">0.0015</span><span class="p">);</span>
 <span class="linenos">12</span>
-<span class="linenos">13</span><span class="w">  </span><span class="c1">// Create the Buffer result BBOX</span><span class="w"></span>
-<span class="linenos">14</span><span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">bbox</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">ZOO</span><span class="p">.</span><span class="nx">Bounds</span><span class="p">();</span><span class="w"></span>
-<span class="linenos">15</span><span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">bounds</span><span class="o">=</span><span class="nx">bufferResultAsJSON</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="nx">geometry</span><span class="p">.</span><span class="nx">getVertices</span><span class="p">();</span><span class="w"></span>
-<span class="linenos">16</span><span class="w">  </span><span class="k">for</span><span class="p">(</span><span class="kd">var</span><span class="w"> </span><span class="nx">t</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nx">bounds</span><span class="p">){</span><span class="w"></span>
-<span class="linenos">17</span><span class="w">    </span><span class="nx">bbox</span><span class="p">.</span><span class="nx">extend</span><span class="p">(</span><span class="nx">bounds</span><span class="p">[</span><span class="nx">t</span><span class="p">]);</span><span class="w"></span>
-<span class="linenos">18</span><span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="linenos">13</span><span class="w">  </span><span class="c1">// Create the Buffer result BBOX</span>
+<span class="linenos">14</span><span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">bbox</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">ZOO</span><span class="p">.</span><span class="nx">Bounds</span><span class="p">();</span>
+<span class="linenos">15</span><span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">bounds</span><span class="o">=</span><span class="nx">bufferResultAsJSON</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="nx">geometry</span><span class="p">.</span><span class="nx">getVertices</span><span class="p">();</span>
+<span class="linenos">16</span><span class="w">  </span><span class="k">for</span><span class="p">(</span><span class="kd">var</span><span class="w"> </span><span class="nx">t</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nx">bounds</span><span class="p">){</span>
+<span class="linenos">17</span><span class="w">    </span><span class="nx">bbox</span><span class="p">.</span><span class="nx">extend</span><span class="p">(</span><span class="nx">bounds</span><span class="p">[</span><span class="nx">t</span><span class="p">]);</span>
+<span class="linenos">18</span><span class="w">  </span><span class="p">}</span>
 <span class="linenos">19</span>
-<span class="linenos">20</span><span class="w">  </span><span class="c1">// Request Intersection service using Buffer result and WFS request using the</span><span class="w"></span>
-<span class="linenos">21</span><span class="w">  </span><span class="c1">// BBOX</span><span class="w"></span>
-<span class="linenos">22</span><span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">myProcess2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">ZOO</span><span class="p">.</span><span class="nx">Process</span><span class="p">(</span><span class="nx">zoo_url</span><span class="p">,</span><span class="s1">&#39;Intersection&#39;</span><span class="p">);</span><span class="w"></span>
-<span class="linenos">23</span><span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">req</span><span class="o">=</span><span class="s2">&quot;&amp;amp;SERVICE=WFS&amp;amp;version=1.0.0&amp;amp;request=GetFeature&amp;amp;typename=poi1&quot;</span><span class="p">;</span><span class="w"></span>
-<span class="linenos">24</span><span class="w">  </span><span class="nx">req</span><span class="o">+=</span><span class="s2">&quot;&amp;amp;SRS=EPSG:4326&amp;amp;BBOX=&quot;</span><span class="p">;</span><span class="w"></span>
-<span class="linenos">25</span><span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">myInputs2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="linenos">26</span><span class="w">    </span><span class="nx">InputEntity1</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="linenos">27</span><span class="w">      </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;complex&#39;</span><span class="p">,</span><span class="w"></span>
-<span class="linenos">28</span><span class="w">      </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="nx">fGJ</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">bufferResultAsJSON</span><span class="p">),</span><span class="w"></span>
-<span class="linenos">29</span><span class="w">      </span><span class="nx">mimeType</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;application/json&quot;</span><span class="w"></span>
-<span class="linenos">30</span><span class="w">    </span><span class="p">},</span><span class="w"></span>
-<span class="linenos">31</span><span class="w">    </span><span class="nx">InputEntity2</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="linenos">32</span><span class="w">      </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;complex&#39;</span><span class="p">,</span><span class="w"></span>
-<span class="linenos">33</span><span class="w">      </span><span class="nx">xlink</span><span class="o">:</span><span class="w"> </span><span class="nx">mapserv_url</span><span class="o">+</span><span class="nx">req</span><span class="o">+</span><span class="nx">bbox</span><span class="p">.</span><span class="nx">left</span><span class="o">+</span><span class="s2">&quot;,&quot;</span><span class="o">+</span><span class="nx">bbox</span><span class="p">.</span><span class="nx">bottom</span><span class="o">+</span><span class="s2">&quot;,&quot;</span><span class="o">+</span><span class="nx">bbox</span><span class="p">.</span><span class="nx">right</span><span class="o">+</span><span class="s2">&quot;,&quot;</span><span class="o">+</span><span class="nx">bbox</span><span class="p">.</span><span class="nx">top</span><span class="p">,</span><span class="w"></span>
-<span class="linenos">34</span><span class="w">      </span><span class="nx">mimeType</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;text/xml&quot;</span><span class="w"></span>
-<span class="linenos">35</span><span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="linenos">36</span><span class="w">  </span><span class="p">};</span><span class="w"></span>
-<span class="linenos">37</span><span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">myOutputs2</span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nx">Result</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;RawDataOutput&#39;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;mimeType&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;application/json&quot;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">};</span><span class="w"></span>
-<span class="linenos">38</span><span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">myExecuteResult4</span><span class="o">=</span><span class="nx">myProcess2</span><span class="p">.</span><span class="nx">Execute</span><span class="p">(</span><span class="nx">myInputs2</span><span class="p">,</span><span class="nx">myOutputs2</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">20</span><span class="w">  </span><span class="c1">// Request Intersection service using Buffer result and WFS request using the</span>
+<span class="linenos">21</span><span class="w">  </span><span class="c1">// BBOX</span>
+<span class="linenos">22</span><span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">myProcess2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">ZOO</span><span class="p">.</span><span class="nx">Process</span><span class="p">(</span><span class="nx">zoo_url</span><span class="p">,</span><span class="s1">&#39;Intersection&#39;</span><span class="p">);</span>
+<span class="linenos">23</span><span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">req</span><span class="o">=</span><span class="s2">&quot;&amp;amp;SERVICE=WFS&amp;amp;version=1.0.0&amp;amp;request=GetFeature&amp;amp;typename=poi1&quot;</span><span class="p">;</span>
+<span class="linenos">24</span><span class="w">  </span><span class="nx">req</span><span class="o">+=</span><span class="s2">&quot;&amp;amp;SRS=EPSG:4326&amp;amp;BBOX=&quot;</span><span class="p">;</span>
+<span class="linenos">25</span><span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">myInputs2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">26</span><span class="w">    </span><span class="nx">InputEntity1</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">27</span><span class="w">      </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;complex&#39;</span><span class="p">,</span>
+<span class="linenos">28</span><span class="w">      </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="nx">fGJ</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">bufferResultAsJSON</span><span class="p">),</span>
+<span class="linenos">29</span><span class="w">      </span><span class="nx">mimeType</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;application/json&quot;</span>
+<span class="linenos">30</span><span class="w">    </span><span class="p">},</span>
+<span class="linenos">31</span><span class="w">    </span><span class="nx">InputEntity2</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">32</span><span class="w">      </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;complex&#39;</span><span class="p">,</span>
+<span class="linenos">33</span><span class="w">      </span><span class="nx">xlink</span><span class="o">:</span><span class="w"> </span><span class="nx">mapserv_url</span><span class="o">+</span><span class="nx">req</span><span class="o">+</span><span class="nx">bbox</span><span class="p">.</span><span class="nx">left</span><span class="o">+</span><span class="s2">&quot;,&quot;</span><span class="o">+</span><span class="nx">bbox</span><span class="p">.</span><span class="nx">bottom</span><span class="o">+</span><span class="s2">&quot;,&quot;</span><span class="o">+</span><span class="nx">bbox</span><span class="p">.</span><span class="nx">right</span><span class="o">+</span><span class="s2">&quot;,&quot;</span><span class="o">+</span><span class="nx">bbox</span><span class="p">.</span><span class="nx">top</span><span class="p">,</span>
+<span class="linenos">34</span><span class="w">      </span><span class="nx">mimeType</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;text/xml&quot;</span>
+<span class="linenos">35</span><span class="w">    </span><span class="p">}</span>
+<span class="linenos">36</span><span class="w">  </span><span class="p">};</span>
+<span class="linenos">37</span><span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">myOutputs2</span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nx">Result</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;RawDataOutput&#39;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;mimeType&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;application/json&quot;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">};</span>
+<span class="linenos">38</span><span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">myExecuteResult4</span><span class="o">=</span><span class="nx">myProcess2</span><span class="p">.</span><span class="nx">Execute</span><span class="p">(</span><span class="nx">myInputs2</span><span class="p">,</span><span class="nx">myOutputs2</span><span class="p">);</span>
 <span class="linenos">39</span>
-<span class="linenos">40</span><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="linenos">41</span><span class="w">    </span><span class="nx">result</span><span class="o">:</span><span class="w"> </span><span class="nx">ZOO</span><span class="p">.</span><span class="nx">SERVICE_SUCCEEDED</span><span class="p">,</span><span class="w"></span>
-<span class="linenos">42</span><span class="w">    </span><span class="nx">outputs</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="nx">name</span><span class="o">:</span><span class="s2">&quot;Result&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">mimeType</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;application/json&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="nx">myExecuteResult4</span><span class="p">}</span><span class="w"> </span><span class="p">]</span><span class="w"></span>
-<span class="linenos">43</span><span class="w">  </span><span class="p">};</span><span class="w"></span>
+<span class="linenos">40</span><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">41</span><span class="w">    </span><span class="nx">result</span><span class="o">:</span><span class="w"> </span><span class="nx">ZOO</span><span class="p">.</span><span class="nx">SERVICE_SUCCEEDED</span><span class="p">,</span>
+<span class="linenos">42</span><span class="w">    </span><span class="nx">outputs</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="nx">name</span><span class="o">:</span><span class="s2">&quot;Result&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">mimeType</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;application/json&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="nx">myExecuteResult4</span><span class="p">}</span><span class="w"> </span><span class="p">]</span>
+<span class="linenos">43</span><span class="w">  </span><span class="p">};</span>
 <span class="linenos">44</span>
-<span class="linenos">45</span><span class="p">}</span><span class="w"></span>
+<span class="linenos">45</span><span class="p">}</span>
 </pre></div>
 </div>
 <div class="admonition warning">
@@ -663,7 +675,7 @@ request  as <code class="docutils literal notranslate"><span class="pre">xlink:h
 </div>
 </section>
 <section id="id11">
-<h3><a class="toc-backref" href="#table-of-contents" role="doc-backlink">Publish and use your Service</a><a class="headerlink" href="#id11" title="Permalink to this heading">¶</a></h3>
+<h3><a class="toc-backref" href="#table-of-contents" role="doc-backlink">Publish and use your Service</a><a class="headerlink" href="#id11" title="Link to this heading">¶</a></h3>
 <p>Now, you can publish your service as you did <a class="reference external" href="#publish-your-service">before</a>. To
 use your service, please use the following <a class="reference external" href="http://localhost/zoo-ws/spatialtools.html">url</a>.</p>
 <div class="admonition note">
@@ -674,12 +686,13 @@ in  <a class="reference external" href="#introduction">the initial screenshot</a
 </section>
 </section>
 <section id="add-union-into-the-chain">
-<h2><a class="toc-backref" href="#table-of-contents" role="doc-backlink">Add Union into the chain</a><a class="headerlink" href="#add-union-into-the-chain" title="Permalink to this heading">¶</a></h2>
+<h2><a class="toc-backref" href="#table-of-contents" role="doc-backlink">Add Union into the chain</a><a class="headerlink" href="#add-union-into-the-chain" title="Link to this heading">¶</a></h2>
 <p>As you can see in the following screenshot, when using the Buffer
 service using a feature collection containing more than one geometry,
 the result is made of multiple geometries. So, running Buffer service
 on the routing interface will result in multiple buffer:</p>
-<a class="reference internal image-reference" href="../_images/Buffer_Routing_Level_151.png"><img alt="../_images/Buffer_Routing_Level_151.png" class="align-center" src="../_images/Buffer_Routing_Level_151.png" style="width: 650px;" /></a>
+<a class="reference internal image-reference" href="../_images/Buffer_Routing_Level_151.png"><img alt="../_images/Buffer_Routing_Level_151.png" class="align-center" src="../_images/Buffer_Routing_Level_151.png" style="width: 650px;" />
+</a>
 <p>So, to get the same result as you got when selecting a single
 road, you should use Union of geometry (input or the one outputed by the
 <code class="docutils literal notranslate"><span class="pre">Buffer</span></code> Service). As you are using the JavaScript ZOO-API, you can
@@ -689,67 +702,67 @@ prior to request (or after requesting) the Buffer Service. Hopefully,
 there is already this Python Service available, its name is
 <code class="docutils literal notranslate"><span class="pre">UnionOne1</span></code>, so you just need to add it in your Service chain.</p>
 <p>Here is the final code for the Buffer JavaScript function:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kd">function</span><span class="w"> </span><span class="nx">Buffer</span><span class="p">(</span><span class="nx">inputData</span><span class="p">,</span><span class="nx">bDist</span><span class="p">){</span><span class="w"></span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kd">function</span><span class="w"> </span><span class="nx">Buffer</span><span class="p">(</span><span class="nx">inputData</span><span class="p">,</span><span class="nx">bDist</span><span class="p">){</span>
 <span class="linenos"> 2</span>
-<span class="linenos"> 3</span><span class="w">  </span><span class="c1">// Create all required ZOO.formats</span><span class="w"></span>
-<span class="linenos"> 4</span><span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">fJ</span><span class="o">=</span><span class="ow">new</span><span class="w"> </span><span class="nx">ZOO</span><span class="p">.</span><span class="nx">Format</span><span class="p">.</span><span class="nb">JSON</span><span class="p">();</span><span class="w"></span>
-<span class="linenos"> 5</span><span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">fGJ</span><span class="o">=</span><span class="ow">new</span><span class="w"> </span><span class="nx">ZOO</span><span class="p">.</span><span class="nx">Format</span><span class="p">.</span><span class="nx">GeoJSON</span><span class="p">();</span><span class="w"></span>
-<span class="linenos"> 6</span><span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">fWPS</span><span class="o">=</span><span class="ow">new</span><span class="w"> </span><span class="nx">ZOO</span><span class="p">.</span><span class="nx">Format</span><span class="p">.</span><span class="nx">WPS</span><span class="p">();</span><span class="w"></span>
+<span class="linenos"> 3</span><span class="w">  </span><span class="c1">// Create all required ZOO.formats</span>
+<span class="linenos"> 4</span><span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">fJ</span><span class="o">=</span><span class="ow">new</span><span class="w"> </span><span class="nx">ZOO</span><span class="p">.</span><span class="nx">Format</span><span class="p">.</span><span class="nb">JSON</span><span class="p">();</span>
+<span class="linenos"> 5</span><span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">fGJ</span><span class="o">=</span><span class="ow">new</span><span class="w"> </span><span class="nx">ZOO</span><span class="p">.</span><span class="nx">Format</span><span class="p">.</span><span class="nx">GeoJSON</span><span class="p">();</span>
+<span class="linenos"> 6</span><span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">fWPS</span><span class="o">=</span><span class="ow">new</span><span class="w"> </span><span class="nx">ZOO</span><span class="p">.</span><span class="nx">Format</span><span class="p">.</span><span class="nx">WPS</span><span class="p">();</span>
 <span class="linenos"> 7</span>
-<span class="linenos"> 8</span><span class="w">  </span><span class="c1">// Call the UnionOne1 Service</span><span class="w"></span>
-<span class="linenos"> 9</span><span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">myInputs0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="linenos">10</span><span class="w">      </span><span class="nx">InputPolygon</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;complex&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="nx">fGJ</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">inputData</span><span class="p">),</span><span class="w"> </span><span class="nx">mimeType</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;application/json&quot;</span><span class="p">},</span><span class="w"></span>
-<span class="linenos">11</span><span class="w">      </span><span class="nx">BufferDistance</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;float&#39;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;value&quot;</span><span class="o">:</span><span class="w"> </span><span class="nx">bDist</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
-<span class="linenos">12</span><span class="w">  </span><span class="p">};</span><span class="w"></span>
-<span class="linenos">13</span><span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">myOutputs0</span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Result</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;RawDataOutput&#39;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;mimeType&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;application/json&quot;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">};</span><span class="w"></span>
-<span class="linenos">14</span><span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">myProcess0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">ZOO</span><span class="p">.</span><span class="nx">Process</span><span class="p">(</span><span class="nx">zoo_url</span><span class="p">,</span><span class="s1">&#39;UnionOne1&#39;</span><span class="p">);</span><span class="w"></span>
-<span class="linenos">15</span><span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">myExecuteResult0</span><span class="o">=</span><span class="nx">myProcess0</span><span class="p">.</span><span class="nx">Execute</span><span class="p">(</span><span class="nx">myInputs0</span><span class="p">,</span><span class="nx">myOutputs0</span><span class="p">);</span><span class="w"></span>
+<span class="linenos"> 8</span><span class="w">  </span><span class="c1">// Call the UnionOne1 Service</span>
+<span class="linenos"> 9</span><span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">myInputs0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">10</span><span class="w">      </span><span class="nx">InputPolygon</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;complex&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="nx">fGJ</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">inputData</span><span class="p">),</span><span class="w"> </span><span class="nx">mimeType</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;application/json&quot;</span><span class="p">},</span>
+<span class="linenos">11</span><span class="w">      </span><span class="nx">BufferDistance</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;float&#39;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;value&quot;</span><span class="o">:</span><span class="w"> </span><span class="nx">bDist</span><span class="w"> </span><span class="p">}</span>
+<span class="linenos">12</span><span class="w">  </span><span class="p">};</span>
+<span class="linenos">13</span><span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">myOutputs0</span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Result</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;RawDataOutput&#39;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;mimeType&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;application/json&quot;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">};</span>
+<span class="linenos">14</span><span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">myProcess0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">ZOO</span><span class="p">.</span><span class="nx">Process</span><span class="p">(</span><span class="nx">zoo_url</span><span class="p">,</span><span class="s1">&#39;UnionOne1&#39;</span><span class="p">);</span>
+<span class="linenos">15</span><span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">myExecuteResult0</span><span class="o">=</span><span class="nx">myProcess0</span><span class="p">.</span><span class="nx">Execute</span><span class="p">(</span><span class="nx">myInputs0</span><span class="p">,</span><span class="nx">myOutputs0</span><span class="p">);</span>
 <span class="linenos">16</span>
-<span class="linenos">17</span><span class="w">  </span><span class="c1">// Call the BufferPy Service</span><span class="w"></span>
-<span class="linenos">18</span><span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">myInputs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="linenos">19</span><span class="w">      </span><span class="nx">InputPolygon</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;complex&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="nx">myExecuteResult0</span><span class="p">,</span><span class="w"> </span><span class="nx">mimeType</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;application/json&quot;</span><span class="p">},</span><span class="w"></span>
-<span class="linenos">20</span><span class="w">      </span><span class="nx">BufferDistance</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;float&#39;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;value&quot;</span><span class="o">:</span><span class="w"> </span><span class="nx">bDist</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
-<span class="linenos">21</span><span class="w">  </span><span class="p">};</span><span class="w"></span>
-<span class="linenos">22</span><span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">myOutputs</span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Result</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;RawDataOutput&#39;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;mimeType&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;application/json&quot;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">};</span><span class="w"></span>
-<span class="linenos">23</span><span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">myProcess</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">ZOO</span><span class="p">.</span><span class="nx">Process</span><span class="p">(</span><span class="nx">zoo_url</span><span class="p">,</span><span class="s1">&#39;BufferPy&#39;</span><span class="p">);</span><span class="w"></span>
-<span class="linenos">24</span><span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">myExecuteResult</span><span class="o">=</span><span class="nx">myProcess</span><span class="p">.</span><span class="nx">Execute</span><span class="p">(</span><span class="nx">myInputs</span><span class="p">,</span><span class="nx">myOutputs</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">17</span><span class="w">  </span><span class="c1">// Call the BufferPy Service</span>
+<span class="linenos">18</span><span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">myInputs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">19</span><span class="w">      </span><span class="nx">InputPolygon</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;complex&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="nx">myExecuteResult0</span><span class="p">,</span><span class="w"> </span><span class="nx">mimeType</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;application/json&quot;</span><span class="p">},</span>
+<span class="linenos">20</span><span class="w">      </span><span class="nx">BufferDistance</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;float&#39;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;value&quot;</span><span class="o">:</span><span class="w"> </span><span class="nx">bDist</span><span class="w"> </span><span class="p">}</span>
+<span class="linenos">21</span><span class="w">  </span><span class="p">};</span>
+<span class="linenos">22</span><span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">myOutputs</span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Result</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;RawDataOutput&#39;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;mimeType&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;application/json&quot;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">};</span>
+<span class="linenos">23</span><span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">myProcess</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">ZOO</span><span class="p">.</span><span class="nx">Process</span><span class="p">(</span><span class="nx">zoo_url</span><span class="p">,</span><span class="s1">&#39;BufferPy&#39;</span><span class="p">);</span>
+<span class="linenos">24</span><span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">myExecuteResult</span><span class="o">=</span><span class="nx">myProcess</span><span class="p">.</span><span class="nx">Execute</span><span class="p">(</span><span class="nx">myInputs</span><span class="p">,</span><span class="nx">myOutputs</span><span class="p">);</span>
 <span class="linenos">25</span>
-<span class="linenos">26</span><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">fGJ</span><span class="p">.</span><span class="nx">read</span><span class="p">(</span><span class="nx">myExecuteResult</span><span class="p">);</span><span class="w"></span>
+<span class="linenos">26</span><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">fGJ</span><span class="p">.</span><span class="nx">read</span><span class="p">(</span><span class="nx">myExecuteResult</span><span class="p">);</span>
 <span class="linenos">27</span>
-<span class="linenos">28</span><span class="p">}</span><span class="w"></span>
+<span class="linenos">28</span><span class="p">}</span>
 </pre></div>
 </div>
 </section>
 <section id="conclusion">
-<h2><a class="toc-backref" href="#table-of-contents" role="doc-backlink">Conclusion</a><a class="headerlink" href="#conclusion" title="Permalink to this heading">¶</a></h2>
+<h2><a class="toc-backref" href="#table-of-contents" role="doc-backlink">Conclusion</a><a class="headerlink" href="#conclusion" title="Link to this heading">¶</a></h2>
 <p>After understanding how basic Geometric Operation Services works, here you built step by step new JavaScript services which reuse the previous ones and combine them in different ways. This was achieved using the ZOO-API, composed by C functions exposed by the ZOO-Kernel to the JavaScript services runtime environement and the JS files which can be optionally installed.</p>
 <p class="rubric">Footnotes</p>
 <aside class="footnote-list brackets">
-<aside class="footnote brackets" id="f3" role="note">
+<aside class="footnote brackets" id="f3" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
 <p>The <code class="docutils literal notranslate"><span class="pre">ZOO.Process</span></code> class uses <code class="docutils literal notranslate"><span class="pre">JSRequest</span></code> (cf. <a class="reference external" href="http://zoo-project.org/docs/api/zoo-format-wps.html">ref</a>). You will get example
 of use <a class="reference external" href="#the-javascript-service">later</a>.</p>
 </aside>
-<aside class="footnote brackets" id="f4" role="note">
+<aside class="footnote brackets" id="f4" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
 <p>So <code class="docutils literal notranslate"><span class="pre">conf</span></code>, <code class="docutils literal notranslate"><span class="pre">inputs</span></code> and <code class="docutils literal notranslate"><span class="pre">outputs</span></code> are simple JavaScript objects, similar
 to the Python dictionaries used in the <a class="reference external" href="ogr_base_vect_ops.html">previous section</a>.</p>
 </aside>
-<aside class="footnote brackets" id="f5" role="note">
+<aside class="footnote brackets" id="f5" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">3</a><span class="fn-bracket">]</span></span>
 <p>Such as <code class="docutils literal notranslate"><span class="pre">conf</span></code>, <code class="docutils literal notranslate"><span class="pre">inputs</span></code> and <code class="docutils literal notranslate"><span class="pre">outputs</span></code>.</p>
 </aside>
-<aside class="footnote brackets" id="f6" role="note">
+<aside class="footnote brackets" id="f6" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">4</a><span class="fn-bracket">]</span></span>
 <p>You can also return a conf Object if you get any informations updated from your JavaScript service (such as cookie for instance)</p>
 </aside>
-<aside class="footnote brackets" id="f7" role="note">
+<aside class="footnote brackets" id="f7" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id5">5</a><span class="fn-bracket">]</span></span>
 <p>Using one of the available <code class="docutils literal notranslate"><span class="pre">ZOO.formats</span></code> you are also able to support various
 <code class="docutils literal notranslate"><span class="pre">ComplexData</span></code> for both input and output of the service. To simplify the
 presentation here, you will use only this default ones.</p>
 </aside>
-<aside class="footnote brackets" id="f8" role="note">
+<aside class="footnote brackets" id="f8" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id9">6</a><span class="fn-bracket">]</span></span>
 <p>So in the hole you created in the previous section.</p>
 </aside>
@@ -803,9 +816,6 @@ presentation here, you will use only this default ones.</p>
         };
     </script>
       <script type="text/javascript" src="../_static/documentation_options.js"></script>
-      <script type="text/javascript" src="../_static/jquery.js"></script>
-      <script type="text/javascript" src="../_static/underscore.js"></script>
-      <script type="text/javascript" src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../_static/doctools.js"></script>
       <script type="text/javascript" src="../_static/sphinx_highlight.js"></script>
 

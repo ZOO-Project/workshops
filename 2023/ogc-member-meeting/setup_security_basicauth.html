@@ -25,8 +25,6 @@
 
   
   
-    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  
 
   
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -53,7 +51,7 @@
   <div class="wy-grid-for-nav">
 
     
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
       <div class="wy-side-nav-search">
         
 
@@ -81,6 +79,15 @@
           
           
               <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../2024/foss4g-europe/index.html">ZOO-Project – Introduction to OGC API - Processes - Part 1: Core</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../2024/foss4g-europe/introduction.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2024/foss4g-europe/using_zoo_from_docker.html">Installation, configuration and ZOO-Kernel use</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2024/foss4g-europe/first_service.html">Creating your first ZOO-Service</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2024/foss4g-europe/building_blocks_presentation.html">Building blocks presentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2024/foss4g-europe/js_services_chaining.html">Playing with building blocks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2024/foss4g-europe/solutions.html">Issue playing with building blocks?</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../foss4g/index.html">ZOO-Project – Introduction to OGC API - Processes - Part 1: Core</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../foss4g/introduction.html">Introduction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../foss4g/using_zoo_from_docker.html">Installation, configuration and ZOO-Kernel use</a></li>
@@ -198,7 +205,7 @@
           <div role="main" class="document">
             
   <section id="secure-access-to-specific-end-points-using-http-basic-authentication">
-<span id="setup-security-basics"></span><h1><a class="toc-backref" href="#table-of-contents" role="doc-backlink">Secure access to specific end-points using HTTP Basic Authentication</a><a class="headerlink" href="#secure-access-to-specific-end-points-using-http-basic-authentication" title="Permalink to this heading">¶</a></h1>
+<span id="setup-security-basics"></span><h1><a class="toc-backref" href="#table-of-contents" role="doc-backlink">Secure access to specific end-points using HTTP Basic Authentication</a><a class="headerlink" href="#secure-access-to-specific-end-points-using-http-basic-authentication" title="Link to this heading">¶</a></h1>
 <nav class="contents" id="table-of-contents">
 <p class="topic-title">Table of Contents</p>
 <ul class="simple">
@@ -214,14 +221,14 @@
 </ul>
 </nav>
 <section id="introduction">
-<h2><a class="toc-backref" href="#table-of-contents" role="doc-backlink">Introduction</a><a class="headerlink" href="#introduction" title="Permalink to this heading">¶</a></h2>
+<h2><a class="toc-backref" href="#table-of-contents" role="doc-backlink">Introduction</a><a class="headerlink" href="#introduction" title="Link to this heading">¶</a></h2>
 <p>In this section, your want to secure access to the execution of the
 HelloPy process. You will start setting up the HTTP Basic
 Authentication process which is available per default in the official
 ZOO-Project docker image.</p>
 </section>
 <section id="configuration-steps">
-<h2><a class="toc-backref" href="#table-of-contents" role="doc-backlink">Configuration steps</a><a class="headerlink" href="#configuration-steps" title="Permalink to this heading">¶</a></h2>
+<h2><a class="toc-backref" href="#table-of-contents" role="doc-backlink">Configuration steps</a><a class="headerlink" href="#configuration-steps" title="Link to this heading">¶</a></h2>
 <p>As you can see in <a class="reference external" href="https://zoo-project.github.io/docs/kernel/configuration.html#openapi-security">the official documentation</a>,
 to secure the HelloPy service execution access, it will be required
 to add a <code class="docutils literal notranslate"><span class="pre">secured</span></code> key in the corresponding endpoint. If you take a
@@ -229,41 +236,41 @@ look into the default <code class="docutils literal notranslate"><span class="pr
 endpoint yet. So, as a first step you will add the section
 corresponding to the endpoint.</p>
 <p>First, start a shell from the running container.</p>
-<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span><span class="nv">docker</span><span class="w"> </span><span class="k">exec</span><span class="w"> </span><span class="o">-</span><span class="nv">it</span><span class="w"> </span><span class="nv">zpgit</span><span class="o">-</span><span class="nv">zookernel</span><span class="o">-</span><span class="mi">1</span><span class="w"> </span><span class="nv">bash</span><span class="w"></span>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span><span class="nv">docker</span><span class="w"> </span><span class="k">exec</span><span class="w"> </span><span class="o">-</span><span class="nv">it</span><span class="w"> </span><span class="nv">zpgit</span><span class="o">-</span><span class="nv">zookernel</span><span class="o">-</span><span class="mi">1</span><span class="w"> </span><span class="nv">bash</span>
 </pre></div>
 </div>
 <p>From this shell, use the commands below to add an access restriction to the HelloPy execution end-point. The <code class="docutils literal notranslate"><span class="pre">sed</span></code> command adds the path correctly to the list.</p>
-<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">cgi</span><span class="o">-</span><span class="n">bin</span><span class="o">/</span><span class="n">oas</span><span class="p">.</span><span class="n">cfg</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">EOF</span><span class="w"></span>
-<span class="o">[</span><span class="n">processes/HelloPy/execution</span><span class="o">]</span><span class="w"></span>
-<span class="n">length</span><span class="o">=</span><span class="mi">1</span><span class="w"></span>
-<span class="n">pname</span><span class="o">=</span><span class="n">HelloPy</span><span class="w"></span>
-<span class="n">rel</span><span class="o">=</span><span class="nl">http</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="p">.</span><span class="n">opengis</span><span class="p">.</span><span class="n">net</span><span class="o">/</span><span class="n">def</span><span class="o">/</span><span class="n">rel</span><span class="o">/</span><span class="n">ogc</span><span class="o">/</span><span class="mf">1.0</span><span class="o">/</span><span class="k">execute</span><span class="w"></span>
-<span class="k">method</span><span class="o">=</span><span class="n">post</span><span class="w"></span>
-<span class="n">secured</span><span class="o">=</span><span class="n">BasicAuth</span><span class="w"></span>
-<span class="n">title</span><span class="o">=</span><span class="k">execute</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">job</span><span class="w"></span>
-<span class="n">abstract</span><span class="o">=</span><span class="n">An</span><span class="w"> </span><span class="k">execute</span><span class="w"> </span><span class="n">endpoint</span><span class="p">.</span><span class="w"></span>
-<span class="n">tags</span><span class="o">=</span><span class="n">ExecuteEndpoint</span><span class="w"></span>
-<span class="n">tags_description</span><span class="o">=</span><span class="w"></span>
-<span class="k">schema</span><span class="o">=</span><span class="nl">http</span><span class="p">:</span><span class="o">//</span><span class="n">schemas</span><span class="p">.</span><span class="n">opengis</span><span class="p">.</span><span class="n">net</span><span class="o">/</span><span class="n">ogcapi</span><span class="o">/</span><span class="n">processes</span><span class="o">/</span><span class="n">part1</span><span class="o">/</span><span class="mf">1.0</span><span class="o">/</span><span class="n">openapi</span><span class="o">/</span><span class="n">responses</span><span class="o">/</span><span class="n">ExecuteSync</span><span class="p">.</span><span class="n">yaml</span><span class="w"></span>
-<span class="k">parameters</span><span class="o">=/</span><span class="n">components</span><span class="o">/</span><span class="k">parameters</span><span class="o">/</span><span class="n">oas</span><span class="o">-</span><span class="n">header1</span><span class="w"></span>
-<span class="n">ecode</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span><span class="mi">404</span><span class="p">,</span><span class="mi">500</span><span class="w"></span>
-<span class="n">eschema</span><span class="o">=</span><span class="nl">http</span><span class="p">:</span><span class="o">//</span><span class="n">schemas</span><span class="p">.</span><span class="n">opengis</span><span class="p">.</span><span class="n">net</span><span class="o">/</span><span class="n">ogcapi</span><span class="o">/</span><span class="n">processes</span><span class="o">/</span><span class="n">part1</span><span class="o">/</span><span class="mf">1.0</span><span class="o">/</span><span class="n">openapi</span><span class="o">/</span><span class="n">responses</span><span class="o">/</span><span class="n">ExecuteAsync</span><span class="p">.</span><span class="n">yaml</span><span class="w"></span>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">cgi</span><span class="o">-</span><span class="n">bin</span><span class="o">/</span><span class="n">oas</span><span class="p">.</span><span class="n">cfg</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">EOF</span>
+<span class="o">[</span><span class="n">processes/HelloPy/execution</span><span class="o">]</span>
+<span class="n">length</span><span class="o">=</span><span class="mi">1</span>
+<span class="n">pname</span><span class="o">=</span><span class="n">HelloPy</span>
+<span class="n">rel</span><span class="o">=</span><span class="nl">http</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="p">.</span><span class="n">opengis</span><span class="p">.</span><span class="n">net</span><span class="o">/</span><span class="n">def</span><span class="o">/</span><span class="n">rel</span><span class="o">/</span><span class="n">ogc</span><span class="o">/</span><span class="mf">1.0</span><span class="o">/</span><span class="k">execute</span>
+<span class="k">method</span><span class="o">=</span><span class="n">post</span>
+<span class="n">secured</span><span class="o">=</span><span class="n">BasicAuth</span>
+<span class="n">title</span><span class="o">=</span><span class="k">execute</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">job</span>
+<span class="n">abstract</span><span class="o">=</span><span class="n">An</span><span class="w"> </span><span class="k">execute</span><span class="w"> </span><span class="n">endpoint</span><span class="p">.</span>
+<span class="n">tags</span><span class="o">=</span><span class="n">ExecuteEndpoint</span>
+<span class="n">tags_description</span><span class="o">=</span>
+<span class="k">schema</span><span class="o">=</span><span class="nl">http</span><span class="p">:</span><span class="o">//</span><span class="n">schemas</span><span class="p">.</span><span class="n">opengis</span><span class="p">.</span><span class="n">net</span><span class="o">/</span><span class="n">ogcapi</span><span class="o">/</span><span class="n">processes</span><span class="o">/</span><span class="n">part1</span><span class="o">/</span><span class="mf">1.0</span><span class="o">/</span><span class="n">openapi</span><span class="o">/</span><span class="n">responses</span><span class="o">/</span><span class="n">ExecuteSync</span><span class="p">.</span><span class="n">yaml</span>
+<span class="k">parameters</span><span class="o">=/</span><span class="n">components</span><span class="o">/</span><span class="k">parameters</span><span class="o">/</span><span class="n">oas</span><span class="o">-</span><span class="n">header1</span>
+<span class="n">ecode</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span><span class="mi">404</span><span class="p">,</span><span class="mi">500</span>
+<span class="n">eschema</span><span class="o">=</span><span class="nl">http</span><span class="p">:</span><span class="o">//</span><span class="n">schemas</span><span class="p">.</span><span class="n">opengis</span><span class="p">.</span><span class="n">net</span><span class="o">/</span><span class="n">ogcapi</span><span class="o">/</span><span class="n">processes</span><span class="o">/</span><span class="n">part1</span><span class="o">/</span><span class="mf">1.0</span><span class="o">/</span><span class="n">openapi</span><span class="o">/</span><span class="n">responses</span><span class="o">/</span><span class="n">ExecuteAsync</span><span class="p">.</span><span class="n">yaml</span>
 
-<span class="o">[</span><span class="n">osecurity</span><span class="o">]</span><span class="w"></span>
-<span class="n">name</span><span class="o">=</span><span class="n">BasicAuth</span><span class="w"></span>
-<span class="n">type</span><span class="o">=</span><span class="n">http</span><span class="w"></span>
-<span class="n">scheme</span><span class="o">=</span><span class="n">basic</span><span class="w"></span>
-<span class="n">realm</span><span class="o">=</span><span class="n">Secured</span><span class="w"> </span><span class="k">section</span><span class="w"></span>
-<span class="n">charset</span><span class="o">=</span><span class="n">utf</span><span class="o">-</span><span class="mi">8</span><span class="w"></span>
-<span class="n">passwd</span><span class="o">=/</span><span class="n">tmp</span><span class="o">/</span><span class="n">htpasswords</span><span class="w"></span>
+<span class="o">[</span><span class="n">osecurity</span><span class="o">]</span>
+<span class="n">name</span><span class="o">=</span><span class="n">BasicAuth</span>
+<span class="n">type</span><span class="o">=</span><span class="n">http</span>
+<span class="n">scheme</span><span class="o">=</span><span class="n">basic</span>
+<span class="n">realm</span><span class="o">=</span><span class="n">Secured</span><span class="w"> </span><span class="k">section</span>
+<span class="n">charset</span><span class="o">=</span><span class="n">utf</span><span class="o">-</span><span class="mi">8</span>
+<span class="n">passwd</span><span class="o">=/</span><span class="n">tmp</span><span class="o">/</span><span class="n">htpasswords</span>
 
-<span class="o">[</span><span class="n">filter_in</span><span class="o">]</span><span class="w"></span>
-<span class="k">path</span><span class="o">=/</span><span class="n">usr</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">cgi</span><span class="o">-</span><span class="n">bin</span><span class="w"></span>
-<span class="n">service</span><span class="o">=</span><span class="n">securityIn</span><span class="w"></span>
+<span class="o">[</span><span class="n">filter_in</span><span class="o">]</span>
+<span class="k">path</span><span class="o">=/</span><span class="n">usr</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">cgi</span><span class="o">-</span><span class="n">bin</span>
+<span class="n">service</span><span class="o">=</span><span class="n">securityIn</span>
 
-<span class="n">EOF</span><span class="w"></span>
+<span class="n">EOF</span>
 
-<span class="n">sed</span><span class="w"> </span><span class="ss">&quot;s#/processes/OTB.BandMath/execution,#/processes/OTB.BandMath/execution,/processes/HelloPy/execution,#g&quot;</span><span class="w"> </span><span class="o">-</span><span class="n">i</span><span class="w"> </span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">cgi</span><span class="o">-</span><span class="n">bin</span><span class="o">/</span><span class="n">oas</span><span class="p">.</span><span class="n">cfg</span><span class="w"></span>
+<span class="n">sed</span><span class="w"> </span><span class="ss">&quot;s#/processes/OTB.BandMath/execution,#/processes/OTB.BandMath/execution,/processes/HelloPy/execution,#g&quot;</span><span class="w"> </span><span class="o">-</span><span class="n">i</span><span class="w"> </span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">cgi</span><span class="o">-</span><span class="n">bin</span><span class="o">/</span><span class="n">oas</span><span class="p">.</span><span class="n">cfg</span>
 </pre></div>
 </div>
 <p>Here, we use the default values provided in the <a class="reference external" href="https://zoo-project.github.io/docs/kernel/configuration.html#openapi-security">official
@@ -273,10 +280,11 @@ except the <code class="docutils literal notranslate"><span class="pre">[filter_
 link</a>  or press the explore
 button to refresh the API definition, you should have a new endpoint
 for the HelloPy execution as shown below.</p>
-<a class="reference internal image-reference" href="../../_images/zoo_ws_ogc_hellopy_secured.png"><img alt="../../_images/zoo_ws_ogc_hellopy_secured.png" class="align-center" src="../../_images/zoo_ws_ogc_hellopy_secured.png" style="width: 450px;" /></a>
+<a class="reference internal image-reference" href="../../_images/zoo_ws_ogc_hellopy_secured.png"><img alt="../../_images/zoo_ws_ogc_hellopy_secured.png" class="align-center" src="../../_images/zoo_ws_ogc_hellopy_secured.png" style="width: 450px;" />
+</a>
 </section>
 <section id="create-a-password-file">
-<h2><a class="toc-backref" href="#table-of-contents" role="doc-backlink">Create a password file</a><a class="headerlink" href="#create-a-password-file" title="Permalink to this heading">¶</a></h2>
+<h2><a class="toc-backref" href="#table-of-contents" role="doc-backlink">Create a password file</a><a class="headerlink" href="#create-a-password-file" title="Link to this heading">¶</a></h2>
 <p>The default service responsible for verifying authentication using
 HTTP Basic Authentication requires a file that stores the user and
 password informations. So, in this section, you will start by creating
@@ -292,14 +300,15 @@ such a file.</p>
 </pre></div>
 </div>
 <p>Now, create the password file with the command below.</p>
-<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span><span class="nv">docker</span><span class="w"> </span><span class="k">exec</span><span class="w"> </span><span class="nv">zpgit</span><span class="o">-</span><span class="nv">zookernel</span><span class="o">-</span><span class="mi">1</span><span class="w"> </span><span class="nv">htpasswd</span><span class="w"> </span><span class="o">-</span><span class="nv">c</span><span class="w"> </span><span class="o">-</span><span class="nv">b</span><span class="w"> </span><span class="o">/</span><span class="nv">etc</span><span class="o">/</span><span class="nv">zoo</span><span class="o">-</span><span class="nv">security</span><span class="o">/</span><span class="nv">htpasswords</span><span class="w"> </span><span class="nv">test</span><span class="w"> </span><span class="nv">test</span><span class="w"></span>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span><span class="nv">docker</span><span class="w"> </span><span class="k">exec</span><span class="w"> </span><span class="nv">zpgit</span><span class="o">-</span><span class="nv">zookernel</span><span class="o">-</span><span class="mi">1</span><span class="w"> </span><span class="nv">htpasswd</span><span class="w"> </span><span class="o">-</span><span class="nv">c</span><span class="w"> </span><span class="o">-</span><span class="nv">b</span><span class="w"> </span><span class="o">/</span><span class="nv">etc</span><span class="o">/</span><span class="nv">zoo</span><span class="o">-</span><span class="nv">security</span><span class="o">/</span><span class="nv">htpasswords</span><span class="w"> </span><span class="nv">test</span><span class="w"> </span><span class="nv">test</span>
 </pre></div>
 </div>
 </section>
 <section id="execute-the-hellopy-service">
-<h2><a class="toc-backref" href="#table-of-contents" role="doc-backlink">Execute the HelloPy service</a><a class="headerlink" href="#execute-the-hellopy-service" title="Permalink to this heading">¶</a></h2>
+<h2><a class="toc-backref" href="#table-of-contents" role="doc-backlink">Execute the HelloPy service</a><a class="headerlink" href="#execute-the-hellopy-service" title="Link to this heading">¶</a></h2>
 <p>Now, go back to the <a class="reference external" href="http://localhost/ogc-api/api.html">link with rel service-doc</a>. You should be able to run the HelloPy process after authenticating using the test/test credentials.</p>
-<a class="reference internal image-reference" href="../../_images/zoo_secured_api_basicauth.png"><img alt="../../_images/zoo_secured_api_basicauth.png" class="align-center" src="../../_images/zoo_secured_api_basicauth.png" style="width: 450px;" /></a>
+<a class="reference internal image-reference" href="../../_images/zoo_secured_api_basicauth.png"><img alt="../../_images/zoo_secured_api_basicauth.png" class="align-center" src="../../_images/zoo_secured_api_basicauth.png" style="width: 450px;" />
+</a>
 <p>To do so, you can use the following execute request body.</p>
 <div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>{
     &quot;inputs&quot;: {
@@ -315,31 +324,31 @@ such a file.</p>
 </div>
 <p>By selecting “respond-async;return=representation” for the Prefer header parameter, you should be able to run the process asynchronously.</p>
 <p>Please execute the command below to make this example request available from swagger-ui.</p>
-<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>sed &quot;s#[processes/HelloPy/execution]#[processes/HelloPy/execution]\nexamples=sample.json\nexamples_summary=Simple echo request#g&quot; -i /usr/lib/cgi-bin/oas.fg
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span><span class="nx">sed</span><span class="w"> </span><span class="s">&quot;s#[processes/HelloPy/execution]#[processes/HelloPy/execution]\nexamples=sample.json\nexamples_summary=Simple echo request#g&quot;</span><span class="w"> </span><span class="o">-</span><span class="nx">i</span><span class="w"> </span><span class="o">/</span><span class="nx">usr</span><span class="o">/</span><span class="nx">lib</span><span class="o">/</span><span class="nx">cgi</span><span class="o">-</span><span class="nx">bin</span><span class="o">/</span><span class="nx">oas</span><span class="p">.</span><span class="nx">fg</span>
 </pre></div>
 </div>
 <p>Then, create and copy the file in the proper location.</p>
-<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">test</span><span class="o">.</span><span class="n">json</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">EOF</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="s2">&quot;inputs&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="s2">&quot;a&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Martin et Jules&quot;</span><span class="w"></span>
-<span class="w">    </span><span class="p">},</span><span class="w"></span>
-<span class="w">    </span><span class="s2">&quot;outputs&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="s2">&quot;Result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="s2">&quot;transmissionMode&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;value&quot;</span><span class="w"></span>
-<span class="w">        </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-<span class="n">EOF</span><span class="w"></span>
-<span class="c1"># Create the target directory</span><span class="w"></span>
-<span class="n">docker</span><span class="w"> </span><span class="n">exec</span><span class="w"> </span><span class="n">zpgit</span><span class="o">-</span><span class="n">zookernel</span><span class="o">-</span><span class="mi">1</span><span class="w"> </span><span class="n">mkdir</span><span class="w"> </span><span class="o">/</span><span class="k">var</span><span class="o">/</span><span class="n">www</span><span class="o">/</span><span class="n">html</span><span class="o">/</span><span class="n">examples</span><span class="o">/</span><span class="n">HelloPy</span><span class="w"></span>
-<span class="c1"># Copy the file to the right location on the zookernel container</span><span class="w"></span>
-<span class="n">docker</span><span class="w"> </span><span class="n">cp</span><span class="w"> </span><span class="n">test</span><span class="o">.</span><span class="n">json</span><span class="w"> </span><span class="n">zpgit</span><span class="o">-</span><span class="n">zookernel</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="o">/</span><span class="k">var</span><span class="o">/</span><span class="n">www</span><span class="o">/</span><span class="n">html</span><span class="o">/</span><span class="n">examples</span><span class="o">/</span><span class="n">HelloPy</span><span class="o">/</span><span class="n">sample</span><span class="o">.</span><span class="n">json</span><span class="w"></span>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">test</span><span class="o">.</span><span class="n">json</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">EOF</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="s2">&quot;inputs&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="s2">&quot;a&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Martin et Jules&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="s2">&quot;outputs&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="s2">&quot;Result&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="s2">&quot;transmissionMode&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;value&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+<span class="n">EOF</span>
+<span class="c1"># Create the target directory</span>
+<span class="n">docker</span><span class="w"> </span><span class="n">exec</span><span class="w"> </span><span class="n">zpgit</span><span class="o">-</span><span class="n">zookernel</span><span class="o">-</span><span class="mi">1</span><span class="w"> </span><span class="n">mkdir</span><span class="w"> </span><span class="o">/</span><span class="k">var</span><span class="o">/</span><span class="n">www</span><span class="o">/</span><span class="n">html</span><span class="o">/</span><span class="n">examples</span><span class="o">/</span><span class="n">HelloPy</span>
+<span class="c1"># Copy the file to the right location on the zookernel container</span>
+<span class="n">docker</span><span class="w"> </span><span class="n">cp</span><span class="w"> </span><span class="n">test</span><span class="o">.</span><span class="n">json</span><span class="w"> </span><span class="n">zpgit</span><span class="o">-</span><span class="n">zookernel</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="o">/</span><span class="k">var</span><span class="o">/</span><span class="n">www</span><span class="o">/</span><span class="n">html</span><span class="o">/</span><span class="n">examples</span><span class="o">/</span><span class="n">HelloPy</span><span class="o">/</span><span class="n">sample</span><span class="o">.</span><span class="n">json</span>
 </pre></div>
 </div>
 </section>
 <section id="conclusion">
-<h2><a class="toc-backref" href="#table-of-contents" role="doc-backlink">Conclusion</a><a class="headerlink" href="#conclusion" title="Permalink to this heading">¶</a></h2>
+<h2><a class="toc-backref" href="#table-of-contents" role="doc-backlink">Conclusion</a><a class="headerlink" href="#conclusion" title="Link to this heading">¶</a></h2>
 <p>In this section, you have activated the security in the OpenAPI
 exposed by the ZOO-Kernel and setup the default securityIn process as
 the authentication filter.</p>
@@ -401,9 +410,6 @@ did for the HelloPy for any other processes.</p>
         };
     </script>
       <script type="text/javascript" src="../../_static/documentation_options.js"></script>
-      <script type="text/javascript" src="../../_static/jquery.js"></script>
-      <script type="text/javascript" src="../../_static/underscore.js"></script>
-      <script type="text/javascript" src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
       <script type="text/javascript" src="../../_static/sphinx_highlight.js"></script>
 
