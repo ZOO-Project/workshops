@@ -79,6 +79,15 @@
           
           
               <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../2024/foss4g/index.html">ZOO-Project – Introduction to OGC API - Processes - Part 1: Core</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../2024/foss4g/introduction.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2024/foss4g/using_zoo_from_docker.html">Installation, configuration and ZOO-Kernel use</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2024/foss4g/first_service.html">Creating your first ZOO-Service</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2024/foss4g/building_blocks_presentation.html">Building blocks presentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2024/foss4g/js_services_chaining.html">Playing with building blocks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2024/foss4g/solutions.html">Issue playing with building blocks?</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../2024/foss4g-europe/index.html">ZOO-Project – Introduction to OGC API - Processes - Part 1: Core</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../2024/foss4g-europe/introduction.html">Introduction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../2024/foss4g-europe/using_zoo_from_docker.html">Installation, configuration and ZOO-Kernel use</a></li>
@@ -721,33 +730,33 @@ an easy way , simply by copying the whole cgi-env content in your <code class="d
 <code class="docutils literal notranslate"><span class="pre">ogr_ws_service_provider.py</span></code> in <code class="docutils literal notranslate"><span class="pre">cgi-env</span></code> directory is shown bellow. Indeed, as
 Python is an interpreted language, you do not have to compile anything before deploying
 your service which makes the deployement step much easier:</p>
-<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">osgeo.ogr</span>
-<span class="kn">import</span> <span class="nn">libxml2</span>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">osgeo.ogr</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">libxml2</span>
 
-<span class="k">def</span> <span class="nf">createGeometryFromWFS</span><span class="p">(</span><span class="n">my_wfs_response</span><span class="p">):</span>
-    <span class="n">doc</span><span class="o">=</span><span class="n">libxml2</span><span class="o">.</span><span class="n">parseMemory</span><span class="p">(</span><span class="n">my_wfs_response</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">my_wfs_response</span><span class="p">))</span>
-    <span class="n">ctxt</span> <span class="o">=</span> <span class="n">doc</span><span class="o">.</span><span class="n">xpathNewContext</span><span class="p">()</span>
-    <span class="n">res</span><span class="o">=</span><span class="n">ctxt</span><span class="o">.</span><span class="n">xpathEval</span><span class="p">(</span><span class="s2">&quot;/*/*/*/*/*[local-name()=&#39;Polygon&#39; or local- name()=&#39;MultiPolygon&#39;]&quot;</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">res</span><span class="p">:</span>
-        <span class="n">geometry_as_string</span><span class="o">=</span><span class="n">node</span><span class="o">.</span><span class="n">serialize</span><span class="p">()</span>
-        <span class="n">geometry</span><span class="o">=</span><span class="n">osgeo</span><span class="o">.</span><span class="n">ogr</span><span class="o">.</span><span class="n">CreateGeometryFromGML</span><span class="p">(</span><span class="n">geometry_as_string</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">geometry</span>
-    <span class="k">return</span> <span class="n">geometry</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">createGeometryFromWFS</span><span class="p">(</span><span class="n">my_wfs_response</span><span class="p">):</span>
+<span class="w">    </span><span class="n">doc</span><span class="o">=</span><span class="n">libxml2</span><span class="o">.</span><span class="n">parseMemory</span><span class="p">(</span><span class="n">my_wfs_response</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">my_wfs_response</span><span class="p">))</span>
+<span class="w">    </span><span class="n">ctxt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">doc</span><span class="o">.</span><span class="n">xpathNewContext</span><span class="p">()</span>
+<span class="w">    </span><span class="n">res</span><span class="o">=</span><span class="n">ctxt</span><span class="o">.</span><span class="n">xpathEval</span><span class="p">(</span><span class="s2">&quot;/*/*/*/*/*[local-name()=&#39;Polygon&#39; or local- name()=&#39;MultiPolygon&#39;]&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="n">node</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">res</span><span class="p">:</span>
+<span class="w">        </span><span class="n">geometry_as_string</span><span class="o">=</span><span class="n">node</span><span class="o">.</span><span class="n">serialize</span><span class="p">()</span>
+<span class="w">        </span><span class="n">geometry</span><span class="o">=</span><span class="n">osgeo</span><span class="o">.</span><span class="n">ogr</span><span class="o">.</span><span class="n">CreateGeometryFromGML</span><span class="p">(</span><span class="n">geometry_as_string</span><span class="p">)</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">geometry</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">geometry</span>
 
-<span class="k">def</span> <span class="nf">Boundary</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span><span class="n">inputs</span><span class="p">,</span><span class="n">outputs</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">inputs</span><span class="p">[</span><span class="s2">&quot;InputPolygon&quot;</span><span class="p">][</span><span class="s2">&quot;mimeType&quot;</span><span class="p">]</span><span class="o">==</span><span class="s2">&quot;application/json&quot;</span><span class="p">:</span>
-        <span class="n">geometry</span><span class="o">=</span><span class="n">osgeo</span><span class="o">.</span><span class="n">ogr</span><span class="o">.</span><span class="n">CreateGeometryFromJson</span><span class="p">(</span><span class="n">inputs</span><span class="p">[</span><span class="s2">&quot;InputPolygon&quot;</span><span class="p">][</span><span class="s2">&quot;value&quot;</span><span class="p">])</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">geometry</span><span class="o">=</span><span class="n">createGeometryFromWFS</span><span class="p">(</span><span class="n">inputs</span><span class="p">[</span><span class="s2">&quot;InputPolygon&quot;</span><span class="p">][</span><span class="s2">&quot;value&quot;</span><span class="p">])</span>
-    <span class="n">rgeom</span><span class="o">=</span><span class="n">geometry</span><span class="o">.</span><span class="n">GetBoundary</span><span class="p">()</span>
-    <span class="k">if</span> <span class="n">outputs</span><span class="p">[</span><span class="s2">&quot;Result&quot;</span><span class="p">][</span><span class="s2">&quot;mimeType&quot;</span><span class="p">]</span><span class="o">==</span><span class="s2">&quot;application/json&quot;</span><span class="p">:</span>
-        <span class="n">outputs</span><span class="p">[</span><span class="s2">&quot;Result&quot;</span><span class="p">][</span><span class="s2">&quot;value&quot;</span><span class="p">]</span><span class="o">=</span><span class="n">rgeom</span><span class="o">.</span><span class="n">ExportToJson</span><span class="p">()</span>
-        <span class="n">outputs</span><span class="p">[</span><span class="s2">&quot;Result&quot;</span><span class="p">][</span><span class="s2">&quot;mimeType&quot;</span><span class="p">]</span><span class="o">=</span><span class="s2">&quot;text/plain&quot;</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">outputs</span><span class="p">[</span><span class="s2">&quot;Result&quot;</span><span class="p">][</span><span class="s2">&quot;value&quot;</span><span class="p">]</span><span class="o">=</span><span class="n">rgeom</span><span class="o">.</span><span class="n">ExportToGML</span><span class="p">()</span>
-    <span class="n">geometry</span><span class="o">.</span><span class="n">Destroy</span><span class="p">()</span>
-    <span class="n">rgeom</span><span class="o">.</span><span class="n">Destroy</span><span class="p">()</span>
-    <span class="k">return</span> <span class="mi">3</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">Boundary</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span><span class="n">inputs</span><span class="p">,</span><span class="n">outputs</span><span class="p">):</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">inputs</span><span class="p">[</span><span class="s2">&quot;InputPolygon&quot;</span><span class="p">][</span><span class="s2">&quot;mimeType&quot;</span><span class="p">]</span><span class="o">==</span><span class="s2">&quot;application/json&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="n">geometry</span><span class="o">=</span><span class="n">osgeo</span><span class="o">.</span><span class="n">ogr</span><span class="o">.</span><span class="n">CreateGeometryFromJson</span><span class="p">(</span><span class="n">inputs</span><span class="p">[</span><span class="s2">&quot;InputPolygon&quot;</span><span class="p">][</span><span class="s2">&quot;value&quot;</span><span class="p">])</span>
+<span class="w">    </span><span class="k">else</span><span class="p">:</span>
+<span class="w">        </span><span class="n">geometry</span><span class="o">=</span><span class="n">createGeometryFromWFS</span><span class="p">(</span><span class="n">inputs</span><span class="p">[</span><span class="s2">&quot;InputPolygon&quot;</span><span class="p">][</span><span class="s2">&quot;value&quot;</span><span class="p">])</span>
+<span class="w">    </span><span class="n">rgeom</span><span class="o">=</span><span class="n">geometry</span><span class="o">.</span><span class="n">GetBoundary</span><span class="p">()</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">outputs</span><span class="p">[</span><span class="s2">&quot;Result&quot;</span><span class="p">][</span><span class="s2">&quot;mimeType&quot;</span><span class="p">]</span><span class="o">==</span><span class="s2">&quot;application/json&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="n">outputs</span><span class="p">[</span><span class="s2">&quot;Result&quot;</span><span class="p">][</span><span class="s2">&quot;value&quot;</span><span class="p">]</span><span class="o">=</span><span class="n">rgeom</span><span class="o">.</span><span class="n">ExportToJson</span><span class="p">()</span>
+<span class="w">        </span><span class="n">outputs</span><span class="p">[</span><span class="s2">&quot;Result&quot;</span><span class="p">][</span><span class="s2">&quot;mimeType&quot;</span><span class="p">]</span><span class="o">=</span><span class="s2">&quot;text/plain&quot;</span>
+<span class="w">    </span><span class="k">else</span><span class="p">:</span>
+<span class="w">        </span><span class="n">outputs</span><span class="p">[</span><span class="s2">&quot;Result&quot;</span><span class="p">][</span><span class="s2">&quot;value&quot;</span><span class="p">]</span><span class="o">=</span><span class="n">rgeom</span><span class="o">.</span><span class="n">ExportToGML</span><span class="p">()</span>
+<span class="w">    </span><span class="n">geometry</span><span class="o">.</span><span class="n">Destroy</span><span class="p">()</span>
+<span class="w">    </span><span class="n">rgeom</span><span class="o">.</span><span class="n">Destroy</span><span class="p">()</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">3</span>
 </pre></div>
 </div>
 <p>We do not dicuss the functions body here as we already gave all the details before and
