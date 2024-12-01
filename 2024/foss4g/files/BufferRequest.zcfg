@@ -1,0 +1,31 @@
+[BufferRequest]
+ Title = Compute buffer request
+ Abstract = Compute buffer request around a geometry
+ processVersion = 1
+ storeSupported = true
+ statusSupported = true
+ serviceProvider = foss4gws.js
+ serviceType = JS
+ <DataInputs>
+  [InputData]
+   Title = The feature
+   Abstract = The feature to run the service with
+   minOccurs = 1
+   maxOccurs = 1
+   <ComplexData>
+    <Default>
+    mimeType = text/xml
+    encoding = utf-8
+    </Default>
+   </ComplexData>
+ </DataInputs>
+ <DataOutputs>
+  [Result]
+   Title = The resulting feature
+   Abstract = The feature created by the service.
+   <ComplexOutput>
+     <Default>
+     mimeType = application/json
+     </Default>
+   </ComplexOutput>
+ </DataOutputs>
