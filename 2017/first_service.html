@@ -56,7 +56,7 @@
         
 
         
-	  <a class="shrink" href="http://zoo-project.org"><img src="http://zoo-project.org/img/zoo-sun-logo.png" class="img-responsive sun" style="display: inline;"> ZOO</a>
+	  <a class="shrink" href="http://zoo-project.org"><img src="http://zoo-project.org/images/zoo-sun-logo.png" class="img-responsive sun" style="display: inline;"> ZOO</a>
         
 
         
@@ -509,8 +509,8 @@ JavaScript or C services.</p>
 <h3><a class="toc-backref" href="#table-of-contents" role="doc-backlink">The Hello Service</a><a class="headerlink" href="#the-hello-service" title="Link to this heading">¶</a></h3>
 <p>You can copy and paste the following into the
 <code class="docutils literal notranslate"><span class="pre">/home/user/zoo-ws/ws_sp/cgi-env/test_service.py</span></code> file.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">zoo</span>
-<span class="k">def</span> <span class="nf">Hello</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span><span class="n">inputs</span><span class="p">,</span><span class="n">outputs</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">zoo</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">Hello</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span><span class="n">inputs</span><span class="p">,</span><span class="n">outputs</span><span class="p">):</span>
     <span class="n">outputs</span><span class="p">[</span><span class="s2">&quot;Result&quot;</span><span class="p">][</span><span class="s2">&quot;value&quot;</span><span class="p">]</span><span class="o">=</span>\
             <span class="s2">&quot;Hello &quot;</span><span class="o">+</span><span class="n">inputs</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">][</span><span class="s2">&quot;value&quot;</span><span class="p">]</span><span class="o">+</span><span class="s2">&quot; from the ZOO-Project Python world !&quot;</span>
     <span class="k">return</span> <span class="n">zoo</span><span class="o">.</span><span class="n">SERVICE_SUCCEEDED</span>
